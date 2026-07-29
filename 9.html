@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>網頁接案 · 勞務報酬單 · 精簡版 · 115 年度</title>
+<style>
+:root{
+ --ink:#15181c;--i2:#4b5560;--i3:#8a929e;--rule:#d9dde2;--r2:#b4bbc4;
+ --app:#ecefe9;--field:#f5f7f9;--blue:#1d4e89;--bt:#e4ecf6;
+ --seal:#b32217;--s2:#8e1a11;--st:#f9e7e4;--ok:#1f6f4a;--okt:#e4f1ea;
+ --warn:#8a5a10;--wbg:#fdf6e6;--wl:#e9d4a6;
+ --sh:0 1px 2px rgba(18,24,32,.05),0 5px 15px rgba(18,24,32,.06);
+ --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+ --sans:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+ --mono:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+ --pz:1;
+}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:var(--sans);color:var(--ink);background:var(--app);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+header.top{background:#fff;border-bottom:1px solid var(--rule)}
+.hd{max-width:1200px;margin:0 auto;padding:14px 18px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+h1{font-family:var(--serif);font-weight:700;font-size:20px;margin:0}
+.hd .sub{font-size:12px;color:var(--i3);margin:2px 0 0}
+.mk{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--seal);border:1.5px solid var(--seal);border-radius:20px;padding:3px 11px}
+main{max-width:1500px;margin:0 auto;padding:16px 18px 44px}
+.grid{display:grid;gap:18px}
+@media(min-width:1100px){.grid{grid-template-columns:minmax(0,0.78fr) minmax(0,1fr);align-items:start}.rt{position:sticky;top:12px}}
+section.lf{zoom:1.08}
+.card{background:#fff;border:1px solid var(--rule);border-radius:6px;box-shadow:var(--sh);margin-bottom:13px;overflow:hidden}
+.ch{display:flex;align-items:center;gap:9px;padding:10px 14px;border-bottom:1px solid var(--rule);background:linear-gradient(180deg,#fcfdfc,#f4f7f4)}
+.ch .n{width:20px;height:20px;flex:0 0 auto;border-radius:3px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:11px;font-weight:600;display:grid;place-content:center}
+.ch h2{font-family:var(--serif);font-size:15px;margin:0;font-weight:700}
+.ch .hint{margin-left:auto;font-size:11px;color:var(--i3)}
+.cb{padding:13px 14px 15px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}@media(max-width:560px){.fg{grid-template-columns:1fr}}
+.f{display:flex;flex-direction:column;gap:4px;min-width:0}.f.full{grid-column:1/-1}
+label{font-size:12.2px;font-weight:500;color:var(--i2);display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.req{color:var(--seal);font-weight:700}
+.opt{font-family:var(--mono);font-size:9.5px;color:var(--ok);background:var(--okt);border-radius:20px;padding:1px 6px}
+.hlp{font-size:11.4px;color:var(--i3);line-height:1.55}
+input[type=text],input[type=date],select,textarea{font-family:var(--sans);font-size:14.5px;color:var(--ink);background:var(--field);
+border:1px solid var(--r2);border-radius:4px;padding:8px 10px;width:100%;-webkit-appearance:none;appearance:none}
+input[inputmode=numeric]{font-family:var(--mono)}
+textarea{resize:vertical;min-height:52px}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%234b5560' stroke-width='1.6' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px var(--bt)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.seg{display:inline-flex;border:1px solid var(--r2);border-radius:4px;overflow:hidden;background:var(--field);flex-wrap:wrap}
+.seg button{font-family:var(--sans);font-size:12.5px;color:var(--i2);background:transparent;border:0;padding:8px 12px;cursor:pointer;border-right:1px solid var(--rule)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--blue);color:#fff;font-weight:600}
+.seg.sl button[aria-pressed=true]{background:var(--seal)}
+.chk{display:flex;gap:8px;align-items:flex-start;padding:7px 9px;border:1px solid var(--rule);border-radius:4px;background:#fcfdfc;cursor:pointer}
+.chk:hover{border-color:var(--blue)}
+.chk input{margin:2px 0 0;width:15px;height:15px;flex:0 0 auto;accent-color:var(--blue)}
+.chk .t{font-size:12.2px;color:var(--i2);line-height:1.5}
+.chk .t b{color:var(--ink);font-size:12.5px}
+.chk .t .d{display:block;margin-top:1px}
+.chk .inl{display:inline-flex;align-items:center;gap:3px;margin:3px 7px 0 0;font-size:11.2px}
+.chk .inl input{width:60px;padding:2px 5px;font-size:11.5px;font-family:var(--mono);text-align:right;background:#fff;height:auto}
+a.law{display:inline-flex;align-items:center;gap:3px;font-family:var(--mono);font-size:10px;color:var(--blue);
+background:var(--bt);border:1px solid #c3d5ea;border-radius:3px;padding:1px 6px;margin:4px 4px 0 0;
+text-decoration:none;line-height:1.6;white-space:nowrap}
+a.law:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+a.law::after{content:"↗";font-size:9px;opacity:.7}
+.laws{display:flex;flex-wrap:wrap;gap:0}
+details.det{border:1px solid var(--wl);background:var(--wbg);border-left:3px solid var(--warn);border-radius:4px;margin-top:9px}
+details.det>summary{cursor:pointer;padding:8px 11px;font-size:12.5px;font-weight:600;color:var(--ink);list-style:none}
+details.det>summary::-webkit-details-marker{display:none}
+details.det>summary::before{content:"▸ ";color:var(--warn);font-weight:700}
+details.det[open]>summary::before{content:"▾ "}
+details.det .dc{padding:0 11px 10px;font-size:12.4px;color:var(--i2);line-height:1.7}
+details.det.b{border-color:#c3d5ea;border-left-color:var(--blue);background:var(--bt)}
+details.det.b>summary::before{color:var(--blue)}
+details.det.r{border-color:#e7bcb6;border-left-color:var(--seal);background:var(--st)}
+details.det.r>summary{color:var(--s2)}details.det.r>summary::before{color:var(--seal)}
+details.det.g{border-color:#bcdcca;border-left-color:var(--ok);background:var(--okt)}
+details.det.g>summary::before{color:var(--ok)}
+.stampbox{border:1px dashed #999;border-radius:2px;padding:4px 6px;font-size:8.6px;color:#777;text-align:center;min-height:40px;display:grid;place-content:center;line-height:1.5}
+.note{font-size:12.3px;color:var(--i2);background:var(--field);border-radius:4px;padding:8px 11px;margin-top:9px;line-height:1.65}
+.note b{color:var(--ink)}
+.note.g{background:var(--okt);color:#1c5c3e}.note.r{background:var(--st);color:var(--s2)}
+.wt{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:6px}
+.wt button{font-family:var(--sans);text-align:left;background:#fff;border:1px solid var(--rule);border-radius:4px;padding:7px 9px;cursor:pointer;font-size:12.5px;color:var(--ink);line-height:1.3}
+.wt button:hover{border-color:var(--blue);background:var(--bt)}
+.wt button[aria-pressed=true]{border-color:var(--seal);background:var(--st);box-shadow:inset 3px 0 0 var(--seal);font-weight:700}
+.items{border:1px solid var(--r2);border-radius:4px;overflow:hidden;background:#fff}
+.ih,.ir{display:grid;grid-template-columns:1.45fr 1.2fr 1fr 26px}
+.ih{background:#f6f8f6;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:9.5px;color:var(--i2);font-weight:600}
+.ih span{padding:6px 8px;border-right:1px solid var(--rule)}.ih span:last-child{border-right:0}.ih span.r{text-align:right}
+.ir{border-bottom:1px solid var(--rule)}.ir:last-of-type{border-bottom:0}
+.ir .c{border-right:1px solid var(--rule);display:flex}.ir .c:last-child{border-right:0}
+.ir input{border:0!important;border-radius:0!important;background:transparent!important;padding:8px!important;font-size:13px!important;box-shadow:none!important;width:100%}
+.ir input:focus{background:var(--bt)!important}
+.ir input.n{font-family:var(--mono);text-align:right}
+.ir input.amt{background:var(--field)!important;font-weight:600}
+.ir .del{border:0;background:transparent;color:var(--i3);cursor:pointer;font-size:13px;display:grid;place-content:center}
+.ir .del:hover{color:var(--seal)}
+.ift{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:7px 10px;background:#f6f8f6;border-top:1px solid var(--rule);flex-wrap:wrap}
+.ift .s{font-size:12.2px;color:var(--i2)}.ift .s b{font-family:var(--mono);font-size:15px;color:var(--ink);margin-left:5px}
+.badd{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--blue);background:#fff;border:1px solid var(--r2);border-radius:4px;padding:5px 10px;cursor:pointer}
+.badd:hover{border-color:var(--blue);background:var(--bt)}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.chip{font-family:var(--sans);font-size:11.5px;color:var(--i2);background:#fff;border:1px solid var(--rule);border-radius:20px;padding:3px 10px;cursor:pointer}
+.chip:hover{border-color:var(--blue);color:var(--blue);background:var(--bt)}
+@media(max-width:600px){.ih{display:none}.ir{grid-template-columns:1fr 1fr}.ir .c{border-right:0;border-bottom:1px solid var(--rule)}.ir .c.fu{grid-column:1/-1}
+.ir .del{grid-column:1/-1;justify-content:flex-end;padding:4px 8px;border-bottom:1px solid var(--rule)}.ir .del::before{content:"移除";font-family:var(--sans);font-size:11.5px;color:var(--i3);margin-right:5px}}
+.tool-g{display:grid;grid-template-columns:1fr 1fr auto;gap:9px;align-items:end}@media(max-width:600px){.tool-g{grid-template-columns:1fr}}
+.tool-g input,.tool-g select{background:#fff}
+.bslv{font-family:var(--sans);font-size:13px;font-weight:700;color:#fff;background:var(--seal);border:0;border-radius:4px;padding:9px 14px;cursor:pointer;white-space:nowrap}
+.bslv:hover{background:var(--s2)}
+.bslv.b2{background:var(--blue)}.bslv.b2:hover{background:#17406f}
+.tier-g{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:9px;align-items:end;margin-top:9px}
+@media(max-width:640px){.tier-g{grid-template-columns:1fr 1fr}}
+.kitbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+.kitbar .kn{font-size:11.4px;color:var(--i3);line-height:1.5}
+.tout{display:none;margin-top:9px;font-size:12.3px;color:var(--i2);background:var(--field);border-radius:4px;padding:9px 10px;line-height:1.7}
+.tout.on{display:block}
+.tout .big{display:block;font-family:var(--mono);font-size:18px;color:var(--ink);font-weight:600;margin:2px 0 4px}
+.calc{border:1px solid var(--r2);border-radius:4px;overflow:hidden;background:#fff;margin-top:10px}
+.calc-h{display:flex;justify-content:space-between;align-items:center;padding:7px 11px;background:var(--blue);color:#fff;font-size:12.2px;font-weight:600}
+.calc-h .rt2{font-family:var(--mono);font-size:10px;opacity:.9}
+.cg{display:grid;grid-template-columns:repeat(4,1fr)}@media(max-width:640px){.cg{grid-template-columns:repeat(2,1fr)}}
+.cr{padding:9px 11px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.cr:last-child{border-right:0}
+.cr .k{font-size:10.5px;color:var(--i3);margin-bottom:2px}
+.cr .v{font-family:var(--mono);font-size:15px;font-weight:600}
+.cr.nt{background:var(--okt)}.cr.nt .v{color:var(--ok)}
+.cn2{padding:8px 11px;font-size:11.6px;color:var(--i2);line-height:1.6}
+.sgr{display:grid;grid-template-columns:1.4fr 58px 1.5fr 92px 26px;border-bottom:1px solid var(--rule)}
+.sgr:last-of-type{border-bottom:0}
+.sgr .c{border-right:1px solid var(--rule);display:flex;align-items:center}.sgr .c:last-child{border-right:0}
+.sgr input{border:0!important;border-radius:0!important;background:transparent!important;padding:7px 8px!important;font-size:12.5px!important;box-shadow:none!important;width:100%}
+.sgr input.n{font-family:var(--mono);text-align:right}
+.sgr .ro{padding:6px 8px;font-family:var(--mono);font-size:10.5px;color:var(--i2);width:100%;text-align:right;line-height:1.35}
+.sgr .del{border:0;background:transparent;color:var(--i3);cursor:pointer;display:grid;place-content:center}
+@media(max-width:640px){.sgr{grid-template-columns:1fr 1fr}.sgr .c{border-right:0;border-bottom:1px solid var(--rule)}.sgr .c.fu{grid-column:1/-1}
+.sgr .del{grid-column:1/-1;justify-content:flex-end;padding:4px 8px}}
+.lint .li{font-size:12.2px;line-height:1.65;border-radius:4px;padding:8px 10px;margin-top:6px;border:1px solid}
+.lint .li.r{background:var(--st);border-color:#e7bcb6;color:var(--s2)}
+.lint .li.y{background:var(--wbg);border-color:var(--wl);color:var(--warn)}
+.lint .li .w{font-family:var(--mono);background:#fff;border-radius:3px;padding:0 5px;margin-right:5px}
+.memo .mi{padding:8px 0;border-bottom:1px dashed var(--rule);font-size:12.4px;color:var(--i2);line-height:1.65}
+.memo .mi:last-child{border-bottom:0}
+.memo .mi b{color:var(--ink);display:block;margin-bottom:2px;font-size:12.8px}
+.grp{grid-column:1/-1;display:flex;align-items:center;gap:8px;margin:6px 0 0;font-size:12px;font-weight:700;color:var(--i2)}
+.grp:first-child{margin-top:0}
+.grp::after{content:"";flex:1;height:1px;background:var(--rule)}
+.grp .tag{font-family:var(--mono);font-size:9.5px;font-weight:600;border-radius:20px;padding:1px 7px}
+.grp .tag.me{color:var(--blue);background:var(--bt);border:1px solid #c3d5ea}
+.grp .tag.cl{color:var(--warn);background:var(--wbg);border:1px solid var(--wl)}
+.grp .tag.doc{color:var(--i2);background:var(--field);border:1px solid var(--rule)}
+.tax .row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:6px 0;border-bottom:1px dotted var(--rule);font-size:12.6px;align-items:baseline}
+.tax .row:last-of-type{border-bottom:0}
+.tax .row .k{color:var(--i2)}.tax .row .k small{display:block;color:var(--i3);font-size:11px;margin-top:1px}
+.tax .row .v{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.tax .row.tot{background:var(--field);margin:4px -8px 0;padding:8px;border-radius:4px;border-bottom:0}
+.tax .row.good .v{color:var(--ok)}.tax .row.bad .v{color:var(--seal)}
+.tl{margin-top:10px;border-left:2px solid var(--rule);padding-left:14px}
+.tl .ti{position:relative;padding:0 0 11px}
+.tl .ti:last-child{padding-bottom:0}
+.tl .ti::before{content:"";position:absolute;left:-19px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 1px var(--blue)}
+.tl .ti .w{font-family:var(--mono);font-size:10.5px;color:var(--seal);font-weight:600}
+.tl .ti .h{font-size:12.8px;font-weight:700;color:var(--ink);margin:1px 0 2px}
+.tl .ti .b{font-size:12.3px;color:var(--i2);line-height:1.65}
+.pay{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.pay span{font-size:11.5px;color:var(--i2);background:#fff;border:1px solid var(--rule);border-radius:20px;padding:3px 10px}
+.ph2{display:flex;align-items:center;gap:9px;margin:0 0 8px;flex-wrap:wrap}
+.ph2 h2{font-family:var(--serif);font-size:15px;margin:0}
+.pgbox{font-family:var(--mono);font-size:10.5px;border-radius:20px;padding:2px 10px;border:1px solid var(--rule);color:var(--i3);background:#fff}
+.pgbox.ok{color:var(--ok);border-color:#bcdcca;background:var(--okt)}
+.pgbox.bad{color:var(--s2);border-color:#e7bcb6;background:var(--st)}
+.btns{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px;align-items:center}
+.btn{font-family:var(--sans);font-size:12.5px;font-weight:600;border-radius:4px;padding:8px 13px;cursor:pointer;border:1px solid var(--r2);background:#fff;color:var(--i2)}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.bp{background:var(--seal);border-color:var(--seal);color:#fff}.btn.bp:hover{background:var(--s2);color:#fff}
+.pzs{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--i2);background:#fff;border:1px solid var(--r2);border-radius:4px;padding:3px 8px}
+.pzs select{width:auto;padding:3px 22px 3px 5px;font-size:12px;background-color:#fff;border:0;box-shadow:none;background-position:right 5px center}
+.a4f{background:#fff;border:1px solid var(--rule);border-radius:5px;box-shadow:var(--sh);overflow:auto}
+.a4s{transform-origin:top left}
+.sheet{width:794px;padding:30px 36px;background:#fff;color:#111;font-size:11.2px;line-height:1.55}
+.sheet.for-file{outline:3px solid #b32217;outline-offset:-3px}
+.sheet.for-self{outline:3px solid #8a5a10;outline-offset:-3px}
+.st1{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:#777;border-bottom:1px solid #ddd;padding-bottom:4px;margin-bottom:9px;letter-spacing:.05em}
+.sti{font-family:var(--serif);font-size:20px;font-weight:700;text-align:center;letter-spacing:.14em;margin:0 0 8px}
+.sto{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;border-top:1.4px solid #222;border-bottom:1px solid #ccc;padding:5px 0;margin-bottom:8px}
+.sd{font-size:10.6px;color:#333;margin-bottom:8px;text-align:justify}
+.sgr2{background:#f7f2ec;border:1px solid #e0d3bf;border-radius:2px;padding:5px 8px;font-size:9.8px;color:#6b4d1c;margin-bottom:8px;line-height:1.55}
+.blk{margin-bottom:8px;break-inside:avoid}
+.bh{font-family:var(--serif);font-size:11.6px;font-weight:700;border-left:3px solid #1d4e89;padding-left:6px;margin-bottom:4px}
+.bb{border:1px solid #d5d5d5;border-radius:2px;padding:6px 8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.rw{display:flex;border-bottom:1px dotted #e0e0e0;padding:2px 0}
+.rw:last-child{border-bottom:0}
+.lbl{font-size:9px;color:#888;min-width:66px;flex:0 0 auto}
+.val{font-size:10.8px;color:#111;word-break:break-all;flex:1;min-width:0}
+.val.m{font-family:var(--mono)}
+table.tb{width:100%;border-collapse:collapse;font-size:10.4px}
+table.tb th{background:#f2f4f2;border:1px solid #cfcfcf;padding:3px 5px;font-size:9px;color:#555;font-weight:600;text-align:right}
+table.tb th.i{width:22px;text-align:center}
+table.tb td{border:1px solid #dcdcdc;padding:3px 5px;vertical-align:top}
+table.tb td.i{text-align:center;font-family:var(--mono);color:#888;font-size:9px}
+table.tb td.d{color:#666;font-size:9.8px}
+table.tb td.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+table.tb tr.sb td{background:#faf7f2;font-size:9.8px;color:#6b4d1c}
+table.tb tr.sm td{background:#f7f8f7}
+table.tb tr.sm td.l{text-align:right;color:#555;font-size:9.8px}
+table.tb tr.nt td{background:#eef3ee;font-weight:700;font-size:11.4px}
+table.tb tr.cu td{background:#fff6e8}
+ol.tms{margin:0;padding:0;list-style:none;column-count:2;column-gap:14px}
+ol.tms li{font-size:9.4px;color:#333;margin-bottom:3px;padding-left:17px;position:relative;text-align:justify;line-height:1.5;break-inside:avoid}
+ol.tms li::before{content:attr(data-n);position:absolute;left:0;font-family:var(--mono);color:#999;font-size:8.6px}
+.sgd{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sl{font-size:9px;color:#888;margin-bottom:2px}
+.sc{border:1px solid #bbb;border-radius:2px;height:58px;background:#fdfdfd;position:relative;overflow:hidden;display:grid;place-content:center}
+.sc .wm{position:absolute;inset:-40%;transform:rotate(-16deg);font-family:var(--mono);font-size:5.6px;
+line-height:2.1;color:#0f2f55;opacity:.13;white-space:pre-wrap;word-break:break-all;pointer-events:none;
+letter-spacing:.04em;text-align:center}
+.sc img{position:relative;z-index:2;max-height:48px;max-width:96%}
+.sft{margin-top:8px;padding-top:5px;border-top:1px solid #ddd;font-size:8.6px;color:#999;text-align:center;line-height:1.5}
+.sigbox{border:1.5px dashed var(--r2);border-radius:4px;height:84px;display:grid;place-content:center;cursor:pointer;background:var(--field)}
+.sigbox:hover{border-color:var(--blue);background:var(--bt)}
+.sigbox.on{border-style:solid;background:#fff}
+.sigbox img{max-height:74px;max-width:96%}
+.sigbox .ph{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--i3);font-size:12.2px}
+.bclr{font-family:var(--sans);font-size:11.5px;color:var(--i2);background:#fff;border:1px solid var(--r2);border-radius:4px;padding:4px 9px;cursor:pointer}
+.sigov{position:fixed;inset:0;background:rgba(12,16,22,.72);display:none;place-content:center;padding:16px;z-index:99}
+.sigov.on{display:grid}
+.sigmw{background:#fff;border-radius:8px;width:min(740px,96vw);overflow:hidden}
+.sigmw-h{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid var(--rule)}
+.sigmw-h h3{font-family:var(--serif);font-size:15px;margin:0}
+.sigmw-h .x{border:0;background:transparent;font-size:21px;color:var(--i3);cursor:pointer;line-height:1}
+.sigmw-b{padding:13px 15px}
+.bigpad{position:relative;border:1.5px solid var(--r2);border-radius:5px;height:min(44vh,270px);background:#fff;touch-action:none;overflow:hidden}
+.bigpad canvas{width:100%;height:100%;display:block;position:relative;z-index:2}
+.bigpad .gl{position:absolute;left:8%;right:8%;bottom:26%;border-bottom:1px dashed #cfd6de;z-index:1}
+.bigpad .ht{position:absolute;inset:0;display:grid;place-content:center;color:#c3cad3;font-size:15px;z-index:1;pointer-events:none}
+.bigpad.dirty .ht,.bigpad.dirty .gl{display:none}
+.sigmw-f{display:flex;gap:8px;justify-content:flex-end;padding:11px 15px;border-top:1px solid var(--rule);background:#fbfcfb}
+.bmc{font-family:var(--sans);font-size:13.5px;font-weight:600;border-radius:4px;padding:9px 18px;cursor:pointer;border:1px solid var(--r2);background:#fff;color:var(--i2)}
+.bmc.ok{background:var(--seal);border-color:var(--seal);color:#fff}
+.bmc.ok[disabled]{background:var(--i3);border-color:var(--i3);cursor:default}
+
+/* ===== 簽署模式 ===== */
+#signHero{display:none;background:linear-gradient(180deg,#12335c,#1d4e89);color:#fff;border-bottom:1px solid #0d2645}
+#signHero .hi{max-width:1200px;margin:0 auto;padding:15px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+#signHero h1{font-family:var(--serif);font-size:19px;margin:0;color:#fff}
+#signHero .s{font-size:12.4px;color:#c8dcf2;margin:3px 0 0;line-height:1.6}
+#signHero .badge{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.12em;border:1.5px solid rgba(255,255,255,.55);border-radius:20px;padding:3px 11px;white-space:nowrap}
+body.sign #signHero{display:block}
+body.sign header.top{display:none}
+body.sign section.lf{display:none!important}
+body.sign .grid{grid-template-columns:minmax(0,1fr)!important}
+body.sign section.rt{position:static!important}
+body.sign .edit-only{display:none!important}
+body.sign main{padding-bottom:150px}
+@media(max-width:520px){body.sign main{padding-bottom:236px}}
+body.sign #signBar{display:flex}
+#signBar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;border-top:1px solid var(--rule);
+ box-shadow:0 -4px 18px rgba(18,24,32,.10);padding:11px 16px;gap:10px;align-items:center;flex-wrap:wrap}
+#signBar .sbi{flex:1 1 240px;min-width:0}
+#signBar .sbi b{display:block;font-size:13.4px}
+#signBar .sbi span{display:block;font-size:11.6px;color:var(--i3);line-height:1.55;margin-top:1px}
+#signBar input[type=text]{width:auto;min-width:160px;flex:0 1 200px}
+#signBar .done{font-size:12.4px;color:var(--ok);font-weight:700;white-space:nowrap}
+.ovr{position:fixed;inset:0;background:rgba(12,16,22,.72);display:none;place-content:center;padding:16px;z-index:98;overflow:auto}
+.ovr.on{display:grid}
+.ovw{background:#fff;border-radius:8px;width:min(660px,96vw);overflow:hidden;margin:auto}
+.ovh{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid var(--rule)}
+.ovh h3{font-family:var(--serif);font-size:15px;margin:0}
+.ovh .x{border:0;background:transparent;font-size:21px;color:var(--i3);cursor:pointer;line-height:1}
+.ovb{padding:13px 15px;max-height:74vh;overflow:auto}
+.ovb .st{border:1px solid var(--rule);border-radius:5px;padding:11px 12px;margin-bottom:10px;background:#fcfdfc}
+.ovb .st .sh{font-size:13px;font-weight:700;margin-bottom:3px}
+.ovb .st .sd2{font-size:12px;color:var(--i2);line-height:1.65;margin-bottom:8px}
+.ovb textarea{min-height:96px;font-family:var(--mono);font-size:11px}
+.lenbar{font-family:var(--mono);font-size:10.5px;border-radius:20px;padding:2px 9px;border:1px solid var(--rule);color:var(--i3);background:#fff;display:inline-block;margin-top:7px}
+.lenbar.ok{color:var(--ok);border-color:#bcdcca;background:var(--okt)}
+.lenbar.bad{color:var(--s2);border-color:#e7bcb6;background:var(--st)}
+#imgPrev{margin:0 0 10px;border:1px solid var(--rule);border-radius:5px;background:#eef1f4;max-height:44vh;overflow:auto;padding:7px;text-align:center}
+#imgPrev img{max-width:100%;height:auto;display:inline-block;box-shadow:var(--sh);background:#fff}
+@media print{
+ html,body{background:#fff!important;margin:0!important;padding:0!important}
+ header.top,section.lf,.ph2,.btns,.sigov,#signHero,#signBar,.ovr{display:none!important}
+ body.sign main{padding-bottom:0!important}
+ main{max-width:none!important;width:auto!important;padding:0!important;margin:0!important}
+ .grid{display:block!important;gap:0!important}
+ section.rt{position:static!important;display:block!important}
+ .a4f{height:auto!important;max-height:none!important;overflow:visible!important;border:0!important;
+  box-shadow:none!important;border-radius:0!important;background:transparent!important}
+ .a4s{transform:none!important;width:auto!important}
+ .sheet{width:100%!important;max-width:100%!important;padding:0!important;margin:0 auto!important;
+  outline:0!important;zoom:var(--pz,1)}
+ .blk,table.tb tr,ol.tms li,.sgd{break-inside:avoid;page-break-inside:avoid}
+ *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+ @page{size:A4 portrait;margin:11mm 12mm}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="hd">
+  <div><h1>網頁接案勞務報酬單 · 精簡版</h1>
+   <p class="sub">個人接案專用 · 115 年度 · 單頁 A4 · 資料只留在你的瀏覽器</p></div>
+  <span class="mk">9A 程式設計師</span>
+ </div>
+</header>
+
+<div id="signHero"><div class="hi">
+ <div><h1 id="shTitle">請確認並簽署</h1>
+  <p class="s" id="shSub">以下是完整的單據與約定事項內容。請往下看完，確認無誤後在頁面最下方簽名。</p></div>
+ <span class="badge">唯讀 · 僅供簽署</span>
+</div></div>
+
+<main>
+<div class="grid">
+
+<section class="lf">
+
+ <!-- 1 -->
+ <div class="card">
+  <div class="ch"><span class="n">1</span><h2>單據與雙方</h2></div>
+  <div class="cb">
+   <div class="seg sl" id="segMode" role="group" aria-label="單據性質" style="width:100%;margin-bottom:9px">
+    <button type="button" data-v="quote" aria-pressed="true">報價單</button>
+    <button type="button" data-v="bill" aria-pressed="false">請款單</button>
+    <button type="button" data-v="receipt" aria-pressed="false">收據</button>
+   </div>
+   <div class="note" id="modeNote"></div>
+
+   <div class="fg" style="margin-top:11px">
+    <div class="grp"><span class="tag doc">單據</span>這張單本身</div>
+    <div class="f"><label>這一聯給誰</label>
+     <select id="audience">
+      <option value="client">客戶留存（字號遮起來）</option>
+      <option value="acct">客戶會計（完整字號）</option>
+      <option value="self">我自己存檔</option>
+     </select></div>
+    <div class="f"><label>付款方是</label>
+     <div class="seg" id="segPayer" role="group"><button type="button" data-v="company" aria-pressed="true">公司行號</button><button type="button" data-v="person" aria-pressed="false">個人</button></div></div>
+    <div class="f"><label id="dfillLb">開立日期</label><input type="date" id="dfill">
+     <span class="hlp" id="dfillHint"></span></div>
+    <div class="f"><label>單據編號 <span class="opt">可省</span></label><input type="text" id="docNo" placeholder="115-001" autocomplete="off"></div>
+    <div class="f full"><label>付款期限 <span class="opt">可省</span></label><input type="text" id="term" placeholder="本單開立後 14 日內" autocomplete="off">
+     <span class="hlp">你自己管理用的。不寫也有法定效果：期限屆至就自動起算遲延利息。</span></div>
+
+    <div class="grp"><span class="tag me">你的</span>立據人（收錢的是你）</div>
+    <div class="f full"><div class="note" style="margin:0"><b>立據人只有三樣是非填不可的：姓名、身分證統一編號、地址。</b>
+     原因很單純——勞務報酬單<b>沒有法定格式</b>，它存在的唯一理由，是讓客戶拿去把你這筆所得報上去；而扣繳憑單依法必須填「所得人姓名、住址、統一編號」，少一樣他就報不出來。
+     其餘每一欄都是方便用的，不填不影響單據效力。<b>身分證影本不用給，辦扣繳申報根本用不到。</b></div></div>
+    <div class="f"><label>你的姓名 <span class="req">必填</span></label><input type="text" id="name" placeholder="王小明" autocomplete="off">
+     <span class="hlp">憑單上的所得人姓名，要跟身分證一致。</span></div>
+    <div class="f" id="idF"><label>你的身分證統一編號 <span class="req">必填</span><span id="idTag" style="font-family:var(--mono);font-size:10px;margin-left:auto"></span></label>
+     <input type="text" id="idno" placeholder="A123456789" style="text-transform:uppercase" autocomplete="off">
+     <span class="hlp">客戶靠這組號碼把所得掛到你名下。沒有它，這筆錢在國稅局那邊會變成無主所得。</span></div>
+    <div class="f" id="addrF"><label>你的地址 <span class="req">必填</span></label><input type="text" id="addr" placeholder="戶籍或通訊地址皆可" autocomplete="off">
+     <span class="hlp">憑單的「所得人地址」欄。法律沒規定一定要戶籍地，能收到信的通訊地址就行。</span></div>
+    <div class="f"><label>你的聯絡方式 <span class="opt">可省</span></label><input type="text" id="contact" placeholder="電話或 Email" autocomplete="off">
+     <span class="hlp">純粹方便客戶找你，不是法定欄位。</span></div>
+    <div class="f" id="addr2F"><label>憑單寄送地址 <span class="opt">可省</span></label><input type="text" id="addr2" placeholder="想收在別的地方才填" autocomplete="off">
+     <span class="hlp">上面那欄已經夠用；只有想把紙本憑單寄到別處才填。</span></div>
+    <div class="f"><label>你的健保投保身分</label>
+     <select id="nhi">
+      <option value="general">一般（單次達 2 萬扣 2.11%）</option>
+      <option value="union_exec">在職業工會投保（第 2 類）— 執行業務所得免扣</option>
+      <option value="free">低收入戶等健保法第 100 條弱勢對象 — 免扣</option>
+     </select>
+     <span class="hlp" id="nhiHint"></span></div>
+    <div class="f"><label>收款方式 <span class="opt">可省</span></label>
+     <select id="payWay">
+      <option value="bank" selected>匯款到我的帳戶</option>
+      <option value="cash">現金（面交）</option>
+      <option value="check">支票</option>
+      <option value="other">其他（自行填寫）</option>
+     </select></div>
+    <div class="f" id="payOtherF"><label id="payOtherLb">收款方式說明</label><input type="text" id="payOther" placeholder="例：面交現金，當場點清" autocomplete="off"></div>
+    <div class="f full" id="bankBox"><div class="fg" style="gap:10px 12px">
+     <div class="f"><label>你的收款銀行</label><select id="bankSel"><option value="">— 選擇銀行 —</option></select></div>
+     <div class="f"><label id="brLb">分行 <span class="opt">可略</span></label><input type="text" id="bankBr" placeholder="○○分行" autocomplete="off"></div>
+     <div class="f"><label>你的帳號</label><input type="text" id="acctNo" inputmode="numeric" placeholder="數字帳號" autocomplete="off"></div>
+     <div class="f"><label>戶名 <span class="opt">要跟你同名</span></label><input type="text" id="acctName" placeholder="王小明" autocomplete="off"></div>
+    </div></div>
+    <div class="f full" id="cashNote" style="display:none"></div>
+
+    <div class="grp"><span class="tag cl">客戶的</span>付款方（付錢給你的那一方）</div>
+    <div class="f"><label>客戶名稱 <span class="req">必填</span></label><input type="text" id="company" placeholder="○○有限公司" autocomplete="off">
+     <span class="hlp">單據要指明是對誰開的，只要公司全銜就夠。</span></div>
+    <div class="f" id="taxidF"><label>客戶統一編號 <span class="opt">可省</span></label><input type="text" id="taxid" inputmode="numeric" maxlength="8" placeholder="8 碼" autocomplete="off">
+     <span class="hlp">他自己有，是他要填的欄位。填了只是他入帳方便。</span></div>
+   </div>
+   <input type="hidden" id="acct">
+   <div class="hlp" id="acctPrev" style="margin-top:7px"></div>
+   
+  </div>
+ </div>
+
+ <!-- 2 -->
+ <div class="card">
+  <div class="ch"><span class="n">2</span><h2>做什麼 · 年期 · 金額</h2><span class="hint" id="catTag"></span></div>
+  <div class="cb">
+   <div class="kitbar">
+<button type="button" class="bslv" id="bKit" style="background:var(--blue)">一鍵套用：維運續約案</button>
+<button type="button" class="badd" id="bKitClr">清掉服務項目重選</button>
+<span class="kn">會選好託管／網域／維護三項，帶入年期方案表，<br>並自動切換成維運適用的條款組合。</span>
+</div>
+<div class="wt" id="wtGrid"></div>
+
+   <label class="chk" style="margin-top:10px"><input type="checkbox" id="ksOn">
+    <span class="t"><b>維運年費拆成三行（維護／託管／網域）</b><span class="d">維護是你的專業勞務，走 9A 沒問題；主機與網域規費不是你的技藝，本質上是轉租與代購。合成一行，等於把不屬於 9A 的部分也塞進 9A。</span></span></label>
+   <div class="tier-g" id="ksBox" style="display:none">
+    <div class="f"><label>年費總額</label><input type="text" id="ksBase" inputmode="numeric" placeholder="8,000" autocomplete="off"></div>
+    <div class="f"><label>網域規費（實付）</label><input type="text" id="ks3" inputmode="numeric" placeholder="500" autocomplete="off"></div>
+    <div class="f"><label>主機成本（實付）</label><input type="text" id="ks2" inputmode="numeric" placeholder="1,800" autocomplete="off"></div>
+    <div class="f"><label>維護服務費 <span class="opt">自動</span></label><input type="text" id="ks1" readonly style="background:#eef3ee;font-family:var(--mono);text-align:right"></div>
+    <button type="button" class="bslv" id="bKs">帶入明細</button>
+   </div>
+   <div class="tout" id="ksOut"></div>
+
+   <div class="fg" style="margin-top:11px">
+    <div class="f full"><label>託管／營運年期 <span class="opt">買幾年就託管幾年</span></label>
+     <div class="seg" id="segYr" role="group" aria-label="託管年期">
+      <button type="button" data-v="1" aria-pressed="true">1 年</button>
+      <button type="button" data-v="2" aria-pressed="false">2 年</button>
+      <button type="button" data-v="3" aria-pressed="false">3 年</button>
+      <button type="button" data-v="5" aria-pressed="false">5 年</button>
+     </div>
+     <span class="hlp" id="yrHint"></span></div>
+    <div class="f full" id="tierF">
+     <label class="chk" style="margin:0"><input type="checkbox" id="tierOn">
+      <span class="t"><b>把年期方案表印在單上，讓客戶自己勾</b><span class="d">上面「託管／營運年期」選的那一年，在單上就是被勾起來的那一列。金額可以改，留白的年期不會印出來。</span></span></label>
+     <div class="tier-g" id="tierBox" style="display:none">
+      <div class="f"><label>1 年</label><input type="text" id="p1" inputmode="numeric" value="8,000" autocomplete="off"></div>
+      <div class="f"><label>2 年</label><input type="text" id="p2" inputmode="numeric" value="16,000" autocomplete="off"></div>
+      <div class="f"><label>3 年</label><input type="text" id="p3" inputmode="numeric" value="23,000" autocomplete="off"></div>
+      <div class="f"><label>5 年</label><input type="text" id="p5" inputmode="numeric" placeholder="留白不印" autocomplete="off"></div>
+      <button type="button" class="bslv" id="bTier">帶入明細</button>
+     </div>
+     <div class="tout" id="tierOut"></div>
+    </div>
+    <div class="f"><label>服務期間 <span class="opt">可改</span></label>
+     <input type="text" id="svcP" placeholder="115.08.01 起 1 年（至 116.07.31）" autocomplete="off"></div>
+    <div class="f"><label>網域註冊人登記為</label>
+     <select id="dnsOwner">
+      <option value="client">客戶名下（我當管理聯絡人）</option>
+      <option value="me">我名下，錢付清後可移轉</option>
+      <option value="none">不涉及網域</option>
+     </select>
+     <span class="hlp" id="dnsHint"></span></div>
+    <div class="f full"><label>網域規費怎麼開 <span class="opt">影響課稅</span></label>
+     <div class="seg" id="segDom" role="group" aria-label="網域規費處理方式">
+      <button type="button" data-v="all" aria-pressed="true">包在一起（單一價）</button>
+      <button type="button" data-v="split">拆開列（規費走代收代付）</button>
+     </div>
+     <span class="hlp" id="domHint"></span></div>
+    <div class="f full"><label>服務內容（印在單上）</label>
+     <textarea id="work" placeholder="點上面的服務項目會自動帶入，也可以自己改"></textarea></div>
+   </div>
+
+   <div class="lint" id="lintBox"></div>
+
+   <div class="items" style="margin-top:11px">
+    <div class="ih"><span>項目</span><span>說明</span><span class="r">金額</span><span></span></div>
+    <div id="rows"></div>
+    <div class="ift"><button type="button" class="badd" id="bAdd">＋ 新增</button><div class="s">服務報酬<b id="sub">NT$ 0</b></div></div>
+   </div>
+
+   <div class="calc">
+    <div class="calc-h"><span>115 年度扣繳試算</span><span class="rt2" id="scope">全案</span></div>
+    <div class="cg">
+     <div class="cr"><div class="k" id="kG">給付總額</div><div class="v" id="vG">NT$ 0</div></div>
+     <div class="cr"><div class="k">代扣所得稅</div><div class="v" id="vT">NT$ 0</div></div>
+     <div class="cr"><div class="k">補充保費</div><div class="v" id="vP">NT$ 0</div></div>
+     <div class="cr nt"><div class="k">你實拿</div><div class="v" id="vN">NT$ 0</div></div>
+    </div>
+    <div class="cn2" id="cNote">填入金額後開始試算。</div>
+   </div>
+
+   <details class="det" id="dTool" style="margin-top:10px"><summary>代收代付款項（網域規費等）</summary>
+    <div class="dc">
+     <p style="margin:0 0 9px">法定門檻三個，<b>缺一不可</b>：能提供帳據、確屬代辦性質、<b>而且你沒賺價差</b>；實務上還要請廠商把<b>憑證抬頭開客戶、正本交客戶</b>。做不到就別放這裡，改回「包在一起」。</p>
+     <div class="tool-g">
+      <div class="f"><label>規費（你付出去的）</label><input type="text" id="dCost" inputmode="numeric" placeholder="1,200"></div>
+      <div class="f"><label>向客戶收多少</label><input type="text" id="dTotal" inputmode="numeric" placeholder="8,000"></div>
+      <button type="button" class="bslv" id="bSplit">拆成兩列</button>
+     </div>
+     <div class="tout" id="dOut"></div>
+     <div class="items" style="margin-top:10px">
+      <div class="ih"><span>項目</span><span>憑證抬頭（開客戶）</span><span class="r">金額</span><span></span></div>
+      <div id="advRows"></div>
+      <div class="ift"><button type="button" class="badd" id="bAddAdv">＋ 新增</button><div class="s">合計<b id="advSub">NT$ 0</b></div></div>
+     </div>
+     <p style="margin:8px 0 0;color:var(--seal)"><b>AI API／TOKEN、你自己刷卡的雲端訂閱不能放這裡</b>——抬頭是你，那是你的成本，該併進服務報酬，報稅時再扣。</p>
+    </div></details>
+
+   <details class="det b" id="qTool" style="margin-top:8px"><summary>我要實拿多少，反推該開多少</summary>
+    <div class="dc">
+     <div class="tool-g">
+      <div class="f"><label>要實拿</label><input type="text" id="target" inputmode="numeric" placeholder="40,000"></div>
+      <div class="f"><label>取整</label><select id="unit"><option value="1">不取整</option><option value="100" selected>進位到 100</option><option value="1000">進位到 1,000</option></select></div>
+      <button type="button" class="bslv b2" id="bSolve">回推並套用</button>
+     </div>
+     <div id="premiseNote"></div>
+     <div class="tout" id="guOut"></div>
+    </div></details>
+
+   <details class="det r" id="stampTool" style="margin-top:8px"><summary id="stampSum">印花稅：這張單要不要貼印花？</summary>
+    <div class="dc">
+     <div id="stampBox"></div>
+     <label class="chk" style="margin-top:9px;background:#fff"><input type="checkbox" id="stampOn">
+      <span class="t"><b>在單據上留一格「印花稅票黏貼處」</b><span class="d">列印後把印花稅票貼上去，並用筆劃押或蓋章註銷。金額為 0 或免貼時不會印。</span></span></label>
+    </div></details>
+
+   <label class="chk" style="margin-top:10px"><input type="checkbox" id="schedOn">
+    <span class="t"><b>分期收款</b><span class="d">稅與補充保費按「每次給付」各自算，分期本來就比一次付少扣。</span></span></label>
+   <div id="schedBox" style="display:none;margin-top:9px">
+    <div class="chips" id="pre"></div>
+    <div class="items" style="margin-top:8px">
+     <div class="ih"><span>期別</span><span class="r">%</span><span>請款條件</span><span class="r">金額／實拿</span><span></span></div>
+     <div id="sgRows"></div>
+     <div class="ift"><button type="button" class="badd" id="bAddStage">＋ 新增一期</button><div class="s">合計<b id="sgPct">0%</b></div></div>
+    </div>
+    <div class="fg" style="margin-top:9px">
+     <div class="f"><label>這張單請哪一期</label><select id="pick"><option value="all">全部（一次請款）</option></select></div>
+     <div class="f" style="justify-content:flex-end"><label class="chk" style="margin:0"><input type="checkbox" id="advNow" checked><span class="t">一併請領代收代付款</span></label></div>
+    </div>
+    <div id="sgFlags"></div>
+   </div>
+
+   <div id="flags"></div>
+  </div>
+ </div>
+
+ <!-- 3 -->
+ <div class="card">
+  <div class="ch"><span class="n">3</span><h2>約定事項與簽名</h2><span class="hint" id="tCount"></span></div>
+  <div class="cb">
+   <div class="f full" style="margin-bottom:11px">
+    <label>客戶身分 <span class="opt">決定條款可以寫多硬</span></label>
+    <select id="cliType">
+     <option value="biz" selected>公司、商號，或個人為營業／工作目的 — 不受消保法拘束</option>
+     <option value="csm">個人，私人用途（部落格、婚禮網站等）— 受消保法保護</option>
+    </select>
+    <span class="hlp" id="cliHint"></span>
+   </div>
+   <div class="seg" id="segPreset" role="group" style="margin-bottom:9px">
+    <button type="button" data-v="full" aria-pressed="true">全選</button>
+    <button type="button" data-v="core">只留核心</button>
+    <button type="button" data-v="none">全不選</button>
+   </div>
+   <div style="display:grid;gap:6px" id="termBox"></div>
+   <div class="f full" style="margin-top:10px"><label>自訂補充 <span class="opt">可略</span></label><input type="text" id="tX" placeholder="本案不含文案撰寫、攝影與第三方付費外掛授權費用" autocomplete="off"></div>
+
+   <div style="margin-top:13px;padding-top:11px;border-top:1px dashed var(--rule)">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;gap:8px;flex-wrap:wrap">
+     <span style="font-size:12.2px;color:var(--i2)" id="sigL"></span>
+     <button type="button" class="bclr" id="bClr" style="display:none">清除簽名</button>
+    </div>
+    <div class="sigbox" id="sigBox" role="button" tabindex="0" aria-label="點擊開啟簽名視窗">
+     <div class="ph"><span style="font-size:20px">✍️</span><span>點這裡開啟大視窗簽名</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <!-- 4 -->
+ <div class="card">
+  <div class="ch"><span class="n">4</span><h2>稅金：繳多少、什麼時候、怎麼繳</h2><span class="hint">第一次做就看這裡</span></div>
+  <div class="cb">
+   <div class="note b"><b>你多半是「退稅」，不是補稅。</b>客戶每次先扣的 10%，通常比你明年實際要繳的還多。<b>但不申報就拿不回來。</b></div>
+
+   <div class="tl" id="flowTL"></div>
+
+   <div style="margin-top:13px;padding-top:12px;border-top:1px dashed var(--rule)">
+    <label style="margin-bottom:6px">算算看：今年（115 年）全年接案收入合計</label>
+    <input type="text" id="yrIncome" inputmode="numeric" placeholder="例：600,000">
+    <span class="hlp">所有客戶加起來的總額。以下用單身、標準扣除額、只有接案收入試算。</span>
+    <label style="margin:9px 0 6px">全年自願提繳勞退 <span class="opt">可略</span></label>
+    <input type="text" id="yrPen" inputmode="numeric" placeholder="例：36,000">
+    <span class="hlp">自營作業者可自願提繳，每月上限為勞退月提繳工資 6%，不計入當年度課稅收入。錢是進你自己的退休金專戶。</span>
+    <div class="tax" id="taxCalc" style="margin-top:10px"></div>
+   </div>
+
+   <details class="det b" style="margin-top:11px"><summary>第一次報稅：一步一步照做</summary>
+    <div class="dc" id="howFile"></div></details>
+
+   <details class="det b" style="margin-top:8px"><summary>該套 20%，還是設帳核實列報？</summary>
+    <div class="dc">
+     <p style="margin:0 0 9px">費用標準的適用對象是<b>「未依法設帳記載並保存憑證，或未能提供證明所得額之帳簿文據者」</b>——所以 20% 是<b>沒有明細時的預設值</b>，不是可以往上估的額度。要扣超過 20%，只有設帳＋逐筆憑證這條路。</p>
+     <div class="tool-g">
+      <div class="f"><label>全年接案收入</label><input type="text" id="bkInc" inputmode="numeric" placeholder="600,000"></div>
+      <div class="f"><label>全年業務成本（有憑證的）</label><input type="text" id="bkCost" inputmode="numeric" placeholder="180,000"></div>
+      <button type="button" class="bslv" id="bBook">比一比</button>
+     </div>
+     <div class="tout" id="bkOut"></div>
+     <p style="margin:9px 0 0">成本只填<b>拿得出憑證</b>的：AI API／TOKEN 帳單、雲端與軟體訂閱、網域主機、外包、設備折舊、業務用網路費。估不出憑證的別填，那是虛列費用。</p>
+    </div></details>
+
+   <details class="det" style="margin-top:8px"><summary>那些百分比到底是什麼</summary>
+    <div class="dc" id="pctExplain"></div></details>
+
+   <details class="det" style="margin-top:8px"><summary>法律預設值站在你這邊（白話速查）</summary>
+    <div class="dc" id="civilLaw"></div></details>
+
+   <details class="det" style="margin-top:8px"><summary>接案者省稅備忘</summary>
+    <div class="dc"><div class="memo" id="memoBox"></div></div></details>
+  </div>
+ </div>
+
+</section>
+
+<section class="rt">
+ <div class="ph2"><h2>即時預覽</h2><span class="pgbox" id="pgInfo">—</span></div>
+ <div class="btns">
+  <button type="button" class="btn bp" id="bPrint">列印 / 存成 PDF</button>
+  <div class="pzs"><span>預覽大小</span>
+   <select id="vscale">
+    <option value="1" selected>100%</option>
+    <option value="1.25">125%</option>
+    <option value="1.5">150%</option>
+    <option value="fit">符合寬度</option>
+   </select></div>
+  <div class="pzs"><span>列印縮放</span>
+   <select id="pscale">
+    <option value="auto" selected>自動塞滿一頁</option>
+    <option value="1">100%</option>
+    <option value="0.95">95%</option>
+    <option value="0.9">90%</option>
+    <option value="0.85">85%</option>
+    <option value="0.8">80%</option>
+    <option value="1.1">110%</option>
+   </select></div>
+  <button type="button" class="btn" id="bImg">存成圖片</button>
+  <button type="button" class="btn edit-only" id="bShare" style="border-color:var(--blue);color:var(--blue);font-weight:700">給客戶簽 ▸</button>
+  <button type="button" class="btn edit-only" id="bBack">貼回簽碼</button>
+  <button type="button" class="btn edit-only" id="bSave">存 JSON</button>
+  <button type="button" class="btn edit-only" id="bLoad">讀取</button>
+  <button type="button" class="btn edit-only" id="bReset">重設</button>
+  <input type="file" id="fLoad" accept="application/json,.json" style="display:none">
+ </div>
+ <div id="fitWarn"></div>
+ <div class="a4f" id="a4f"><div class="a4s" id="a4s"><div class="sheet" id="sheet"></div></div></div>
+</section>
+
+</div>
+</main>
+
+<div class="ovr" id="shareOv" role="dialog" aria-modal="true" aria-label="產生簽署頁">
+ <div class="ovw">
+  <div class="ovh"><h3>給客戶簽</h3><button type="button" class="x" data-close="shareOv" aria-label="關閉">×</button></div>
+  <div class="ovb">
+   <div class="note b" style="margin:0 0 11px"><b>客戶那一份會被刪掉哪些東西：</b>你的年度接案收入、勞退提繳、核實列報比較器、實拿回推目標、代收代付成本試算，以及身分證字號（只留遮罩後的樣子）。<b>是從資料裡刪掉，不是用 CSS 藏起來</b>，他按 F12 也看不到。</div>
+
+   <div class="st">
+    <div class="sh">方式一 · 下載一個檔案傳給他（對方用<b>電腦</b>）</div>
+    <div class="sd2">產生一份獨立的 HTML，用 LINE、Email 傳給客戶。他點兩下用瀏覽器打開就能簽，不需要網路、不需要你有主機。<b>對方是 Windows／Mac 就用這個，最穩。</b>
+    <br><span style="color:var(--s2)"><b>對方用 iPhone 的話不要用這一招。</b>iOS 把 .html 附件丟給「檔案／快速查看」開，那個預覽器<b>不執行 JavaScript</b>，畫面會是空白或跑版，簽名板也叫不出來。iPhone 請改用下面的方式二。</span></div>
+    <button type="button" class="bslv b2" id="bMakeFile">下載簽署頁 HTML</button>
+   </div>
+
+   <div class="st">
+    <div class="sh">方式二 · 給他一條網址（<b>iPhone／Android 手機都用這個</b>）</div>
+    <div class="sd2">要用這個，你得先把<b>這份 HTML 檔本身</b>放到一個網址上（自己的主機、GitHub Pages、Cloudflare Pages 都行）。填入那個網址後，下面會產生帶資料的連結。資料放在網址的 <span style="font-family:var(--mono)">#</span> 之後，<b>不會送到任何伺服器</b>。這條網址一貼進 LINE，對方點開就能簽，手機也一樣。
+    <br><b>提醒他：</b>從 LINE 點開會落在 LINE 內建瀏覽器，簽名可以簽，但「分享／下載」有時被擋。請他按右上角「⋯」選<b>用 Safari 開啟</b>（Android 是「用瀏覽器開啟」），流程最完整。</div>
+    <div class="f" style="margin-bottom:9px"><label>簽署頁網址（這份 HTML 放的位置）</label>
+     <input type="text" id="signBase" placeholder="https://你的網域/sign.html" autocomplete="off"></div>
+    <button type="button" class="bslv b2" id="bMakeLink">產生並複製連結</button>
+    <div id="linkOut"></div>
+   </div>
+
+   <div class="note r" style="margin:0"><b>簽名的效力，講白話：</b>現行電子簽章法第 4 條已經明定電子簽章效力等同實體簽章，第 5 條第 4 項也把「須經同意」放寬成「給對方反對的機會、沒反對就推定同意」——<b>第 3 區的 t35 條款就是在做這件事，請確認它有勾</b>。
+    但手寫觸控簽名<b>不是</b>第 6 條的「數位簽章」，沒有「推定為本人親自簽名」的效果。所以：<b>簽完的檔案、回簽碼、LINE 對話全部留著</b>，那才是你真正的證據。金額大的案子仍建議紙本用印。</div>
+  </div>
+ </div>
+</div>
+
+<div class="ovr" id="codeOv" role="dialog" aria-modal="true" aria-label="回簽碼">
+ <div class="ovw">
+  <div class="ovh"><h3>把這串代碼傳回去</h3><button type="button" class="x" data-close="codeOv" aria-label="關閉">×</button></div>
+  <div class="ovb">
+   <p style="margin:0 0 9px;font-size:12.6px;color:var(--i2);line-height:1.65">全選複製下面整段，用 LINE 或 Email 傳回給對方。這串代碼裡只有你的簽名與姓名，沒有其他資料。<b>如果覺得代碼太長不好傳，改用「圖片回傳」也可以</b>——差別是代碼能把簽名貼回對方的原始檔，圖片則是一張已經簽好的成品。</p>
+   <textarea id="codeBox" readonly></textarea>
+   <div style="display:flex;gap:8px;margin-top:9px;flex-wrap:wrap">
+    <button type="button" class="bslv" id="bCopyCode">複製</button>
+   </div>
+   <div id="codeOut"></div>
+  </div>
+ </div>
+</div>
+
+<div class="ovr" id="backOv" role="dialog" aria-modal="true" aria-label="貼回簽碼">
+ <div class="ovw">
+  <div class="ovh"><h3>貼回簽碼</h3><button type="button" class="x" data-close="backOv" aria-label="關閉">×</button></div>
+  <div class="ovb">
+   <p style="margin:0 0 9px;font-size:12.6px;color:var(--i2);line-height:1.65">客戶簽完會拿到一串代碼。貼在這裡按套用，他的簽名就會出現在你這份單據的付款方欄位，然後你再列印或存 PDF 存檔。</p>
+   <textarea id="backCode" placeholder="把客戶給你的那一長串代碼貼在這裡"></textarea>
+   <div style="display:flex;gap:8px;margin-top:9px;flex-wrap:wrap">
+    <button type="button" class="bslv" id="bApplyBack">套用</button>
+    <button type="button" class="badd" id="bDropBack">清除付款方簽名</button>
+   </div>
+   <div id="backOut"></div>
+  </div>
+ </div>
+</div>
+
+<div class="ovr" id="imgOv" role="dialog" aria-modal="true" aria-label="單據圖片">
+ <div class="ovw">
+  <div class="ovh"><h3>單據圖片</h3><button type="button" class="x" data-close="imgOv" aria-label="關閉">×</button></div>
+  <div class="ovb">
+   <div class="note" id="imgMsg" style="margin:0 0 10px">正在產生圖片，請稍等…</div>
+   <div id="imgPrev"></div>
+   <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button type="button" class="bslv b2" id="bImgShare" style="display:none">分享／傳給對方</button>
+    <button type="button" class="bslv" id="bImgDl" style="display:none">下載圖片</button>
+   </div>
+   <div class="note" id="imgTip" style="display:none"><b>iPhone：</b>按上面藍色的「分享／傳給對方」，選 LINE 就直接送出。沒看到那顆鈕的話，<b>長按圖片 → 加入照片</b>，再從 LINE 的相片傳回去。<br><b>Android：</b>長按圖片 → 下載圖片。<br><b>電腦：</b>按「下載圖片」。</div>
+  </div>
+ </div>
+</div>
+
+<div id="signBar">
+ <div class="sbi"><b id="sbT">確認無誤後請簽名</b><span id="sbS">簽名前請先把上面的單據內容與約定事項看過一遍。</span></div>
+ <input type="text" id="sigCN" placeholder="簽署人姓名" autocomplete="off">
+ <button type="button" class="btn bp" id="bSignNow">✍️ 我要簽名</button>
+ <button type="button" class="btn bp" id="bSignImg" style="display:none">圖片回傳 ▸</button>
+ <button type="button" class="btn" id="bSignPrint" style="display:none">存成 PDF</button>
+ <button type="button" class="btn" id="bSignFile" style="display:none">下載已簽署檔</button>
+ <button type="button" class="btn" id="bSignCode" style="display:none">複製回簽碼</button>
+ <button type="button" class="btn" id="bSignClr" style="display:none">重簽</button>
+</div>
+
+<div class="sigov" id="sigOv" role="dialog" aria-modal="true" aria-label="簽名">
+ <div class="sigmw">
+  <div class="sigmw-h"><h3>請在框內簽名</h3><button type="button" class="x" id="sigX" aria-label="關閉">×</button></div>
+  <div class="sigmw-b"><div class="bigpad" id="bigPad"><div class="gl"></div><div class="ht">✍️ 在此簽名</div><canvas></canvas></div></div>
+  <div class="sigmw-f">
+   <button type="button" class="bmc" id="sigClr2">清除重簽</button>
+   <button type="button" class="bmc ok" id="sigOk" disabled>確定</button>
+  </div>
+ </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* 這份文件的原始骨架，用來產生「簽署頁 HTML」。在任何 DOM 生成之前先抓，
+   所以拿到的是乾淨模板，資料靠注入的區塊還原，不會把上一份的內容夾帶出去。 */
+var INJ_ID='__inj_'+'data';
+var INJ_RE=new RegExp('<scr'+'ipt id="'+INJ_ID+'">[\\s\\S]*?<\\/scr'+'ipt>','i');
+var PRISTINE=document.documentElement.outerHTML.replace(INJ_RE,'');
+var $=function(i){return document.getElementById(i);};
+var NF=new Intl.NumberFormat('zh-TW');
+var M=function(n){return 'NT$ '+NF.format(Math.round(n||0));};
+var m=function(n){return '$'+NF.format(Math.round(n||0));};
+function E(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function N(i){return parseInt((($(i)&&$(i).value)||'').replace(/[^\d]/g,''),10)||0;}
+function F(v){var n=parseFloat(String(v==null?'':v).replace(/[^\d.]/g,''));return isNaN(n)?0:n;}
+function up(n,u){u=u||1;return Math.ceil(n/u)*u;}
+
+/* ===== 法條連結 ===== */
+var PC={'民法':'B0000001','所得稅法':'G0340003','著作權法':'J0070017','營業稅法':'G0340080',
+ '營業秘密法':'J0080028','個人資料保護法':'I0050021','全民健康保險法':'L0060001','勞工退休金條例':'N0030020',
+ '執行業務所得查核辦法':'G0340030','民事訴訟法':'B0010001','消費者保護法':'J0170001',
+ '印花稅法':'G0340091','各類所得扣繳率標準':'G0340028','電子簽章法':'J0080037'};
+var MOF={'執行業務者費用標準':'https://law-out.mof.gov.tw/LawContent.aspx?id=GL011721',
+ '營業稅法施行細則':'https://law-out.mof.gov.tw/LawContent.aspx?id=FL006083',
+ '所得稅法施行細則':'https://law-out.mof.gov.tw/LawContent.aspx?id=FL005936',
+ '小規模營業人營業稅起徵點':'https://law-out.mof.gov.tw/LawContent.aspx?id=FL006090'};
+var SPECIAL={'電子簽章法':'https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0080037'};
+function LW(name,no,label){
+ var u='';
+ if(MOF[name]) u=MOF[name];
+ else if(SPECIAL[name]) u=SPECIAL[name];
+ else if(PC[name]) u='https://law.moj.gov.tw/LawClass/'+(no?('LawSingle.aspx?pcode='+PC[name]+'&flno='+no):('LawAll.aspx?pcode='+PC[name]));
+ var t=label||(name+(no?(' 第 '+no+' 條'):''));
+ if(!u) return '<span class="law">'+t+'</span>';
+ return '<a class="law" href="'+u+'" target="_blank" rel="noopener">'+t+'</a>';
+}
+function LWS(list){return '<span class="laws">'+list.join('')+'</span>';}
+
+/* ===== 115 年度常數 ===== */
+var EXEC_ST=20010, PR=0.0211, PR_EX=20000, PR_CAP=1e7, RATE_9A=0.20;
+
+/* ===== 託管年期：買幾年就託管幾年 ===== */
+var YR=1;
+var CNY={1:'一',2:'二',3:'三',5:'五'};
+function cnY(){return CNY[YR]||String(YR);}
+var YRE=/（[一二三四五六七八九十百\d]+\s*年期）/g;
+function yrTag(){return '（'+cnY()+'年期）';}
+
+function rocD(d){return (d.getFullYear()-1911)+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0');}
+function addMon(d,n){
+ var x=new Date(d.getTime()), day=x.getDate();
+ x.setDate(1); x.setMonth(x.getMonth()+n);
+ var last=new Date(x.getFullYear(),x.getMonth()+1,0).getDate();
+ x.setDate(Math.min(day,last)); return x;
+}
+function periodText(){
+ var v=$('dfill').value; if(!v) return '';
+ var p=v.split('-').map(Number); if(!p[0]) return '';
+ var s=new Date(p[0],p[1]-1,p[2]);
+ var e=new Date(s.getTime()); e.setDate(e.getDate()-1); e=addMon(e,12*YR);
+ return rocD(s)+' 起 '+YR+' 年（至 '+rocD(e)+'）';
+}
+var perAuto=true;                       /* 服務期間尚未被手動改過 */
+$('svcP').addEventListener('input',function(){perAuto=false;});
+/* setPeriod=true：明確要求重算服務期間（按年期鈕、選到年約服務）
+   setPeriod=false：只在服務期間本來就是自動帶的時候跟著更新 */
+function syncYear(setPeriod){
+ var t=yrTag();
+ Array.prototype.forEach.call(document.querySelectorAll('#rows .i-n,#advRows .i-n'),function(inp){
+  inp.value=inp.value.replace(YRE,t);
+ });
+ var w=$('work'); if(w.value) w.value=w.value.replace(YRE,t);
+ if(setPeriod||(perAuto&&$('svcP').value.trim())){var p=periodText(); if(p)$('svcP').value=p;}
+ var hint=periodText(), end=hint?(hint.split('至 ')[1]||'').replace('）',''):'';
+ $('yrHint').innerHTML='買 <b>'+YR+'</b> 年就託管維運 <b>'+YR+'</b> 年'+(end?('，到期日 '+E(end)):'')
+  +'。年期一改，明細項目、服務內容與年約條款會一起跟著變。';
+}
+$('segYr').addEventListener('click',function(e){
+ var b=e.target.closest('button'); if(!b) return;
+ Array.prototype.forEach.call(this.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+ YR=parseInt(b.dataset.v,10)||1;
+ syncYear(true); render();
+});
+
+/* ===== 網域規費：包在一起 vs 拆開列 ===== */
+var DOM='all';
+function domSplit(){return DOM==='split';}
+$('segDom').addEventListener('click',function(e){
+ var b=e.target.closest('button'); if(!b) return;
+ Array.prototype.forEach.call(this.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+ DOM=b.dataset.v;
+ var d=$('dTool'); if(d){d.style.display=domSplit()?'':'none'; if(domSplit()) d.open=true;}
+ syncDom(); syncYear(false); render();
+});
+/* 已經加進明細的網域項目，跟著切換改名 */
+function syncDom(){
+ var A='網域申請、註冊規費與 DNS 設定管理費', B='網域申請與 DNS 設定管理費';
+ var from=domSplit()?A:B, to=domSplit()?B:A;
+ Array.prototype.forEach.call(document.querySelectorAll('#rows .i-n'),function(inp){
+  inp.value=inp.value.split(from).join(to);
+ });
+ var w=$('work');
+ if(w.value){
+  w.value=w.value.split('，並含服務期間內之網域註冊規費。').join(domSplit()?'；網域註冊規費由付款方負擔，另列代收代付款項。':'，並含服務期間內之網域註冊規費。')
+                 .split('；網域註冊規費由付款方負擔，另列代收代付款項。').join(domSplit()?'；網域註冊規費由付款方負擔，另列代收代付款項。':'，並含服務期間內之網域註冊規費。');
+ }
+}
+
+/* ===== 服務項目 ===== */
+var SVC=[
+{id:'prep',lb:'前置作業',item:'前置作業費（需求訪談與規劃）',
+ dsc:'需求訪談、功能範圍界定、資訊架構與時程規劃',
+ work:'前置作業，含需求訪談、功能範圍界定、資訊架構與時程規劃及技術選型評估。本階段成果為書面規劃文件，中止時已完成部分仍應計價。'},
+{id:'build',lb:'網站建置',item:'網站建置服務費',
+ dsc:'前後台建置、資料庫串接、響應式切版、上線測試與後台交付',
+ work:'網站建置專案，含需求訪談、版型與前後台建置、資料庫串接、響應式切版、上線測試與後台帳號交付。'},
+{id:'lp',lb:'單頁式網站',item:'單頁式網站製作費',
+ dsc:'版面設計、切版、表單串接與上線',
+ work:'單頁式網站製作，含版面設計、切版、聯絡表單串接與上線發布。'},
+{id:'revamp',lb:'網站改版',item:'網站改版服務費',
+ dsc:'結構調整、版型重製、內容搬遷、轉址與上線測試',
+ work:'既有網站改版，含結構調整、版型重製、內容搬遷、轉址設定與上線測試。'},
+{id:'host',lb:'託管營運',item:'網站託管環境建置與維運服務費{Y}',
+ dsc:'CDN 與 DNS 設定、SSL 憑證管理、部署維護、監控、備份與技術支援',
+ work:'網站託管環境建置與維運服務{Y}，含 CDN 與 DNS 設定、SSL 憑證申請與更新、部署管線維護、可用性監控、定期備份及技術支援。'},
+{id:'domain',lb:'網域管理',
+ item:function(){return domSplit()?('網域申請與 DNS 設定管理費'+yrTag()):('網域申請、註冊規費與 DNS 設定管理費'+yrTag());},
+ dsc:'網域查詢與申請代辦、DNS 記錄設定、到期續約提醒',
+ work:function(){return '網域申請與 DNS 設定管理服務'+yrTag()+'，含網域查詢與申請代辦、DNS 記錄設定、到期續約提醒及異動處理'
+   +(domSplit()?'；網域註冊規費由付款方負擔，另列代收代付款項。':'，並含服務期間內之網域註冊規費。')+'';}},
+{id:'maint',lb:'維護／支援',item:'網站維護與技術支援服務費{Y}',
+ dsc:'內容更新、版面微調、故障排除與技術諮詢',
+ work:'網站維護與技術支援服務{Y}，含既有頁面文字與圖片更新、版面微調、故障排除、環境調整及技術諮詢。'},
+{id:'mail',lb:'企業信箱',item:'企業郵件服務設定費',
+ dsc:'服務開通、MX 與 SPF／DKIM／DMARC 設定與收發測試',
+ work:'企業郵件服務設定，含服務開通、MX 與 SPF／DKIM／DMARC 記錄設定及收發測試。'},
+{id:'seo',lb:'基礎 SEO',item:'基礎 SEO 技術設定費',
+ dsc:'結構化資料、sitemap、搜尋引擎收錄與成效工具串接',
+ work:'基礎 SEO 技術設定，含標題與描述規劃、結構化資料標記、sitemap 產出、搜尋引擎收錄申請與成效工具串接。'},
+{id:'handover',lb:'原始碼交接',item:'原始碼與帳號權限交付服務費',
+ dsc:'原始碼整理、部署說明文件、帳號權限移轉',
+ work:'結案交付，含原始碼整理與部署說明文件、各項服務帳號權限移轉及交接說明。'},
+{id:'assign',lb:'權利讓與',item:'著作財產權讓與對價',
+ dsc:'依本單約定事項所載範圍讓與',
+ work:'著作財產權讓與，範圍依本單約定事項所載，於價金全額付清時發生效力。'}
+];
+function fy(s){return String(typeof s==='function'?s():s).replace(/\{Y\}/g,yrTag());}
+var YEARLY=['host','domain','maint'];
+var picked=[];
+(function(){var h='';SVC.forEach(function(w){h+='<button type="button" data-id="'+w.id+'" aria-pressed="false">'+w.lb+'</button>';});$('wtGrid').innerHTML=h;})();
+function svcBy(id){for(var i=0;i<SVC.length;i++) if(SVC[i].id===id) return SVC[i];return null;}
+var workAuto=false;
+$('wtGrid').addEventListener('click',function(e){
+ var b=e.target.closest('button'); if(!b) return;
+ var id=b.dataset.id, i=picked.indexOf(id);
+ if(i>=0) picked.splice(i,1); else picked.push(id);
+ b.setAttribute('aria-pressed',picked.indexOf(id)>=0?'true':'false');
+ var wk=$('work');
+ if(!wk.value.trim()||workAuto){
+  var t=picked.map(function(x){var s=svcBy(x);return s?fy(s.work):'';}).filter(Boolean).join('\n');
+  wk.value=t; workAuto=!!t;
+ }
+ if(i<0){
+  var s=svcBy(id);
+  if(s) addItem(fy(s.item),s.dsc);
+  if(YEARLY.indexOf(id)>=0){
+   if(id==='domain'&&domSplit()){var d=$('dTool'); if(d) d.open=true;}
+   if(perAuto) syncYear(true);
+   if($('t15')&&!$('t15').checked) $('t15').checked=true;
+  }
+ }
+ render();
+});
+$('work').addEventListener('input',function(){workAuto=false;});
+
+/* ===== 年期方案表 ===== */
+var TIERY=[1,2,3,5];
+function tierOnQ(){var e=$('tierOn');return !!(e&&e.checked);}
+function tiers(){var out=[];TIERY.forEach(function(y){var v=N('p'+y);if(v>0)out.push({y:y,a:v});});return out;}
+function tierSync(){var b=$('tierBox');if(b)b.style.display=tierOnQ()?'':'none';}
+function tierApply(){
+ var v=N('p'+YR), o=$('tierOut');
+ if(v<=0){o.className='tout on';o.innerHTML='「'+cnY()+' 年」那一格沒有金額，先填了再帶入。';return;}
+ var h=svcBy('host'); addItem(fy(h.item),h.dsc,v);
+ o.className='tout on';
+ o.innerHTML='已把 <b>'+cnY()+' 年期 '+m(v)+'</b> 帶進明細。單次給付 '+m(v)+'：'
+  +(v>=EXEC_ST?'<b style="color:var(--seal)">達 20,010 元，扣 10% 所得稅</b>':'未達 20,010 元，免扣所得稅')+'；'
+  +(v>=PR_EX?'<b style="color:var(--seal)">達 2 萬元，扣 2.11% 補充保費</b>':'未達 2 萬元，免扣補充保費')
+  +'。想收滿又不被扣，改用下面的「分期收款」按年拆，服務本來就逐年提供，不算拆單。';
+ render();
+}
+$('tierOn').addEventListener('change',function(){tierSync();render();});
+$('bTier').addEventListener('click',tierApply);
+TIERY.forEach(function(y){$('p'+y).addEventListener('input',function(){
+ var v=this.value.replace(/[^\d]/g,'');this.value=v?NF.format(parseInt(v,10)):'';render();});});
+tierSync();
+
+/* ===== 維運續約案：一鍵套用 ===== */
+var KIT_ON=['t1','t2','t6','t9','t11','t12','t13','t14','t16','t18','t22','t25','t29','t30','t31','t32','t33','t34','t35'];
+var KIT_OFF=['t3','t4','t5','t7','t8','t15','t23','t28'];
+function kitClear(){
+ picked=[];
+ Array.prototype.forEach.call($('wtGrid').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed','false');});
+ sd('rows',DEF); $('work').value=''; workAuto=false;
+}
+/* ===== 維運年費三行拆帳 ===== */
+function ksCalc(){
+ var b=N('ksBase'),h=N('ks2'),d=N('ks3'),v=b-h-d;
+ $('ks1').value=NF.format(v);
+ var o=$('ksOut');
+ if(b<=0){o.className='tout';o.innerHTML='';return v;}
+ if(v<0){o.className='tout on';o.innerHTML='<span style="color:var(--seal)"><b>主機加網域已經超過年費總額。</b>這樣拆出來維護費是負的，先確認年費是不是填錯了。</span>';return v;}
+ var pct=Math.round(v/b*100);
+ o.className='tout on';
+ o.innerHTML='<b>拆完的樣子</b><span class="big">9A 收入 '+m(v)+'　·　非 9A '+m(h+d)+'</span>'
+  +'維護服務費 '+m(v)+'（占 '+pct+'%）是你的專業勞務，走 9A、扣兩成必要費用後課稅。'
+  +'主機 '+m(h)+' 與網域 '+m(d)+' 是轉付第三方的成本。'
+  +'<b>網域規費最乾淨的作法是走代收代付</b>——請註冊商把憑證抬頭開客戶、正本交客戶，那筆錢就完全不進你的收入。'
+  +'做不到抬頭開客戶就別放代收代付欄，留在服務報酬裡，報稅時當成本扣。'
+  +'<br><span style="color:var(--i3)">拆帳金額要對得上你實際付出去的錢。為了壓低 9A 而把維護費硬寫成很小的一塊，是虛偽記載，不是節稅。</span>';
+ return v;
+}
+['ksBase','ks2','ks3'].forEach(function(i){
+ var e=$(i); if(!e)return;
+ e.addEventListener('input',function(){
+  var x=this.value.replace(/[^\d]/g,''); this.value=x?NF.format(parseInt(x,10)):'';
+  ksCalc();
+ });
+});
+$('ksOn').addEventListener('change',function(){
+ $('ksBox').style.display=this.checked?'':'none';
+ if(this.checked&&!N('ksBase')){var v=N('p'+YR)||sum('rows');if(v>0)$('ksBase').value=NF.format(v);}
+ ksCalc();
+});
+$('bKs').addEventListener('click',function(){
+ var b=N('ksBase'),h=N('ks2'),d=N('ks3'),v=b-h-d;
+ if(b<=0){alert('請先填年費總額。');return;}
+ if(v<0){alert('主機加網域超過年費總額，先確認數字。');return;}
+ sd('rows',[]);
+ var mt=svcBy('maint'),ht=svcBy('host'),dm=svcBy('domain');
+ addItem(fy(mt.item),mt.dsc,v);
+ if(h>0)addItem(fy(ht.item),ht.dsc,h);
+ if(d>0)addItem(fy(dm.item),dm.dsc,d);
+ ['maint','host','domain'].forEach(function(id){if(picked.indexOf(id)<0)picked.push(id);});
+ Array.prototype.forEach.call($('wtGrid').querySelectorAll('button'),function(x){
+  if(picked.indexOf(x.dataset.id)>=0)x.setAttribute('aria-pressed','true');});
+ $('work').value=['maint','host','domain'].map(function(x){return fy(svcBy(x).work);}).join('\n'); workAuto=true;
+ ksCalc(); render();
+});
+$('bKitClr').addEventListener('click',function(){kitClear();render();});
+$('bKit').addEventListener('click',function(){
+ kitClear();
+ ['host','domain','maint'].forEach(function(id){
+  picked.push(id);
+  var b=$('wtGrid').querySelector('[data-id="'+id+'"]'); if(b)b.setAttribute('aria-pressed','true');
+ });
+ $('work').value=picked.map(function(x){return fy(svcBy(x).work);}).join('\n'); workAuto=true;
+ if($('dnsOwner')) $('dnsOwner').value='client';
+ DOM='all';
+ Array.prototype.forEach.call($('segDom').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.v==='all'?'true':'false');});
+ if(typeof syncDom==='function') syncDom();
+ $('tierOn').checked=true; tierSync();
+ var v=N('p'+YR); var h=svcBy('host'); addItem(fy(h.item),h.dsc,v>0?v:'');
+ KIT_ON.forEach(function(id){if($(id))$(id).checked=true;});
+ KIT_OFF.forEach(function(id){if($(id))$(id).checked=false;});
+ Array.prototype.forEach.call($('segPreset').querySelectorAll('button'),function(x){x.setAttribute('aria-pressed','false');});
+ syncYear(true); render();
+ var o=$('tierOut'); o.className='tout on';
+ o.innerHTML='已套用維運續約組合。<b>關掉的條款</b>：驗收、提案改稿次數、定金、中途停工、託管年約、交付後不含維護、報價外流賠償——這些是建置案在用的，維運案留著會自相矛盾。'
+  +'<b>打開的新條款</b>：賠償上限、到期即停不通知、中途喊停轉服務額度、支援時段與緊急加價、不可抗力與調價權。';
+});
+
+/* ===== 自動連動 ===== */
+var acctAuto=true;
+$('acctName').addEventListener('input',function(){acctAuto=false;});
+$('name').addEventListener('input',function(){ if(acctAuto){$('acctName').value=this.value;buildAcct();} });
+$('bankSel').addEventListener('change',function(){
+ var oth=(this.value==='__other');
+ $('brLb').innerHTML=oth?'銀行名稱 <span class="req">＊</span>':'分行 <span class="opt">可略</span>';
+ $('bankBr').placeholder=oth?'例：○○銀行 ○○分行':'○○分行';
+});
+['input','change'].forEach(function(ev){$('dfill').addEventListener(ev,function(){syncYear(false);});});
+
+/* ===== 明細列 ===== */
+var DEF=[{n:'',d:'',a:''}];
+function rowH(o,ph){o=o||{n:'',d:'',a:''};
+ return '<div class="ir"><div class="c fu"><input class="i-n" type="text" placeholder="項目" value="'+E(o.n)+'" autocomplete="off"></div>'
+ +'<div class="c fu"><input class="i-d" type="text" placeholder="'+(ph||'說明（可略）')+'" value="'+E(o.d)+'" autocomplete="off"></div>'
+ +'<div class="c fu"><input class="i-a n amt" inputmode="numeric" placeholder="金額" value="'+(o.a?NF.format(o.a):'')+'"></div>'
+ +'<button type="button" class="del" aria-label="移除">✕</button></div>';}
+function rd(r){return {n:r.querySelector('.i-n').value.trim(),d:r.querySelector('.i-d').value.trim(),
+ a:parseInt((r.querySelector('.i-a').value||'').replace(/[^\d]/g,''),10)||0};}
+function lst(id){return Array.prototype.map.call($(id).querySelectorAll('.ir'),rd);}
+function sum(id){return lst(id).reduce(function(s,x){return s+x.a;},0);}
+function sd(id,l,ph){$(id).innerHTML='';(l&&l.length?l:DEF).forEach(function(o){$(id).insertAdjacentHTML('beforeend',rowH(o,ph));});}
+function bind(id){
+ var h=$(id);
+ h.addEventListener('input',function(e){
+   if(e.target.classList.contains('i-a')){var v=e.target.value.replace(/[^\d]/g,'');e.target.value=v?NF.format(parseInt(v,10)):'';}
+   render();});
+ h.addEventListener('click',function(e){
+   var d=e.target.closest('.del'); if(!d) return;
+   var rs=h.querySelectorAll('.ir');
+   if(rs.length<=1){Array.prototype.forEach.call(rs[0].querySelectorAll('input'),function(x){x.value='';});render();return;}
+   d.closest('.ir').remove(); render();});
+}
+bind('rows'); bind('advRows');
+function addItem(n,d,a,tgt){
+ tgt=tgt||'rows';
+ var rs=$(tgt).querySelectorAll('.ir'), last=rs[rs.length-1];
+ if(last&&!rd(last).n&&!rd(last).a){
+  last.querySelector('.i-n').value=n; last.querySelector('.i-d').value=d||'';
+  if(a) last.querySelector('.i-a').value=NF.format(a);
+ } else $(tgt).insertAdjacentHTML('beforeend',rowH({n:n,d:d||'',a:a||''}));
+}
+$('bAdd').addEventListener('click',function(){$('rows').insertAdjacentHTML('beforeend',rowH(null));render();});
+$('bAddAdv').addEventListener('click',function(){$('advRows').insertAdjacentHTML('beforeend',rowH(null,'憑證抬頭（開客戶）'));render();});
+sd('rows',DEF); sd('advRows',DEF,'憑證抬頭（開客戶）');
+
+/* ===== 網域拆分 ===== */
+$('bSplit').addEventListener('click',function(){
+ var cost=N('dCost'), tot=N('dTotal'), o=$('dOut');
+ o.className='tout on';
+ if(tot<=0){o.innerHTML='請先填「向客戶收多少」。';return;}
+ if(cost<=0){o.innerHTML='請填實際規費。真的沒成本的話，這筆就純粹是<b>設定管理費</b>，直接列在服務明細。';return;}
+ if(cost>tot){o.innerHTML='規費比收費還高，等於你在貼錢。請確認數字。';return;}
+ var fee=tot-cost;
+ addItem('網域註冊規費'+yrTag(),'代收代付 · 憑證抬頭請開客戶',cost,'advRows');
+ if(fee>0) addItem('網域申請與 DNS 設定管理費'+yrTag(),'網域代辦、DNS 記錄設定、續約提醒',fee,'rows');
+ DOM='split';
+ Array.prototype.forEach.call($('segDom').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.v==='split'?'true':'false');});
+ o.innerHTML='<b>已拆好</b><span class="big">'+m(cost)+' ＋ '+m(fee)+'</span>'
+  +'規費 '+m(cost)+' → 代收代付，不是收入。管理費 '+m(fee)+' → 走 9A，只有 '+m(Math.round(fee*0.8))+' 算稅。<br>'
+  +'<span style="color:var(--i3)">記得請註冊商把 '+m(cost)+' 那張憑證<b>抬頭開成客戶</b>、正本交客戶；做不到就切回「包在一起」。</span>';
+ render();
+});
+['dCost','dTotal','target','bkInc','bkCost'].forEach(function(i){$(i).addEventListener('input',function(e){var v=e.target.value.replace(/[^\d]/g,'');e.target.value=v?NF.format(parseInt(v,10)):'';});});
+
+/* ===== 20% vs 核實列報 ===== */
+$('bBook').addEventListener('click',function(){
+ var inc=N('bkInc'), cost=N('bkCost'), o=$('bkOut');
+ o.className='tout on';
+ if(inc<=0){o.innerHTML='<span style="color:var(--seal)">先填全年接案收入。</span>';return;}
+ var std=Math.round(inc*RATE_9A), d=cost-std;
+ o.innerHTML='<div><b>套 20% 費用標準</b>　可減 '+m(std)+' → 執行業務所得 <b>'+m(inc-std)+'</b><br><span style="color:var(--i3)">免設帳、免憑證。</span></div>'
+  +'<div style="margin-top:6px"><b>設帳核實列報</b>　可減 '+m(cost)+' → 執行業務所得 <b>'+m(Math.max(0,inc-cost))+'</b><br><span style="color:var(--i3)">要日記帳＋逐筆憑證，帳簿留 10 年、憑證留 5 年。</span></div>'
+  +'<div style="margin-top:8px;padding-top:7px;border-top:1px dashed var(--rule)">'
+  +(d>0?('成本比 20% 多 <b>'+m(d)+'</b>，<b style="color:var(--ok)">設帳核實划算</b>。')
+    :(d===0?'兩邊一樣，<b>套 20% 比較省事</b>。'
+      :('成本比 20% 少 <b>'+m(-d)+'</b>，<b>套 20% 就好</b>——國稅局幫你估的比你實際花的還多。')))
+  +'</div>';
+});
+
+/* ===== 分期 ===== */
+var DEFS=[{n:'訂金／前置作業費',p:30,w:'簽約時'},{n:'驗收交付尾款',p:70,w:'驗收通過後 7 日內'}];
+var PRE=[['30:訂金／前置作業費|70:驗收交付尾款','30/70'],
+['50:前置作業費（簽約時）|50:上線交付金','50/50'],
+['30:簽約訂金|40:開發完成款|30:上線驗收尾款','30/40/30']];
+(function(){var h='';PRE.forEach(function(p,i){h+='<button type="button" class="chip" data-i="'+i+'">'+p[1]+'</button>';});$('pre').innerHTML=h;})();
+function sgH(s){s=s||{n:'',p:'',w:''};
+ return '<div class="sgr"><div class="c fu"><input class="s-n" type="text" placeholder="期別" value="'+E(s.n)+'" autocomplete="off"></div>'
+ +'<div class="c"><input class="s-p n" inputmode="numeric" placeholder="%" value="'+E(s.p)+'"></div>'
+ +'<div class="c fu"><input class="s-w" type="text" placeholder="請款條件" value="'+E(s.w)+'" autocomplete="off"></div>'
+ +'<div class="c"><div class="ro s-o">—</div></div><button type="button" class="del" aria-label="移除">✕</button></div>';}
+var _d=null;
+function sgDefs(){if(_d)return _d;
+ return Array.prototype.map.call($('sgRows').querySelectorAll('.sgr'),function(r){
+  return {n:r.querySelector('.s-n').value.trim(),p:F(r.querySelector('.s-p').value),w:r.querySelector('.s-w').value.trim()};});}
+function sgSeed(l){$('sgRows').innerHTML='';(l&&l.length?l:DEFS).forEach(function(s){$('sgRows').insertAdjacentHTML('beforeend',sgH(s));});}
+function on(){return $('schedOn').checked;}
+function amts(total){
+ var A=sgDefs().filter(function(s){return s.p>0;});
+ if(!A.length) return [];
+ var t=A.reduce(function(a,b){return a+b.p;},0)||100, o=[], acc=0;
+ A.forEach(function(s,i){var a=(i===A.length-1)?(total-acc):Math.round(total*s.p/t);acc+=a;
+  o.push({n:s.n||('第 '+(i+1)+' 期'),p:Math.round(s.p/t*1000)/10,w:s.w,a:a});});
+ return o;}
+$('sgRows').addEventListener('input',function(e){if(e.target.classList.contains('s-p'))e.target.value=e.target.value.replace(/[^\d.]/g,'');render();});
+$('sgRows').addEventListener('click',function(e){var d=e.target.closest('.del');if(!d)return;
+ if($('sgRows').querySelectorAll('.sgr').length<=1)return; d.closest('.sgr').remove();render();});
+$('bAddStage').addEventListener('click',function(){$('sgRows').insertAdjacentHTML('beforeend',sgH(null));render();});
+$('pre').addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;
+ sgSeed(PRE[+c.dataset.i][0].split('|').map(function(x){var q=x.split(':');return {n:q[1],p:parseFloat(q[0]),w:''};}));render();});
+$('schedOn').addEventListener('change',function(){$('schedBox').style.display=this.checked?'':'none';render();});
+sgSeed(DEFS);
+
+/* ===== 扣繳 ===== */
+var st={mode:'quote',payer:'company'};
+var sig='';
+var sigC='';var sigCT='';var SIGNMODE=false;var OPENSIG=null;
+function tp(g){
+ if(st.payer==='person') return {tax:0,prem:0};
+ var tax=0, prem=0, nhi=$('nhi').value;
+ if(g>=EXEC_ST) tax=Math.floor(g*0.10);
+ if(nhi==='general'&&g>=PR_EX) prem=Math.round(Math.min(g,PR_CAP)*PR);
+ return {tax:tax,prem:prem};
+}
+function notes(g){
+ var nhi=$('nhi').value,t,p;
+ if(st.payer==='person') return {t:'付款方是個人，沒有代扣義務 → 你拿全額，明年自己報',p:'付款方是個人 → 不扣補充保費'};
+ t=(g>=EXEC_ST)?('這次給付達 '+NF.format(EXEC_ST)+' 元 → 扣 10%'):('沒到 '+NF.format(EXEC_ST)+' 元 → 不扣所得稅');
+ if(nhi==='union_exec') p='工會加保、用執行業務所得當投保金額 → 免扣（附在保證明）';
+ else if(nhi==='free') p='無投保資格或低收入戶 → 免扣';
+ else p=(g>=PR_EX)?('這次給付達 '+NF.format(PR_EX)+' 元 → 扣 2.11%'):('沒到 '+NF.format(PR_EX)+' 元 → 不扣');
+ return {t:t,p:p};
+}
+function totals(total){
+ if(on()){var A=amts(total);if(A.length){var t=0,p=0;A.forEach(function(s){var c=tp(s.a);t+=c.tax;p+=c.prem;});return {g:total,t:t,p:p,n:total-t-p,L:A};}}
+ var c=tp(total); return {g:total,t:c.tax,p:c.prem,n:total-c.tax-c.prem,L:[]};
+}
+function netOf(t){return totals(t).n;}
+function solve(target,u){
+ if(target<=0)return 0;
+ u=u||1;
+ _d=sgDefs();
+ try{
+  /* 先試「開單＝目標」：若各期都未達扣繳門檻，實拿本來就等於開單，
+     不必為了湊實拿反而把金額推過 20,000／20,010 的門檻多繳一截。 */
+  var g0=up(target,u);
+  if(netOf(g0)>=target) return g0;
+  var hi=Math.max(target+1,Math.ceil(target*1.5)),k=0;
+  while(netOf(hi)<target&&k++<80)hi=Math.ceil(hi*1.15)+1000;
+  var lo=target;
+  while(lo<hi){var mid=Math.floor((lo+hi)/2);if(netOf(mid)>=target)hi=mid;else lo=mid+1;}
+  lo=up(lo,u);
+  while(netOf(lo)<target)lo+=u;
+  return lo;
+ } finally{_d=null;}
+}
+var quote=null;
+$('bSolve').addEventListener('click',function(){
+ var t=N('target');
+ if(t<=0){$('guOut').className='tout on';$('guOut').innerHTML='請先輸入你想實拿的金額。';return;}
+ var g=solve(t,parseInt($('unit').value,10)||1);
+ var rs=$('rows').querySelectorAll('.ir'), A=lst('rows'), cur=A.reduce(function(s,x){return s+x.a;},0);
+ var named=A.filter(function(x){return x.n||x.a>0;});
+ if(named.length<=1||cur<=0){
+  var r=rs[0];
+  if(!r.querySelector('.i-n').value.trim())r.querySelector('.i-n').value='網站建置服務費';
+  if(!r.querySelector('.i-d').value.trim())r.querySelector('.i-d').value='依服務內容欄所載範圍';
+  r.querySelector('.i-a').value=NF.format(g);
+ } else {
+  var idx=[],acc=0;
+  Array.prototype.forEach.call(rs,function(r2){if(rd(r2).a>0)idx.push(r2);});
+  idx.forEach(function(r2,i){var a=rd(r2).a,v=(i===idx.length-1)?(g-acc):Math.round(g*a/cur);acc+=v;r2.querySelector('.i-a').value=NF.format(v);});
+ }
+ quote={target:t,sched:on(),payer:st.payer,nhi:$('nhi').value}; render();
+});
+
+/* ===== 用語檢查 ===== */
+var LINT=[
+{re:/(租金|租賃|月租|年租|租用|出租)/,lv:'r',ti:'一個「租」字會害你掉進營業稅',
+ msg:'寫成出租，這筆就從專業服務變成租賃買賣，要看每月 5 萬門檻。改成<b>「網站託管環境建置與維運服務費」</b>。',
+ lw:[LW('營業稅法',3,'營業稅法第 3 條')]},
+{re:/(伺服器代管|主機代管|機櫃|IDC|主機租)/,lv:'r',ti:'這種寫法像你在轉賣機房',
+ msg:'改成描述實際做的事：環境建置、CDN 與 DNS 設定、SSL 管理、部署與監控、備份、技術支援。',lw:[]},
+{re:/(Cloudflare|AWS|GCP|Azure|GoDaddy|Gandi|Namecheap|Vercel|Netlify|中華電信|HiNet)/i,lv:'y',ti:'單據上不用寫供應商',
+ msg:'寫你提供什麼服務就好，保護成本結構，也避免被理解成轉售。',lw:[]},
+{re:/(代購|代買|代訂)/,lv:'y',ti:'「代購」在稅法上有嚴格定義',
+ msg:'代收代付要<b>收付沒價差</b>且<b>憑證抬頭是客戶</b>。有收管理費就不符合，請用上面的拆分器。',lw:[]},
+{re:/發票/,lv:'r',ti:'你開不了統一發票',
+ msg:'沒辦稅籍登記，依法不能開統一發票。這張單就是<b>收據（領據）</b>，客戶憑這個入帳、辦扣繳，效力完整。',lw:[]},
+{re:/(AI|人工智慧|ChatGPT|Claude|GPT|生成式)/i,lv:'y',ti:'怎麼做出來的是你的營業秘密',
+ msg:'單據寫成果就好，第 3 區的營業秘密與第三方素材兩條已經界定清楚。',
+ lw:[LW('營業秘密法',2,'營業秘密法第 2 條')]},
+{re:/買斷/,lv:'y',ti:'「買斷」不是法律用語',
+ msg:'要讓與就寫<b>「著作財產權讓與」</b>，並約定錢全部付清才生效。',
+ lw:[LW('著作權法',21,'著作權法第 21 條')]}
+];
+function renderLint(){
+ var t=[];
+ lst('rows').forEach(function(x){t.push(x.n,x.d);});
+ lst('advRows').forEach(function(x){t.push(x.n,x.d);});
+ t.push($('work').value);
+ var s=t.join(' '), h='';
+ LINT.forEach(function(l){
+  var mm=s.match(l.re);
+  if(mm) h+='<div class="li '+l.lv+'"><span class="w">'+E(mm[0])+'</span><b>'+l.ti+'。</b> '+l.msg+(l.lw.length?LWS(l.lw):'')+'</div>';
+ });
+ $('lintBox').innerHTML=h;
+}
+
+/* ===== 客戶身分 ===== */
+function CT(){return ($('cliType')&&$('cliType').value)||'biz';}
+function csm(){return CT()==='csm';}
+
+/* ===== 條款（22 條，原 33 條合併版） ===== */
+var TERMS=[
+{id:'t1',core:1,lb:'免用統一發票',ui:'先講清楚這是收據不是發票，省得客戶會計來問。',lw:[],
+ tx:'立據人為個人、未辦理稅籍登記，依法開立收據（領據），非統一發票。'},
+
+{id:'t2',core:1,lb:'著作權歸屬：沒寫到的一律留在我這裡',
+ ui:'沒書面約定讓與，著作權<b>本來就是你的</b>；有約定也是錢付清才生效。沒寫明的範圍，法律推定<b>未讓與、未授權</b>。',
+ lw:[LW('著作權法',12,'著作權法第 12 條'),LW('著作權法',36,'第 36 條'),LW('著作權法',37,'第 37 條')],
+ tx:'除雙方另有書面約定外，依著作權法第 12 條，本件著作之著作財產權歸立據人享有，付款方得於原委製目的範圍內利用；如另約定讓與者，以本單價金全額付清時發生效力。'
+   +'讓與或授權之地域、期間、利用方法、改作及再授權，以本單明文記載者為限；未明文記載之部分，依著作權法第 36 條第 2 項及第 37 條第 1 項，推定為未讓與、未授權。'
+   +'立據人就本件所使用之自有元件、框架、模板與函式庫，保留於其他案件繼續使用之權利。'},
+
+{id:'t3',core:1,lb:'錢付清才交；沒付清就上線＝侵權',
+ ui:'同時履行抗辯權（第 264 條）讓你合法壓住原始碼與帳號。著作權還沒移轉就拿去上線，不只是欠錢，是<b>侵害著作財產權</b>——嚇阻力比違約金強得多。',
+ lw:[LW('民法',505,'民法第 505 條'),LW('民法',264,'第 264 條'),LW('著作權法',88,'著作權法第 88 條')],
+ tx:'本件原始碼、部署設定檔、設計原始檔及各項服務帳號權限，於價金全額付清後交付或移轉；在此之前提供之測試環境與檔案僅供確認之用。'
+   +'付款方未依約給付價金前，立據人得依民法第 264 條行使同時履行抗辯權，拒絕交付前開標的，且不負遲延責任（民法第 505 條參照）。'
+   +'付款方於價金付清前將本件成果重製、公開傳輸、改作或投入營運使用者，除構成違約外，並構成著作財產權之侵害，立據人得依著作權法第 84 條請求排除侵害、依第 88 條請求損害賠償。'},
+
+{id:'t4',core:1,lb:'驗收：幾天沒回算過；上線在用也算過',
+ ui:'<span class="inl">交付後逾 <input type="text" id="nAcc" inputmode="numeric" value="7"> 日</span>沒<b>具體</b>書面意見＝驗收通過，擋掉「我就是不喜歡」。'
+   +'網站已經對外公開、已經拿去接生意，也視為受領——你只要一張截圖就夠。',lw:[],
+ tx:function(){return '成果交付或測試網址提供後逾 <b>'+(F($('nAcc').value)||7)+'</b> 日，付款方未以書面提出修改意見者，視為驗收通過，該期款項即為到期。'
+   +'前開修改意見應具體指明不符本單約定規格之處；僅表達主觀好惡而未指明具體不符之處者，不生阻卻驗收之效力。'
+   +'付款方將本件成果上線、對外公開、投入營運使用，或以之對第三人提供服務者，均視為受領工作並驗收通過，不得再以未完成驗收為由拒絕或遲延給付。';}},
+
+{id:'t5',core:0,lb:'提案幾款、改幾次、超過怎麼算',
+ ui:'<span class="inl">提案 <input type="text" id="nPro" inputmode="numeric" value="2"> 款</span><span class="inl">修改 <input type="text" id="nRev" inputmode="numeric" value="3"> 次</span><span class="inl">超過每次 <input type="text" id="nFee" inputmode="numeric" value="3,000"> 元</span>'
+   +'<br>這個「每次多少元」同時是「交付後不含維護」那條的<b>價目表</b>，改一處兩邊一起變。',lw:[],
+ tx:function(){return '本案含版型提案 <b>'+(F($('nPro').value)||2)+'</b> 款、修改 <b>'+(F($('nRev').value)||3)+'</b> 次。'
+   +'逾此次數或超出原委製範圍之修改與功能追加，每次另計新臺幣 <b>'+NF.format(N('nFee')||3000)+'</b> 元，經雙方書面確認後施作。';}},
+
+{id:'t6',core:0,lb:'拖著不付：利息、停服、催收費用、抵銷',
+ ui:'<span class="inl">年息 <input type="text" id="nLate" inputmode="numeric" value="5"> %</span>不寫也有 5%，寫了好催（上限 16%）。逾期 15 天可停維運；催收花的錢可以往回要；客戶回一句「金額沒錯」，兩年時效<b>整個重算</b>。',
+ lw:[LW('民法',233,'民法第 233 條'),LW('民法',203,'第 203 條'),LW('民法',334,'第 334 條'),LW('民法',129,'第 129 條')],
+ tx:function(){return '付款方逾期未付者，自應付日之次日起至清償日止，按年息 <b>'+(F($('nLate').value)||5)+'%</b> 計付遲延利息（民法第 229、233、203 條）；'
+   +'逾期達 15 日者，立據人得於書面通知後暫停維運、更新及技術支援服務至款項付清為止，暫停期間不計入服務期間，立據人不負遲延或違約責任。'
+   +'立據人因催討所支出之必要費用（含存證信函郵資、支付命令或訴訟裁判費、強制執行費用及律師費用），由付款方負擔（民法第 233 條第 3 項）；立據人並得依民法第 334 條主張抵銷。'
+   +'付款方就本單金額所為之書面或通訊軟體確認、對帳、分期或延期給付之請求、部分給付，均屬民法第 129 條第 1 項第 2 款之承認，時效因而中斷並重行起算。';}},
+
+{id:'t7',core:0,lb:'訂金是定金，不退',
+ ui:'客戶自己搞砸讓案子做不下去，訂金不用退。<b>收訂金就一定要勾。</b><span id="t7Note"></span>',
+ lw:[LW('民法',249,'民法第 249 條')],
+ tx:function(){
+  var base='第一期款為定金。契約因可歸責於付款方之事由致不能履行者，依民法第 249 條第 2 款，定金不得請求返還。';
+  if(csm()) base+='但立據人已完成部分工作者，就逾越已發生必要費用及已完成部分報酬之餘額，仍應返還付款方。';
+  return base;}},
+
+{id:'t8',core:0,lb:'案子中途停下來：三種情形怎麼算',
+ ui:'客戶喊停要賠（含<b>沒做完那段的預期利益</b>）；客戶不給素材卡住可催告解約求償；你生病出事做不完，已完成且有用的部分他仍要付。',
+ lw:[LW('民法',511,'民法第 511 條'),LW('民法',507,'第 507 條'),LW('民法',512,'第 512 條')],
+ tx:'工作完成前付款方得隨時終止契約，但應依民法第 511 條但書賠償立據人因終止而生之損害，包含已完成部分之報酬及未完成部分可得預期之利益。'
+   +'付款方應於約定期限內提供文字、圖片、商標、網域與主機權限及書面確認等協力事項；逾期者工期順延，經催告仍不為協力者，立據人得依民法第 507 條解除契約並請求賠償。'
+   +'因立據人死亡、傷病或其他非可歸責於立據人之事由致不能完成工作者，契約於該事由發生時終止；已完成部分對付款方為有用者，付款方應受領並給付相當報酬及墊款（民法第 512 條）。'},
+
+{id:'t9',core:0,lb:'我可以放作品集',ui:'就算著作財產權全讓出去，<b>你還是可以放進自己的作品集</b>。',
+ lw:[LW('著作權法',21,'著作權法第 21 條')],
+ tx:'著作人格權依著作權法第 21 條不得讓與或繼承。立據人保留於個人作品集、履歷及專業社群展示本件成果之權利；涉及保密資訊者另依書面約定辦理。'},
+
+{id:'t11',core:1,lb:'請用 9A 申報；我要憑單時要給我',
+ ui:'兩件事。<b>類別</b>：很多公司圖方便把外包報成「薪資所得」，那你就沒有兩成費用率，還可能被推定成僱傭關係，所以先把 9A 寫死。'
+   +'<br><b>憑單</b>：自 103 年起各式憑單「<b>原則免填發、例外予以填發</b>」——客戶<b>一定要</b>在次年 1 月底前向國稅局列單申報，但<b>不必</b>主動寄紙本給你。'
+   +'你要就得開口要，這條先把「要就要給」寫進去；不要也沒關係，5 月報稅時所得資料會自動帶入，或自己上財政部查。',
+ lw:[LW('所得稅法',92,'所得稅法第 92 條'),LW('所得稅法',114,'第 114 條')],
+ tx:'雙方為承攬關係，立據人非付款方之受僱人，本件報酬應以「9A 執行業務所得」列單申報。'
+   +'付款方應依所得稅法第 92 條規定，於次年 1 月底前將本件所得及扣繳稅額向該管稽徵機關列單申報；立據人請求填發扣（免）繳憑單者，付款方應予填發。'},
+
+{id:'t12',core:1,lb:'我的個資只能用在報稅',ui:'身分證字號跟地址只給入帳與報稅用，用完銷毀。',
+ lw:[LW('個人資料保護法',0,'個人資料保護法')],
+ tx:'本單所載個人資料僅供入帳、所得扣繳申報及補充保險費扣繳之特定目的使用，付款方應依個人資料保護法妥善保管，目的消失後應予銷毀。'},
+
+{id:'t13',core:1,lb:'我怎麼做的，客戶無權過問',ui:'交付「成果」，不含流程、工具、模板、提示詞。客戶不能要求你交出來。',
+ lw:[LW('營業秘密法',2,'營業秘密法第 2 條')],
+ tx:'本件交付範圍為約定之工作成果。立據人所使用之開發流程、工具組合、內部模板、自動化腳本及技術訣竅，屬營業秘密法第 2 條所稱之營業秘密，不在交付、授權或揭露範圍內；付款方不得要求提供或據以主張權利。'},
+
+{id:'t14',core:0,lb:'第三方素材與 AI／服務用量費用誰付',
+ ui:'<b>吃 TOKEN 的案子一定要勾。</b>抬頭開你＝你的成本（報稅自己扣），抬頭開他＝代收代付。另外開源元件與圖庫字型，你擔保能給他用，但不擔保他能獨占。',lw:[],
+ tx:'工作成果中如含開放原始碼元件、第三方字型圖庫素材或以工具輔助產製之內容，其權利狀態依各該授權條款定之；立據人擔保有權將之交付付款方於約定用途內使用，但不擔保付款方得就該等部分主張排他之著作財產權。'
+   +'本案報價已含立據人自行採購之開發工具、AI 服務用量（含 API 及 TOKEN 費用）、雲端與軟體訂閱等成本，該等憑證抬頭開立予立據人，屬立據人之營業成本，不另向付款方請領。'
+   +'付款方指定使用之第三方付費服務（含正式環境主機、網域規費、金流、簡訊、地圖及 AI 服務帳號等），其費用及後續續約由付款方自行負擔並直接與供應商締約；如由立據人代為墊付，應請供應商將憑證抬頭開立予付款方、正本交付付款方，該款項為代收代付款，不計入本件報酬。超出原委製範圍而新增之服務用量，另行報價。'},
+
+{id:'t15',core:0,lb:'託管營運年約：買幾年就託管幾年',
+ ui:'<b>年期跟著第 2 區的選擇自動變。</b>你提供的是設定與維運，<b>不是保證第三方平台永不斷線</b>；到期前 30 天通知續約，沒續約就停止維運。<b>網域沒續約會被別人搶走，這句一定要寫。</b>',lw:[],
+ tx:function(){
+  var per=($('svcP').value||'').trim();
+  return '本件託管維運服務期間為 <b>'+YR+'</b> 年'+(per?('（民國 '+E(per)+'）'):'')+'，付款方購買之年期即為立據人提供託管維運之年期。'
+   +'服務範圍為環境設定、部署、監控、備份與技術支援；第三方平台、網路或憑證機構之中斷、政策變更或服務終止，非可歸責於立據人，發生時立據人應即通知並協助以合理方式回復，不負賠償責任。'
+   +'服務期間屆滿前 30 日，立據人應通知付款方是否續約；未於屆滿前完成續約及付款者，維運服務自屆滿之日起停止，備份資料保留 30 日後刪除。'
+   +'網域未經續約將依註冊管理機構規定失效並開放他人註冊，其結果由付款方自負。';}},
+
+{id:'t16',core:0,lb:'網域掛在誰名下',ui:'網頁接案最常翻臉的一條。內容跟著第 2 區的選擇自動變。',lw:[],
+ tx:function(){
+  var v=$('dnsOwner').value;
+  var fee=domSplit()?'服務期間內之網域註冊規費由付款方負擔，立據人代為墊付者列為代收代付款項。':'服務期間內之網域註冊規費已包含於本單服務報酬，續期另行計價。';
+  if(v==='client') return '本案網域之註冊人（Registrant）登記為付款方，立據人僅擔任管理聯絡人並代為設定；網域所有權自始歸屬付款方，立據人不得留置。'+fee;
+  if(v==='me') return '本案網域於服務期間內登記於立據人名下並由立據人管理；付款方於價金全額付清後，得隨時要求移轉予付款方指定之帳戶，立據人應於接獲通知後 14 日內配合辦理，移轉規費由付款方負擔。'+fee;
+  return '';}},
+
+{id:'t18',core:0,lb:'客戶給的內容出事他負責',ui:'客戶提供的文字圖片侵權或違法，責任是他的。',lw:[],
+ tx:'付款方提供之文字、圖片、影音、商標及商品資訊，其合法性、真實性及權利來源由付款方負責；因該等內容致第三人主張權利或遭主管機關處分者，由付款方自行處理並負擔一切責任。'},
+
+{id:'t22',core:0,lb:'吵到上法院時，在哪個法院吵',
+ ui:'客戶在外縣市時值得寫。<span class="inl">選 <select id="court"><option value="ks">臺灣高雄地方法院</option><option value="ct">臺灣橋頭地方法院</option><option value="tp">臺灣臺北地方法院</option><option value="nt">臺灣新北地方法院</option><option value="ty">臺灣桃園地方法院</option><option value="tc">臺灣臺中地方法院</option><option value="tn">臺灣臺南地方法院</option></select></span>'
+   +'<br><b>但支付命令是專屬管轄</b>，只能向債務人住所地聲請，合意管轄不算數；50 萬元以下起訴前還要先調解。',
+ lw:[LW('民事訴訟法',24,'民訴第 24 條'),LW('民事訴訟法',510,'第 510 條'),LW('民事訴訟法',403,'第 403 條')],
+ tx:function(){
+  var CTS={ks:'臺灣高雄地方法院',ct:'臺灣橋頭地方法院',tp:'臺灣臺北地方法院',nt:'臺灣新北地方法院',ty:'臺灣桃園地方法院',tc:'臺灣臺中地方法院',tn:'臺灣臺南地方法院'};
+  var v=($('court')&&$('court').value)||'ks';
+  var n=CTS[v]||CTS.ks;
+  var t='因本單所生或與之相關之爭議，除法律另有專屬管轄之規定外，雙方合意以<b>'+n+'</b>為第一審管轄法院（民事訴訟法第 24 條）。本合意不排除任一方依法聲請調解、聲請支付命令或聲請保全程序之權利。';
+  if(csm()) t+='付款方如認本合意顯失公平，得於為本案言詞辯論前，依民事訴訟法第 28 條第 2 項聲請移送其管轄法院。';
+  return t;}},
+
+{id:'t23',core:1,lb:'交付後不含維護；追加一律按價目表計費',
+ ui:'承攬本來就不含售後維護，但不寫清楚，客戶會叫你改到天荒地老。<b>界線是：可以切「維護與變更」，不能切「交付時就有的瑕疵」</b>（第 501 條之 1）。'
+   +'加上民法第 491 條：非受報酬即不為完成者<b>視為允與報酬</b>，所以上面「提案幾款、改幾次」設的按次金額，就是你的價目表。',
+ lw:[LW('民法',491,'民法第 491 條'),LW('民法',498,'第 498 條'),LW('民法','501-1','第 501 條之 1')],
+ tx:function(){
+  var f=N('nFee')||3000;
+  return '<b>驗收通過後，本單不含任何維護、更新、代管、監控或技術支援服務</b>；付款方嗣後之下列需求均不在本單報酬範圍，須另行委託，並按次計費每次新臺幣 <b>'+NF.format(f)+'</b> 元，經雙方書面確認後施作：'
+   +'一、內容、文字、圖片或版面之新增與變更。二、功能追加或需求範圍變更。三、第三方平台、瀏覽器、外掛或應用程式介面改版所需之調整。四、主機、網域、憑證或帳號環境變更之處理。五、付款方或第三人自行修改後所生之問題。六、操作教學、諮詢與資料匯出。'
+   +'前開按次金額為立據人之價目表；付款方於本單範圍外要求施作而依其性質非受報酬即不為完成者，視為允與報酬，未另議定金額者依該價目表計算（民法第 491 條）。'
+   +'本條為服務範圍之界定，不減短民法第 498 條所定之瑕疵發見期間：交付時即不符本單約定規格之程式錯誤，仍依承攬瑕疵擔保規定辦理，立據人接獲書面通知後儘速修正，不另計費；立據人明知而未告知之瑕疵，不適用本條限制。'
+   +(csm()?'本條不影響付款方依消費者保護法所得主張之權利。':'');}},
+
+{id:'t25',core:0,lb:'你給的素材、你指定的做法出包，不算我的瑕疵',
+ ui:'民法第 496 條直接寫在你這邊，<b>但舉證責任在你</b>——所以一定要加「指示須以書面或訊息為之」，沒紀錄這條就用不到。',
+ lw:[LW('民法',496,'民法第 496 條'),LW('民法',509,'第 509 條')],
+ tx:'付款方提供之素材、內容、設計稿，或指定之版型、外掛、函式庫、金流、主機環境與技術方案，其適用性由付款方自行判斷。'
+   +'工作之瑕疵因前開材料之性質或依付款方之指示而生者，付款方不得依民法第 493 條至第 495 條主張修補、解除契約、減少報酬或損害賠償（民法第 496 條）。'
+   +'付款方之指示、選用與確認，應以書面、電子郵件或通訊軟體訊息為之，未留存紀錄者，推定未曾指示。'
+   +'於付款方受領工作前，因其所供給材料之瑕疵或指示不適當，致工作毀損、滅失或不能完成者，立據人已及時通知付款方時，得請求已服勞務之報酬及墊款之償還（民法第 509 條）。'},
+
+{id:'t28',core:0,lb:'報價與規劃書拿去給別人做，要賠',
+ ui:'<b>報價階段最常被白嫖。</b>民法第 245 條之 1 的關鍵在「<b>經明示應予保密</b>」——你沒寫這句就用不到。請求權只有 2 年。',
+ lw:[LW('民法','245-1','民法第 245 條之 1'),LW('營業秘密法',2,'營業秘密法第 2 條')],
+ tx:'本單所載報價、工時估算、功能規劃、資訊架構、技術方案與版型提案，為立據人投入成本所產出之成果，立據人於此<b>明示應予保密</b>，'
+   +'付款方不得洩漏、交付第三人或用於本案以外之用途（含委由他人依該內容施作）。違反者依民法第 245 條之 1 第 1 項第 2 款及營業秘密法負損害賠償責任。本項義務於本單未經簽署或契約未成立時，仍繼續有效。'},
+
+{id:'t29',core:1,lb:'審閱期確認（客戶是個人消費者時才出現）',
+ ui:'<b>看似讓步，其實是保護你。</b>消保法第 11 條之 1 違反的效果是「該條款<b>不構成契約內容</b>」——你辛苦寫的全部作廢。叫消費者拋棄審閱權也是無效的，只能真的給。'
+   +'<span class="inl">審閱期間 <input type="text" id="nRev2" inputmode="numeric" value="5"> 日</span>',
+ lw:[LW('消費者保護法','11-1','消保法第 11 條之 1')],
+ tx:function(){
+  var d=F($('nRev2')&&$('nRev2').value)||5;
+  return '付款方確認已於簽署前 <b>'+d+'</b> 日取得本單全部條款內容並經合理審閱（消費者保護法第 11 條之 1 第 1 項）。立據人已就本單重要條款向付款方說明。';}},
+
+{id:'t30',core:0,lb:'賠償上限：把曝險綁在一年份服務費',
+ ui:'<b>維運案最該補的一條。</b>站掛三天，客戶告的是營業損失，金額跟你收的那幾千塊沒有關係。'
+   +'上限訂在<b>當年度已收價金</b>，再把間接損害與營業損失整塊排除——後面那句擋掉的錢通常比上限本身還多。'
+   +'<br>「故意或重大過失不適用」看起來像自廢武功，其實是<b>保護傘</b>：民法第 222 條讓這部分本來就排除不掉，'
+   +'主動寫進去反而證明條款不是顯失公平。<b>訂得太狠的下場是整條無效，變成完全沒有上限。</b>',
+ lw:[LW('民法',222,'民法第 222 條'),LW('民法','247-1','第 247 條之 1')],
+ tx:'立據人依本單所負之損害賠償責任，以損害發生時所屬服務年度付款方已給付價金之總額為上限，'
+   +'且不包括間接損害、營業損失、預期利益、商譽損失、第三人求償及資料重建費用。'
+   +'前開限制於立據人有故意或重大過失時，不適用之（民法第 222 條）。'},
+
+{id:'t31',core:0,lb:'到期就停，我沒有通知義務',
+ ui:'跟上面「託管營運年約」<b>二選一</b>。那條寫的是你要在到期前 30 天通知續約；這條相反，<b>時間到就停，你不用通知</b>。'
+   +'<br>後半段最重要：<b>到期後網域續費與環境監控的責任移回客戶</b>。沒有這句，網域三個月後過期，客戶還是回頭找你。',lw:[],
+ tx:function(){return '本件維運服務期間為 <b>'+YR+'</b> 年，屆滿即行終止，<b>不自動續約</b>。'
+   +'立據人無屆期通知義務，付款方不得以未受通知為由主張服務期間延長或請求賠償；立據人得於屆滿前另行提出續約報價，雙方均無承諾義務。'
+   +'服務期間屆滿後，網域續費、DNS 解析設定、網站運行環境之維持與監控，改由付款方自行負責；'
+   +'網域因未續費而依註冊管理機構規定失效並開放他人註冊，或網站因未維護而中斷、資料滅失者，立據人不負責任。';}},
+
+{id:'t32',core:0,lb:'中途喊停：錢不退，換成服務額度',
+ ui:'你擋不掉客戶喊停，委任（第 549 條）與承攬（第 511 條）都給了隨時終止權，能決定的是<b>錢怎麼算</b>。'
+   +'純寫「已收不退」，遇到消費者身分的客戶有被認定顯失公平的空間；<b>轉成同額服務額度</b>實質等於不退現金，形式上留了對價，站得住。'
+   +'<br>後半句「你自己的問題導致終止才按比例退」是<b>拿來保護前半句的</b>，不要拿掉。',
+ lw:[LW('民法',549,'民法第 549 條'),LW('民法',511,'第 511 條')],
+ tx:'付款方於服務期間內終止契約者，已給付之價金不予退還，轉為同額之服務額度，'
+   +'得於終止日起 24 個月內折抵立據人提供之其他服務；該額度不得請求以現金返還，逾期未使用者失效。'
+   +'因可歸責於立據人之事由致契約終止者，不適用前段規定，就尚未提供之完整服務月數按比例退還價金，'
+   +'已支出之網域註冊規費及第三方平台費用除外。'},
+
+{id:'t33',core:0,lb:'更新次數、支援時段、緊急加價、客戶自己亂動',
+ ui:'<span class="inl">年度更新 <input type="text" id="nUpd" inputmode="numeric" value="3"> 次</span>'
+   +'<span class="inl">緊急支援每次 <input type="text" id="nSos" inputmode="numeric" value="2,000"> 元</span>'
+   +'<span class="inl">回復工時每小時 <input type="text" id="nHr" inputmode="numeric" value="1,500"> 元</span>'
+   +'<br>「工作日回覆」擋不住半夜的奪命連環扣，<b>時段要寫出來</b>。'
+   +'客戶找別人動 DNS、後台、密碼把站搞掛，沒這條你還是有回復義務。超次計費沿用上面「提案幾款改幾次」那格的按次金額。',lw:[],
+ tx:function(){return '年度資料更新以每服務年度 <b>'+(F($('nUpd')&&$('nUpd').value)||3)+'</b> 次為限，'
+   +'範圍為既有版型內之文字與圖片替換及既有頁面內容調整，未使用之次數不遞延至次年度；'
+   +'逾此次數或超出前開範圍者，每次另計新臺幣 <b>'+NF.format(N('nFee')||3000)+'</b> 元，經雙方書面確認後施作。'
+   +'支援受理時間為工作日 09:00 至 18:00，立據人於次一工作日內回覆；非工作時間、例假日，'
+   +'或要求四小時內處理之緊急支援，每次另計新臺幣 <b>'+NF.format(N('nSos')||2000)+'</b> 元。'
+   +'付款方自行或委由第三人變更網站檔案、DNS 紀錄、帳號密碼或平台設定，致服務中斷、資料遺失或功能異常者，'
+   +'立據人不負回復義務；付款方要求協助回復者，按每小時新臺幣 <b>'+NF.format(N('nHr')||1500)+'</b> 元、'
+   +'以實際工時計算，未滿一小時以一小時計。';}},
+
+{id:'t34',core:0,lb:'不可抗力、成本調漲權、移交只做一次',
+ ui:'三年價格鎖死，但註冊局的批發價逐年調、平台免費額度也可能縮水，<b>調價權要先留著</b>。'
+   +'移交協力寫「以一次為限」，避免客戶反覆要你配合搬家。ICANN 的 60 天鎖定期先寫進去，'
+   +'免得客戶要搬走時以為是你在卡。',lw:[],
+ tx:'因天災、戰爭、罷工、電力或電信中斷、網路攻擊、法令變更，或其他不可歸責於立據人之事由致服務受影響者，'
+   +'立據人於該事由存續期間停止履行，不負遲延責任。'
+   +'第三方註冊管理機構之規費、雲端平台之費率或免費額度政策變動，致立據人成本增加逾百分之十者，'
+   +'立據人得以書面通知調整價金或就差額請求給付；付款方不同意者，得於受通知後 14 日內終止契約。'
+   +'服務終止時，立據人配合提供網域移轉授權碼並解除移轉鎖定，此項移交協力以一次為限，移轉衍生之註冊規費由付款方負擔；'
+   +'依 ICANN 規則，網域於註冊、移轉或註冊人資料變更後 60 日內不得再行移轉，此為註冊管理機構之限制，非立據人所得免除。'
+   +'立據人得將本服務之一部委由第三人履行，並就該第三人之履行負同一責任；'
+   +'維運期間立據人所撰寫之設定檔、部署腳本及自動化工具，其著作財產權歸立據人享有，付款方於本服務範圍內取得非專屬使用權。'},
+
+{id:'t35',core:1,lb:'這張單可以用線上簽名完成',
+ ui:'現行電子簽章法已經把「須經相對人同意」放寬成<b>「給對方反對的機會，沒反對就推定同意」</b>（第 5 條第 4 項）。'
+   +'把這條印在單上，就是法律要的那個「事前告知」，你之後不必再去要一句「我同意電子簽」。'
+   +'<b>但要知道分寸：</b>手指或觸控筆畫的簽名<b>不是</b>法律上的「數位簽章」，沒有第 6 條「推定為本人親自簽名」的效果——那個要自然人憑證等級的憑證才有。'
+   +'真的吵起來，靠的是簽署當下的頁面內容、對話紀錄與付款事實。所以<b>簽完的檔案跟 LINE 對話都要留著</b>；金額很大的案子，還是走紙本用印或自然人憑證。',
+ lw:[LW('電子簽章法',4,'電子簽章法第 4 條'),LW('電子簽章法',5,'第 5 條'),LW('電子簽章法',6,'第 6 條'),LW('電子簽章法',8,'第 8 條')],
+ tx:'本單得以電子文件及電子簽章之方式作成、傳送及簽署，其法律效力與實體文件及簽章相同（電子簽章法第 4 條）。'
+   +'付款方如不同意採用電子形式，應於簽署前以書面或通訊軟體訊息通知立據人改採紙本用印；未於簽署前表示反對者，推定同意採用電子形式（電子簽章法第 5 條第 4 項）。'
+   +'雙方同意以本單之電子檔、簽署當時所顯示之單據內容、簽署時間紀錄及雙方往來訊息，作為簽署與承諾之證明，並得依電子簽章法第 8 條以電子文件方式保存。'
+   +'本單所稱電子簽章不以數位簽章為限；任一方於簽署前得要求改以紙本簽署，他方不得拒絕。'}
+];
+(function(){
+ var h='';
+ TERMS.forEach(function(t){
+  h+='<label class="chk"><input type="checkbox" id="'+t.id+'" checked><span class="t"><b>'+t.lb+'</b>'
+   +'<span class="d">'+t.ui+(t.lw&&t.lw.length?LWS(t.lw):'')+'</span></span></label>';
+ });
+ $('termBox').innerHTML=h;
+})();
+var TIDS=TERMS.map(function(t){return t.id;});
+/* t15（到期前30日通知續約）與 t31（到期即停不通知）互斥，兩條同時印會自相矛盾 */
+function fixTermConflicts(){if($('t15')&&$('t31')&&$('t15').checked&&$('t31').checked)$('t31').checked=false;}
+fixTermConflicts();
+[['t15','t31'],['t31','t15']].forEach(function(p){$(p[0]).addEventListener('change',function(){if(this.checked&&$(p[1]).checked){$(p[1]).checked=false;render();}});});
+$('segPreset').addEventListener('click',function(e){
+ var b=e.target.closest('button'); if(!b) return;
+ Array.prototype.forEach.call(this.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+ var v=b.dataset.v;
+ TERMS.forEach(function(t){$(t.id).checked=(v==='full')?true:(v==='none'?false:!!t.core);});
+ fixTermConflicts();
+ render();
+});
+$('termBox').addEventListener('click',function(e){ if(e.target.tagName==='A') e.stopPropagation(); });
+function terms(){
+ var T=[],q=(st.mode==='quote');
+ TERMS.forEach(function(t){
+  if(!$(t.id).checked) return;
+  if(t.id==='t29'&&!csm()) return;
+  var s=(typeof t.tx==='function')?t.tx():t.tx;
+  if(s) T.push(s);
+ });
+ if(quote&&quote.target>0) T.splice(1,0,'本單所載金額為含稅報價，已內含依法應由付款方代扣之所得稅及補充保險費；立據人實收金額為新臺幣 <b>'+NF.format(quote.target)+'</b> 元。付款方仍應依法辦理扣繳、繳納及申報。');
+ if($('tX').value.trim()) T.push(E($('tX').value.trim()));
+ var n=0; return T.map(function(t){n++;return '<li data-n="'+n+'.">'+t+'</li>';}).join('');
+}
+
+/* ===== 身分證 ===== */
+var LT={A:10,B:11,C:12,D:13,E:14,F:15,G:16,H:17,I:34,J:18,K:19,L:20,M:21,N:22,O:35,P:23,Q:24,R:25,S:26,T:27,U:28,V:29,W:32,X:30,Y:31,Z:33};
+function vid(s){s=(s||'').toUpperCase().trim();if(!/^[A-Z][1289]\d{8}$/.test(s))return null;
+ var n=LT[s[0]],d=[Math.floor(n/10),n%10];s.slice(1).split('').forEach(function(c){d.push(+c);});
+ var w=[1,9,8,7,6,5,4,3,2,1,1],x=0;d.forEach(function(v,i){x+=v*w[i];});return x%10===0;}
+function mask(s){s=(s||'').toUpperCase().trim();if(s.length<6)return s;
+ var o='';while(o.length<s.length-5)o+='*';return s.slice(0,3)+o+s.slice(-2);}
+$('idno').addEventListener('input',function(){
+ var v=this.value,t=$('idTag'),ok=vid(v);
+ t.textContent=!v.trim()?'':(ok===null?'未檢核':(ok?'✓ 正確':'✗ 檢核碼有誤'));
+ t.style.color=(ok===null||!v.trim())?'var(--i3)':(ok?'var(--ok)':'var(--seal)');
+});
+
+/* ===== 銀行 ===== */
+var BANKS=[['004','臺灣銀行'],['005','土地銀行'],['006','合作金庫'],['007','第一銀行'],['008','華南銀行'],
+['009','彰化銀行'],['011','上海商銀'],['012','台北富邦'],['013','國泰世華'],['017','兆豐商銀'],
+['048','王道商銀'],['050','臺灣企銀'],['053','台中商銀'],['081','匯豐（台灣）'],['103','臺灣新光商銀'],
+['108','陽信商銀'],['118','板信商銀'],['147','三信商銀'],['700','中華郵政'],['803','聯邦銀行'],
+['805','遠東商銀'],['806','元大銀行'],['807','永豐銀行'],['808','玉山銀行'],['809','凱基銀行'],
+['812','台新銀行'],['816','安泰銀行'],['822','中國信託'],['823','將來銀行'],['824','LINE Bank'],['826','樂天國際商銀']];
+(function(){var h='';BANKS.forEach(function(b){h+='<option value="'+b[0]+'">'+b[0]+'　'+b[1]+'</option>';});
+ h+='<option value="__other">其他（自行填寫）</option>';$('bankSel').insertAdjacentHTML('beforeend',h);})();
+function bankLabel(){var v=$('bankSel').value;if(!v||v==='__other')return '';
+ for(var i=0;i<BANKS.length;i++)if(BANKS[i][0]===v)return BANKS[i][0]+' '+BANKS[i][1];return '';}
+var PAYW={bank:'匯款',cash:'現金（面交）',check:'支票',other:'其他'};
+function payMode(){return $('payWay').value;}
+function buildAcct(){
+ var w=payMode(), oth2=($('payOther').value||'').trim(), s='', warn='';
+ if(w==='bank'){
+  var bank=bankLabel(), br=($('bankBr').value||'').trim(), no=($('acctNo').value||'').trim(), nm=($('acctName').value||'').trim();
+  var oth=($('bankSel').value==='__other'), parts=[];
+  if(bank)parts.push(bank+(br?'（'+br+'）':''));
+  else if(oth&&br)parts.push(br);
+  if(no)parts.push(no);
+  if(nm)parts.push('戶名 '+nm);
+  s=parts.join(' / ');
+  if(nm&&$('name').value.trim()&&nm!==$('name').value.trim())warn=' <span style="color:var(--seal)">⚠ 戶名跟你的姓名不一樣</span>';
+ } else { s=PAYW[w]+(oth2?('　'+oth2):''); }
+ $('acct').value=s;
+ $('acctPrev').innerHTML=s?('會印在單上：<b style="color:var(--i2)">'+E(s)+'</b>'+warn):'';
+}
+function syncPayWay(){
+ var w=payMode(), isBank=(w==='bank');
+ $('bankBox').style.display=isBank?'':'none';
+ $('payOtherF').style.display=isBank?'none':'';
+ $('payOtherLb').textContent=(w==='check')?'支票資訊（可略）':(w==='cash'?'現金收款方式說明（可略）':'請說明收款方式');
+ $('payOther').placeholder=(w==='check')?'例：即期支票，發票日 115.08.15':(w==='cash'?'例：面交現金，當場點清':'例：LINE Pay 轉帳');
+ var cn=$('cashNote');
+ if(w==='cash'||w==='check'){
+  cn.style.display='';
+  cn.innerHTML='<div class="note r"><b>現金／支票收款，這張收據就是你唯一的付款證明。</b>'
+   +'<b>1.</b> 等錢真的到手、點清了，才切到「收據」開單。'
+   +'<b>2.</b> <b>印兩份</b>，你簽名，也請對方在「付款方簽收」那格簽名或蓋章。'
+   +'<b>3.</b> <b>付現金不等於不用報稅</b>——扣繳義務看的是有沒有給付，客戶照樣要扣 10%、照樣要在隔年 2/10 前給你憑單。'
+   +LWS([LW('所得稅法',88,'所得稅法第 88 條')])+'</div>';
+ } else { cn.style.display='none'; cn.innerHTML=''; }
+ buildAcct();
+}
+$('payWay').addEventListener('change',function(){syncPayWay();render();});
+$('payOther').addEventListener('input',function(){buildAcct();render();});
+['bankSel','bankBr','acctNo','acctName'].forEach(function(i){
+ $(i).addEventListener('input',function(){buildAcct();render();});
+ $(i).addEventListener('change',function(){buildAcct();render();});});
+$('acctNo').addEventListener('input',function(e){e.target.value=e.target.value.replace(/[^\d\-]/g,'');});
+function roc(v){if(!v)return null;var p=v.split('-').map(Number);if(!p[0])return null;
+ return (p[0]-1911)+' 年 '+String(p[1]).padStart(2,'0')+' 月 '+String(p[2]).padStart(2,'0')+' 日';}
+
+/* ===== 簽名格浮水印 ===== */
+function briefWork(n){
+ var w=($('work').value||'').replace(/\s+/g,'').replace(/[，。、；：]/g,'·');
+ return w?(w.length>n?w.slice(0,n):w):'';
+}
+function sigWM(fd,ti){
+ var d=(fd||'').replace(/\s/g,''), t=(ti||'').replace(/\s/g,'');
+ var co=($('company').value||'').trim();
+ var unit=[t,d,co?('致'+co):'',briefWork(24)].filter(Boolean).join('　');
+ if(!unit) return '';
+ var out=[]; for(var i=0;i<9;i++) out.push(unit);
+ return E(out.join('　'));
+}
+
+/* ===== 印花稅（地方稅，由立據人／立約人自行貼花） ===== */
+var STAMP={kind:'',rate:0,base:0,tax:0};
+function stampCalc(amount){
+ if(st.mode==='quote')   return {kind:'承攬契據',rate:0.001,base:amount,tax:Math.floor(amount*0.001)};
+ if(st.mode==='receipt') return {kind:'銀錢收據',rate:0.004,base:amount,tax:Math.floor(amount*0.004)};
+ return {kind:'免貼',rate:0,base:amount,tax:0};
+}
+function renderStamp(){
+ var o=STAMP, h='', tag='';
+ var LWSTAMP=LWS([LW('印花稅法',5,'印花稅法第 5 條'),LW('印花稅法',6,'第 6 條 免稅'),LW('印花稅法',7,'第 7 條 稅率'),LW('印花稅法',23,'第 23 條 罰則')]);
+ if(st.mode==='bill'){
+  tag='免貼';
+  h='<b>請款單免貼。</b>還沒收到錢的請款單，性質是「催索欠款或核對數目所用之帳單」，依印花稅法第 6 條第 4 款免納印花稅。'
+   +'<span style="color:var(--s2)"><b>但錢收到後開的那張收據要貼</b></span>——切到「收據」模式就會算給你看。';
+ } else if(st.mode==='quote'){
+  tag=(o.tax>0?('1‰ · '+m(o.tax)):'1‰');
+  h='<b>報價單一被客戶簽章確認，就變成「承攬契據」，按金額 1‰ 貼花，雙方各貼自己那份。</b>'
+   +'沒簽的報價只是要約，不用貼；但財政部見解很明確：以報價單代替契約書並簽章確認者，仍應貼花。<br>'
+   +(o.base>0?('<span class="big">'+m(o.base)+' × 1‰ ＝ <b>'+m(o.tax)+'</b> 元</span>'):'<span style="color:var(--i3)">填入金額後會算給你看。</span>')
+   +'<span style="color:var(--i3)">想省掉：報價單不要求簽章，改用 LINE／Email 取得書面同意——契約照樣成立（民法第 153 條），證據也留得住。</span>';
+ } else {
+  tag=(o.tax>0?('4‰ · '+m(o.tax)):'4‰');
+  h='<b>收據要貼，而且是「你」要貼。</b>執行業務者收報酬開的收據屬<b>銀錢收據</b>，不具營業發票性質（你繳綜所稅不是營業稅），'
+   +'每件按 <b>4‰</b> 由<b>立據人</b>貼。律師、會計師、地政士都一樣，沒有例外。<br>'
+   +(o.base>0?('<span class="big">'+m(o.base)+' × 4‰ ＝ <b>'+m(o.tax)+'</b> 元</span>'):'<span style="color:var(--i3)">填入金額後會算給你看。</span>')
+   +'跟客戶約定「這筆你出」沒有用，納稅義務人仍是立據人。'
+   +'<span style="color:var(--s2)"><b>漏貼罰 5 至 15 倍。</b></span>';
+ }
+ if(st.mode!=='bill'){
+  h+='<br><b>怎麼貼</b>：郵局買印花稅票貼上，<b>一定要劃押或蓋章註銷</b>才算完稅；也可向<b>地方稅稽徵機關</b>（不是國稅局）申請開立繳款書。每件算到元為止，不足 1 元免貼；書立後交付或使用時就要貼足。';
+  if(on()) h+='<br><span style="color:var(--i3)"><b>分期：</b>分次收款各開收據的，每張各自先貼足；日後開總收據時把分次收據收回貼在背面，金額相等就不必重複貼。</span>';
+ }
+ $('stampBox').innerHTML=h+LWSTAMP;
+ $('stampSum').textContent='印花稅：'+(st.mode==='bill'?'請款單免貼':(st.mode==='quote'?('簽了就是承攬契據 · '+tag):('銀錢收據 · '+tag)));
+}
+
+/* ===== 單據 ===== */
+var CN=['一','二','三','四','五','六'];
+function sheet(){
+ var q=(st.mode==='quote'), rc=(st.mode==='receipt');
+ var aud=$('audience').value;
+ var total=sum('rows'), adv=sum('advRows'), T=totals(total), A=T.L;
+ var pk=$('pick').value, si=(on()&&pk!=='all'&&A.length)?parseInt(pk,10):-1;
+ if(si>=A.length)si=-1;
+ var advIn=(si<0)||$('advNow').checked, advV=advIn?adv:0;
+ var bg=(si>=0)?A[si].a:total, c=(si>=0)?tp(bg):{tax:T.t,prem:T.p};
+ var pay=bg-c.tax-c.prem+advV;
+ STAMP=stampCalc(pay);
+ var idf=($('idno').value||'').trim().toUpperCase();
+ var ids=(aud==='client')?mask(idf):idf;
+ var fd=roc($('dfill').value), tm=($('term').value||'').trim();
+ var no=0,nx=function(){return CN[no++];};
+
+ var ti=q?'勞 務 報 價 單':(rc?'勞 務 報 酬 收 據':'勞 務 報 酬 請 款 單');
+ var dc=q?('立據人（報價人）茲就下列勞務提出報價如后'+(tm?('，'+E(tm)):'')+'。<b>本單為報價用，尚未成立契約</b>；經付款方書面確認或支付第一期款後始生效力。')
+   :(rc?'立據人（所得人）茲提供下列勞務予付款方，報酬明細如后，上列款項業已如數收訖，特立此據為憑。'
+      :('立據人（所得人）茲提供下列勞務予付款方，報酬明細如后，敬請惠予撥款'+(tm?('（'+E(tm)+'）'):'')+'。<b>本單為請款用，款項尚未收訖。</b>'));
+
+ var gb='';
+ if(quote&&quote.target>0)gb='<div class="sgr2"><b>含稅報價　</b>本單金額已內含應由付款方代扣之所得稅與補充保險費。開立 <b>'+m(total)+'</b>，扣繳後立據人實收 <b>'+m(T.n)+'</b>。付款方仍應依法扣繳並填發扣（免）繳憑單。</div>';
+
+ var nh={general:'一般被保險人',union_exec:'職業工會投保，以執行業務所得為投保金額',free:'無投保資格／第 5 類低收入戶'}[$('nhi').value];
+ var ac=($('acct').value||'').trim();
+ var left='<div class="rw"><span class="lbl">姓名</span><span class="val">'+(E($('name').value.trim())||'&nbsp;')+'</span></div>'
+  +'<div class="rw"><span class="lbl">聯絡方式</span><span class="val">'+(E($('contact').value.trim())||'&nbsp;')+'</span></div>';
+ if(!q){
+  left+='<div class="rw"><span class="lbl">身分證統編'+(aud==='client'?'（遮罩）':'')+'</span><span class="val m">'+(E(ids)||'&nbsp;')+'</span></div>'
+   +'<div class="rw"><span class="lbl">戶籍地址</span><span class="val">'+(E($('addr').value.trim())||'&nbsp;')+'</span></div>'
+   +(($('addr2').value||'').trim()?'<div class="rw"><span class="lbl">憑單寄送</span><span class="val">'+E($('addr2').value.trim())+'</span></div>':'')
+   +'<div class="rw"><span class="lbl">健保身分</span><span class="val">'+E(nh)+'</span></div>';
+ }
+ var right='<div class="rw"><span class="lbl">客戶名稱</span><span class="val">'+(E($('company').value.trim())||'&nbsp;')+'</span></div>'
+  +'<div class="rw"><span class="lbl">統一編號</span><span class="val m">'+(E($('taxid').value.trim())||'&nbsp;')+'</span></div>'
+  +'<div class="rw"><span class="lbl">'+(payMode()==='bank'?'收款帳戶':'收款方式')+'</span><span class="val m">'+(E(ac)||'&nbsp;')+'</span></div>'
+  +'<div class="rw"><span class="lbl">所得類別</span><span class="val"><b>9A</b> 執行業務所得／程式設計師（費用率 20%）</span></div>';
+ var who='<div class="blk"><div class="bh">'+nx()+'、雙方資料</div><div class="bb"><div class="two"><div>'+left+'</div><div>'+right+'</div></div>'
+  +(q?'<div style="font-size:8.8px;color:#777;margin-top:3px">報價階段無扣繳與申報行為，故不記載身分證統一編號與地址；俟契約成立、實際給付時另於請款單提供。</div>':'')
+  +'</div></div>';
+
+ var per=($('svcP').value||'').trim();
+ var wk='<div class="blk"><div class="bh">'+nx()+'、服務內容</div><div class="bb">'
+  +'<div class="val" style="min-height:26px">'+(E($('work').value.trim())||'&nbsp;')+'</div>'
+  +(per?'<div class="rw" style="margin-top:3px;border-top:1px dotted #e0e0e0"><span class="lbl">服務期間</span><span class="val m">民國 '+E(per)+'</span></div>':'')
+  +'</div></div>';
+
+ var pl='';
+ if(tierOnQ()){
+  var TT=tiers();
+  if(TT.length){
+   var tr='';
+   TT.forEach(function(o){
+    tr+='<tr'+(o.y===YR?' class="cu"':'')+'><td class="i">'+(o.y===YR?'\u25a0':'\u25a1')+'</td>'
+     +'<td>'+(CNY[o.y]||o.y)+'年期方案</td><td class="d">自服務起日起算 '+o.y+' 年（共 '+(o.y*12)+' 個月）</td>'
+     +'<td class="n">'+m(o.a)+'</td><td class="n">'+m(Math.round(o.a/o.y))+'</td></tr>';
+   });
+   pl='<div class="blk"><div class="bh">'+nx()+'、服務年期方案（請於左欄勾選一項）</div><div class="bb">'
+    +'<table class="tb"><thead><tr><th class="i">選定</th><th style="text-align:left">方案</th>'
+    +'<th style="text-align:left">服務期間</th><th style="width:80px">總價</th><th style="width:80px">平均年費</th></tr></thead>'
+    +'<tbody>'+tr+'</tbody></table>'
+    +'<div style="font-size:8.8px;color:#777;margin-top:3px">各方案服務內容相同，年期越長之單位年費越低。'
+    +'方案經勾選並完成給付後，即依所選年期提供服務。</div></div></div>';
+  }
+ }
+ var rows=lst('rows').filter(function(x){return x.n||x.a>0;});
+ if(!rows.length)rows=[{n:'',d:'',a:0}];
+ var bd='';
+ rows.forEach(function(x,i){bd+='<tr><td class="i">'+(i+1)+'</td><td>'+(E(x.n)||'&nbsp;')+'</td><td class="d">'+(E(x.d)||'&nbsp;')+'</td><td class="n">'+m(x.a)+'</td></tr>';});
+ var ad=lst('advRows').filter(function(x){return x.n||x.a>0;});
+ if(ad.length&&advIn){bd+='<tr class="sb"><td colspan="4">代收代付款項（原封轉付、無差額，非屬立據人所得，不列入扣繳）</td></tr>';
+  ad.forEach(function(x,i){bd+='<tr><td class="i">代'+(i+1)+'</td><td>'+(E(x.n)||'&nbsp;')+'</td><td class="d">'+(E(x.d)||'&nbsp;')+'</td><td class="n">'+m(x.a)+'</td></tr>';});}
+ var am='<div class="blk"><div class="bh">'+nx()+'、'+(q?'報價明細':(rc?'收費明細與領款金額':'收費明細與請款金額'))+'（新臺幣）</div><div class="bb">'
+  +'<table class="tb"><thead><tr><th class="i">#</th><th style="text-align:left">項目</th><th style="text-align:left">說明</th><th style="width:88px">金額</th></tr></thead><tbody>'+bd+'</tbody><tbody>'
+  +'<tr class="sm"><td class="l" colspan="3">'+(si>=0?'全案服務報酬總額（所得給付總額）':'服務報酬小計（所得給付總額）')+'</td><td class="n">'+m(total)+'</td></tr>'
+  +(si>=0?('<tr class="sm"><td class="l" colspan="3">本次請款：<b>'+E(A[si].n)+'</b>（占全案 '+A[si].p+'%）</td><td class="n">'+m(bg)+'</td></tr>'):'')
+  +'<tr class="sm"><td class="l" colspan="3">減：代扣所得稅 10%</td><td class="n">'+(c.tax?'-'+m(c.tax):m(0))+'</td></tr>'
+  +'<tr class="sm"><td class="l" colspan="3">減：二代健保補充保險費 2.11%</td><td class="n">'+(c.prem?'-'+m(c.prem):m(0))+'</td></tr>'
+  +(advV?'<tr class="sm"><td class="l" colspan="3">加：代收代付款項（非屬所得）</td><td class="n">'+m(advV)+'</td></tr>':'')
+  +'<tr class="sm nt"><td class="l" colspan="3">'+(q?'本報價應付金額合計':(rc?'實收金額合計':'應付金額合計'))+'</td><td class="n">'+m(pay)+'</td></tr>'
+  +'</tbody></table></div></div>';
+
+ var sg='';
+ if(on()&&A.length){
+  var sr='';
+  A.forEach(function(s,i){var cc=tp(s.a);
+   sr+='<tr'+(i===si?' class="cu"':'')+'><td class="i">'+(i+1)+'</td><td>'+E(s.n)+'</td><td class="d">'+(E(s.w)||'&nbsp;')+'</td>'
+    +'<td class="n">'+s.p+'%</td><td class="n">'+m(s.a)+'</td><td class="n">'+((cc.tax+cc.prem)?'-'+m(cc.tax+cc.prem):m(0))+'</td><td class="n">'+m(s.a-cc.tax-cc.prem)+'</td></tr>';});
+  sg='<div class="blk"><div class="bh">'+nx()+'、收款排程</div><div class="bb">'
+   +'<table class="tb"><thead><tr><th class="i">#</th><th style="text-align:left">期別</th><th style="text-align:left">請款條件</th><th style="width:36px">比例</th><th style="width:72px">給付</th><th style="width:66px">代扣</th><th style="width:72px">實收</th></tr></thead>'
+   +'<tbody>'+sr+'</tbody><tbody><tr class="sm"><td class="l" colspan="4">合計</td><td class="n">'+m(T.g)+'</td><td class="n">'+((T.t+T.p)?'-'+m(T.t+T.p):m(0))+'</td><td class="n">'+m(T.n)+'</td></tr></tbody></table>'
+   +'<div style="font-size:8.8px;color:#777;margin-top:3px">扣繳稅款與補充保險費依法按每次給付金額分別計算，各期均應於實際給付時另行開立收據。</div></div></div>';
+ }
+
+ var stampBlk=($('stampOn').checked&&STAMP.tax>0)
+  ?('<div class="blk"><div class="bb" style="display:flex;gap:10px;align-items:center">'
+   +'<div style="font-size:9px;color:#888;flex:0 0 auto;line-height:1.6">印花稅票黏貼處<br>'+E(STAMP.kind)+'　'+(STAMP.rate*1000)+'‰<br>應貼 '+m(STAMP.tax)+' 元</div>'
+   +'<div class="stampbox" style="flex:1">貼用印花稅票後請劃押或蓋章註銷</div></div></div>')
+  :'';
+
+ var tt=terms();
+ var tb2=tt?('<div class="blk"><div class="bh">'+nx()+'、約定事項</div><div class="bb"><ol class="tms">'+tt+'</ol></div></div>'):'';
+ var wm=sigWM(fd,ti);
+ var pb='<div class="blk"><div class="bb"><div class="sgd">'
+  +'<div><div class="sl">'+(q?'立據人（報價人）簽章':(rc?'領款人／立據人（親簽或蓋章）':'立據人（親簽或蓋章）'))+'</div>'
+  +'<div class="sc"><div class="wm">'+wm+'</div>'+(sig?'<img src="'+sig+'" alt="簽名">':'')+'</div></div>'
+  +'<div><div class="sl">'+(q?'付款方確認同意（簽章後報價生效）':(payMode()!=='bank'?'付款方簽收／用印（現金請務必簽章）':'付款方簽收／用印（可留空）'))+'</div>'
+  +'<div class="sc"><div class="wm">'+wm+'</div>'+(sigC?'<img src="'+sigC+'" alt="付款方簽名">':'')+'</div>'
+  +(sigC?('<div style="font-size:8.4px;color:#777;margin-top:2px;line-height:1.5">簽署人 '+(E(cliSigner())||'—')+'　'+E(sigCT||'')+'</div>'):'')
+  +'</div>'
+  +'</div></div></div>';
+
+ return '<div class="st1"><span>'+(aud==='client'?'客戶留存聯':(aud==='acct'?'會計／申報聯':'立據人自存聯'))+'</span><span>單號：'+(E($('docNo').value.trim())||'—')+'</span></div>'
+  +'<div class="sti">'+ti+'</div>'
+  +'<div class="sto"><span>致（付款方）：<b>'+(E($('company').value.trim())||'＿＿＿＿＿＿＿＿')+'</b></span>'
+  +'<span>中華民國 <b class="m">'+(fd||'＿＿＿ 年 ＿＿ 月 ＿＿ 日')+'</b></span></div>'
+  +'<div class="sd">'+dc+'</div>'+gb+who+wk+pl+am+sg+tb2+pb+stampBlk
+  +'<div class="sft">依 115 年度扣繳率標準與二代健保補充保險費規定製作 · 個人未辦稅籍登記，依法開立收據（領據）'
+  +(aud==='acct'?' · 本聯載有完整身分證統一編號，供申報扣（免）繳憑單使用':'')+'</div>';
+}
+
+/* ===== 動態提示（精簡） ===== */
+function flags(bg,total,T){
+ var f=[], adv=sum('advRows');
+ if(st.mode==='bill')f.push('<b>請款單</b>：不會寫「收訖」。等錢確定入帳再切到「收據」開一次。');
+ if(st.mode==='receipt')f.push('<b>收據</b>：會寫款項已收訖。先確認錢真的進帳戶再開。');
+ if(quote&&quote.target>0){
+  var d=T.n-quote.target;
+  f.push('<b>含稅報價已套用。</b>開單 '+m(total)+'，扣完實收 <b>'+m(T.n)+'</b>'+(d>0?('（多 '+m(d)+'，取整造成）'):(d<0?('（<b>少 '+m(-d)+'</b>，請重按一次回推）'):'（剛好）'))+'。');
+ }
+ if(total>0)f.push('明年只有 <b>'+m(Math.round(total*(1-RATE_9A)))+'</b> 併入綜所稅（'+m(total)+' 扣掉兩成必要費用）。這 20% 是<b>提不出帳簿文據時的預設值</b>，不是可以往上估的額度。');
+ if(bg>=PR_EX&&bg<EXEC_ST&&st.payer==='company'&&$('nhi').value==='general')
+  f.push('<b>這個金額卡在縫裡。</b>所得稅要 20,010 才扣，補充保費 20,000 就扣——這次不扣稅但會扣保費。');
+ if(adv>0)f.push('<b>代收代付 '+m(adv)+' 已分開列，不算收入。</b>務必請廠商把憑證抬頭開成客戶、正本交客戶——<b>這步沒做，會被整筆算成你的收入。</b>');
+ var c=tp(bg);
+ if(c.prem>0&&$('nhi').value==='general')
+  f.push('被扣的 '+m(c.prem)+' 補充保費，<b>明年可以全額列舉扣除，沒有 2.4 萬上限</b>。長期接案就到職業工會加保，以後直接免扣。');
+ if(st.payer==='person')f.push('<b>付款方是個人，不會扣你任何錢</b>——全額入帳，明年 5 月自己併入綜所稅。');
+ if(total>0&&st.mode!=='quote')f.push('<b>錢要在兩年內要回來</b>（承攬報酬時效 2 年）。過期客戶可以合法拒付；對過帳、回一句「金額沒錯」都算承認，時效會重新起算兩年。');
+ $('flags').innerHTML=f.map(function(x){return '<div class="note">'+x+'</div>';}).join('');
+}
+function stages(total){
+ var rs=$('sgRows').querySelectorAll('.sgr'), ds=sgDefs(), tot=ds.reduce(function(a,b){return a+b.p;},0);
+ var A=amts(total), k=0;
+ Array.prototype.forEach.call(rs,function(r,i){
+  var o=r.querySelector('.s-o');
+  if(ds[i]&&ds[i].p>0&&A[k]){var cc=tp(A[k].a);o.innerHTML=m(A[k].a)+'<br><b>實拿 '+m(A[k].a-cc.tax-cc.prem)+'</b>';k++;}
+  else o.textContent='—';});
+ $('sgPct').textContent=(Math.round(tot*10)/10)+'%';
+ $('sgPct').style.color=(Math.abs(tot-100)<.05)?'var(--ok)':'var(--seal)';
+ var sel=$('pick').value, op='<option value="all">全部（一次請款）</option>';
+ A.forEach(function(s,i){op+='<option value="'+i+'">第 '+(i+1)+' 期 · '+E(s.n)+'（'+s.p+'%／'+m(s.a)+'）</option>';});
+ $('pick').innerHTML=op;
+ $('pick').value=(sel!=='all'&&sel!==''&&parseInt(sel,10)<A.length)?sel:'all';
+ var f=[];
+ if(Math.abs(tot-100)>.05)f.push('<div class="note r">比例加起來 <b>'+(Math.round(tot*10)/10)+'%</b>，不是 100%。目前按比例分攤。</div>');
+ if(A.length){
+  var one=tp(total),t=0,p=0;
+  A.forEach(function(s){var cc=tp(s.a);t+=cc.tax;p+=cc.prem;});
+  var sv=(one.tax+one.prem)-(t+p);
+  if(sv>0)f.push('<div class="note g"><b>分期後少被扣 '+m(sv)+'。</b>「請款條件」要寫具體（簽約時／驗收通過後 7 日內），各期付款日不同天。所得稅明年結算仍會合併，真正省下的是補充保費。</div>');
+ }
+ $('sgFlags').innerHTML=f.join('');
+ return A;
+}
+
+/* ===== render ===== */
+function segw(id,k){$(id).addEventListener('click',function(e){
+ var b=e.target.closest('button'); if(!b)return;
+ Array.prototype.forEach.call(this.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+ st[k]=b.dataset.v; render();});}
+segw('segMode','mode'); segw('segPayer','payer');
+
+function render(){
+ $('sub').textContent=M(sum('rows'));
+ $('advSub').textContent=M(sum('advRows'));
+ var total=sum('rows'), adv=sum('advRows'), q=(st.mode==='quote');
+ $('schedBox').style.display=on()?'':'none';
+ var A=on()?stages(total):[]; if(!on())$('sgFlags').innerHTML='';
+ var T=totals(total);
+ var pk=$('pick').value, si=(on()&&pk!=='all'&&A.length)?parseInt(pk,10):-1;
+ if(si>=A.length)si=-1;
+ var advIn=(si<0)||$('advNow').checked, advV=advIn?adv:0;
+ var bg=(si>=0)?A[si].a:total, nt=notes(bg);
+ var dTax=(si>=0)?tp(bg).tax:T.t, dPrem=(si>=0)?tp(bg).prem:T.p;
+
+ $('scope').textContent=(si>=0)?('本期：'+A[si].n):(on()?'全案（分期後）':'全案');
+ $('kG').textContent=(si>=0)?'本期給付':'給付總額';
+ $('vG').textContent=M(bg);
+ $('vT').textContent=dTax?'−'+M(dTax):M(0);
+ $('vP').textContent=dPrem?'−'+M(dPrem):M(0);
+ $('vN').textContent=M(bg-dTax-dPrem+advV);
+ $('cNote').innerHTML=total>0?('<b>所得稅：</b>'+nt.t+'　<b>·　補充保費：</b>'+nt.p+(advV?('　<b>·　代收代付：</b>另加 '+M(advV)):'')):'填入金額後開始試算。';
+ $('catTag').innerHTML='9A · 費用率 20%';
+
+ var ch=$('cliHint');
+ if(ch) ch.innerHTML = csm()
+  ? '<b>收斂模式。</b>定金改為可扣除已發生費用後返還餘額、管轄加上移送保留、並自動加入審閱期條款。消保法第 11 條之 1 違反的效果是<b>條款不構成契約內容</b>，整組作廢比讓一步痛得多。'
+  : '<b>強勢模式。</b>客戶為營業目的委製時不構成消費關係，定型化契約那套用不上，條款可以寫到民法容許的極限。'
+    + (st.payer==='person' ? '<br><span style="color:var(--seal)"><b>你在第 1 區選了「付款方是個人」。</b>若這位個人是私人用途，請切到下面那個選項。</span>' : '');
+ var t7n=$('t7Note');
+ if(t7n) t7n.innerHTML = csm()
+  ? '<br><span style="color:var(--i3)">收斂模式：條文自動補上「餘額仍應返還」，避免整條被認定顯失公平。</span>'
+  : '<br><span style="color:var(--i3)">強勢模式：定金全額不退。</span>';
+
+ $('modeNote').innerHTML=q?'<b>報價單</b>：談價格用。不寫身分證字號跟地址、不寫「收訖」。客戶簽名＝接受報價與所有約定事項。'
+  :(st.mode==='bill'?'<b>請款單</b>：不會出現「收訖」。錢入帳前只該簽這個版本。'
+  :'<b>收據</b>：會寫「款項業已如數收訖」。<b>先確認錢進帳戶再開。</b>');
+ $('sigL').innerHTML=q?'立據人（報價人）簽名 <b>建議簽</b>':(st.mode==='bill'?'立據人簽名 <b>必要</b>':'領款人簽名 <b>必要</b>——簽了就代表錢收到了');
+ $('idF').style.display=q?'none':''; $('addrF').style.display=q?'none':''; $('addr2F').style.display=q?'none':'';
+
+ var dv=$('dnsOwner').value;
+ $('dnsHint').innerHTML=(dv==='client')?'<b>建議這個。</b>掛客戶名下，你永遠不會被說「扣住網域勒索」。'
+  :(dv==='me'?'掛你名下管理方便，條款會自動改成「錢付清後可移轉」。':'相關條款會自動不印。');
+
+ $('domHint').innerHTML=domSplit()
+  ? '規費那段不算你的收入、不扣稅，但<b>三個條件缺一不可</b>：有帳據、確屬代辦、<b>你沒賺價差</b>；還要請註冊商把憑證抬頭開客戶、正本交客戶。'
+    +'<b>網域是你自己刷卡買的話，抬頭是你，這條路走不通。</b>'
+  : '<b>可以，而且多數情況這樣最乾淨。</b>整筆算你的服務收入，走 9A 只有八成課稅，規費變成你的成本。'
+    +'法規寫的是「<b>得</b>按代收代付處理」，不是「應」——所以包在一起完全合法，只是你少了一點稅上的好處，換到不用管憑證抬頭。';
+
+ var rcv=(st.mode==='receipt');
+ $('dfillLb').textContent=rcv?'開立日期（＝實際收款日）':'開立日期';
+ $('dfillHint').innerHTML=rcv?'扣繳義務發生在「給付時」，所以收據上的日期要寫<b>錢真的到手那天</b>。':'';
+ var dt=$('dTool'); if(dt) dt.style.display=domSplit()?'':'none';
+ $('taxidF').style.display=(st.payer==='person')?'none':'';
+ if(st.payer==='person'&&$('taxid').value) $('taxid').value='';
+
+ var nchk=TIDS.filter(function(i){return $(i).checked;}).length;
+ $('tCount').textContent='已勾 '+nchk+' / '+TIDS.length+' 條';
+
+ var pn=$('premiseNote');
+ if(quote&&quote.target>0){
+  var mis=[];
+  if(quote.sched!==on())mis.push(quote.sched?'回推時是分期，現在是全案一次':'回推時是全案一次，現在是分期');
+  if(quote.payer!==st.payer)mis.push('付款方性質改了');
+  if(quote.nhi!==$('nhi').value)mis.push('健保投保身分改了');
+  if(mis.length)pn.innerHTML='<div class="note r"><b>⚠ 條件改了，實拿會對不上。</b>'+mis.join('；')+'。<b>請重按一次回推。</b></div>';
+  else pn.innerHTML='<div class="note g"><b>✓ 條件一致，實拿跟目標相符。</b></div>';
+ } else pn.innerHTML='';
+
+ var go=$('guOut');
+ if(quote&&quote.target>0){ $('qTool').open=true;
+  go.className='tout on';
+  go.innerHTML='<b>已套用</b><span class="big">開單 '+NF.format(total)+' 元</span>'
+   +'開單 '+m(T.g)+' − 所得稅 '+m(T.t)+' − 補充保費 '+m(T.p)+' = <b style="color:var(--seal)">實收 '+m(T.n)+'</b>';
+ } else {go.className='tout';go.innerHTML='';}
+
+ var nh2=$('nhiHint'), nv=$('nhi').value;
+ if(nh2) nh2.innerHTML=(nv==='union_exec')
+  ? '第 2 類被保險人，薪資與執行業務所得<b>免扣</b>補充保費。<b>要先把工會的在保證明或繳費收據給對方會計</b>，否則他還是會照扣。'
+  : (nv==='free' ? '低收入戶等健保法第 100 條所定弱勢對象免扣，需提出證明文件。'
+     : '單次給付達 20,000 元扣 2.11%，單次計費以 1,000 萬元為上限。');
+
+ renderLint();
+ flags(bg,total,T);
+ var sh=$('sheet');
+ sh.className='sheet'+($('audience').value==='acct'?' for-file':($('audience').value==='self'?' for-self':''));
+ sh.innerHTML=sheet();
+ renderStamp();
+ requestAnimationFrame(function(){scale();schedulePrintCalc();});
+}
+['name','contact','idno','addr','addr2','nhi','company','taxid','work','dfill','docNo','term','bankBr','acctNo','acctName',
+'audience','pick','unit','tX','svcP','dnsOwner','advNow']
+ .forEach(function(i){var e=$(i);if(!e)return;e.addEventListener('input',render);e.addEventListener('change',render);});
+TIDS.forEach(function(i){var e=$(i);if(e)e.addEventListener('change',render);});
+$('stampOn').addEventListener('change',render);
+document.addEventListener('input',function(e){
+ if(e.target&&['nAcc','nPro','nRev','nFee','nLate','nRev2','nUpd','nSos','nHr'].indexOf(e.target.id)>=0){
+  if(e.target.id==='nFee'||e.target.id==='nSos'||e.target.id==='nHr'){var v=e.target.value.replace(/[^\d]/g,'');e.target.value=v?NF.format(parseInt(v,10)):'';}
+  else e.target.value=e.target.value.replace(/[^\d.]/g,'');
+  render();
+ }
+});
+document.addEventListener('change',function(e){ if(e.target&&(e.target.id==='court'||e.target.id==='cliType')) render(); });
+
+/* ===== 螢幕預覽縮放 ===== */
+function scale(){
+ var f=$('a4f'), s=$('a4s'), sh=$('sheet');
+ if(!f||!s||!sh) return;
+ var v=$('vscale')?$('vscale').value:'1', k;
+ if(v==='fit') k=Math.min(1,(f.clientWidth-2)/794); else k=parseFloat(v)||1;
+ s.style.transform='scale('+k+')';
+ s.style.width=(794*k)+'px';
+ s.style.height=(sh.offsetHeight*k)+'px';
+ var full=sh.offsetHeight*k+2, maxH=Math.max(420,window.innerHeight-140);
+ f.style.height=Math.min(full,maxH)+'px';
+}
+window.addEventListener('resize',scale);
+$('vscale').addEventListener('change',scale);
+
+/* ===== 列印：一張 A4 ===== */
+var PW=703, PH=1040, ZMIN=0.62, ZMAX=1.18;
+var CAN_ZOOM=(function(){try{return !!(window.CSS&&CSS.supports&&CSS.supports('zoom','0.9'));}catch(e){return false;}})();
+function heightAt(px){
+ var c=$('sheet').cloneNode(true);
+ c.className='sheet';
+ c.style.cssText='position:absolute;left:-99999px;top:0;width:'+px+'px;padding:0;margin:0;visibility:hidden';
+ document.body.appendChild(c);
+ var h=c.scrollHeight;
+ document.body.removeChild(c);
+ return h;
+}
+function fitsOne(z){ return heightAt(Math.round(PW/z))*z <= PH*0.97; }
+function autoFit(){
+ if(fitsOne(ZMAX)) return ZMAX;
+ if(!fitsOne(ZMIN)) return ZMIN;
+ var lo=ZMIN, hi=ZMAX;
+ for(var i=0;i<7;i++){var mid=(lo+hi)/2; if(fitsOne(mid)) lo=mid; else hi=mid;}
+ return Math.floor(lo*100)/100;
+}
+var pcTimer=null;
+function schedulePrintCalc(){clearTimeout(pcTimer);pcTimer=setTimeout(applyPrintScale,240);}
+function applyPrintScale(){
+ var box=$('pgInfo'), warn=$('fitWarn');
+ if(!CAN_ZOOM){
+  document.documentElement.style.setProperty('--pz',1);
+  $('pscale').disabled=true; box.className='pgbox'; box.textContent='瀏覽器不支援縮放';
+  warn.innerHTML=''; return;
+ }
+ var v=$('pscale').value, z;
+ try{ z=(v==='auto')?autoFit():(parseFloat(v)||1); }catch(err){ z=1; }
+ document.documentElement.style.setProperty('--pz',z);
+ var ok=false; try{ ok=fitsOne(z); }catch(err){ ok=true; }
+ box.className='pgbox '+(ok?'ok':'bad');
+ box.textContent=(ok?'✓ 一頁 A4':'✗ 會變兩頁')+' · '+Math.round(z*100)+'%';
+ warn.innerHTML=ok?'':'<div class="note r" style="margin:0 0 9px"><b>目前塞不進一頁。</b>已縮到最小 '+Math.round(ZMIN*100)+'%。把第 3 區切成「只留核心」，或減少明細列與服務內容字數，就會回到一頁。</div>';
+}
+$('pscale').addEventListener('change',applyPrintScale);
+$('bPrint').addEventListener('click',function(){applyPrintScale();setTimeout(function(){window.print();},80);});
+
+
+/* ===== 簽名影像壓縮：裁掉四周空白、縮到 380px、把濃淡量化成四階 =====
+   目的是把 dataURL 壓小，這樣整份資料才塞得進一條網址。 */
+function packSig(cv){
+ var w=cv.width,h=cv.height,d;
+ try{d=cv.getContext('2d').getImageData(0,0,w,h).data;}catch(e){return cv.toDataURL('image/png');}
+ var x0=w,y0=h,x1=-1,y1=-1,x,y,a;
+ for(y=0;y<h;y++)for(x=0;x<w;x++){a=d[(y*w+x)*4+3];
+  if(a>10){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;}}
+ if(x1<0)return '';
+ var pd=Math.round(Math.max(w,h)*0.02);
+ x0=Math.max(0,x0-pd);y0=Math.max(0,y0-pd);x1=Math.min(w-1,x1+pd);y1=Math.min(h-1,y1+pd);
+ var sw=x1-x0+1,sh=y1-y0+1,k=Math.min(1,380/sw);
+ var ow=Math.max(1,Math.round(sw*k)),oh=Math.max(1,Math.round(sh*k));
+ var o=document.createElement('canvas');o.width=ow;o.height=oh;
+ var oc=o.getContext('2d');
+ try{oc.imageSmoothingQuality='high';}catch(e){}
+ oc.drawImage(cv,x0,y0,sw,sh,0,0,ow,oh);
+ try{
+  var id=oc.getImageData(0,0,ow,oh),p=id.data,i,v;
+  for(i=0;i<p.length;i+=4){v=p[i+3];
+   v=(v<32)?0:(v<110)?85:(v<190)?170:255;
+   p[i]=20;p[i+1]=35;p[i+2]=58;p[i+3]=v;}
+  oc.putImageData(id,0,0);
+ }catch(e){}
+ return o.toDataURL('image/png');
+}
+function nowROC(){
+ var d=new Date(),p=function(x){return String(x).length<2?('0'+x):String(x);};
+ return '中華民國 '+(d.getFullYear()-1911)+' 年 '+(d.getMonth()+1)+' 月 '+d.getDate()+' 日 '+p(d.getHours())+':'+p(d.getMinutes());
+}
+function cliSigner(){var e=$('sigCN');return e?e.value.trim():'';}
+
+/* ===== 資料打包：base64url ＋ deflate-raw ===== */
+function b64u(buf){var a=new Uint8Array(buf),s='',i;
+ for(i=0;i<a.length;i++)s+=String.fromCharCode(a[i]);
+ return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function unb64u(t){t=String(t).replace(/-/g,'+').replace(/_/g,'/');
+ while(t.length%4)t+='=';
+ var s=atob(t),a=new Uint8Array(s.length),i;
+ for(i=0;i<s.length;i++)a[i]=s.charCodeAt(i);return a;}
+function packData(o){
+ var j=new TextEncoder().encode(JSON.stringify(o));
+ if(typeof CompressionStream!=='function')return Promise.resolve('p'+b64u(j.buffer));
+ var cs=new CompressionStream('deflate-raw'),w=cs.writable.getWriter();
+ w.write(j);w.close();
+ return new Response(cs.readable).arrayBuffer().then(function(b){return 'z'+b64u(b);});
+}
+function unpackData(t){
+ t=String(t).replace(/\s+/g,'');
+ var tag=t.charAt(0),body=unb64u(t.slice(1));
+ if(tag!=='z')return Promise.resolve(JSON.parse(new TextDecoder().decode(body)));
+ if(typeof DecompressionStream!=='function')return Promise.reject(new Error('no ds'));
+ var ds=new DecompressionStream('deflate-raw'),w=ds.writable.getWriter();
+ w.write(body);w.close();
+ return new Response(ds.readable).arrayBuffer().then(function(b){return JSON.parse(new TextDecoder().decode(b));});
+}
+
+/* ===== 產生一份自帶資料的 HTML ===== */
+function makeDoc(key,payload){
+ var inj='<scr'+'ipt id="'+INJ_ID+'">window.'+key+'='+JSON.stringify(payload)+';<\/scr'+'ipt>';
+ var html=PRISTINE.replace(INJ_RE,'');
+ var i=html.indexOf('</head>');
+ html=(i<0)?(inj+html):(html.slice(0,i)+inj+html.slice(i));
+ return '<!DOCTYPE html>\n'+html;
+}
+function dl(name,text,type){
+ var b=new Blob([text],{type:type||'text/html;charset=utf-8'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;
+ document.body.appendChild(a);a.click();
+ setTimeout(function(){URL.revokeObjectURL(a.href);a.parentNode&&a.parentNode.removeChild(a);},900);
+}
+function copyText(t){
+ try{if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(t);}catch(e){}
+ return Promise.reject(new Error('no clipboard'));
+}
+function fname(pre){
+ var no=($('docNo').value||'').trim().replace(/[\\/:*?"<>|]/g,''),d=($('dfill').value||'');
+ return pre+'_'+(no||'勞務單')+(d?('_'+d):'')+'.html';
+}
+
+/* ===== 簽名 ===== */
+function refreshSigBox(){
+ var box=$('sigBox');
+ if(sig){box.classList.add('on');box.innerHTML='<img src="'+sig+'" alt="簽名">';$('bClr').style.display='';}
+ else{box.classList.remove('on');box.innerHTML='<div class="ph"><span style="font-size:20px">✍️</span><span>點這裡開啟大視窗簽名</span></div>';$('bClr').style.display='none';}
+}
+(function(){
+ var ov=$('sigOv'),pad=$('bigPad'),cv=pad.querySelector('canvas'),cx=cv.getContext('2d'),dr=false,has=false,last=null;
+ var SIGTGT='me';
+ function sty(){var r=Math.max(window.devicePixelRatio||1,1);cx.setTransform(r,0,0,r,0,0);cx.lineWidth=3;cx.lineCap='round';cx.lineJoin='round';cx.strokeStyle='#14233a';}
+ function fit(){var rc=cv.getBoundingClientRect(),r=Math.max(window.devicePixelRatio||1,1);
+  cv.width=Math.round(rc.width*r);cv.height=Math.round(rc.height*r);sty();}
+ function ps(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
+ cv.addEventListener('pointerdown',function(e){e.preventDefault();dr=true;last=ps(e);cv.setPointerCapture&&cv.setPointerCapture(e.pointerId);});
+ cv.addEventListener('pointermove',function(e){if(!dr)return;e.preventDefault();var p=ps(e);
+  cx.beginPath();cx.moveTo(last.x,last.y);cx.lineTo(p.x,p.y);cx.stroke();last=p;
+  if(!has){has=true;pad.classList.add('dirty');$('sigOk').disabled=false;}});
+ window.addEventListener('pointerup',function(){dr=false;});
+ cv.addEventListener('pointercancel',function(){dr=false;});
+ function open(){ov.classList.add('on');setTimeout(function(){fit();cx.clearRect(0,0,cv.width,cv.height);has=false;pad.classList.remove('dirty');$('sigOk').disabled=true;},30);}
+ function close(){ov.classList.remove('on');}
+ $('sigBox').addEventListener('click',open);
+ $('sigBox').addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+ $('sigX').addEventListener('click',close);
+ ov.addEventListener('click',function(e){if(e.target===ov)close();});
+ $('sigClr2').addEventListener('click',function(){cx.clearRect(0,0,cv.width,cv.height);has=false;pad.classList.remove('dirty');$('sigOk').disabled=true;});
+ OPENSIG=function(who){SIGTGT=who||'me';
+  var hh=document.querySelector('.sigmw-h h3');
+  if(hh)hh.textContent=(SIGTGT==='c')?'付款方簽名':'請在框內簽名';
+  open();};
+ $('sigOk').addEventListener('click',function(){if(!has)return;
+  var d=packSig(cv);
+  if(!d){close();return;}
+  if(SIGTGT==='c'){sigC=d;sigCT=nowROC();syncSignBar();}
+  else{sig=d;refreshSigBox();}
+  close();render();});
+ $('bClr').addEventListener('click',function(){sig='';refreshSigBox();render();});
+ window.addEventListener('resize',function(){if(ov.classList.contains('on'))fit();});
+})();
+
+/* ===== 年度稅額試算 ===== */
+var EX_115=101000, STD_115=136000;
+var BRK=[[610000,0.05,0],[1380000,0.12,42700],[2770000,0.20,153100],[5190000,0.30,430100],[Infinity,0.40,949100]];
+function yearTax(net){
+ if(net<=0) return {rate:0,cut:0,tax:0};
+ for(var i=0;i<BRK.length;i++) if(net<=BRK[i][0]) return {rate:BRK[i][1],cut:BRK[i][2],tax:Math.round(net*BRK[i][1]-BRK[i][2])};
+ return {rate:0.40,cut:949100,tax:Math.round(net*0.40-949100)};
+}
+function renderTax(){
+ var R=N('yrIncome'), box=$('taxCalc');
+ if(R<=0){
+  box.innerHTML='<div class="row"><div class="k">填入全年收入後，這裡會一步一步算給你看。<small>免稅門檻約 296,250 元——低於這個數字，你被扣的稅可以全額退回來。</small></div><div class="v">—</div></div>';
+  return;
+ }
+ var cost=Math.round(R*RATE_9A), inc=R-cost;
+ var pen=Math.min(N('yrPen'),inc);
+ var net=Math.max(0,inc-pen-EX_115-STD_115);
+ var t=yearTax(net);
+ var pre=Math.floor(R*0.10);
+ var diff=pre-t.tax;
+ var h='';
+ h+='<div class="row"><div class="k">全年接案收入<small>客戶開給你的總額</small></div><div class="v">'+m(R)+'</div></div>';
+ h+='<div class="row"><div class="k">減：兩成必要費用<small>9A 程式設計師費用率 20%，不用憑證</small></div><div class="v">−'+m(cost)+'</div></div>';
+ h+='<div class="row"><div class="k">＝ 執行業務所得</div><div class="v">'+m(inc)+'</div></div>';
+ if(pen>0) h+='<div class="row"><div class="k">減：自願提繳勞退<small>不計入當年度課稅收入</small></div><div class="v">−'+m(pen)+'</div></div>';
+ h+='<div class="row"><div class="k">減：免稅額<small>每人 101,000</small></div><div class="v">−'+m(EX_115)+'</div></div>';
+ h+='<div class="row"><div class="k">減：標準扣除額<small>單身 136,000；有配偶 272,000</small></div><div class="v">−'+m(STD_115)+'</div></div>';
+ h+='<div class="row"><div class="k">＝ 綜合所得淨額</div><div class="v">'+m(net)+'</div></div>';
+ h+='<div class="row"><div class="k">× 稅率 '+Math.round(t.rate*100)+'%'+(t.cut?'，再減累進差額 '+NF.format(t.cut):'')+'</div><div class="v">'+m(t.tax)+'</div></div>';
+ h+='<div class="row"><div class="k"><b>明年 5 月實際要繳的稅</b></div><div class="v">'+m(t.tax)+'</div></div>';
+ h+='<div class="row"><div class="k">客戶已經先幫你扣掉的<small>假設每筆給付都達 20,010 元而被扣 10%；單筆未達門檻的款項（如維運月付）不會被預扣，退補金額請按實際扣繳數核對</small></div><div class="v">'+m(pre)+'</div></div>';
+ h+='<div class="row tot '+(diff>=0?'good':'bad')+'"><div class="k"><b>'+(diff>=0?'國稅局要退你':'你還要補繳')+'</b>'
+  +'<small>'+(diff>=0?'申報後約 3 個月內匯到你帳戶。不申報就拿不回來。':'申報時一併繳清即可。')+'</small></div>'
+  +'<div class="v">'+m(Math.abs(diff))+'</div></div>';
+ if($('nhi').value==='general')
+  h+='<div class="row"><div class="k">另外被扣的補充保費<small>2.11%，報稅時可全額列舉扣除</small></div><div class="v">約 '+m(Math.round(R*PR))+'</div></div>';
+ box.innerHTML=h;
+}
+(function(){
+ ['yrIncome','yrPen'].forEach(function(i){$(i).addEventListener('input',function(e){
+  var v=e.target.value.replace(/[^\d]/g,'');e.target.value=v?NF.format(parseInt(v,10)):'';renderTax();});});
+ $('nhi').addEventListener('change',renderTax);
+
+ $('flowTL').innerHTML=
+  '<div class="ti"><div class="w">第 1 步　談案子</div><div class="h">開報價單，請客戶簽</div>'
+  +'<div class="b">你跟客戶是<b>承攬關係</b>，不是僱傭。契約講好就成立（LINE 回「好」也算），請他簽是為了留證據，並讓那些約定事項一起生效。'
+  +LWS([LW('民法',490,'第 490 條 承攬'),LW('民法',153,'第 153 條 契約成立')])+'</div></div>'
+
+  +'<div class="ti"><div class="w">第 2 步　做案子</div><div class="h">收訂金、做、交付</div>'
+  +'<div class="b">訂金收了不用退（客戶自己搞砸的話）。中途被喊停他<b>要賠</b>。客戶不給素材卡住，催告後可解約求償。<b>原始碼與帳號權限壓到錢付清再交。</b>'
+  +LWS([LW('民法',249,'第 249 條'),LW('民法',511,'第 511 條'),LW('民法',507,'第 507 條'),LW('民法',505,'第 505 條')])+'</div></div>'
+
+  +'<div class="ti"><div class="w">第 3 步　請款收錢</div><div class="h">先開請款單，錢到了才開收據</div>'
+  +'<div class="b"><b>順序不能顛倒。</b>客戶付款時先扣：單次達 <b>20,010 元</b>扣 10% 所得稅，達 <b>20,000 元</b>再扣 2.11% 補充保費。<b>兩年內一定要要回來。</b>'
+  +LWS([LW('民法',233,'第 233 條'),LW('民法',127,'第 127 條 兩年時效')])+'</div></div>'
+
+  +'<div class="ti"><div class="w">第 4 步　隔年報稅</div><div class="h">把被扣走的錢領回來</div>'
+  +'<div class="b"><b>116 年 1/31 前</b>客戶要繳庫並向國稅局列單申報你的所得（這是他的義務）。'
+  +'<b>扣繳憑單不一定會拿到</b>：自 103 年起各式憑單「原則免填發、例外予以填發」，客戶可以不寄紙本給你，但你開口要，他就要給。'
+  +'<b>5/1–5/31</b> 你上網申報，所得資料會自動帶入，也可自己查所得清單，沒憑單完全不影響。'
+  +'<b>就算算出來不用繳稅，只要被扣過就一定要申報，不然退不回來。</b>'
+  +LWS([LW('所得稅法',92,'第 92 條')])+'</div></div>';
+
+ $('howFile').innerHTML=
+  '<b>先準備身分驗證（三選一）</b><br>'
+  +'・<b>手機報稅最簡單</b>：行動自然人憑證（TW FidO），註冊一次，之後刷臉或指紋<br>'
+  +'・健保卡＋密碼（密碼到健保署網站註冊）　・自然人憑證＋讀卡機（戶政事務所辦，250 元）<br><br>'
+  +'<b>然後照順序做</b><br>'
+  +'<b>1.</b> 5/1 起到財政部電子申報繳稅服務網 <a class="law" href="https://tax.nat.gov.tw/" target="_blank" rel="noopener">tax.nat.gov.tw</a>，下載軟體或用手機版網頁。<br>'
+  +'<b>2.</b> 選驗證方式登入，系統自動帶入所得資料。<br>'
+  +'<b>3.</b> <b>停下來核對</b>：你的接案收入有沒有被列成「9A 執行業務所得」？被列成 50 薪資所得就先找客戶會計更正——差別是那兩成費用能不能扣。<b>沒收到扣繳憑單很正常</b>（原則免填發），所得資料照樣會帶進來。<br>'
+  +'<b>4.</b> 扣除額選標準或列舉，系統兩邊都算，選數字大的。被扣的補充保費記得放進列舉的健保費，<b>沒有上限</b>。<br>'
+  +'<b>5.</b> 要退稅就填銀行帳號送出；要補稅就在 5/31 前繳清。<b>6.</b> 存下收執聯。<br><br>'
+  +'<b>補稅怎麼繳</b>：申報系統裡可直接繳，或上 <a class="law" href="https://paytax.nat.gov.tw" target="_blank" rel="noopener">paytax.nat.gov.tw</a>。'
+  +'<span class="pay"><span>信用卡（多家可分期 0 利率）</span><span>帳戶轉帳</span><span>晶片金融卡</span><span>ATM</span><span>行動支付</span><span>超商（限 3 萬以下）</span><span>銀行臨櫃（郵局不代收）</span></span>'
+  +'刷卡與委託取款<b>不是當下扣款</b>，通常 6 月中才請款，記得留錢在帳戶。<br><br>'
+  +'<b>查自己的所得資料</b>：<a class="law" href="https://www.etax.nat.gov.tw" target="_blank" rel="noopener">etax.nat.gov.tw</a> → 線上服務 → 電子稅務文件 → 個人所得資料清單。客戶沒給憑單也能自己查。';
+
+ $('pctExplain').innerHTML=
+  '<b>10%　代扣所得稅</b>　客戶付款時先幫你押的稅，單次給付達 20,010 元才扣。這是<b>預繳</b>，不是最終稅額，明年結算多退少補。'+LWS([LW('所得稅法',88,'第 88 條')])
+  +'<br><br><b>2.11%　二代健保補充保費</b>　不是稅，是健保費，單次達 20,000 元就扣。<b>報稅時可全額列舉扣除，沒有 2.4 萬上限。</b>職業工會加保並以執行業務所得為投保金額就免扣。'+LWS([LW('全民健康保險法',31,'健保法第 31 條')])
+  +'<br><br><b>20%　必要費用率</b>　<b>不是稅率</b>，是國稅局預設你賺 100 元有 20 元是成本，只對剩下 80 元課稅，不用憑證。實際花更多就設帳走核實列報。'+LWS([LW('執行業務者費用標準',0,'執行業務者費用標準')])
+  +'<br><br><b>5／12／20／30／40%　綜所稅級距</b>　115 年度：淨額 61 萬以下 5%，61～138 萬 12%，138～277 萬 20%，277～519 萬 30%，519 萬以上 40%。<b>累進</b>——超過門檻只有超過那段用高稅率。'
+  +'<br><br><b>完全不用繳的門檻</b>　只有接案收入、單身、標準扣除額，全年約 <b>296,250 元</b>以下算出來是零。但被扣過就要申報才退得回來。';
+
+ $('civilLaw').innerHTML=
+  '<b>第 490 條</b>　完成工作換報酬＝承攬。你不是他的員工，他不能指揮你怎麼做。'+LWS([LW('民法',490,'看條文')])
+  +'<br><b>第 153 條</b>　講好就成立，不用簽名。LINE 回「好」、付訂金都算。'+LWS([LW('民法',153,'看條文')])
+  +'<br><b>第 264、505 條</b>　他不付錢你可以合法不交，而且不算遲延。這是壓住原始碼最直接的依據。'+LWS([LW('民法',264,'看條文')])
+  +'<br><b>第 249 條</b>　客戶自己的原因做不下去，定金不用退（單上要寫明「第一期款為定金」）。'+LWS([LW('民法',249,'看條文')])
+  +'<br><b>第 511 條</b>　客戶隨時可喊停，但要賠已完成報酬<b>加上</b>未完成那段的預期利益。'+LWS([LW('民法',511,'看條文')])
+  +'<br><b>第 507 條</b>　他不給文案圖片權限而卡住，催告後可解約求償。'+LWS([LW('民法',507,'看條文')])
+  +'<br><b>第 491 條</b>　沒談價的追加<b>視為允與報酬</b>，依價目表計算——所以要把按次金額寫成價目表。'+LWS([LW('民法',491,'看條文')])
+  +'<br><b>第 496 條</b>　客戶指定的素材或做法造成的瑕疵，他無權主張。<b>但舉證責任在你</b>，指示一定要留書面。'+LWS([LW('民法',496,'看條文')])
+  +'<br><b>第 509 條</b>　被客戶素材卡住做不完，<b>及時通知</b>就能請領已做部分與墊款。'+LWS([LW('民法',509,'看條文')])
+  +'<br><b>第 512 條</b>　你生病出事做不完，已完成且有用的部分他仍要受領並付錢。'+LWS([LW('民法',512,'看條文')])
+  +'<br><b>第 245 條之 1</b>　報價被拿去給別人做能求償，但秘密須<b>經明示應予保密</b>，請求權只有 2 年。'+LWS([LW('民法','245-1','看條文')])
+  +'<br><b>第 127、129、137 條</b>　承攬報酬時效 2 年；但客戶<b>承認</b>（回一句「金額沒錯，月底付」或先付一部分）時效就歸零重算。'+LWS([LW('民法',127,'看條文')])
+  +'<br><b>第 233 條第 3 項、334 條</b>　催收花的錢能要回來；你手上壓著他的款項可直接抵銷。'+LWS([LW('民法',233,'看條文')])
+  +'<br><b>著作權法第 36、37 條</b>　讓與與授權範圍不明者，一律推定<b>未讓與、未授權</b>。'+LWS([LW('著作權法',37,'看條文')])
+  +'<br><b>著作權法第 88 條</b>　沒付清就上線是侵權，不易證明損害時可請法院在 1 萬～100 萬酌定，故意且情節重大得增至 500 萬。'+LWS([LW('著作權法',88,'看條文')])
+  +'<br><span style="color:var(--seal)"><b>兩條踩不過去的紅線</b></span>　<b>第 501 條</b>瑕疵發見期間（交付後 1 年）得加長<b>但不得減短</b>；<b>第 501 條之 1</b>你明知瑕疵卻不告知的話，免責特約無效。'
+  +'所以能切的是<b>維護與變更</b>，不是<b>交付時就有的瑕疵</b>。'+LWS([LW('民法',501,'第 501 條'),LW('民法','501-1','第 501 條之 1')])
+  +'<br><b>支付命令是專屬管轄</b>　只能向債務人住所地或營業所在地法院聲請，合意管轄不算數，送錯直接駁回、費用不退；50 萬以下起訴前應先調解。'+LWS([LW('民事訴訟法',510,'民訴第 510 條')]);
+
+ var MEMO=[
+ ['你不用辦稅籍登記，也不用繳營業稅',
+  '營業稅法定義「銷售勞務」時加了但書排除執行業務者，施行細則第 6 條的名單上有「程式設計師」，接多少都一樣，沒有金額門檻。<b>但這把傘只罩專業服務</b>——寫成出租主機、賣網域商品，那部分就要看每月 5 萬門檻。',
+  [LW('營業稅法',3,'營業稅法第 3 條'),LW('營業稅法施行細則',0,'施行細則第 6 條')]],
+ ['維運年費不要合成一行寫',
+  '同一筆 8,000 裡面有三種東西：<b>維護</b>是你的技藝，走 9A、受營業稅法第 3 條但書保護；<b>主機</b>是提供貨物與他人使用收益，落在但書外面；<b>網域規費</b>根本是代購，本來就不該算你的收入。拆成三行，9A 的部分變小、扣繳與補充保費的門檻跟著降，而且被查的時候你講得清楚。用上面第 2 區的「維運年費拆成三行」工具。',
+  [LW('營業稅法',3,'營業稅法第 3 條'),LW('營業稅法施行細則',0,'施行細則第 6 條')]],
+ ['網域與主機的錢，最好從頭到尾不要經過你',
+  '最乾淨的作法是<b>讓客戶自己刷卡、用他自己的帳號</b>去買網域和主機，你只收設定與維護費。退一步才是你墊付、走代收代付欄，但那要三個條件同時成立：有帳據、確屬代辦、<b>你沒賺價差</b>，而且憑證抬頭要開客戶、正本交客戶。做不到就老實併進服務報酬，報稅時當成本扣——那也完全合法，只是少了一點好處。',
+  [LW('執行業務所得查核辦法',0,'查核辦法')]],
+ ['20% 是「沒設帳時的預設值」，不是可以往上估的額度',
+  '費用標準第一句就限定適用對象：未依法設帳記載並保存憑證、或未能提供帳簿文據者。想扣超過 20%，只能設帳＋逐筆憑證核實。後面還有但書：稽徵機關查得的實際所得額較高者，依查得資料核計。',
+  [LW('執行業務者費用標準',0,'執行業務者費用標準'),LW('執行業務所得查核辦法',8,'查核辦法第 8 條')]],
+ ['程式設計師 20%：114 年度確定，115 年度還沒公告',
+  '114 年度費用標準第 22 點「程式設計師：百分之二十」。115 年度要等 116 年 3 月前後才公告，本工具先沿用 20% 推估——近年沒調過，但明年 5 月報稅前記得回去對一次。',
+  [LW('執行業務者費用標準',0,'執行業務者費用標準')]],
+ ['AI API／TOKEN 是最好舉證的成本',
+  '平台後台每月有用量與帳單明細，invoice PDF ＋信用卡帳單就吃得下。地雷是<b>混用</b>：同一把 key 也拿來寫私人東西就得按比例分攤。解法是接案專用卡、每案專用 key，usage 報表天生就是分案明細。',
+  [LW('執行業務所得查核辦法',0,'查核辦法')]],
+ ['補充保費明年可以「全額」扣回來；工會加保則直接免扣',
+  '健保費（含補充保費）是獨立列舉項目，繳多少扣多少，<b>沒有 2.4 萬上限</b>（那是壽險）。到職業工會加保並以執行業務所得為投保金額，客戶付錢時就不用再扣 2.11%，附一張在保證明給對方會計即可。加保後還能自願提繳勞退，每月 6% 以內不計入當年度課稅收入。',
+  [LW('所得稅法',17,'所得稅法第 17 條'),LW('全民健康保險法',31,'健保法第 31 條'),LW('勞工退休金條例',14,'勞退條例第 14 條')]],
+ ['沒被扣稅不代表不用報',
+  '單次未達 20,010 元不扣繳，但付款方仍要列單申報，你明年 5 月還是要併入綜所稅。漏報是補稅加罰，不是省到。',
+  [LW('所得稅法',92,'所得稅法第 92 條')]],
+ ['年底的案子，收款排到一月就算明年的',
+  '執行業務所得看「錢什麼時候實際進帳」，不是看完工或開單日。12 月完工、1 月收款就落在明年度。今年收入偏高時尾款晚幾天收就分散掉了，這是合法的。',
+  [LW('執行業務所得查核辦法',0,'查核辦法')]],
+ ['別讓客戶把你報成「薪資所得」',
+  '很多公司圖方便把外包一律報成薪資，那你就沒有兩成費用率，還可能被推定成僱傭關係。第 3 區的條款已經寫死是承攬、要用 9A，開單時順便跟對方會計講一聲。',
+  [LW('所得稅法',11,'所得稅法第 11 條')]],
+ ['錢一定要在兩年內要回來，但時效可以一直重設',
+  '承攬報酬請求權 2 年，過期客戶可以合法不付。但客戶<b>承認</b>就中斷、重行起算——所以每次催款都引導對方回覆具體金額並截圖存檔（籠統一句「我知道欠你」可能不夠）。順序是書面催款→存證信函→支付命令→調解→訴訟，多數停在前三步。',
+  [LW('民法',127,'第 127 條'),LW('民法',129,'第 129 條'),LW('民事訴訟法',508,'民訴第 508 條')]],
+ ['客戶是公司還是個人，決定條款能寫多硬',
+  '消保法要「以消費為目的之消費者」對上「企業經營者」才適用。客戶是公司或為營業目的委製＝不構成消費關係，條款空間很大；客戶是個人私人用途就要收斂，否則容易整條失效。共通紅線是民法第 247 條之 1：制式條款顯失公平者無效——所以「全部免責」永遠不是好寫法，「範圍界定清楚＋按次計費」才是。',
+  [LW('消費者保護法',2,'消保法第 2 條'),LW('民法','247-1','民法第 247 條之 1')]],
+ ['網域規費包在服務費裡完全合法，不一定要拆',
+  '法規原文是「執行業務者代收代付之款項，如能提供帳據並經查明確屬代辦性質<b>而無所得</b>者，<b>得</b>按代收代付處理」——注意是「<b>得</b>」不是「應」。'
+  +'所以你有兩條路：<b>包在一起</b>，整筆算 9A 收入、只有八成課稅，規費變成你的成本；或<b>拆開列</b>，規費不算收入，但必須真的沒賺價差、憑證抬頭還要開客戶。'
+  +'<b>網域是你自己刷卡買的，抬頭就是你，拆開那條路走不通</b>——這種情況直接包在一起，最乾淨也最省事。'
+  +'差別只在課稅基礎：收 8,000、規費 1,200，包在一起是 6,400 進綜所稅，拆開是 5,440，差 960 元的所得，換算稅金通常一兩百元而已。',
+  [LW('執行業務所得查核辦法',12,'查核辦法第 12 條')]],
+ ['印花稅：收據 4‰、簽了的報價單 1‰，這筆是你要繳的',
+  '執行業務者收報酬開的收據屬<b>銀錢收據</b>，不具營業發票性質，每件按金額 <b>4‰</b> 由<b>立據人（你）</b>貼用印花稅票；以報價單、估價單代替合約並簽章確認者，屬<b>承攬契據</b>，按 <b>1‰</b> 由雙方各就持有的那份貼。'
+  +'請款單因為屬「催索欠款或核對數目所用之帳單」，<b>免納印花稅</b>。'
+  +'印花稅是<b>地方稅</b>，找地方稅稽徵機關不是國稅局；郵局買稅票貼上並劃押註銷，或申請開立繳款書。每件算到元為止，不足 1 元免貼。<b>漏貼罰 5 至 15 倍。</b>'
+  +'跟客戶約定「稅由你出」在法律上沒有用，納稅義務人仍是立據人。',
+  [LW('印花稅法',5,'第 5 條'),LW('印花稅法',6,'第 6 條'),LW('印花稅法',7,'第 7 條'),LW('印花稅法',23,'第 23 條')]],
+ ['扣繳憑單不一定會拿到，而且拿不到也沒差',
+  '自 103 年起各式憑單採「<b>原則免填發、例外予以填發</b>」：客戶只要在期限內向國稅局申報，且所得資料已納入結算申報期間的查詢服務，就<b>得免填發紙本憑單</b>給你。'
+  +'但你<b>要求時他仍應給</b>。沒拿到憑單完全不影響你的權益——5 月報稅時所得資料會自動帶入，也能自己上財政部查個人所得資料清單。'
+  +'真正會被罰的是「未依限申報」或「未依限按實填報／填發」，不是「沒主動寄紙本給你」。',
+  [LW('所得稅法',92,'所得稅法第 92 條'),LW('所得稅法',114,'第 114 條')]],
+ ['收現金完全合法，但不會因此變成不用報稅',
+  '扣繳義務發生在「給付時」，而施行細則把給付時定義為<b>實際給付、轉帳給付或匯撥給付之時</b>——用什麼方式付都一樣。'
+  +'所以收現金：客戶照樣要扣 10%、照樣要列單申報，你照樣要在明年併入綜所稅，收據照樣要貼印花。'
+  +'現金唯一的差別是<b>沒有金流紀錄</b>，那張簽收的收據就是你唯一的證明，所以要印兩份、雙方都簽。',
+  [LW('所得稅法',88,'所得稅法第 88 條'),LW('所得稅法施行細則',0,'施行細則第 82 條')]],
+ ['金額往上走時，找記帳士算一次',
+  '年收入穩定破百萬後，「個人接案 vs 開行號」的分界點值得算清楚，通常一次諮詢就回本。這份工具是範本，不是稅務意見。',[]]
+ ];
+ var h='';
+ MEMO.forEach(function(x){h+='<div class="mi"><b>'+x[0]+'</b>'+x[1]+(x[2].length?LWS(x[2]):'')+'</div>';});
+ $('memoBox').innerHTML=h;
+
+ renderTax();
+})();
+
+/* ===== 存讀 ===== */
+var FIELDS=['name','contact','idno','addr','addr2','nhi','company','taxid','work','dfill','docNo','term','bankSel','bankBr','acctNo','acctName',
+'audience','unit','tX','target','svcP','dnsOwner','payWay','payOther','dCost','dTotal','pscale','vscale','yrIncome','yrPen',
+'nAcc','nPro','nRev','nFee','nLate','court','cliType','nRev2','nUpd','nSos','nHr','p1','p2','p3','p5','sigCN','signBase','ksBase','ks1','ks2','ks3'];
+function snapObj(){
+ var o={v:6,st:st,yr:YR,picked:picked,sig:sig,quote:quote,sigC:sigC,sigCT:sigCT,f:{},t:{},
+  rows:lst('rows'),adv:lst('advRows'),sched:on(),advNow:$('advNow').checked,stamp:$('stampOn').checked,tier:$('tierOn').checked,dom:DOM,stages:sgDefs()};
+ FIELDS.forEach(function(k){var e=$(k);if(e)o.f[k]=e.value;});
+ TIDS.forEach(function(k){var e=$(k);if(e)o.t[k]=e.checked;});
+ return o;
+}
+function applyObj(o){
+ FIELDS.forEach(function(k){if(o.f&&o.f[k]!=null&&$(k))$(k).value=o.f[k];});
+ TIDS.forEach(function(k){if(o.t&&o.t[k]!=null&&$(k))$(k).checked=!!o.t[k];});
+ fixTermConflicts();
+ sd('rows',o.rows); sd('advRows',o.adv,'憑證抬頭（開客戶）');
+ if(o.stages&&o.stages.length)sgSeed(o.stages);
+ $('schedOn').checked=!!o.sched; $('advNow').checked=(o.advNow!==false); $('stampOn').checked=!!o.stamp; $('tierOn').checked=!!o.tier; tierSync();
+ picked=o.picked||[]; sig=o.sig||''; quote=o.quote||null;
+ sigC=o.sigC||''; sigCT=o.sigCT||'';
+ YR=parseInt(o.yr,10)||1; DOM=(o.dom==='split')?'split':'all';
+ Array.prototype.forEach.call($('segDom').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.v===DOM?'true':'false');});
+ if(o.st){st.mode=o.st.mode||'quote';st.payer=o.st.payer||'company';}
+ Array.prototype.forEach.call($('segMode').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.v===st.mode?'true':'false');});
+ Array.prototype.forEach.call($('segPayer').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.v===st.payer?'true':'false');});
+ Array.prototype.forEach.call($('segYr').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',parseInt(b.dataset.v,10)===YR?'true':'false');});
+ Array.prototype.forEach.call($('wtGrid').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',picked.indexOf(b.dataset.id)>=0?'true':'false');});
+ acctAuto=false; perAuto=false; syncPayWay(); refreshSigBox(); syncYear(false); render();
+}
+$('bSave').addEventListener('click',function(){
+ var b=new Blob([JSON.stringify(snapObj(),null,1)],{type:'application/json'});
+ var a=document.createElement('a');a.href=URL.createObjectURL(b);
+ a.download=(($('docNo').value.trim()||'勞務單')+'_'+(($('dfill').value)||''))+'.json';
+ a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},800);
+});
+$('bLoad').addEventListener('click',function(){$('fLoad').click();});
+$('fLoad').addEventListener('change',function(e){
+ var f=e.target.files&&e.target.files[0]; if(!f)return;
+ var r=new FileReader();
+ r.onload=function(){
+  try{applyObj(JSON.parse(r.result));}
+  catch(err){alert('這個檔案讀不進來，格式可能不對。');}
+ };
+ r.readAsText(f); e.target.value='';
+});
+
+/* ===== 給客戶簽 =====
+   forClient() 是「刪除」，不是「隱藏」：下面這些欄位在送出去的資料裡
+   根本不存在，客戶開開發者工具也翻不到。 */
+var SECRET=['yrIncome','yrPen','bkInc','bkCost','target','unit','dCost','dTotal','signBase','ksBase','ks1','ks2','ks3'];
+function forClient(){
+ var o=snapObj();
+ SECRET.forEach(function(k){if(o.f)delete o.f[k];});
+ o.quote=null;
+ o.f.audience='client';
+ if(o.f.idno)o.f.idno=mask(o.f.idno);
+ o.f.sigCN='';
+ o.sigC='';o.sigCT='';
+ o.sign=1;
+ return o;
+}
+function ovOpen(id){$(id).classList.add('on');}
+function ovClose(id){$(id).classList.remove('on');}
+document.addEventListener('click',function(e){
+ var b=e.target.closest?e.target.closest('[data-close]'):null;
+ if(b){ovClose(b.getAttribute('data-close'));return;}
+ if(e.target.classList&&e.target.classList.contains('ovr'))e.target.classList.remove('on');
+});
+$('bShare').addEventListener('click',function(){
+ if(!sum('rows')&&!confirm('明細金額還是 0，確定要現在寄出去給客戶簽？')) return;
+ $('linkOut').innerHTML=''; ovOpen('shareOv');
+});
+$('bBack').addEventListener('click',function(){$('backOut').innerHTML='';ovOpen('backOv');});
+$('bMakeFile').addEventListener('click',function(){
+ var btn=this; btn.disabled=true; btn.textContent='產生中…';
+ packData(forClient()).then(function(t){
+  dl(fname('請簽署'),makeDoc('__SIGN_DATA',t));
+  btn.disabled=false; btn.textContent='下載簽署頁 HTML';
+ }).catch(function(){btn.disabled=false;btn.textContent='下載簽署頁 HTML';alert('產生失敗，請改用方式二或換一個瀏覽器。');});
+});
+$('bMakeLink').addEventListener('click',function(){
+ var base=($('signBase').value||'').trim().replace(/#.*$/,'');
+ var out=$('linkOut'), btn=this;
+ btn.disabled=true;
+ packData(forClient()).then(function(t){
+  btn.disabled=false;
+  var url=(base?base:'')+'#s='+t;
+  var L=url.length, cls=(L<5000)?'ok':(L<8000?'':'bad');
+  var msg=(L<5000)?'長度正常，LINE、Email 都貼得過去。'
+   :(L<8000?'有點長，貼 LINE 通常還可以，但建議改用方式一傳檔案。'
+   :'<b>太長了</b>，很可能被通訊軟體截斷。請改用方式一，或先把簽名以外的明細精簡。');
+  out.innerHTML='<textarea readonly style="margin-top:9px" id="linkBox"></textarea>'
+   +'<div class="lenbar '+cls+'">'+NF.format(L)+' 字元</div>'
+   +'<div class="hlp" style="margin-top:5px">'+msg+(base?'':' <b style="color:var(--seal)">你還沒填網址，上面只有 # 後面那段，客戶點不開。</b>')+'</div>';
+  $('linkBox').value=url;
+  copyText(url).then(function(){
+   out.insertAdjacentHTML('beforeend','<div class="note g" style="margin-top:7px">已複製到剪貼簿。</div>');
+  }).catch(function(){
+   $('linkBox').focus(); $('linkBox').select();
+   out.insertAdjacentHTML('beforeend','<div class="note" style="margin-top:7px">瀏覽器不給自動複製，已幫你全選，請按 Ctrl+C／⌘C。</div>');
+  });
+ }).catch(function(){btn.disabled=false;alert('產生失敗，請改用方式一。');});
+});
+$('bApplyBack').addEventListener('click',function(){
+ var t=($('backCode').value||'').trim(), out=$('backOut');
+ if(!t){out.innerHTML='<div class="note r" style="margin-top:9px">請先貼上代碼。</div>';return;}
+ unpackData(t).then(function(o){
+  if(!o||!o.sigC)throw new Error('empty');
+  sigC=o.sigC; sigCT=o.sigCT||nowROC();
+  if($('sigCN'))$('sigCN').value=o.sigCN||'';
+  render();
+  out.innerHTML='<div class="note g" style="margin-top:9px"><b>已套用。</b>付款方簽名欄現在有簽名了，右邊預覽可以直接列印或存 PDF。</div>';
+ }).catch(function(){
+  out.innerHTML='<div class="note r" style="margin-top:9px">這串代碼讀不出來。可能是複製時被截斷、或中間夾了換行以外的字。請對方重新複製整段。</div>';
+ });
+});
+$('bDropBack').addEventListener('click',function(){
+ sigC='';sigCT='';if($('sigCN'))$('sigCN').value='';render();
+ $('backOut').innerHTML='<div class="note" style="margin-top:9px">已清除付款方簽名。</div>';
+});
+
+/* ===== 簽署模式（客戶端） ===== */
+function syncSignBar(){
+ var done=!!sigC;
+ $('bSignNow').style.display=done?'none':'';
+ ['bSignImg','bSignPrint','bSignFile','bSignCode','bSignClr'].forEach(function(i){$(i).style.display=done?'':'none';});
+ $('sbT').innerHTML=done?'<span class="done">✓ 已簽署 · '+E(sigCT)+'</span>':'確認無誤後請簽名';
+ $('sbS').textContent=done?'請按「圖片回傳」產生一張簽好的單據圖片，直接用 LINE 傳回給對方（手機最方便）。也建議自己存一份 PDF。':'簽名前請先把上面的單據內容與約定事項看過一遍。';
+}
+function enterSign(){
+ SIGNMODE=true;
+ document.body.classList.add('sign');
+ var co=($('company').value||'').trim();
+ document.title='請簽署 · '+(co||'勞務報酬單');
+ $('shSub').innerHTML='這是 <b>'+(E(($('name').value||'').trim())||'對方')+'</b> 送出的單據，內容不可修改。請往下看完全部條款，確認無誤後在頁面最下方簽名。';
+ syncSignBar(); render();
+ try{window.scrollTo(0,0);}catch(e){}
+}
+$('bSignNow').addEventListener('click',function(){
+ if(!cliSigner()){
+  if(!confirm('還沒填簽署人姓名，確定直接簽？填了對雙方都比較清楚。')) {$('sigCN').focus();return;}
+ }
+ OPENSIG&&OPENSIG('c');
+});
+$('bSignClr').addEventListener('click',function(){
+ if(!confirm('清掉簽名重簽？')) return;
+ sigC='';sigCT='';syncSignBar();render();
+});
+$('bSignPrint').addEventListener('click',function(){window.print();});
+$('bSignFile').addEventListener('click',function(){
+ var btn=this;btn.disabled=true;
+ packData(snapObj()).then(function(t){
+  dl(fname('已簽署'),makeDoc('__LOAD_DATA',t));btn.disabled=false;
+ }).catch(function(){btn.disabled=false;alert('產生失敗，請改用「複製回簽碼」。');});
+});
+$('bSignCode').addEventListener('click',function(){
+ packData({b:1,sigC:sigC,sigCT:sigCT,sigCN:cliSigner()}).then(function(t){
+  $('codeBox').value=t; $('codeOut').innerHTML=''; ovOpen('codeOv');
+  setTimeout(function(){$('codeBox').focus();$('codeBox').select();},60);
+ }).catch(function(){alert('產生失敗，請改用「下載已簽署檔」。');});
+});
+$('bCopyCode').addEventListener('click',function(){
+ var t=$('codeBox').value;
+ copyText(t).then(function(){$('codeOut').innerHTML='<div class="note g" style="margin-top:9px">已複製。</div>';})
+  .catch(function(){$('codeBox').focus();$('codeBox').select();
+   $('codeOut').innerHTML='<div class="note" style="margin-top:9px">瀏覽器不給自動複製，已幫你全選，請按 Ctrl+C／⌘C。</div>';});
+});
+$('sigCN').addEventListener('input',render);
+$('bReset').addEventListener('click',function(){
+ if(!confirm('清空所有欄位重新開始？')) return;
+ FIELDS.forEach(function(k){var e=$(k);if(!e)return;
+  if(e.tagName==='SELECT')e.selectedIndex=0; else e.value='';});
+ $('nUpd').value='3';$('nSos').value='2,000';$('nHr').value='1,500';$('p1').value='8,000';$('p2').value='16,000';$('p3').value='23,000';$('p5').value='';$('tierOn').checked=false;tierSync();$('nAcc').value='7';$('nPro').value='2';$('nRev').value='3';$('nFee').value='3,000';$('nLate').value='5';$('nRev2').value='5';
+ $('unit').value='100'; $('pscale').value='auto'; $('vscale').value='1';
+ TIDS.forEach(function(k){var e=$(k);if(e)e.checked=true;});
+ fixTermConflicts();
+ sd('rows',DEF); sd('advRows',DEF,'憑證抬頭（開客戶）'); sgSeed(DEFS);
+ $('schedOn').checked=false; $('advNow').checked=true; $('stampOn').checked=false;
+ picked=[]; sig=''; sigC=''; sigCT=''; quote=null; workAuto=false; acctAuto=true; perAuto=true; YR=1; DOM='all';
+ $('ksOn').checked=false; $('ksBox').style.display='none'; $('ksBase').value=''; $('ks1').value=''; $('ks2').value=''; $('ks3').value=''; $('ksOut').className='tout';
+ Array.prototype.forEach.call($('segDom').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.v==='all'?'true':'false');});
+ $('dTool').open=false; $('qTool').open=false;
+ $('brLb').innerHTML='分行 <span class="opt">可略</span>';
+ Array.prototype.forEach.call($('wtGrid').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed','false');});
+ Array.prototype.forEach.call($('segYr').querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.v==='1'?'true':'false');});
+ $('dOut').className='tout'; $('guOut').className='tout';
+ today(); syncPayWay(); refreshSigBox(); syncYear(false); renderTax(); render();
+});
+
+/* ===== 產生圖片：把單據畫成 PNG（iPhone／LINE 回傳用） =====
+   主路徑：把 #sheet 整份塞進 SVG 的 foreignObject，畫到 canvas。
+   萬一瀏覽器不給（畫出來全白或 canvas 被污染），退回自己用 canvas
+   畫一張「簽署回執」小卡，那條路徑純 2D 繪圖，哪台機器都畫得出來。 */
+var IMGMOD=(function(){
+ var curBlob=null,curName='',curUrl='';
+ function vars(){
+  var ns=['--ink','--i2','--i3','--rule','--r2','--app','--field','--blue','--bt','--seal','--s2','--st','--ok','--okt','--warn','--wbg','--wl','--sh','--serif','--sans','--mono'];
+  var cs=getComputedStyle(document.documentElement),o='',i,v;
+  for(i=0;i<ns.length;i++){v=cs.getPropertyValue(ns[i]);if(v)o+=ns[i]+':'+v.trim()+';';}
+  return o+'--pz:1;';
+ }
+ function allCss(){
+  var t='',st=document.querySelectorAll('style'),i;
+  for(i=0;i<st.length;i++)t+=st[i].textContent+'\n';
+  return t;
+ }
+ function inked(x,c){
+  /* 抽樣看有沒有東西被畫上去；取不到像素就當作有（後面 toDataURL 會自己失敗） */
+  try{
+   var n=0,step=Math.max(1,Math.floor(c.height/50)),y,d,i;
+   for(y=2;y<c.height;y+=step){
+    d=x.getImageData(0,y,c.width,1).data;
+    for(i=0;i<d.length;i+=32){ if(d[i]<225||d[i+1]<225||d[i+2]<225){ n++; if(n>25) return true; } }
+   }
+   return false;
+  }catch(e){ return true; }
+ }
+ function sheetPng(){
+  return new Promise(function(res,rej){
+   var sh=$('sheet'); if(!sh||!sh.scrollHeight) return rej(new Error('no sheet'));
+   var W=794,H=Math.max(420,sh.scrollHeight+10);
+   var k=Math.sqrt(13000000/(W*H)); if(!(k>0)) k=1; if(k>2) k=2; if(k<0.8) k=0.8;
+   var wrap=document.createElement('div');
+   wrap.setAttribute('style','margin:0;padding:0;background:#fff;width:'+W+'px;'+vars());
+   var stl=document.createElement('style'); stl.appendChild(document.createTextNode(allCss()));
+   wrap.appendChild(stl);
+   var cl=sh.cloneNode(true); cl.removeAttribute('id'); wrap.appendChild(cl);
+   var xml; try{ xml=new XMLSerializer().serializeToString(wrap); }catch(e){ return rej(e); }
+   var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+Math.round(W*k)+'" height="'+Math.round(H*k)+'" viewBox="0 0 '+W+' '+H+'">'
+    +'<rect x="0" y="0" width="'+W+'" height="'+H+'" fill="#ffffff"/>'
+    +'<foreignObject x="0" y="0" width="'+W+'" height="'+H+'">'+xml+'</foreignObject></svg>';
+   var img=new Image(), done=false;
+   var tm=setTimeout(function(){ if(!done){done=true;rej(new Error('timeout'));} },12000);
+   img.onload=function(){
+    if(done) return; done=true; clearTimeout(tm);
+    setTimeout(function(){
+     try{
+      var c=document.createElement('canvas');
+      c.width=Math.round(W*k); c.height=Math.round(H*k);
+      var x=c.getContext('2d');
+      x.fillStyle='#ffffff'; x.fillRect(0,0,c.width,c.height);
+      x.drawImage(img,0,0,c.width,c.height);
+      if(!inked(x,c)) return rej(new Error('blank'));
+      res(c.toDataURL('image/png'));
+     }catch(e){ rej(e); }
+    },60);
+   };
+   img.onerror=function(){ if(done)return; done=true; clearTimeout(tm); rej(new Error('svg')); };
+   img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+  });
+ }
+ function gv(id){ var e=$(id); return e?String(e.value||'').trim():''; }
+ function certPng(){
+  return new Promise(function(res){
+   var W=1000,pad=58,rows=[],i;
+   rows.push(['單號',gv('docNo')||'—']);
+   rows.push(['日期',gv('dfill')||'—']);
+   rows.push(['付款方',gv('company')||'—']);
+   rows.push(['承攬方',gv('name')||'—']);
+   try{
+    var tr=document.querySelector('#sheet tr.nt');
+    if(tr){ var td=tr.querySelectorAll('td');
+     if(td.length>=2) rows.push([td[0].textContent.replace(/\s+/g,''),td[td.length-1].textContent.replace(/\s+/g,'')]); }
+   }catch(e){}
+   var who=(typeof cliSigner==='function'?cliSigner():'')||'—';
+   rows.push(['簽署人',who]);
+   rows.push(['簽署時間',(typeof sigCT!=='undefined'&&sigCT)?sigCT:'—']);
+   var sd=(typeof sigC!=='undefined')?sigC:'';
+   var sigH=sd?230:40;
+   var H=pad*2+72+rows.length*40+sigH+86;
+   var k=2,c=document.createElement('canvas');
+   c.width=W*k; c.height=H*k;
+   var x=c.getContext('2d'); x.scale(k,k);
+   var SANS='"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif';
+   x.fillStyle='#ffffff'; x.fillRect(0,0,W,H);
+   x.strokeStyle='#b4bbc4'; x.lineWidth=2; x.strokeRect(15,15,W-30,H-30);
+   x.fillStyle='#b32217'; x.fillRect(15,15,W-30,6);
+   x.fillStyle='#15181c'; x.font='700 31px '+SANS;
+   x.fillText('簽署回執',pad,pad+34);
+   x.fillStyle='#8a929e'; x.font='13px '+SANS;
+   x.fillText('本圖為簽署證明，請與原始單據一併保存',pad,pad+58);
+   var y=pad+96;
+   for(i=0;i<rows.length;i++){
+    x.strokeStyle='#e6e9ed'; x.lineWidth=1;
+    x.beginPath(); x.moveTo(pad,y+26.5); x.lineTo(W-pad,y+26.5); x.stroke();
+    x.fillStyle='#4b5560'; x.font='15px '+SANS; x.fillText(rows[i][0],pad,y+18);
+    x.fillStyle='#15181c'; x.font='600 17px '+SANS; x.fillText(rows[i][1],pad+170,y+18);
+    y+=40;
+   }
+   y+=14;
+   x.fillStyle='#4b5560'; x.font='15px '+SANS; x.fillText('簽名',pad,y+16);
+   function tail(){
+    x.fillStyle='#8a929e'; x.font='12.5px '+SANS;
+    x.fillText('本回執由單據簽署頁產生 · 產生時間 '+new Date().toLocaleString('zh-TW'),pad,H-pad+6);
+    res(c.toDataURL('image/png'));
+   }
+   if(sd){
+    var im=new Image();
+    im.onload=function(){
+     var mw=W-pad*2-180, mh=180;
+     var r=Math.min(mw/im.width,mh/im.height,1.6);
+     x.drawImage(im,pad+180,y-6,im.width*r,im.height*r);
+     x.strokeStyle='#d9dde2'; x.beginPath(); x.moveTo(pad+180,y+192); x.lineTo(W-pad,y+192); x.stroke();
+     tail();
+    };
+    im.onerror=tail;
+    im.src=sd;
+   } else {
+    x.fillStyle='#8a929e'; x.font='15px '+SANS; x.fillText('（尚未簽名）',pad+180,y+16);
+    tail();
+   }
+  });
+ }
+ function toBlob(du){
+  var i=du.indexOf(','),b=atob(du.slice(i+1)),n=b.length,u=new Uint8Array(n);
+  while(n--) u[n]=b.charCodeAt(n);
+  return new Blob([u],{type:'image/png'});
+ }
+ function nm(){
+  var no=(gv('docNo')||'勞務單').replace(/[\\/:*?"<>|]/g,''),d=gv('dfill');
+  return (SIGNMODE?'已簽署_':'')+no+(d?('_'+d):'')+'.png';
+ }
+ function show(){
+  ovOpen('imgOv');
+  $('imgMsg').className='note'; $('imgMsg').textContent='正在產生圖片，請稍等…';
+  $('imgPrev').innerHTML=''; $('imgTip').style.display='none';
+  $('bImgShare').style.display='none'; $('bImgDl').style.display='none';
+  if(curUrl){ try{URL.revokeObjectURL(curUrl);}catch(e){} curUrl=''; }
+  curBlob=null; curName=nm();
+  var fell=false;
+  setTimeout(function(){
+   sheetPng().catch(function(){ fell=true; return certPng(); }).then(function(du){
+    curBlob=toBlob(du);
+    $('imgPrev').innerHTML='<img alt="單據圖片" src="'+du+'">';
+    $('bImgDl').style.display='';
+    $('imgTip').style.display='';
+    var f=null;
+    try{ f=new File([curBlob],curName,{type:'image/png'}); }catch(e){}
+    var can=false;
+    try{ can=!!(f&&navigator.share&&navigator.canShare&&navigator.canShare({files:[f]})); }catch(e){}
+    if(can) $('bImgShare').style.display='';
+    if(fell){
+     $('imgMsg').className='note r';
+     $('imgMsg').innerHTML='<b>這台瀏覽器畫不出整份單據</b>，已改成一張「簽署回執」小卡（單號、金額、簽署人、簽名都在上面）。整份單據請改按「存成 PDF」。';
+    }else{
+     $('imgMsg').className='note g';
+     $('imgMsg').textContent='圖片好了。用下面的方式傳出去即可。';
+    }
+   }).catch(function(){
+    $('imgMsg').className='note r';
+    $('imgMsg').innerHTML='<b>圖片產生失敗。</b>請改用「存成 PDF」，或用手機直接截圖傳回。';
+   });
+  },30);
+ }
+ return {show:show,blob:function(){return curBlob;},name:function(){return curName;}};
+})();
+$('bImg').addEventListener('click',function(){IMGMOD.show();});
+$('bSignImg').addEventListener('click',function(){IMGMOD.show();});
+$('bImgDl').addEventListener('click',function(){
+ var b=IMGMOD.blob(); if(!b) return;
+ var a=document.createElement('a'),u=URL.createObjectURL(b);
+ a.href=u; a.download=IMGMOD.name(); document.body.appendChild(a); a.click();
+ setTimeout(function(){URL.revokeObjectURL(u);a.parentNode&&a.parentNode.removeChild(a);},900);
+});
+$('bImgShare').addEventListener('click',function(){
+ var b=IMGMOD.blob(); if(!b) return;
+ var f; try{ f=new File([b],IMGMOD.name(),{type:'image/png'}); }catch(e){ return; }
+ try{ navigator.share({files:[f],title:'已簽署單據'}).catch(function(){}); }catch(e){}
+});
+
+/* ===== 起始 ===== */
+function today(){
+ var d=new Date(), p=function(n){return String(n).padStart(2,'0');};
+ $('dfill').value=d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());
+}
+today(); syncPayWay(); refreshSigBox(); syncYear(false); render();
+window.addEventListener('load',function(){scale();applyPrintScale();});
+
+/* ===== 開機路由：帶資料的簽署頁 / 已簽署檔 / #s= 連結 ===== */
+(function(){
+ var raw=null, mode=null;
+ if(typeof window.__SIGN_DATA==='string'){raw=window.__SIGN_DATA;mode='sign';}
+ else if(typeof window.__LOAD_DATA==='string'){raw=window.__LOAD_DATA;mode='load';}
+ else if(location.hash.indexOf('#s=')===0){raw=location.hash.slice(3);mode='sign';}
+ if(!raw)return;
+ unpackData(raw).then(function(o){
+  applyObj(o);
+  if(mode==='sign'||o.sign)enterSign();
+ }).catch(function(){
+  alert('這份簽署資料讀不出來。若是從連結點進來的，可能是網址在傳送過程被截斷了；請對方改用檔案的方式傳給你。');
+ });
+})();
+})();
+</script>
+</body>
+</html>
