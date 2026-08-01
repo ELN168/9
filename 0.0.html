@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asme — 洞悉一切</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+                 "Microsoft JhengHei", "Noto Sans TC", "Helvetica Neue", sans-serif;
+  }
+  a { text-decoration: none; color: inherit; }
+  button { font: inherit; cursor: pointer; }
+  :focus-visible { outline: 2px solid rgba(255,255,255,.7); outline-offset: 3px; }
+
+  /* ── liquid glass ── */
+  .glass {
+    background: rgba(255,255,255,.01);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: none;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .glass::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(180deg,
+      rgba(255,255,255,.45) 0%, rgba(255,255,255,.15) 20%,
+      rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+      rgba(255,255,255,.15) 80%, rgba(255,255,255,.45) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ── 字體 ── */
+  .serif   { font-family: 'Instrument Serif', 'Noto Serif TC', serif; font-weight: 400; }
+  .em      { font-family: 'Instrument Serif', 'Noto Serif TC', serif; font-weight: 300;
+             font-style: normal; letter-spacing: .04em; }
+  .em-lat  { font-family: 'Instrument Serif', serif; font-style: italic; }
+
+  .wrap  { max-width: 72rem; margin: 0 auto; }
+  .label { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+
+  /* ── 捲動進場 ── */
+  .rv { opacity: 0; transition: opacity .8s ease, transform .8s ease; }
+  .rv-up   { transform: translateY(40px); }
+  .rv-up-s { transform: translateY(20px); }
+  .rv-up-l { transform: translateY(60px); }
+  .rv-left { transform: translateX(-40px); }
+  .rv-right{ transform: translateX(40px); }
+  .rv.in { opacity: 1; transform: none; }
+
+  /* ══════ HERO ══════ */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; overflow: hidden; }
+  .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: bottom; opacity: 0; }
+
+  header { position: relative; z-index: 20; padding: 1.5rem; }
+  .nav {
+    max-width: 64rem; margin: 0 auto; border-radius: 9999px;
+    padding: .75rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-left { display: flex; align-items: center; }
+  .brand { display: flex; align-items: center; gap: .5rem; font-size: 1.125rem; font-weight: 600; }
+  .nav-links { display: none; gap: 2rem; margin-left: 2rem; }
+  .nav-links a { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.8); transition: color .2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .btn-plain { background: none; border: none; color: #fff; font-size: .875rem; font-weight: 500; }
+  .btn-glass { border-radius: 9999px; padding: .5rem 1.5rem; color: #fff; font-size: .875rem; font-weight: 500; background: none; border: none; transition: background-color .2s; }
+  .btn-glass:hover { background-color: rgba(255,255,255,.05); }
+
+  .hero-body {
+    position: relative; z-index: 10; flex: 1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 3rem 1.5rem; text-align: center; transform: translateY(-20%);
+  }
+  h1.hero-title {
+    margin: 0 0 2rem; font-size: 3.5rem; line-height: 1;
+    letter-spacing: -.025em; white-space: nowrap;
+  }
+  .mailrow { width: 100%; max-width: 36rem; margin-bottom: 1.5rem; }
+  .mailbox { display: flex; align-items: center; gap: .75rem; border-radius: 9999px; padding: .5rem .5rem .5rem 1.5rem; }
+  .mailbox input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 1rem; min-width: 0; }
+  .mailbox input::placeholder { color: rgba(255,255,255,.4); }
+  .send { background: #fff; color: #000; border: none; border-radius: 9999px; padding: .75rem; display: grid; place-items: center; transition: transform .2s; }
+  .send:hover { transform: scale(1.05); }
+  .sub { margin: 0 0 2rem; max-width: 36rem; padding: 0 1rem; font-size: .875rem; line-height: 1.7; }
+  .manifesto { border-radius: 9999px; padding: .75rem 2rem; font-size: .875rem; font-weight: 500; color: #fff; background: none; border: none; transition: background-color .2s; }
+  .manifesto:hover { background-color: rgba(255,255,255,.05); }
+
+  .socials { position: relative; z-index: 10; display: flex; justify-content: center; gap: 1rem; padding-bottom: 3rem; }
+  .socials a { border-radius: 9999px; padding: 1rem; color: rgba(255,255,255,.8); display: grid; place-items: center; transition: all .2s; }
+  .socials a:hover { color: #fff; background-color: rgba(255,255,255,.05); }
+
+  /* ══════ ABOUT ══════ */
+  .about { position: relative; padding: 8rem 1.5rem 2.5rem; overflow: hidden; }
+  .about .glow { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at top, rgba(255,255,255,.03) 0%, transparent 70%); }
+  .about .eyebrow { font-size: .875rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); margin: 0 0 1.5rem; }
+  h2.about-title { margin: 0; font-size: 2.25rem; line-height: 1.1; letter-spacing: -.025em; }
+  h2.about-title .em { color: rgba(255,255,255,.6); }
+  .about-title br { display: none; }
+
+  /* ══════ FEATURED ══════ */
+  .featured { padding: 1.5rem 1.5rem 5rem; overflow: hidden; }
+  .video-card { position: relative; aspect-ratio: 16/9; border-radius: 1.5rem; overflow: hidden; }
+  .video-card > video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .video-card .scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(0,0,0,.6), transparent 50%); }
+  .video-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .approach { max-width: 28rem; border-radius: 1rem; padding: 1.5rem; }
+  .approach .label { display: block; margin-bottom: .75rem; }
+  .approach p { margin: 0; font-size: .875rem; line-height: 1.7; }
+  .explore { border-radius: 9999px; padding: .75rem 2rem; font-size: .875rem; font-weight: 500; color: #fff;
+    background: none; border: none; flex-shrink: 0; transition: transform .2s; }
+  .explore:hover { transform: scale(1.05); }
+  .explore:active { transform: scale(.95); }
+
+  /* ══════ PHILOSOPHY ══════ */
+  .philosophy { padding: 7rem 1.5rem; overflow: hidden; }
+  h2.phi-title { margin: 0 0 4rem; font-size: 3rem; letter-spacing: -.025em; }
+  h2.phi-title .em-lat { color: rgba(255,255,255,.4); }
+  .phi-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  .phi-video { aspect-ratio: 4/3; border-radius: 1.5rem; overflow: hidden; }
+  .phi-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .phi-text { display: flex; flex-direction: column; justify-content: center; gap: 2.5rem; }
+  .phi-text .label { display: block; margin-bottom: 1rem; }
+  .phi-text p.body { margin: 0; font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.7); }
+  .divider { width: 100%; height: 1px; background: rgba(255,255,255,.1); }
+
+  /* ══════ SERVICES ══════ */
+  .services { position: relative; padding: 7rem 1.5rem; overflow: hidden; }
+  .services .glow { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,.02) 0%, transparent 60%); }
+  .svc-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; }
+  .svc-head h2 { margin: 0; font-size: 1.875rem; letter-spacing: -.025em; }
+  .svc-head span { display: none; font-size: .875rem; color: rgba(255,255,255,.4); }
+  .svc-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  .card { border-radius: 1.5rem; overflow: hidden; }
+  .card .thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+  .card video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s ease; }
+  .card:hover video { transform: scale(1.05); }
+  .card .thumb .scrim { position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, rgba(0,0,0,.4), transparent); }
+  .card .body { padding: 1.5rem; }
+  .card .row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+  .card .pill { border-radius: 9999px; padding: .5rem; display: grid; place-items: center; color: #fff; }
+  .card h3 { margin: 0 0 .75rem; font-size: 1.25rem; letter-spacing: -.025em; }
+  .card p { margin: 0; font-size: .875rem; line-height: 1.7; color: rgba(255,255,255,.5); }
+
+  footer.foot { padding: 0 1.5rem 4rem; text-align: center; font-size: .75rem; color: rgba(255,255,255,.3); }
+
+  /* ══════ 響應式 ══════ */
+  @media (min-width: 640px) {
+    h1.hero-title { font-size: 4.5rem; }
+  }
+  @media (min-width: 768px) {
+    .nav-links { display: flex; }
+    h1.hero-title { font-size: 6rem; }
+    .about { padding: 11rem 1.5rem 3.5rem; }
+    h2.about-title { font-size: 3.75rem; }
+    .about-title br { display: block; }
+    .featured { padding: 2.5rem 1.5rem 8rem; }
+    .video-overlay { padding: 2.5rem; flex-direction: row; align-items: flex-end; justify-content: space-between; }
+    .approach { padding: 2rem; }
+    .approach p { font-size: 1rem; }
+    .philosophy { padding: 10rem 1.5rem; }
+    h2.phi-title { font-size: 4.5rem; margin-bottom: 6rem; }
+    .phi-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .phi-text p.body { font-size: 1.125rem; }
+    .services { padding: 10rem 1.5rem; }
+    .svc-head { margin-bottom: 4rem; }
+    .svc-head h2 { font-size: 3rem; }
+    .svc-head span { display: block; }
+    .svc-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .card .body { padding: 2rem; }
+    .card h3 { font-size: 1.5rem; }
+  }
+  @media (min-width: 1024px) {
+    h1.hero-title { font-size: 8rem; }
+    h2.about-title { font-size: 4.5rem; }
+    h2.phi-title { font-size: 6rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rv { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ 主視覺 ═══════════ -->
+<section class="hero">
+  <video id="heroVideo" muted autoplay playsinline preload="auto"
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4"></video>
+
+  <header>
+    <nav class="nav glass">
+      <div class="nav-left">
+        <a class="brand" href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <span>Asme</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">功能</a>
+          <a href="#pricing">方案</a>
+          <a href="#about">關於</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button class="btn-plain">註冊</button>
+        <button class="btn-glass glass">登入</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero-body">
+    <h1 class="hero-title serif">洞悉<span class="em">一切</span>。</h1>
+
+    <form class="mailrow" onsubmit="return false;">
+      <div class="mailbox glass">
+        <input type="email" placeholder="輸入你的電子郵件" aria-label="電子郵件" />
+        <button class="send" type="submit" aria-label="訂閱">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+
+    <p class="sub">掌握最新消息與洞察。立即訂閱我們的電子報，不錯過任何精彩更新。</p>
+
+    <button class="manifesto glass">閱讀我們的宣言</button>
+  </div>
+
+  <div class="socials">
+    <a href="#" class="glass" aria-label="Instagram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+    <a href="#" class="glass" aria-label="Twitter">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+    </a>
+    <a href="#" class="glass" aria-label="官方網站">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════ 關於我們 ═══════════ -->
+<section class="about" id="about">
+  <div class="glow"></div>
+  <div class="wrap">
+    <p class="eyebrow rv rv-up-s">關於我們</p>
+    <h2 class="about-title serif rv rv-up" style="transition-delay:.1s">
+      開創<span class="em">思維</span>，獻給<br />
+      <span class="em">創造、建構、啟發</span>的心靈。
+    </h2>
+  </div>
+</section>
+
+<!-- ═══════════ 精選影片 ═══════════ -->
+<section class="featured" id="features">
+  <div class="wrap">
+    <div class="video-card glass rv rv-up-l">
+      <video muted autoplay loop playsinline preload="auto"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4"></video>
+      <div class="scrim"></div>
+      <div class="video-overlay">
+        <div class="approach glass">
+          <span class="label">我們的方法</span>
+          <p>我們相信好奇心驅動的探索力量。每個專案都始於一個問題，而每個答案都會推開通往創新的另一扇門。</p>
+        </div>
+        <button class="explore glass">探索更多</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 創新 x 願景 ═══════════ -->
+<section class="philosophy" id="pricing">
+  <div class="wrap">
+    <h2 class="phi-title serif rv rv-up">創新 <span class="em-lat">x</span> 願景</h2>
+    <div class="phi-grid">
+      <div class="phi-video rv rv-left" style="transition-delay:.1s">
+        <video muted autoplay loop playsinline preload="auto"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4"></video>
+      </div>
+      <div class="phi-text rv rv-right" style="transition-delay:.2s">
+        <div>
+          <span class="label">選擇你的場域</span>
+          <p class="body">每一次真正有意義的突破，都發生在嚴謹策略與卓越創意視野的交會處。我們就在這個交叉口工作，把大膽的思考化為打動人心、重塑產業的具體成果。</p>
+        </div>
+        <div class="divider"></div>
+        <div>
+          <span class="label">形塑未來</span>
+          <p class="body">我們相信，最好的作品誕生於好奇心與信念相遇的時刻。我們的流程專為挖掘被忽略的機會而設計，並把它轉譯成在第一印象之後仍長久迴響的體驗。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 我們做什麼 ═══════════ -->
+<section class="services">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="svc-head rv rv-up-s">
+      <h2 class="serif">我們做什麼</h2>
+      <span>我們的服務</span>
+    </div>
+    <div class="svc-grid">
+      <article class="card glass rv rv-up-l">
+        <div class="thumb">
+          <video muted autoplay loop playsinline preload="auto"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"></video>
+          <div class="scrim"></div>
+        </div>
+        <div class="body">
+          <div class="row">
+            <span class="label">策略</span>
+            <span class="pill glass">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </span>
+          </div>
+          <h3 class="serif">研究與洞察</h3>
+          <p>我們深入數據、文化與人的行為，挖出真正能帶來長遠改變的洞察。</p>
+        </div>
+      </article>
+
+      <article class="card glass rv rv-up-l" style="transition-delay:.15s">
+        <div class="thumb">
+          <video muted autoplay loop playsinline preload="auto"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4"></video>
+          <div class="scrim"></div>
+        </div>
+        <div class="body">
+          <div class="row">
+            <span class="label">工藝</span>
+            <span class="pill glass">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </span>
+          </div>
+          <h3 class="serif">設計與執行</h3>
+          <p>從概念到上線，我們斟酌每一個細節，交付看似毫不費力、實際上格外出色的體驗。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">© 2026 Asme</footer>
+
+<script>
+  /* ── 主視覺影片：淡入 → 結束前淡出 → 無縫重播 ── */
+  (function () {
+    var video = document.getElementById('heroVideo');
+    if (!video) return;
+    var raf = null, fadingOut = false;
+    var FADE = 500, LEAD = 0.55;
+
+    function fade(from, to, duration) {
+      if (raf) cancelAnimationFrame(raf);
+      var start = performance.now();
+      (function step(now) {
+        var t = Math.min((now - start) / duration, 1);
+        video.style.opacity = String(from + (to - from) * t);
+        if (t < 1) raf = requestAnimationFrame(step); else raf = null;
+      })(performance.now());
+    }
+
+    video.addEventListener('canplay', function () {
+      var p = video.play(); if (p && p.catch) p.catch(function () {});
+      fade(0, 1, FADE);
+    });
+
+    video.addEventListener('timeupdate', function () {
+      if (!video.duration || isNaN(video.duration)) return;
+      if (video.duration - video.currentTime <= LEAD && !fadingOut) {
+        fadingOut = true;
+        fade(parseFloat(video.style.opacity || '1'), 0, FADE);
+      }
+    });
+
+    video.addEventListener('ended', function () {
+      video.style.opacity = '0';
+      setTimeout(function () {
+        video.currentTime = 0;
+        var p = video.play(); if (p && p.catch) p.catch(function () {});
+        fadingOut = false;
+        fade(0, 1, FADE);
+      }, 100);
+    });
+  })();
+
+  /* ── 捲動進場 ── */
+  (function () {
+    var items = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '-100px 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
