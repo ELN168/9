@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>W.M 自然美學空間 | 逢甲商圈·線上預約系統</title>
+  <meta name="description" content="W.M 自然美學空間 逢甲旗艦店 官方線上預約系統。提供凝膠美甲、指甲彩繪、光固美睫、飄霧眉、凍甲/咬甲專業調理、手足SPA保養與專業教學。">
+  
+  <meta name="theme-color" content="#1C1917">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="https://wm27-3.com/images/apple-touch-icon.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,400&family=Noto+Serif+TC:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* 手機字體全面放大、大拇指極佳觸控 */
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F8F5F2;
+      color: #24201D;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .serif-title { font-family: 'Bodoni Moda', 'Noto Serif TC', serif; }
+    .serif-text { font-family: 'Noto Serif TC', serif; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .glass-dark {
+      background: rgba(28, 25, 23, 0.98);
+      backdrop-filter: blur(16px);
+    }
+    
+    #virtual-cursor {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      pointer-events: none;
+      z-index: 999999;
+      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      display: none;
+    }
+    .swatch-btn.active {
+      box-shadow: 0 0 0 2px #1C1917, 0 0 0 4px #C8A27A;
+      transform: scale(1.15);
+    }
+    /* iOS input 聚焦防縮放 (16px) */
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  </style>
+</head>
+<body class="pb-36 select-none bg-[#F8F5F2]">
+
+  <!-- 虛擬游標 (演示用) -->
+  <div id="virtual-cursor">
+    <svg viewBox="0 0 24 24" class="w-8 h-8 fill-rose-600 drop-shadow-2xl">
+      <path d="M4 2l16 11.5-7.5 1.5 4.5 7-3 1.5-4.5-7-5.5 5.5z"/>
+    </svg>
+  </div>
+
+  <!-- 頂部控制列 (大字體·高度舒適) -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-[#C8A27A]/30 px-4 py-3 text-white shadow-xl">
+    <div class="max-w-md mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-[#E0C09E] serif-title font-bold tracking-wide text-base">W.M Natural Space</span>
+      </div>
+
+      <!-- 視角切換器 -->
+      <div class="flex items-center gap-1 bg-stone-900 p-1 rounded-full border border-stone-700 text-xs">
+        <button id="view-customer-btn" onclick="setViewMode('customer')" class="px-3 py-1 rounded-full font-bold bg-[#C8A27A] text-stone-950 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-mobile-screen text-xs"></i> 顧客端
+        </button>
+        <button id="view-merchant-btn" onclick="setViewMode('merchant')" class="px-3 py-1 rounded-full font-semibold text-stone-300 hover:text-white transition flex items-center gap-1.5">
+          <i class="fa-solid fa-store text-xs"></i> 店家後台
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="startAutoDemo()" id="btn-auto-run" class="bg-stone-800 hover:bg-stone-700 text-[#E0C09E] border border-[#C8A27A]/50 font-bold px-3 py-1.5 rounded-full text-xs flex items-center gap-1.5 shadow">
+          <i class="fa-solid fa-play text-xs"></i>
+          <span>演練</span>
+        </button>
+        <button onclick="openTutorialModal()" class="bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 p-2 rounded-full text-sm w-8 h-8 flex items-center justify-center">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 視角 1：📱 顧客端 (大字體·手機高友善版) -->
+  <!-- ========================================== -->
+  <div id="customer-view" class="pt-16">
+    
+    <!-- 奢華 Header 形象區 -->
+    <div class="bg-[#1C1917] text-[#FAF8F5] px-5 pt-5 pb-6 shadow-md border-b border-[#C8A27A]/30">
+      <div class="max-w-md mx-auto">
+        <div class="flex items-center justify-between">
+          <span class="bg-[#C8A27A] text-stone-950 text-xs font-black tracking-wider px-2.5 py-1 rounded uppercase">
+            台中逢甲商圈
+          </span>
+          <span class="text-xs font-semibold text-stone-200 flex items-center gap-1 bg-stone-900 px-3 py-1 rounded-full border border-stone-800">
+            <i class="fa-solid fa-star text-amber-400 text-xs"></i> 4.8 星 (448 則好評)
+          </span>
+        </div>
+        
+        <div class="flex items-end justify-between mt-3.5">
+          <div>
+            <h1 class="text-2xl font-bold serif-title tracking-wide text-white">W.M 自然美學空間</h1>
+            <p class="text-xs text-[#D8B48D] tracking-wider uppercase mt-1 font-semibold">Natural Aesthetic Space · 全預約制安排</p>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <a href="tel:0908004068" class="w-11 h-11 rounded-full border border-[#C8A27A]/50 flex items-center justify-center text-[#C8A27A] hover:bg-[#C8A27A]/10 transition shadow-sm" title="致電 0908-004-068">
+              <i class="fa-solid fa-phone text-base"></i>
+            </a>
+            <a href="https://line.me/R/ti/p/@cud0296a" target="_blank" class="w-11 h-11 rounded-full bg-[#06C755] flex items-center justify-center text-white shadow-md hover:opacity-90 transition" title="官方 LINE">
+              <i class="fa-brands fa-line text-2xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-sm text-stone-300 serif-text italic mt-3.5 pt-3 border-t border-stone-800 flex items-center gap-2">
+          <i class="fa-solid fa-quote-left text-[#C8A27A] text-xs"></i>
+          <span>一個人的手，值得被慢慢處理。</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 📸 官方 IG (@w.m_natural_aesthetic_space) 精選作品照片牆 -->
+    <div class="max-w-md mx-auto px-4 mt-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-bold text-sm text-stone-900 flex items-center gap-1.5">
+          <i class="fa-brands fa-instagram text-rose-500 text-base"></i> 官方 IG 最新精選實拍照
+        </span>
+        <a href="https://www.instagram.com/w.m_natural_aesthetic_space" target="_blank" class="text-xs text-[#A07850] font-bold hover:underline">
+          @w.m_natural_aesthetic_space <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+        </a>
+      </div>
+
+      <!-- IG 橫向滑動大圖櫥窗 (大尺寸、大字體) -->
+      <div class="flex gap-3 overflow-x-auto hide-scrollbar py-1">
+        <div onclick="selectServiceItem(1); openLightbox(1);" class="w-32 shrink-0 bg-white rounded-2xl p-2 border border-stone-200 shadow-sm cursor-pointer hover:border-stone-400 transition">
+          <img src="https://wm27-3.com/images/ruby-cat-eye-900.webp" alt="赤金貓眼" class="w-full aspect-square rounded-xl object-cover">
+          <p class="text-xs font-bold text-stone-900 mt-2 truncate">赤金貓眼</p>
+          <p class="text-xs text-rose-600 font-semibold">#招牌貓眼</p>
+        </div>
+
+        <div onclick="selectServiceItem(2); openLightbox(2);" class="w-32 shrink-0 bg-white rounded-2xl p-2 border border-stone-200 shadow-sm cursor-pointer hover:border-stone-400 transition">
+          <img src="https://wm27-3.com/images/garnet-sand-900.webp" alt="石榴星砂" class="w-full aspect-square rounded-xl object-cover">
+          <p class="text-xs font-bold text-stone-900 mt-2 truncate">石榴星砂</p>
+          <p class="text-xs text-rose-600 font-semibold">#短甲顯白</p>
+        </div>
+
+        <div onclick="selectServiceItem(3); openLightbox(3);" class="w-32 shrink-0 bg-white rounded-2xl p-2 border border-stone-200 shadow-sm cursor-pointer hover:border-stone-400 transition">
+          <img src="https://wm27-3.com/images/pine-cat-eye-900.webp" alt="松綠貓眼" class="w-full aspect-square rounded-xl object-cover">
+          <p class="text-xs font-bold text-stone-900 mt-2 truncate">松綠貓眼</p>
+          <p class="text-xs text-rose-600 font-semibold">#秋冬熱門</p>
+        </div>
+
+        <div onclick="selectServiceItem(8); openLightbox(8);" class="w-32 shrink-0 bg-white rounded-2xl p-2 border border-stone-200 shadow-sm cursor-pointer hover:border-stone-400 transition">
+          <img src="https://wm27-3.com/images/lotus-gold-900.webp" alt="藕紫金箔" class="w-full aspect-square rounded-xl object-cover">
+          <p class="text-xs font-bold text-stone-900 mt-2 truncate">藕紫金箔</p>
+          <p class="text-xs text-rose-600 font-semibold">#溫柔金箔</p>
+        </div>
+
+        <div onclick="selectServiceItem(14); openLightbox(14);" class="w-32 shrink-0 bg-white rounded-2xl p-2 border border-stone-200 shadow-sm cursor-pointer hover:border-stone-400 transition">
+          <img src="https://wm27-3.com/images/cocoa-spot-900.webp" alt="可可斑紋" class="w-full aspect-square rounded-xl object-cover">
+          <p class="text-xs font-bold text-stone-900 mt-2 truncate">可可斑紋</p>
+          <p class="text-xs text-rose-600 font-semibold">#手繪彩繪</p>
+        </div>
+
+        <div onclick="selectServiceItem(15); openLightbox(15);" class="w-32 shrink-0 bg-white rounded-2xl p-2 border border-stone-200 shadow-sm cursor-pointer hover:border-stone-400 transition">
+          <img src="https://wm27-3.com/images/silver-french-900.webp" alt="銀蔥法式" class="w-full aspect-square rounded-xl object-cover">
+          <p class="text-xs font-bold text-stone-900 mt-2 truncate">銀蔥法式</p>
+          <p class="text-xs text-rose-600 font-semibold">#氣質顯長</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔮 30秒美甲命定色與風格測驗 -->
+    <div class="max-w-md mx-auto px-4 mt-3.5">
+      <div class="bg-gradient-to-r from-[#24201D] to-[#2E2824] text-white p-4 rounded-2xl border border-[#C8A27A]/40 shadow-md flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-[#C8A27A] text-stone-950 flex items-center justify-center text-xl shrink-0 shadow">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-sm text-white">30 秒找出你的命定美甲款</h3>
+              <span class="bg-[#C8A27A] text-stone-950 text-xs font-black px-2 py-0.5 rounded">測驗</span>
+            </div>
+            <p class="text-xs text-stone-300 mt-0.5">依膚色基調、甲面長度智慧配對款式</p>
+          </div>
+        </div>
+        <button onclick="openQuizModal()" class="bg-[#C8A27A] hover:bg-[#B88E5E] text-stone-950 text-xs font-bold px-3.5 py-2.5 rounded-xl shrink-0 shadow transition">
+          開始測驗
+        </button>
+      </div>
+    </div>
+
+    <!-- 地點導航與停車指南 -->
+    <div class="max-w-md mx-auto px-4 mt-3.5">
+      <div class="bg-[#EDE6DE] border border-[#DDD3C9] p-4 rounded-2xl text-sm shadow-sm space-y-2">
+        <div class="flex items-center justify-between gap-2">
+          <div>
+            <p class="font-bold text-stone-900 text-sm">
+              <i class="fa-solid fa-location-dot text-[#A07850] mr-1"></i>台中市西屯區西安街277巷27-3號
+            </p>
+            <p class="text-xs text-stone-600 mt-0.5">逢甲商圈步行可達 · 週一至週六 10:00-20:00 (週日休)</p>
+          </div>
+          <a href="https://maps.app.goo.gl/A55JbkrhNcBHtge7A" target="_blank" class="shrink-0 bg-stone-900 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl hover:bg-stone-800 transition">
+            導航
+          </a>
+        </div>
+        <div class="pt-2 border-t border-stone-300 text-xs text-stone-700 font-medium flex items-center gap-4">
+          <span>🛵 機車：巷內免費停放</span>
+          <span>🚗 汽車：福星/文華停車場</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎨 9 色系色票快速挑選 Bar (大色票 30px 好點) -->
+    <div class="max-w-md mx-auto px-4 mt-4">
+      <div class="flex items-center justify-between text-xs text-stone-800 mb-2">
+        <span class="font-bold text-xs flex items-center gap-1.5">
+          <i class="fa-solid fa-palette text-[#A07850]"></i> 依 9 大經典色系挑選款式
+        </span>
+        <span id="selected-tone-text" class="text-xs text-stone-600 font-semibold">點選色票快速過濾</span>
+      </div>
+      <div class="flex items-center gap-2.5 overflow-x-auto hide-scrollbar py-1" id="swatch-container">
+        <button onclick="filterTone('all', '全部作品')" class="swatch-btn active text-xs bg-stone-900 text-white px-4 py-2 rounded-full shrink-0 transition font-bold">全部</button>
+        <button onclick="filterTone('紅', '正紅 — 節慶與氣色')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#B32B28" title="正紅"></button>
+        <button onclick="filterTone('粉', '粉紫 — 溫柔的日常')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#DDB3BA" title="粉紫"></button>
+        <button onclick="filterTone('裸', '裸膚 — 最耐看的一款')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#DFC6B6" title="裸膚"></button>
+        <button onclick="filterTone('奶茶', '奶茶 — 暖而不甜')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#A87A56" title="奶茶"></button>
+        <button onclick="filterTone('灰', '灰霧 — 冷調的乾淨')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#9A938C" title="灰霧"></button>
+        <button onclick="filterTone('墨', '墨黑 — 收在指尖的力量')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#2E2A28" title="墨黑"></button>
+        <button onclick="filterTone('藍', '藍調 — 冷靜的對比')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#2F5F86" title="藍調"></button>
+        <button onclick="filterTone('綠', '松綠 — 秋冬的深色')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#2C5348" title="松綠"></button>
+        <button onclick="filterTone('黃', '鵝黃 — 亮起來的那一手')" class="swatch-btn w-8 h-8 rounded-full shrink-0 transition" style="background:#D9AE45" title="鵝黃"></button>
+      </div>
+    </div>
+
+    <!-- 服務分類標籤 Tabs (寬大按鈕) -->
+    <div class="max-w-md mx-auto px-4 mt-3.5">
+      <div class="flex gap-2 overflow-x-auto hide-scrollbar py-1" id="cat-tabs">
+        <button onclick="switchCategory('gel')" class="tab-btn active px-4 py-2.5 rounded-2xl text-sm font-bold bg-[#1C1917] text-white shrink-0 shadow-sm transition">
+          凝膠美甲 / 彩繪
+        </button>
+        <button onclick="switchCategory('ingrown')" class="tab-btn px-4 py-2.5 rounded-2xl text-sm font-semibold bg-white border border-stone-200 text-stone-800 shrink-0 transition">
+          凍甲·咬甲調理
+        </button>
+        <button onclick="switchCategory('lash')" class="tab-btn px-4 py-2.5 rounded-2xl text-sm font-semibold bg-white border border-stone-200 text-stone-800 shrink-0 transition">
+          光固美睫
+        </button>
+        <button onclick="switchCategory('brow')" class="tab-btn px-4 py-2.5 rounded-2xl text-sm font-semibold bg-white border border-stone-200 text-stone-800 shrink-0 transition">
+          飄霧眉
+        </button>
+        <button onclick="switchCategory('care')" class="tab-btn px-4 py-2.5 rounded-2xl text-sm font-semibold bg-white border border-stone-200 text-stone-800 shrink-0 transition">
+          手足保養
+        </button>
+      </div>
+    </div>
+
+    <!-- 服務項目列表 (超清晰大卡片、大圖 84x84px) -->
+    <main class="max-w-md mx-auto px-4 mt-3 space-y-3" id="service-list">
+      <!-- JS 動態生成 -->
+    </main>
+
+    <!-- 🌟 凍甲/嵌甲修復前後對比實例 -->
+    <div class="max-w-md mx-auto px-4 mt-4">
+      <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-7 h-7 rounded-full bg-[#1C1917] text-[#E0C09E] text-xs flex items-center justify-center">
+              <i class="fa-solid fa-stethoscope text-xs"></i>
+            </span>
+            <h3 class="font-bold text-sm text-stone-900">4.8 星專業凍甲嵌甲修護實例</h3>
+          </div>
+          <span class="text-xs text-[#A07850] font-bold">溫和不痛 · 根治復發</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-center text-xs">
+          <div class="bg-rose-50 p-3.5 rounded-2xl border border-rose-100">
+            <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">調理前 (Before)</span>
+            <p class="text-xs text-stone-700 mt-2 leading-relaxed font-medium">甲溝紅腫發炎、指甲刺入肉裡、走路疼痛</p>
+          </div>
+          <div class="bg-emerald-50 p-3.5 rounded-2xl border border-emerald-100">
+            <span class="bg-emerald-600 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">調理後 (After)</span>
+            <p class="text-xs text-stone-700 mt-2 leading-relaxed font-medium">溫和修整減壓、建立生長引導、即刻穿鞋不痛</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⭐ Google 4.8 星真實評論精選 -->
+    <div class="max-w-md mx-auto px-4 mt-4">
+      <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-2">
+            <i class="fa-brands fa-google text-[#4285F4] text-lg"></i>
+            <h3 class="font-bold text-sm text-stone-900">Google 4.8 星顧客真實好評</h3>
+          </div>
+          <span class="text-xs bg-amber-100 text-amber-900 font-bold px-3 py-1 rounded-full">448 則評論</span>
+        </div>
+
+        <div class="space-y-3 text-xs text-stone-700">
+          <div class="bg-stone-50 p-3.5 rounded-xl border border-stone-100">
+            <div class="flex items-center justify-between text-xs mb-1.5">
+              <span class="font-bold text-stone-900 text-sm">Chen ** (在地嚮導)</span>
+              <span class="text-amber-500 font-bold text-sm">★★★★★</span>
+            </div>
+            <p class="text-xs leading-relaxed text-stone-600">
+              「大推老師的凍甲調理！之前拔甲痛死又復發，來這邊處理完全不痛，老師還很細心教我正確修剪方式，真的拯救了我的腳大拇指！」
+            </p>
+          </div>
+
+          <div class="bg-stone-50 p-3.5 rounded-xl border border-stone-100">
+            <div class="flex items-center justify-between text-xs mb-1.5">
+              <span class="font-bold text-stone-900 text-sm">Emily L** (逢甲大學)</span>
+              <span class="text-amber-500 font-bold text-sm">★★★★★</span>
+            </div>
+            <p class="text-xs leading-relaxed text-stone-600">
+              「赤金貓眼跟石榴星砂美到不行，而且前置甘皮修整得很乾淨，維持度超好滿滿一個月完全沒翻起！報價透明動手前講得清清楚楚超安心。」
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 預約常見問題 FAQ -->
+    <div class="max-w-md mx-auto px-4 mt-3.5">
+      <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+        <h3 class="font-bold text-sm text-stone-900 flex items-center gap-1.5 mb-2">
+          <i class="fa-solid fa-circle-question text-[#A07850]"></i> 預約須知與常見問題 (FAQ)
+        </h3>
+        <div class="space-y-2 text-xs divide-y divide-stone-100">
+          <details class="pt-2 group cursor-pointer">
+            <summary class="font-bold text-stone-900 list-none flex justify-between items-center py-1 text-sm">
+              <span>大概要多少錢？可以先報價嗎？</span>
+              <i class="fa-solid fa-chevron-down text-xs text-stone-400 group-open:rotate-180 transition"></i>
+            </summary>
+            <p class="text-xs text-stone-600 mt-1.5 leading-relaxed bg-stone-50 p-3 rounded-xl">
+              價格依款式難度、實際狀況與所需時間報價。預約時把想做的款式圖傳過來，會在動手之前把價格講清楚，絕不會做完才加價。現場付款。
+            </p>
+          </details>
+          <details class="pt-2 group cursor-pointer">
+            <summary class="font-bold text-stone-900 list-none flex justify-between items-center py-1 text-sm">
+              <span>指甲很短或有咬指甲習慣，能做嗎？</span>
+              <i class="fa-solid fa-chevron-down text-xs text-stone-400 group-open:rotate-180 transition"></i>
+            </summary>
+            <p class="text-xs text-stone-600 mt-1.5 leading-relaxed bg-stone-50 p-3 rounded-xl">
+              能。短甲做單色、貓眼與漸層都很耐看。咬甲狀況會先看甲床與指緣，必要時先做保養與凝膠加厚重建甲床。
+            </p>
+          </details>
+          <details class="pt-2 group cursor-pointer">
+            <summary class="font-bold text-stone-900 list-none flex justify-between items-center py-1 text-sm">
+              <span>男生可以做嗎？</span>
+              <i class="fa-solid fa-chevron-down text-xs text-stone-400 group-open:rotate-180 transition"></i>
+            </summary>
+            <p class="text-xs text-stone-600 mt-1.5 leading-relaxed bg-stone-50 p-3 rounded-xl">
+              可以。手足深層保養、嵌甲凍甲處理與自然修眉都有男性客人在做。
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部社群關注 Footer -->
+    <footer class="max-w-md mx-auto px-4 mt-6 text-center text-xs text-stone-500 space-y-3 pb-6">
+      <div class="flex items-center justify-center gap-6 text-stone-800 font-bold text-sm">
+        <a href="https://line.me/R/ti/p/@cud0296a" target="_blank" class="hover:text-[#06C755] flex items-center gap-1.5">
+          <i class="fa-brands fa-line text-xl text-[#06C755]"></i> LINE 預約
+        </a>
+        <a href="https://www.instagram.com/w.m_natural_aesthetic_space" target="_blank" class="hover:text-rose-500 flex items-center gap-1.5">
+          <i class="fa-brands fa-instagram text-xl text-rose-500"></i> Instagram
+        </a>
+        <a href="https://www.facebook.com/share/1KNEocBZW6/" target="_blank" class="hover:text-blue-600 flex items-center gap-1.5">
+          <i class="fa-brands fa-facebook text-xl text-blue-600"></i> Facebook
+        </a>
+      </div>
+      <p class="text-xs text-stone-400">© 2026 W.M 自然美學空間 · 西安街逢甲店 · 專屬預約系統</p>
+    </footer>
+
+    <!-- 底部固定預約預覽條 (大尺寸、超好按) -->
+    <div class="fixed bottom-0 left-0 right-0 p-3.5 bg-white/95 backdrop-blur border-t border-stone-200 z-40 shadow-lg">
+      <div class="max-w-md mx-auto flex items-center justify-between gap-3">
+        <div class="flex-1 min-w-0" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <p class="text-xs text-stone-500 font-medium">已選預約項目</p>
+          <p class="text-base font-bold text-stone-900 truncate" id="selected-service-name">赤金貓眼 (正紅長橢圓)</p>
+          <p class="text-xs font-bold text-[#A07850]" id="selected-service-price">依款式與甲況確認</p>
+        </div>
+        <button onclick="openBookingModal()" id="btn-proceed" class="bg-[#1C1917] hover:bg-stone-800 text-white font-bold px-6 py-4 rounded-2xl shadow-md transition flex items-center gap-2 text-sm shrink-0">
+          <span>進入預約排程</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 視角 2：💼 店家後台 POS 看板 -->
+  <!-- ========================================== -->
+  <div id="merchant-view" class="pt-16 max-w-md mx-auto px-4 hidden space-y-4">
+    <div class="bg-[#1C1917] text-[#FAF8F5] p-5 rounded-3xl shadow-xl border border-[#C8A27A]/30">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-800">
+        <div>
+          <span class="text-xs text-[#C8A27A] uppercase tracking-wider font-bold">Today Overview</span>
+          <h2 class="text-lg font-bold mt-0.5">W.M 今日預約即時看板</h2>
+        </div>
+        <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-mono">
+          即時連線
+        </span>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2.5 text-center mt-3.5">
+        <div class="bg-stone-900 p-3 rounded-2xl border border-stone-800">
+          <p class="text-xs text-stone-400">今日預約席次</p>
+          <p class="text-base font-bold text-amber-300 mt-1" id="pos-booking-count">4 組客訂</p>
+        </div>
+        <div class="bg-stone-900 p-3 rounded-2xl border border-stone-800">
+          <p class="text-xs text-stone-400">預估營收</p>
+          <p class="text-base font-bold text-emerald-400 mt-1">NT$ 6,800</p>
+        </div>
+        <div class="bg-stone-900 p-3 rounded-2xl border border-stone-800">
+          <p class="text-xs text-stone-400">節省私訊時間</p>
+          <p class="text-base font-bold text-rose-400 mt-1">1.5 小時</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 即時預約排程清單 -->
+    <div class="bg-white p-4 rounded-3xl border border-stone-200 shadow-sm space-y-3">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-sm text-stone-900 flex items-center gap-1.5">
+          <i class="fa-solid fa-calendar-check text-[#A07850]"></i> 今日施作排程 (即時更新)
+        </h3>
+        <button onclick="simulateNewOrder()" class="text-xs bg-stone-100 hover:bg-stone-200 text-stone-700 px-3 py-1.5 rounded-xl transition font-medium">
+          + 模擬新客人下單
+        </button>
+      </div>
+
+      <div class="space-y-2.5" id="pos-order-list">
+        <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 flex items-center justify-between gap-2 text-xs">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5 rounded">10:30</span>
+              <span class="font-bold text-stone-900 text-sm">陳小姐 (0912-333-444)</span>
+            </div>
+            <p class="text-xs text-stone-500 mt-1">赤金貓眼 · 他店卸甲 · 杏仁甲型</p>
+          </div>
+          <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full font-bold">已確認</span>
+        </div>
+
+        <div class="bg-stone-50 p-3.5 rounded-2xl border border-stone-200 flex items-center justify-between gap-2 text-xs">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5 rounded">13:30</span>
+              <span class="font-bold text-stone-900 text-sm">林佩萱 Sandy (0938-555-888)</span>
+            </div>
+            <p class="text-xs text-stone-500 mt-1">甲溝炎/嵌甲調理 · 短甲 · 帶圖討論</p>
+          </div>
+          <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full font-bold">已確認</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 彈窗 1：預約詳情填寫彈窗 Booking Modal (大字體·防跳動) -->
+  <!-- ========================================== -->
+  <div id="booking-modal" class="fixed inset-0 bg-black/65 z-50 hidden flex flex-col justify-end">
+    <div class="bg-[#F8F5F2] rounded-t-3xl p-5 max-w-md mx-auto w-full max-h-[92vh] overflow-y-auto" id="booking-modal-content">
+      <div class="flex items-center justify-between pb-3.5 border-b border-stone-200">
+        <div>
+          <h3 class="font-bold text-lg text-stone-900">預約確認與專屬評估</h3>
+          <p class="text-xs text-stone-600 font-medium" id="modal-service-desc"></p>
+        </div>
+        <button onclick="closeBookingModal()" class="text-stone-400 hover:text-stone-600 p-2 text-2xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <form id="booking-form" onsubmit="submitBooking(event)" class="mt-4 space-y-4 text-sm">
+        
+        <!-- 卸甲選項 (大按鈕好按) -->
+        <div class="bg-white p-4 rounded-2xl border border-stone-200 space-y-2">
+          <label class="block font-bold text-stone-900 text-sm">是否有舊凝膠需要卸甲？</label>
+          <div class="grid grid-cols-3 gap-2">
+            <label class="border-2 border-stone-200 rounded-xl p-3 text-center cursor-pointer has-[:checked]:bg-[#1C1917] has-[:checked]:text-white has-[:checked]:border-[#1C1917] transition">
+              <input type="radio" name="removal" value="不需卸甲 (原生指甲)" checked class="hidden">
+              <span class="font-bold block text-sm">不需卸甲</span>
+              <span class="text-xs opacity-75 mt-0.5 block">原生甲</span>
+            </label>
+            <label class="border-2 border-stone-200 rounded-xl p-3 text-center cursor-pointer has-[:checked]:bg-[#1C1917] has-[:checked]:text-white has-[:checked]:border-[#1C1917] transition">
+              <input type="radio" name="removal" value="W.M 本店續做卸甲" class="hidden">
+              <span class="font-bold block text-sm">本店續做</span>
+              <span class="text-xs opacity-75 mt-0.5 block">本店卸甲</span>
+            </label>
+            <label class="border-2 border-stone-200 rounded-xl p-3 text-center cursor-pointer has-[:checked]:bg-[#1C1917] has-[:checked]:text-white has-[:checked]:border-[#1C1917] transition">
+              <input type="radio" name="removal" value="他店凝膠卸甲" class="hidden">
+              <span class="font-bold block text-sm">他店卸甲</span>
+              <span class="text-xs opacity-75 mt-0.5 block">需包敷卸除</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 甲型選擇 -->
+        <div class="bg-white p-4 rounded-2xl border border-stone-200 space-y-2">
+          <label class="block font-bold text-stone-900 text-sm">偏好甲型（若不確定可現場討論）</label>
+          <select id="nail-shape" class="w-full border border-stone-300 rounded-xl p-3.5 text-base bg-stone-50 outline-none">
+            <option value="現場依甲型比例討論決定">現場依甲型比例討論決定 (推薦)</option>
+            <option value="短圓甲型 (顯白俐落)">短圓甲型 (顯白俐落 / 日常首選)</option>
+            <option value="方圓甲型 (經典氣質)">方圓甲型 (經典氣質 / 顯手指修長)</option>
+            <option value="長橢圓甲型 (優雅華麗)">長橢圓甲型 (優雅華麗 / 適合拍照)</option>
+            <option value="杏仁甲 / 梯形甲">杏仁甲 / 歐美梯形甲 (需一定長度)</option>
+          </select>
+        </div>
+
+        <!-- 手足與甲面狀況複選 -->
+        <div class="bg-white p-4 rounded-2xl border border-stone-200 space-y-2">
+          <label class="block font-bold text-stone-900 text-sm">目前手足狀況（可複選）</label>
+          <div class="grid grid-cols-2 gap-2 text-xs text-stone-800">
+            <label class="flex items-center gap-2.5 bg-stone-50 p-3 rounded-xl border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="condition" value="短甲 / 咬甲習慣" class="rounded text-stone-900 w-4 h-4">
+              <span class="font-medium">短甲 / 咬甲習慣</span>
+            </label>
+            <label class="flex items-center gap-2.5 bg-stone-50 p-3 rounded-xl border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="condition" value="指甲斷裂 / 需延甲" class="rounded text-stone-900 w-4 h-4">
+              <span class="font-medium">指甲斷裂 / 需延甲</span>
+            </label>
+            <label class="flex items-center gap-2.5 bg-stone-50 p-3 rounded-xl border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="condition" value="甲溝炎 / 嵌甲疼痛" class="rounded text-stone-900 w-4 h-4">
+              <span class="font-medium">甲溝 / 嵌甲疼痛</span>
+            </label>
+            <label class="flex items-center gap-2.5 bg-stone-50 p-3 rounded-xl border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="condition" value="自備小紅書/IG款式圖" class="rounded text-stone-900 w-4 h-4">
+              <span class="font-medium">自備款式圖討論</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 顧客與預約時間資料 -->
+        <div class="bg-white p-4 rounded-2xl border border-stone-200 space-y-3">
+          <label class="block font-bold text-stone-900 text-sm">預約人資料與時段</label>
+          
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <span class="block text-xs text-stone-600 font-medium mb-1">姓名 / 暱稱 *</span>
+              <input type="text" id="cust-name" required placeholder="例：林小姐" class="w-full border border-stone-300 rounded-xl p-3.5 text-base bg-stone-50 focus:bg-white outline-none">
+            </div>
+            <div>
+              <span class="block text-xs text-stone-600 font-medium mb-1">聯絡手機 *</span>
+              <input type="tel" id="cust-phone" required placeholder="0912345678" class="w-full border border-stone-300 rounded-xl p-3.5 text-base bg-stone-50 focus:bg-white outline-none">
+            </div>
+          </div>
+
+          <div>
+            <span class="block text-xs text-stone-600 font-medium mb-1">希望預約日期 * (週日公休)</span>
+            <input type="date" id="book-date" required class="w-full border border-stone-300 rounded-xl p-3.5 text-base bg-stone-50 focus:bg-white outline-none">
+          </div>
+
+          <div>
+            <span class="block text-xs text-stone-600 font-medium mb-1">希望施作時段 *</span>
+            <div class="grid grid-cols-4 gap-2 text-sm" id="time-slots">
+              <button type="button" onclick="selectTime('10:30')" class="time-slot border border-stone-300 rounded-xl py-3 font-bold text-center transition">10:30</button>
+              <button type="button" onclick="selectTime('13:30')" class="time-slot border-2 border-[#1C1917] bg-[#1C1917] text-white font-bold rounded-xl py-3 text-center transition">13:30</button>
+              <button type="button" onclick="selectTime('16:00')" class="time-slot border border-stone-300 rounded-xl py-3 font-bold text-center transition">16:00</button>
+              <button type="button" onclick="selectTime('18:00')" class="time-slot border border-stone-300 rounded-xl py-3 font-bold text-center transition">18:00</button>
+            </div>
+            <input type="hidden" id="selected-time" value="13:30" required>
+          </div>
+
+          <div>
+            <span class="block text-xs text-stone-600 font-medium mb-1">想做的色系／自備圖／特殊需求備註</span>
+            <input type="text" id="cust-notes" placeholder="如：想要奶茶色系、有甲溝發炎等" class="w-full border border-stone-300 rounded-xl p-3.5 text-base bg-stone-50 outline-none">
+          </div>
+        </div>
+
+        <!-- 報價保證說明 -->
+        <div class="bg-[#EDE6DE] p-4 rounded-xl text-xs text-stone-700 leading-relaxed">
+          <span class="font-bold text-stone-900 block mb-1 text-sm"><i class="fa-solid fa-circle-check text-[#A07850] mr-1"></i>W.M 報價保證：</span>
+          價格依款式難度與實際指甲狀況報價，送出後美甲師會在 LINE 預先溝通報價清楚，絕不會做完才臨時加價。
+        </div>
+
+        <!-- 一鍵 LINE 預約直發大按鈕 -->
+        <button type="submit" id="btn-submit-line" class="w-full bg-[#06C755] hover:bg-[#05b34c] text-white font-bold py-4 rounded-2xl shadow-lg flex items-center justify-center gap-2 text-base transition">
+          <i class="fa-brands fa-line text-2xl"></i>
+          <span>一鍵傳送 LINE 官方帳號預約 (@cud0296a)</span>
+        </button>
+        <p class="text-center text-xs text-stone-500 font-medium">點擊將自動開啟 LINE 傳送格式化預約單給 W.M 官方帳號</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 彈窗 2：🔮 智慧命定美甲風格測驗 Quiz Modal -->
+  <!-- ========================================== -->
+  <div id="quiz-modal" class="fixed inset-0 bg-black/75 z-50 hidden flex flex-col justify-center items-center p-4">
+    <div class="bg-[#F8F5F2] rounded-3xl max-w-sm w-full p-5 space-y-4 text-xs text-stone-800 shadow-2xl border border-stone-300">
+      <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+        <h3 class="font-bold text-sm text-stone-900 flex items-center gap-1.5">
+          <i class="fa-solid fa-wand-magic-sparkles text-[#A07850]"></i> 美甲命定風格 30秒測驗
+        </h3>
+        <button onclick="closeQuizModal()" class="text-stone-400 hover:text-stone-600 p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+
+      <div class="space-y-3" id="quiz-questions">
+        <div>
+          <label class="block font-bold text-stone-900 mb-1.5 text-xs">1. 你的膚色基調？</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="setQuizAnswer('skin', 'fair', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition font-medium">冷白皮</button>
+            <button onclick="setQuizAnswer('skin', 'warm', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition active bg-stone-900 text-white font-bold">暖黃皮</button>
+            <button onclick="setQuizAnswer('skin', 'tan', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition font-medium">健康小麥色</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-900 mb-1.5 text-xs">2. 主要出席的日常場合？</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="setQuizAnswer('scene', 'work', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition active bg-stone-900 text-white font-bold">上班通勤</button>
+            <button onclick="setQuizAnswer('scene', 'party', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition font-medium">婚禮/節慶</button>
+            <button onclick="setQuizAnswer('scene', 'vacation', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition font-medium">拍照約會</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-900 mb-1.5 text-xs">3. 目前的甲面長度？</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="setQuizAnswer('len', 'short', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition active bg-stone-900 text-white font-bold">短甲 / 圓甲型</button>
+            <button onclick="setQuizAnswer('len', 'long', this)" class="quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition font-medium">長甲 / 橢圓修長</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 測驗結果展示 -->
+      <div class="bg-gradient-to-r from-[#EDE6DE] to-[#E5DDD4] p-3.5 rounded-2xl border border-[#DDD3C9] space-y-1">
+        <p class="text-xs text-[#A07850] font-bold">✨ 為您計算出的命定款式：</p>
+        <p class="text-sm font-bold text-stone-900" id="quiz-result-title">石榴星砂 (深酒紅閃粉短圓款)</p>
+        <p class="text-xs text-stone-600 leading-snug" id="quiz-result-desc">暖黃皮的顯白救星！短甲修整俐落，細閃微光不張揚，上班與約會完美兼具。</p>
+      </div>
+
+      <button onclick="applyQuizResult()" class="w-full bg-[#1C1917] text-[#FAF8F5] font-bold py-3.5 rounded-xl shadow transition text-sm">
+        選取此推薦款式並預約
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 彈窗 3：📖 店家營運與安裝指南 Modal -->
+  <!-- ========================================== -->
+  <div id="tutorial-modal" class="fixed inset-0 bg-black/70 z-50 hidden flex flex-col justify-center items-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-5 max-h-[85vh] overflow-y-auto space-y-4 text-xs text-stone-700">
+      <div class="flex items-center justify-between pb-2.5 border-b border-stone-200">
+        <h3 class="font-bold text-stone-900 text-sm flex items-center gap-1.5">
+          <i class="fa-solid fa-graduation-cap text-[#A07850]"></i> 店家 3 分鐘極速安裝與營運指南
+        </h3>
+        <button onclick="closeTutorialModal()" class="text-stone-400 hover:text-stone-600 p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+
+      <div class="space-y-3 leading-relaxed">
+        <div class="bg-amber-50 border border-amber-200 p-3.5 rounded-xl">
+          <p class="font-bold text-amber-950 text-xs">💡 為什麼這套系統比傳統預約更省錢省時？</p>
+          <p class="text-xs text-amber-900 mt-1">
+            一般預約平台每月收 2,000 元月租，客人卻依然喜歡用 LINE 私訊。本系統<strong>終身免月租</strong>，客人選好款式與甲況一鍵發送至 LINE，店家 1 秒看懂顧客需求！
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-stone-900 mb-1 flex items-center gap-1 text-xs">
+            <span class="w-4 h-4 bg-stone-900 text-white rounded-full text-[10px] flex items-center justify-center">1</span>
+            如何設定到 Instagram (IG)？
+          </h4>
+          <p class="text-stone-600 pl-5 text-xs">
+            打開 IG 商業檔案 -> 點擊「編輯個人檔案」 -> 在「網站 / 連結」處填入預約網址，自介寫上「💅 線上 24H 快速預約請點下方連結」。
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-stone-900 mb-1 flex items-center gap-1 text-xs">
+            <span class="w-4 h-4 bg-stone-900 text-white rounded-full text-[10px] flex items-center justify-center">2</span>
+            如何綁定到 LINE 官方帳號圖文選單？
+          </h4>
+          <p class="text-stone-600 pl-5 text-xs">
+            登入 LINE Official Account Manager 後台 -> 進入「圖文選單」 -> 建立一個區塊（動作選擇「開啟連結」） -> 貼上本預約網址。
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-stone-900 mb-1 flex items-center gap-1 text-xs">
+            <span class="w-4 h-4 bg-stone-900 text-white rounded-full text-[10px] flex items-center justify-center">3</span>
+            如何加入手機桌面像真 APP 一樣使用？
+          </h4>
+          <p class="text-stone-600 pl-5 text-xs">
+            iPhone Safari 點擊底部「分享」➔「加入主畫面」；Android Chrome 點擊右上角三點 ➔「安裝應用程式 / 新增至主螢幕」，即可生成專屬桌面 App 圖示！
+          </p>
+        </div>
+      </div>
+
+      <button onclick="closeTutorialModal()" class="w-full bg-[#1C1917] text-white font-bold py-3 rounded-xl shadow mt-2 text-sm">我了解了，返回系統</button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 彈窗 4：🔍 作品高清大圖 Lightbox Modal -->
+  <!-- ========================================== -->
+  <div id="lightbox-modal" class="fixed inset-0 bg-black/85 z-50 hidden flex flex-col justify-center items-center p-4" onclick="closeLightbox()">
+    <div class="relative max-w-sm w-full bg-stone-900 rounded-3xl overflow-hidden shadow-2xl border border-stone-700" onclick="event.stopPropagation()">
+      <div class="relative w-full aspect-square bg-black">
+        <img id="lightbox-img" src="" alt="Lookbook" class="w-full h-full object-cover">
+        <button onclick="closeLightbox()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-4 text-stone-100">
+        <div class="flex items-center justify-between">
+          <h3 id="lightbox-title" class="font-bold text-base"></h3>
+          <span id="lightbox-tag" class="bg-[#C8A27A] text-stone-950 text-xs px-2.5 py-0.5 rounded font-bold"></span>
+        </div>
+        <p id="lightbox-desc" class="text-xs text-stone-400 mt-1.5 leading-relaxed"></p>
+        <div class="flex items-center justify-between mt-3.5 pt-3 border-t border-stone-800">
+          <span id="lightbox-time" class="text-xs text-[#C8A27A] font-bold"></span>
+          <button id="lightbox-select-btn" class="bg-[#C8A27A] hover:bg-[#b88e5e] text-stone-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition">
+            選取此款式
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- JavaScript 全功能引擎 -->
+  <!-- ========================================== -->
+  <script>
+    const wmServices = [
+      { id: 1, cat: "gel", tone: "紅", name: "赤金貓眼 (正紅長橢圓)", price: "依款式洽詢", time: "100-120 min", img: "https://wm27-3.com/images/ruby-cat-eye-900.webp", desc: "光一轉金線走過，正紅底加磁石，年節與婚宴常客款", tag: "招牌貓眼" },
+      { id: 2, cat: "gel", tone: "紅", name: "石榴星砂 (深酒紅閃粉短圓)", price: "依款式洽詢", time: "90 min", img: "https://wm27-3.com/images/garnet-sand-900.webp", desc: "深酒紅混細閃粉，短甲也壓得住的顏色，顯白首選", tag: "顯白推薦" },
+      { id: 3, cat: "gel", tone: "綠", name: "松綠貓眼 (墨綠方圓漸層)", price: "依款式洽詢", time: "100 min", img: "https://wm27-3.com/images/pine-cat-eye-900.webp", desc: "墨綠到深黑貓眼漸層，冷調不重，秋冬點台率最高", tag: "秋冬熱門" },
+      { id: 4, cat: "gel", tone: "墨", name: "墨金貓眼 (黑色系短甲款)", price: "依款式洽詢", time: "90 min", img: "https://wm27-3.com/images/ink-cat-eye-900.webp", desc: "接近黑的墨色貓眼，短甲做起來俐落，上班不突兀", tag: "俐落百搭" },
+      { id: 5, cat: "gel", tone: "黃", name: "鵝黃珠寶 (極光鑽與紅心寶石)", price: "依款式洽詢", time: "130 min", img: "https://wm27-3.com/images/golden-jewel-900.webp", desc: "鵝黃金蔥配珠光白，紅心鑽與極光鑽跳色，拍照款", tag: "拍照必備" },
+      { id: 6, cat: "gel", tone: "紅", name: "正紅貝殼 (短方圓貝殼片)", price: "依款式洽詢", time: "110 min", img: "https://wm27-3.com/images/crimson-shell-900.webp", desc: "正紅跳兩指透明底，鋪貝殼片與手繪圖騰", tag: "氣質款" },
+      { id: 7, cat: "gel", tone: "奶茶", name: "酒紅奶茶 (雙色顯白跳色)", price: "依款式洽詢", time: "90 min", img: "https://wm27-3.com/images/wine-milk-tea-900.webp", desc: "酒紅與奶茶裸色交錯跳色，日常最好搭", tag: "日常首選" },
+      { id: 8, cat: "gel", tone: "粉", name: "藕紫金箔 (溫柔金箔斜線)", price: "依款式洽詢", time: "110 min", img: "https://wm27-3.com/images/lotus-gold-900.webp", desc: "藕紫與粉裸交錯，金箔壓一條斜線帶過，溫柔不無聊", tag: "溫柔氣質" },
+      { id: 9, cat: "gel", tone: "粉", name: "金箔亮片 (淡紫碎箔漸層)", price: "依款式洽詢", time: "100 min", img: "https://wm27-3.com/images/gold-flake-900.webp", desc: "淡紫透明底指尖鋪金箔碎箔，短甲也顯長", tag: "仙氣顯長" },
+      { id: 10, cat: "gel", tone: "粉", name: "奶熊蝴蝶結 (立體小熊粉白)", price: "依款式洽詢", time: "130 min", img: "https://wm27-3.com/images/milk-bear-900.webp", desc: "粉白底做立體小熊與蝴蝶結，放假最常點", tag: "可愛立體" },
+      { id: 11, cat: "gel", tone: "粉", name: "香檳寶石 (粉裸銀蔥寶石)", price: "依款式洽詢", time: "120 min", img: "https://wm27-3.com/images/champagne-gem-900.webp", desc: "粉裸色銀蔥配香檳色寶石，橢圓長甲優雅感", tag: "優雅閃亮" },
+      { id: 12, cat: "gel", tone: "裸", name: "琥珀金箔 (經典復古暈染)", price: "依款式洽詢", time: "120 min", img: "https://wm27-3.com/images/amber-foil-900.webp", desc: "琥珀棕黃暈染搭配金箔碎片，法式復古氛圍", tag: "法式復古" },
+      { id: 14, cat: "gel", tone: "奶茶", name: "可可斑紋 (焦糖乳牛手繪)", price: "依款式洽詢", time: "110 min", img: "https://wm27-3.com/images/cocoa-spot-900.webp", desc: "焦糖色跳銀蔥，手繪乳牛斑紋，奶茶色系最搶眼", tag: "手繪彩繪" },
+      { id: 15, cat: "gel", tone: "裸", name: "銀蔥法式 (裸粉香檳貝殼)", price: "依款式洽詢", time: "100 min", img: "https://wm27-3.com/images/silver-french-900.webp", desc: "裸粉底做銀蔥漸層法式，香檳貝殼點綴，短甲極耐看", tag: "氣質法式" },
+      { id: 16, cat: "gel", tone: "灰", name: "菱格大地 (手繪菱格紋短圓)", price: "依款式洽詢", time: "110 min", img: "https://wm27-3.com/images/earth-argyle-900.webp", desc: "大地灰色系手繪菱格，每指格子大小不一，耐看不膩", tag: "文青菱格" },
+      { id: 17, cat: "gel", tone: "裸", name: "裸粉大理石 (香檳金蔥跳色)", price: "依款式洽詢", time: "100 min", img: "https://wm27-3.com/images/nude-marble-900.webp", desc: "裸粉底大理石暈染，跳一指香檳金蔥，最保險上班款", tag: "百搭通勤" },
+      { id: 18, cat: "gel", tone: "裸", name: "純白法式 (經典細閃微笑線)", price: "依款式洽詢", time: "90 min", img: "https://wm27-3.com/images/pure-french-900.webp", desc: "傳統白色微笑線法式，指尖加細閃，永恆經典", tag: "經典微笑線" },
+      { id: 13, cat: "gel", tone: "all", name: "客製化帶圖施作 / 討論報價", price: "帶圖確認報價", time: "120-150 min", img: "https://wm27-3.com/images/logo-wm-512.png", desc: "可自備 IG / 小紅書圖片，動手前講清價格", tag: "帶圖客製" },
+
+      { id: 21, cat: "ingrown", tone: "all", name: "甲溝炎 / 嵌甲凍甲專業調理", price: "現場評估狀況", time: "60-90 min", img: "https://wm27-3.com/images/diagram-ingrown-nail.svg", desc: "不硬剪，先評估甲溝紅腫發炎狀況，溫和修整並教導後續留甲照護", tag: "4.8星專業口碑" },
+      { id: 22, cat: "ingrown", tone: "all", name: "咬甲習慣 / 受損斷裂甲床重建", price: "依甲況安排", time: "75 min", img: "https://wm27-3.com/images/og-cover.jpg", desc: "針對長期咬甲短甲、甲床退縮，以凝膠加厚保護並養護指緣", tag: "咬甲救星" },
+
+      { id: 31, cat: "lash", tone: "all", name: "光固美睫 · 自然裸妝感 (根根分明)", price: "依根數安排", time: "75 min", img: "https://wm27-3.com/images/lash-natural-fan-900.webp", desc: "依原生睫毛與眼型調整長度與捲度，不壓眼、輕盈無異物感", tag: "自然偽素顏" },
+      { id: 32, cat: "lash", tone: "all", name: "光固美睫 · 濃密微醺設計款", price: "依根數安排", time: "90 min", img: "https://wm27-3.com/images/lash-natural-fan-900.webp", desc: "深邃立體眼線感，拍照立體、省去每天畫眼線時間", tag: "自帶眼線" },
+
+      { id: 41, cat: "brow", tone: "all", name: "客製自然飄霧眉 / 粉霧眉", price: "預約專屬諮詢", time: "150 min", img: "https://wm27-3.com/images/brow-ombre-01-900.webp", desc: "依臉型骨骼與原生毛流設計眉型，霧度依日常妝感客製", tag: "量身定做" },
+
+      { id: 51, cat: "care", tone: "all", name: "手部精緻指緣甘皮修整 SPA", price: "洽詢預約", time: "60 min", img: "https://wm27-3.com/images/wine-milk-tea-900.webp", desc: "指緣軟化、甘皮修整、指甲型態修磨、導入精華滋養", tag: "基礎保養" },
+      { id: 52, cat: "care", tone: "all", name: "足部深層去繭嫩白護理", price: "洽詢預約", time: "80 min", img: "https://wm27-3.com/images/plaid-pedicure-900.webp", desc: "軟化足底硬繭、深層拋光、足浴去角質與長效保濕敷膜", tag: "足部救星" }
+    ];
+
+    let currentCategory = 'gel';
+    let currentTone = 'all';
+    let selectedService = wmServices[0];
+    let selectedTimeSlot = '13:30';
+
+    function init() {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      if (tomorrow.getDay() === 0) {
+        tomorrow.setDate(tomorrow.getDate() + 1);
+      }
+      document.getElementById('book-date').value = tomorrow.toISOString().split('T')[0];
+      document.getElementById('book-date').min = new Date().toISOString().split('T')[0];
+
+      selectServiceItem(1);
+      renderServices();
+    }
+
+    function setViewMode(mode) {
+      const custView = document.getElementById('customer-view');
+      const merchView = document.getElementById('merchant-view');
+      const custBtn = document.getElementById('view-customer-btn');
+      const merchBtn = document.getElementById('view-merchant-btn');
+
+      if (mode === 'customer') {
+        custView.classList.remove('hidden');
+        merchView.classList.add('hidden');
+        custBtn.className = "px-3 py-1 rounded-full font-bold bg-[#C8A27A] text-stone-950 transition flex items-center gap-1.5";
+        merchBtn.className = "px-3 py-1 rounded-full font-semibold text-stone-300 hover:text-white transition flex items-center gap-1.5";
+      } else {
+        custView.classList.add('hidden');
+        merchView.classList.remove('hidden');
+        merchBtn.className = "px-3 py-1 rounded-full font-bold bg-[#C8A27A] text-stone-950 transition flex items-center gap-1.5";
+        custBtn.className = "px-3 py-1 rounded-full font-semibold text-stone-300 hover:text-white transition flex items-center gap-1.5";
+      }
+    }
+
+    function switchCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.className = "tab-btn px-4 py-2.5 rounded-2xl text-sm font-semibold bg-white border border-stone-200 text-stone-800 shrink-0 transition";
+      });
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick')?.includes(cat));
+      if (targetBtn) {
+        targetBtn.className = "tab-btn active px-4 py-2.5 rounded-2xl text-sm font-bold bg-[#1C1917] text-white shrink-0 shadow-sm transition";
+      }
+      renderServices();
+    }
+
+    function filterTone(tone, label) {
+      currentTone = tone;
+      document.querySelectorAll('.swatch-btn').forEach(btn => btn.classList.remove('active'));
+      event?.currentTarget?.classList.add('active');
+      document.getElementById('selected-tone-text').innerText = label;
+      
+      if (currentCategory !== 'gel') {
+        switchCategory('gel');
+      } else {
+        renderServices();
+      }
+    }
+
+    function renderServices() {
+      const container = document.getElementById('service-list');
+      let filtered = wmServices.filter(s => s.cat === currentCategory);
+
+      if (currentCategory === 'gel' && currentTone !== 'all') {
+        filtered = filtered.filter(s => s.tone === currentTone || s.tone === 'all');
+      }
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="bg-white p-8 rounded-2xl text-center text-stone-400 text-sm font-medium">此色系暫無特定作品，可直接點選「帶圖客製」！</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(s => {
+        const isSelected = selectedService && selectedService.id === s.id;
+        return `
+          <div onclick="selectServiceItem(${s.id})" class="service-card bg-white p-4 rounded-2xl border-2 ${isSelected ? 'border-[#1C1917] shadow-md ring-2 ring-[#C8A27A]/30' : 'border-stone-200/80'} transition cursor-pointer hover:border-stone-400 flex items-center gap-3.5">
+            <div class="relative w-20 h-20 rounded-xl overflow-hidden bg-stone-100 shrink-0 border border-stone-200 group" onclick="event.stopPropagation(); openLightbox(${s.id});">
+              <img src="${s.img}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='https://wm27-3.com/images/logo-wm-512.png'">
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition">
+                <i class="fa-solid fa-magnifying-glass-plus text-sm"></i>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0 pr-1">
+              <div class="flex items-center gap-1.5">
+                <h4 class="font-bold text-stone-900 text-base truncate leading-tight">${s.name}</h4>
+                ${s.tag ? `<span class="bg-[#EDE6DE] text-[#A07850] text-xs px-2 py-0.5 rounded font-bold shrink-0">${s.tag}</span>` : ''}
+              </div>
+              <p class="text-xs text-stone-600 mt-1 line-clamp-2 leading-snug">${s.desc}</p>
+              <div class="flex items-center gap-3 mt-2 text-xs font-semibold">
+                <span class="text-stone-500"><i class="fa-regular fa-clock mr-1"></i>${s.time}</span>
+                <span class="text-[#A07850] font-bold text-sm">${s.price}</span>
+              </div>
+            </div>
+            <button class="w-8 h-8 rounded-full border-2 ${isSelected ? 'bg-[#1C1917] text-white border-[#1C1917]' : 'border-stone-300 text-stone-400'} flex items-center justify-center transition shrink-0">
+              <i class="fa-solid fa-check text-xs"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectServiceItem(id) {
+      selectedService = wmServices.find(x => x.id === id);
+      document.getElementById('selected-service-name').innerText = selectedService.name;
+      document.getElementById('selected-service-price').innerText = selectedService.price;
+      
+      const btn = document.getElementById('btn-proceed');
+      btn.disabled = false;
+
+      renderServices();
+    }
+
+    function openLightbox(id) {
+      const item = wmServices.find(x => x.id === id);
+      if (!item) return;
+      document.getElementById('lightbox-img').src = item.img;
+      document.getElementById('lightbox-title').innerText = item.name;
+      document.getElementById('lightbox-tag').innerText = item.tag || '精選作品';
+      document.getElementById('lightbox-desc').innerText = item.desc;
+      document.getElementById('lightbox-time').innerText = `⏱ 施作時間約 ${item.time}`;
+      
+      document.getElementById('lightbox-select-btn').onclick = () => {
+        selectServiceItem(item.id);
+        closeLightbox();
+      };
+
+      document.getElementById('lightbox-modal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+    }
+
+    function selectTime(slot) {
+      selectedTimeSlot = slot;
+      document.getElementById('selected-time').value = slot;
+      document.querySelectorAll('.time-slot').forEach(el => {
+        if (el.innerText === slot) {
+          el.className = "time-slot border-2 border-[#1C1917] bg-[#1C1917] text-white font-bold rounded-xl py-3 text-center transition";
+        } else {
+          el.className = "time-slot border border-stone-300 rounded-xl py-3 font-bold text-center transition text-stone-700";
+        }
+      });
+    }
+
+    function openBookingModal() {
+      if (!selectedService) return;
+      document.getElementById('modal-service-desc').innerText = `已選主要項目：${selectedService.name}`;
+      document.getElementById('booking-modal').classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.add('hidden');
+    }
+
+    function openTutorialModal() {
+      document.getElementById('tutorial-modal').classList.remove('hidden');
+    }
+
+    function closeTutorialModal() {
+      document.getElementById('tutorial-modal').classList.add('hidden');
+    }
+
+    function openQuizModal() {
+      document.getElementById('quiz-modal').classList.remove('hidden');
+    }
+
+    function closeQuizModal() {
+      document.getElementById('quiz-modal').classList.add('hidden');
+    }
+
+    function setQuizAnswer(type, val, btn) {
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = "quiz-btn bg-white border border-stone-200 p-3 rounded-xl text-center hover:border-stone-800 transition font-medium";
+      });
+      btn.className = "quiz-btn bg-stone-900 text-white font-bold p-3 rounded-xl text-center";
+
+      if (val === 'fair') {
+        document.getElementById('quiz-result-title').innerText = "松綠貓眼 (墨綠方圓漸層)";
+        document.getElementById('quiz-result-desc').innerText = "冷白皮的絕美對比色！墨黑漸層至松綠，轉動帶有金光，氣場強大又顯手指修長。";
+      } else if (val === 'warm') {
+        document.getElementById('quiz-result-title').innerText = "石榴星砂 (深酒紅閃粉短圓款)";
+        document.getElementById('quiz-result-desc').innerText = "暖黃皮的顯白救星！短甲修整俐落，細閃微光不張揚，上班與約會完美兼具。";
+      } else {
+        document.getElementById('quiz-result-title').innerText = "琥珀金箔 (經典復古暈染)";
+        document.getElementById('quiz-result-desc').innerText = "健康膚色最襯托的法式復古色！琥珀棕金交錯，優雅充滿層次。";
+      }
+    }
+
+    function applyQuizResult() {
+      const title = document.getElementById('quiz-result-title').innerText;
+      if (title.includes('松綠')) {
+        selectServiceItem(3);
+      } else if (title.includes('石榴')) {
+        selectServiceItem(2);
+      } else {
+        selectServiceItem(12);
+      }
+      closeQuizModal();
+      openBookingModal();
+    }
+
+    function submitBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const date = document.getElementById('book-date').value;
+      const notes = document.getElementById('cust-notes').value.trim() || '無';
+      const removal = document.querySelector('input[name="removal"]:checked').value;
+      const nailShape = document.getElementById('nail-shape').value;
+      
+      const conditions = [];
+      document.querySelectorAll('input[name="condition"]:checked').forEach(cb => conditions.push(cb.value));
+      const conditionText = conditions.length > 0 ? conditions.join('、') : '無特殊狀況';
+
+      const lineMessage = 
+`✨ 【W.M 自然美學空間 預約申請單】
+────────────────────
+👤 顧客姓名：${name}
+📞 聯絡電話：${phone}
+📅 希望日期：${date}
+⏰ 希望時段：${selectedTimeSlot}
+────────────────────
+💅 預約主項目：
+▫️ ${selectedService.name} (預估 ${selectedService.time})
+────────────────────
+🔍 施作前置與狀況評估：
+▫️ 偏好甲型：${nailShape}
+▫️ 卸甲需求：${removal}
+▫️ 甲況備註：${conditionText}
+📝 款式與需求說明：${notes}
+────────────────────
+📍 施作地點：台中市西屯區西安街277巷27-3號 (逢甲商圈)
+────────────────────
+(此預約單由 W.M 專屬預約系統生成，請等待老師確認檔期並回覆報價)`;
+
+      const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
+      window.location.href = lineUrl;
+    }
+
+    function simulateNewOrder() {
+      const orderList = document.getElementById('pos-order-list');
+      const countEl = document.getElementById('pos-booking-count');
+      const newCard = document.createElement('div');
+      newCard.className = "bg-amber-50 p-3.5 rounded-2xl border border-amber-200 flex items-center justify-between gap-2 text-xs animate-pulse";
+      newCard.innerHTML = `
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="bg-rose-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">剛剛新進</span>
+            <span class="font-bold text-stone-900 text-sm">張小姐 (0988-777-666)</span>
+          </div>
+          <p class="text-xs text-stone-600 mt-1">石榴星砂短圓 · 他店卸甲 · 預約明天 13:30</p>
+        </div>
+        <span class="text-xs text-amber-900 bg-amber-200 px-2.5 py-1 rounded-full font-bold">新進預約</span>
+      `;
+      orderList.insertBefore(newCard, orderList.firstChild);
+      countEl.innerText = "5 組客訂 (+1 新進)";
+    }
+
+    // 🤖 全自動演示
+    async function startAutoDemo() {
+      setViewMode('customer');
+      const cursor = document.getElementById('virtual-cursor');
+      cursor.style.display = 'block';
+      const btn = document.getElementById('btn-auto-run');
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 演示中...';
+
+      const sleep = ms => new Promise(r => setTimeout(r, ms));
+      const moveTo = (el) => {
+        const rect = el.getBoundingClientRect();
+        cursor.style.top = (rect.top + rect.height/2) + 'px';
+        cursor.style.left = (rect.left + rect.width/2) + 'px';
+      };
+
+      // 1. 點選測驗按鈕
+      const quizBtn = document.querySelector('button[onclick="openQuizModal()"]');
+      if (quizBtn) {
+        moveTo(quizBtn);
+        await sleep(500);
+        openQuizModal();
+        await sleep(700);
+
+        const fairBtn = document.querySelectorAll('.quiz-btn')[0];
+        if (fairBtn) {
+          moveTo(fairBtn);
+          setQuizAnswer('skin', 'fair', fairBtn);
+          await sleep(600);
+        }
+
+        const applyBtn = document.querySelector('button[onclick="applyQuizResult()"]');
+        if (applyBtn) {
+          moveTo(applyBtn);
+          applyQuizResult();
+          await sleep(700);
+        }
+      }
+
+      // 2. 自動填入姓名與手機
+      const inputName = document.getElementById('cust-name');
+      if (inputName) {
+        moveTo(inputName);
+        inputName.value = '';
+        const sampleName = '林佩萱 (Sandy)';
+        for (let c of sampleName) {
+          inputName.value += c;
+          await sleep(40);
+        }
+      }
+
+      const inputPhone = document.getElementById('cust-phone');
+      if (inputPhone) {
+        moveTo(inputPhone);
+        inputPhone.value = '';
+        const samplePhone = '0938-555-888';
+        for (let c of samplePhone) {
+          inputPhone.value += c;
+          await sleep(30);
+        }
+      }
+
+      // 3. 選擇甲型與卸甲
+      const shapeSelect = document.getElementById('nail-shape');
+      if (shapeSelect) shapeSelect.value = "方圓甲型 (經典氣質)";
+
+      const removalLabels = document.querySelectorAll('input[name="removal"]');
+      if (removalLabels[2]) removalLabels[2].checked = true;
+      await sleep(350);
+
+      // 4. 滾動至底部綠色 LINE 按鈕
+      const submitBtn = document.getElementById('btn-submit-line');
+      const modal = document.getElementById('booking-modal-content');
+      if (modal) modal.scrollTo({ top: modal.scrollHeight, behavior: 'smooth' });
+      await sleep(500);
+      moveTo(submitBtn);
+
+      submitBtn.style.animation = 'pulse 1s infinite';
+      submitBtn.style.boxShadow = '0 0 30px #06C755';
+      cursor.style.display = 'none';
+
+      btn.innerHTML = '✅ 演示完成';
+      btn.className = "bg-emerald-500 text-white font-bold px-3 py-1.5 rounded-full text-xs";
+    }
+
+    init();
+  </script>
+</body>
+</html>
