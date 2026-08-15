@@ -197,12 +197,11 @@
 
     <!-- 📸 官方 IG 精選作品照片牆 (可點開高清大圖) -->
     <div class="max-w-md mx-auto px-4 mt-4" id="section-ig-wall">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="font-bold text-sm text-stone-900 flex items-center gap-1.5 shrink-0">
-          <i class="fa-brands fa-instagram text-rose-500 text-base"></i> 官方IG
-        </span>
-        <a href="https://www.instagram.com/w.m_natural_aesthetic_space" target="_blank" class="text-xs text-[#A07850] font-bold hover:underline flex items-center gap-1 truncate">
-          @w.m_natural_aesthetic_space <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+      <div class="flex items-center justify-between mb-2">
+        <a href="https://www.instagram.com/w.m_natural_aesthetic_space" target="_blank" class="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-sm hover:opacity-90 active:scale-95 transition cursor-pointer">
+          <i class="fa-brands fa-instagram text-sm"></i>
+          <span>官方IG</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-80"></i>
         </a>
       </div>
 
@@ -506,11 +505,11 @@
         <div onclick="contactServiceOnLine(selectedService)" class="flex-1 min-w-0 pl-2 cursor-pointer">
           <p class="text-[11px] text-[#C8A27A] font-bold tracking-wider uppercase">官方預約 LINE ID: @cud0296a</p>
           <p class="text-sm font-bold text-stone-100 truncate" id="selected-service-name">石榴星砂</p>
-          <p class="text-xs text-stone-400" id="selected-service-price">⏱ 約 90 min · 洽詢報價</p>
+          <p class="text-xs text-[#E0C09E] font-medium" id="selected-service-price">動手前報價 · 點擊直接諮詢</p>
         </div>
-        <button type="button" onclick="contactServiceOnLine(selectedService)" id="btn-proceed" class="bg-gradient-to-r from-[#06C755] to-[#05b34c] text-white font-black px-5 py-3.5 rounded-2xl shadow-lg transition flex items-center gap-2 text-sm shrink-0 hover:brightness-110 active:scale-98 cursor-pointer">
+        <button type="button" onclick="contactServiceOnLine(selectedService)" id="btn-proceed" class="bg-gradient-to-r from-[#06C755] to-[#05b34c] text-white font-black px-4.5 py-3.5 rounded-2xl shadow-lg transition flex items-center gap-2 text-sm shrink-0 hover:brightness-110 active:scale-98 cursor-pointer">
           <i class="fa-brands fa-line text-xl"></i>
-          <span>加 LINE 預約</span>
+          <span>官方LINE帳號</span>
         </button>
       </div>
     </div>
@@ -541,13 +540,11 @@
       <div class="p-3.5 sm:p-4 text-stone-100 flex-1 overflow-y-auto">
         <div class="flex items-center justify-between">
           <h3 id="lightbox-title" class="font-bold text-base"></h3>
-          <span id="lightbox-tag" class="bg-[#C8A27A] text-stone-950 text-xs px-2.5 py-0.5 rounded font-bold"></span>
         </div>
-        <p id="lightbox-desc" class="text-xs text-stone-400 mt-1 leading-relaxed"></p>
         <div class="mt-3 pt-2.5 border-t border-stone-800">
           <button type="button" onclick="contactServiceOnLine(currentLightboxService)" class="w-full bg-[#06C755] hover:bg-[#05b34c] text-white font-bold py-3.5 px-4 rounded-xl text-sm shadow transition flex items-center justify-center gap-2 active:scale-98 cursor-pointer">
             <i class="fa-brands fa-line text-xl"></i>
-            <span>加 LINE 預約此項目</span>
+            <span>官方LINE帳號預約此項目</span>
           </button>
         </div>
       </div>
@@ -615,27 +612,19 @@
         const isSelected = selectedService && selectedService.id === s.id;
         return `
           <div onclick="selectServiceItem(${s.id})" class="service-card luxury-card p-3.5 rounded-2xl border-2 ${isSelected ? 'border-[#181513] ring-2 ring-[#C8A27A]/40 shadow-md' : 'border-stone-200/80'} transition cursor-pointer flex items-center gap-3.5">
-            <div class="relative rounded-xl overflow-hidden bg-stone-100 shrink-0 border border-stone-200 group cursor-pointer" style="width: 72px; height: 72px; min-width: 72px;" onclick="event.stopPropagation(); openLightbox(${s.id});">
+            <div class="relative rounded-xl overflow-hidden bg-stone-100 shrink-0 border border-stone-200 group cursor-pointer" style="width: 64px; height: 64px; min-width: 64px;" onclick="event.stopPropagation(); openLightbox(${s.id});">
               <img src="${s.img}" alt="${s.name}" style="width: 100%; height: 100%; object-fit: cover;" class="group-hover:scale-105 transition" onerror="this.src='https://wm27-3.com/images/logo-wm-512.png'">
               <span class="absolute top-1 right-1 w-5 h-5 bg-stone-900/80 backdrop-blur-sm text-white rounded-full flex items-center justify-center text-[9px] shadow-sm group-hover:bg-[#C8A27A] group-hover:text-stone-950 transition" title="點擊放大">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
               </span>
             </div>
             <div class="flex-1 min-w-0 pr-1">
-              <div class="flex items-center gap-1.5">
-                <h4 class="font-bold text-stone-900 text-base leading-snug break-words">${s.name}</h4>
-                ${s.tag ? `<span class="bg-[#ECE5DC] text-[#A07850] text-xs px-2 py-0.5 rounded font-bold shrink-0">${s.tag}</span>` : ''}
-              </div>
-              <p class="text-xs text-stone-600 mt-1 leading-snug">${s.desc}</p>
-              <div class="flex items-center gap-3 mt-1.5 text-xs font-semibold">
-                <span class="text-stone-500"><i class="fa-regular fa-clock mr-1"></i>${s.time}</span>
-                <span class="text-[#A07850] font-bold text-xs">動手前報價</span>
-              </div>
+              <h4 class="font-bold text-stone-900 text-base leading-snug break-words">${s.name}</h4>
             </div>
-            <div class="shrink-0 flex flex-col gap-1.5">
-              <button type="button" onclick="event.stopPropagation(); contactServiceOnLine(wmServices.find(x => x.id === ${s.id}))" class="bg-[#06C755] hover:bg-[#05b34c] text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1 shadow-sm active:scale-95 cursor-pointer">
-                <i class="fa-brands fa-line text-sm"></i>
-                <span>加LINE</span>
+            <div class="shrink-0">
+              <button type="button" onclick="event.stopPropagation(); contactServiceOnLine(wmServices.find(x => x.id === ${s.id}))" class="bg-[#06C755] hover:bg-[#05b34c] text-white px-3.5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm active:scale-95 cursor-pointer">
+                <i class="fa-brands fa-line text-base"></i>
+                <span>官方LINE帳號</span>
               </button>
             </div>
           </div>
@@ -646,7 +635,7 @@
     function selectServiceItem(id) {
       selectedService = wmServices.find(x => x.id === id);
       document.getElementById('selected-service-name').innerText = selectedService.name;
-      document.getElementById('selected-service-price').innerText = `⏱ 約 ${selectedService.time} · 洽詢報價`;
+      document.getElementById('selected-service-price').innerText = `動手前報價 · 點擊直接諮詢`;
       renderServices();
     }
 
@@ -693,8 +682,6 @@
       if (!item) return;
       document.getElementById('lightbox-img').src = item.img;
       document.getElementById('lightbox-title').innerText = item.name;
-      document.getElementById('lightbox-tag').innerText = item.tag || '精選作品';
-      document.getElementById('lightbox-desc').innerText = item.desc;
       currentLightboxService = item;
       document.getElementById('lightbox-modal').classList.remove('hidden');
     }
@@ -1003,9 +990,9 @@
     }
 
     function copyAILineText() {
-      const text = `您好！我在官網上傳了這張小紅書款式圖片想要諮詢，AI 分析為【${currentAIResult.craft} · ${currentAIResult.colors}】，想詢問近期方便預約的時段與詳細報價，謝謝您！`;
+      const text = `您好！我想預約諮詢這款【${currentAIResult.craft} · ${currentAIResult.colors}】，請問近期有哪些時段可以預約呢？謝謝！`;
       copyTextToClipboard(text);
-      showToast('📋 已複製客製化諮詢內容！開啟 LINE 貼上即可！');
+      showToast('📋 已複製預約訊息！開啟 LINE 貼上即可！');
     }
 
     // ─────────────────────────────────────────
@@ -1014,12 +1001,11 @@
     function contactServiceOnLine(service) {
       if (!service) service = selectedService || wmServices[1];
       const name = service.name || '美學項目';
-      const time = service.time ? `⏱ 約 ${service.time}` : '';
-      const text = `您好！我在官網看中了【${name}】${time}，想預約諮詢施作，請問近期方便預約的時段？謝謝！`;
+      const text = `您好！我想預約【${name}】，請問近期有哪些時段可以預約呢？謝謝！`;
 
       // 1. 自動複製到剪貼簿（電腦/手機雙重保障）
       copyTextToClipboard(text);
-      showToast(`📋 已為您預填【${name}】預約訊息！`);
+      showToast(`📋 已為您預填「我想預約【${name}】」！`);
 
       // 2. 使用 LINE 官方對話框文字預填 URL Scheme
       const encodedMsg = encodeURIComponent(text);
