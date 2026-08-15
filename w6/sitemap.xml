@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://wm27-3.com/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wm27-3.com/images/hero-garnet-sand-900.webp</image:loc>
+      <image:title>W.M 自然美學空間 台中西屯逢甲美甲推薦</image:title>
+      <image:caption>逢甲商圈人氣美甲客製、凍甲嵌甲調理、光固美睫與飄霧眉</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wm27-3.com/images/ruby-cat-eye-900.webp</image:loc>
+      <image:title>赤金貓眼 凝膠美甲</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wm27-3.com/images/diagram-ingrown-nail.svg</image:loc>
+      <image:title>甲溝炎 嵌甲凍甲專業調理流程</image:title>
+    </image:image>
+  </url>
+</urlset>
