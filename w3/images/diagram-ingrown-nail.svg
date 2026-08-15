@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" role="img"
+aria-labelledby="t d" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+<title id="t">正常指甲與凍甲（嵌甲）的甲溝剖面對照</title>
+<desc id="d">左側為正常指甲：甲片弧度平緩，兩側邊緣停在甲溝上方，不壓迫皮膚。右側為凍甲（嵌甲）：甲片弧度過彎呈夾狀，邊緣往下刺入兩側甲溝，造成紅腫與疼痛。下方標示可到店處理與應先就醫的分界。</desc>
+<rect width="880" height="470" fill="#FBF9F8"/>
+<text x="40" y="44" font-size="19" font-weight="600" fill="#1E1A18" letter-spacing="1.5">指甲橫向剖面：正常與凍甲的差別</text>
+<line x1="40" y1="60" x2="840" y2="60" stroke="#EAE0DA" stroke-width="1"/>
+<g transform="translate(40,84)">
+<text x="0" y="18" font-size="15" font-weight="600" fill="#8A6A2F" letter-spacing="2">正常</text>
+<g transform="translate(0,34)">
+<path d="M40 150 Q40 34 190 34 Q340 34 340 150 L340 166 Q190 196 40 166 Z"
+fill="#EFE3DC" stroke="#D8C6BC" stroke-width="1.5"/>
+<path d="M64 66 Q57 88 64 110" fill="none" stroke="#C9B3A8" stroke-width="1.5"/>
+<path d="M316 66 Q323 88 316 110" fill="none" stroke="#C9B3A8" stroke-width="1.5"/>
+<path d="M64 74 Q190 32 316 74 L316 88 Q190 46 64 88 Z"
+fill="#F7F4F2" stroke="#1E1A18" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="64" cy="81" r="5" fill="none" stroke="#8A6A2F" stroke-width="2"/>
+<circle cx="316" cy="81" r="5" fill="none" stroke="#8A6A2F" stroke-width="2"/>
+<text x="190" y="134" font-size="13" fill="#7C726B" text-anchor="middle">指腹剖面</text>
+</g>
+<text x="190" y="234" font-size="14.5" fill="#1E1A18" text-anchor="middle" font-weight="600">甲片弧度平緩</text>
+<text x="190" y="258" font-size="14" fill="#4C4641" text-anchor="middle">兩側邊緣停在皮膚上方，不往下施壓</text>
+</g>
+<line x1="440" y1="96" x2="440" y2="340" stroke="#EAE0DA" stroke-width="1"/>
+<g transform="translate(460,84)">
+<text x="0" y="18" font-size="15" font-weight="600" fill="#B07E7C" letter-spacing="2">凍甲（嵌甲）</text>
+<g transform="translate(0,34)">
+<path d="M40 150 Q40 34 190 34 Q340 34 340 150 L340 166 Q190 196 40 166 Z"
+fill="#EFE3DC" stroke="#D8C6BC" stroke-width="1.5"/>
+<path d="M54 60 Q40 90 58 118 Q82 110 79 82 Z" fill="#E2ADAB" opacity=".9"/>
+<path d="M326 60 Q340 90 322 118 Q298 110 301 82 Z" fill="#E2ADAB" opacity=".9"/>
+<path d="M66 112 Q70 50 190 40 Q310 50 314 112 L301 114 Q298 62 190 54 Q82 62 79 114 Z"
+fill="#F7F4F2" stroke="#1E1A18" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="72" cy="113" r="6.5" fill="none" stroke="#B32B28" stroke-width="2.4"/>
+<circle cx="308" cy="113" r="6.5" fill="none" stroke="#B32B28" stroke-width="2.4"/>
+<text x="190" y="134" font-size="13" fill="#7C726B" text-anchor="middle">指腹剖面</text>
+<path d="M20 148 L62 121" fill="none" stroke="#B32B28" stroke-width="1.6"/>
+<path d="M62 121 l-11.5 1.2 l4.2 6.4 Z" fill="#B32B28"/>
+<path d="M360 148 L318 121" fill="none" stroke="#B32B28" stroke-width="1.6"/>
+<path d="M318 121 l11.5 1.2 l-4.2 6.4 Z" fill="#B32B28"/>
+</g>
+<text x="190" y="234" font-size="14.5" fill="#1E1A18" text-anchor="middle" font-weight="600">甲片捲成夾狀，弧度過彎</text>
+<text x="190" y="258" font-size="14" fill="#4C4641" text-anchor="middle">邊緣往下刺進甲溝，紅腫、按壓會痛</text>
+</g>
+<g transform="translate(40,362)">
+<rect x="0" y="0" width="390" height="86" fill="#F2EDE9" stroke="#DFD3CB" stroke-width="1"/>
+<text x="20" y="30" font-size="14.5" font-weight="600" fill="#1E1A18">可以到店處理</text>
+<text x="20" y="55" font-size="13.5" fill="#4C4641">邊緣刺肉、按壓會痛、反覆長歪，</text>
+<text x="20" y="74" font-size="13.5" fill="#4C4641">但沒有化膿、沒有滲液。</text>
+<rect x="410" y="0" width="390" height="86" fill="#F6EAEA" stroke="#E0C6C5" stroke-width="1"/>
+<text x="430" y="30" font-size="14.5" font-weight="600" fill="#8E2F2C">請先就醫，不要自己處理</text>
+<text x="430" y="55" font-size="13.5" fill="#4C4641">已化膿、長肉芽、劇痛發燒，或本身有</text>
+<text x="430" y="74" font-size="13.5" fill="#4C4641">糖尿病、末梢循環不良。</text>
+</g>
+</svg>
