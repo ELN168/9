@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARK DIGITAL ｜ 奢華工藝行銷網頁 · Google 商家在地加分 · SEO/AEO 內碼 · AI 評論引擎</title>
+  <meta name="description" content="專注打造高質感品牌行銷網頁、Google 商家地圖排名加分、SEO/AEO/GEO 底層語意代碼工程，以及 24H Google 商家 AI 智慧評論回覆系統。">
+  <meta name="keywords" content="行銷網頁設計, Google商家加分, AEO優化, GEO在地優化, SEO代碼, Google評論AI回覆, 網頁內碼優化, 商家地圖排名">
+
+  <!-- Google Fonts: Cinzel + Noto Serif TC + Plus Jakarta Sans + Noto Sans TC + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=JetBrains+Mono:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@600;700;900&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+/* ==========================================================================
+   ARK STUDIO ｜ 奢華重磅工藝設計系統 (Heavy-Weight Luxury Craft)
+   字體大幅增粗放大、高對比飽和色彩、深邃立體曜石背景與卡片浮凸層次
+   ========================================================================== */
+
+:root {
+  /* 深邃純粹曜石背景 (Deep Obsidian Void) */
+  --bg-void: #050608;
+  --bg-deep: #090C12;
+  --bg-surface-1: #0F141E;
+  --bg-surface-2: #151C2A;
+  --bg-surface-3: #1C2538;
+  --bg-glass: rgba(15, 20, 30, 0.92);
+  --bg-glass-hover: rgba(22, 30, 44, 0.96);
+
+  /* 重磅皇家流光金 (Heavy Imperial Gold) */
+  --gold-pure: #FFF2B2;
+  --gold-main: #E5B83B;
+  --gold-bright: #FFDF70;
+  --gold-dark: #A67C1E;
+  --gold-border: rgba(229, 184, 59, 0.55);
+  --gold-glow: rgba(229, 184, 59, 0.35);
+
+  /* 飽和科技高光 (Saturated Accents) */
+  --accent-cyan: #38BDF8;
+  --accent-cyan-bright: #7DD3FC;
+  --accent-emerald: #34D399;
+  --accent-rose: #FB7185;
+  --accent-purple: #C084FC;
+
+  /* 高對比文字階層 (High Contrast Text) */
+  --text-pure: #FFFFFF;
+  --text-gold-bright: #FFF5D0;
+  --text-body: #F1F5F9;
+  --text-sub: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  /* 漸層系統 */
+  --grad-gold-text: linear-gradient(135deg, #FFFFFF 10%, #FFDF70 45%, #E5B83B 80%, #C48E1A 100%);
+  --grad-gold-btn: linear-gradient(135deg, #FFF5D0 0%, #E5B83B 65%, #B37D15 100%);
+  --grad-gold-card: linear-gradient(145deg, rgba(229, 184, 59, 0.18) 0%, rgba(15, 20, 30, 0.92) 100%);
+  --grad-hero-bg: radial-gradient(circle at 50% 15%, rgba(229, 184, 59, 0.15) 0%, rgba(9, 12, 18, 0.95) 75%, #050608 100%);
+
+  /* 邊框與高光 */
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-medium: rgba(255, 255, 255, 0.22);
+  --border-glass: rgba(255, 255, 255, 0.18);
+
+  /* 圓角 */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* 陰影與立體景深 */
+  --shadow-card: inset 0 1px 2px rgba(255, 255, 255, 0.2), 0 24px 64px rgba(0, 0, 0, 0.85);
+  --shadow-gold-heavy: 0 0 45px rgba(229, 184, 59, 0.45);
+
+  /* 字體系統 */
+  --font-serif: 'Noto Serif TC', 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 基礎重設 */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-void);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(229, 184, 59, 0.12) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  color: var(--text-body);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gold-gradient-text {
+  background: var(--grad-gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+  font-weight: 900;
+  text-shadow: 0 0 30px rgba(229, 184, 59, 0.2);
+}
+
+/* 環境氛圍層 */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+.orb-gold {
+  top: -10%;
+  left: 20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(229, 184, 59, 0.25) 0%, transparent 70%);
+}
+
+.orb-cyan {
+  top: 45%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+}
+
+.orb-emerald {
+  bottom: 5%;
+  left: -5%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.16) 0%, transparent 70%);
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/* 頂部導航 */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(5, 6, 8, 0.9);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1.5px solid var(--border-subtle);
+  transition: all var(--transition);
+}
+
+.navbar.scrolled {
+  background: rgba(5, 6, 8, 0.98);
+  border-bottom-color: var(--gold-border);
+  box-shadow: 0 6px 36px rgba(0, 0, 0, 0.9);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 82px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-crest {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-2);
+  border: 1.5px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.3), 0 0 20px rgba(229, 184, 59, 0.35);
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title-lux {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.logo-sub-lux {
+  font-family: var(--font-sans);
+  color: var(--gold-bright);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-left: 3px;
+}
+
+.logo-tagline-lux {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--gold-main);
+}
+
+.badge-craft {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-pure);
+  background: rgba(229, 184, 59, 0.16);
+  border: 1.5px solid var(--gold-border);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-left: 12px;
+}
+
+.pulse-gold {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  box-shadow: 0 0 10px var(--gold-bright);
+  animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  transition: color var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--gold-bright);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--gold-bright);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* 奢華按鈕 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-gold-solid {
+  background: var(--grad-gold-btn);
+  color: #050608;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 6px 24px rgba(229, 184, 59, 0.5);
+  font-weight: 800;
+}
+
+.btn-gold-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #fff, 0 10px 36px rgba(229, 184, 59, 0.7);
+  background: #FFE078;
+}
+
+.btn-gold-outline {
+  background: rgba(229, 184, 59, 0.12);
+  color: var(--gold-pure);
+  border: 1.5px solid var(--gold-border);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(229, 184, 59, 0.25);
+  border-color: var(--gold-bright);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-dark-glass {
+  background: var(--bg-surface-2);
+  color: #fff;
+  border: 1.5px solid var(--border-medium);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  font-weight: 700;
+}
+
+.btn-dark-glass:hover {
+  background: var(--bg-surface-3);
+  border-color: var(--gold-border);
+  transform: translateY(-2px);
+}
+
+.btn-hero {
+  padding: 16px 36px;
+  font-size: 1.12rem;
+  border-radius: var(--radius-md);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* 區塊標題 */
+.section {
+  padding: 120px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.section-header {
+  margin-bottom: 68px;
+  max-width: 860px;
+}
+
+.section-header.text-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-badge-lux {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--gold-bright);
+  text-transform: uppercase;
+  background: rgba(229, 184, 59, 0.14);
+  border: 1.5px solid var(--gold-border);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.section-title-lux {
+  font-family: var(--font-serif);
+  font-size: 2.85rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.section-desc-lux {
+  font-size: 1.18rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+/* HERO 主視覺 */
+.hero-section {
+  padding: 100px 0 92px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+}
+
+.hero-crest-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 26px;
+  background: rgba(21, 28, 42, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--gold-pure);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25), 0 0 25px rgba(229, 184, 59, 0.25);
+  margin-bottom: 36px;
+}
+
+.crest-dot {
+  color: var(--gold-bright);
+  font-size: 1rem;
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+}
+
+.hero-subhead {
+  font-size: 1.32rem;
+  color: var(--text-body);
+  max-width: 900px;
+  margin: 0 auto 52px;
+  line-height: 1.85;
+  font-weight: 500;
+}
+
+.hero-subhead strong {
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 2px solid var(--gold-main);
+}
+
+.hero-cta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 88px;
+  flex-wrap: wrap;
+}
+
+/* HERO 展示大看板 */
+.hero-showcase-board {
+  max-width: 1160px;
+  margin: 0 auto;
+  background: var(--grad-gold-card);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 38px;
+  box-shadow: var(--shadow-card), 0 0 50px rgba(229, 184, 59, 0.25);
+}
+
+.hsb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  text-align: left;
+}
+
+.hsb-card {
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition);
+}
+
+.hsb-card:hover {
+  border-color: var(--gold-bright);
+  transform: translateY(-3px);
+}
+
+.hsb-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.g-map-emblem {
+  width: 42px;
+  height: 42px;
+  background: rgba(234, 67, 53, 0.18);
+  border: 1.5px solid rgba(234, 67, 53, 0.5);
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hsb-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.hsb-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  margin-top: 3px;
+}
+
+.stars-gold { color: var(--gold-bright); }
+.stars-cyan { color: var(--accent-cyan); }
+.stars-rose { color: var(--accent-rose); }
+
+.score-num {
+  font-weight: 900;
+  color: #fff;
+}
+
+.verified-tag {
+  font-size: 0.76rem;
+  color: var(--accent-emerald);
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.hsb-pill-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.htag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--bg-surface-2);
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  border-left: 3px solid var(--gold-bright);
+}
+
+.icon-ring {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.icon-ring-cyan { background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan); }
+.icon-ring-emerald { background: var(--accent-emerald); box-shadow: 0 0 10px var(--accent-emerald); }
+
+.ai-platform-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  background: rgba(192, 132, 252, 0.18);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  margin-left: auto;
+}
+
+.status-live-tag {
+  font-size: 0.76rem;
+  color: var(--accent-emerald);
+  margin-left: auto;
+  font-weight: 700;
+}
+
+.hsb-code-mini {
+  background: #040508;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.syn-key { color: var(--gold-bright); font-weight: 600; }
+.syn-str { color: var(--accent-emerald); }
+.syn-val { color: var(--accent-cyan); font-weight: 600; }
+
+.hsb-caption {
+  font-size: 0.84rem;
+  color: var(--text-sub);
+  font-weight: 500;
+}
+
+.hsb-bubble {
+  background: var(--bg-surface-2);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 14px;
+  font-size: 0.88rem;
+  color: #fff;
+  line-height: 1.55;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.hsb-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--gold-pure);
+  font-weight: 700;
+}
+
+/* 4 大服務項目 */
+.services-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.mosaic-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(28px);
+  border: 1.5px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 46px 42px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-card);
+}
+
+.mosaic-card:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), 0 0 40px rgba(229, 184, 59, 0.3);
+}
+
+.mc-num {
+  position: absolute;
+  top: 36px;
+  right: 40px;
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--gold-bright);
+  opacity: 0.6;
+}
+
+.mc-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--border-glass);
+  margin-bottom: 26px;
+}
+
+.icon-gold { background: rgba(229, 184, 59, 0.18); color: var(--gold-bright); border-color: var(--gold-border); }
+.icon-rose { background: rgba(251, 113, 133, 0.18); color: var(--accent-rose); }
+.icon-cyan { background: rgba(56, 189, 248, 0.18); color: var(--accent-cyan); }
+.icon-emerald { background: rgba(52, 211, 153, 0.18); color: var(--accent-emerald); }
+
+.mc-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.mc-latin {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--gold-bright);
+  margin-bottom: 20px;
+}
+
+.mc-text {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.mc-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 22px 24px;
+}
+
+.mc-check-item {
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gold-check {
+  color: var(--gold-bright);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+/* AI 評論回覆實機展示 */
+.section-demo {
+  background: linear-gradient(180deg, #050608 0%, #0E131C 100%);
+}
+
+.lux-demo-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 44px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(32px);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-card), 0 0 50px rgba(229, 184, 59, 0.25);
+}
+
+.ctrl-heading {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gold-step-num {
+  width: 26px;
+  height: 26px;
+  background: var(--gold-bright);
+  color: #050608;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scenario-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sc-btn {
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.sc-btn:hover {
+  border-color: var(--gold-bright);
+  background: var(--bg-surface-2);
+}
+
+.sc-btn.active {
+  background: var(--bg-surface-2);
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 25px rgba(229, 184, 59, 0.35);
+}
+
+.sc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.sc-stars {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.sc-badge-rec {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-pure);
+  background: rgba(229, 184, 59, 0.22);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+}
+
+.sc-badge-mid {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-cyan-bright);
+  background: rgba(56, 189, 248, 0.22);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+}
+
+.sc-badge-alert {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-rose);
+  background: rgba(251, 113, 133, 0.22);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+}
+
+.sc-desc {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.tone-chips-group {
+  display: flex;
+  gap: 12px;
+}
+
+.tchip {
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  color: var(--text-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.tchip:hover {
+  color: #fff;
+  border-color: var(--gold-bright);
+}
+
+.tchip.active {
+  background: var(--gold-bright);
+  color: #050608;
+  border-color: var(--gold-bright);
+  font-weight: 900;
+  box-shadow: 0 0 20px rgba(229, 184, 59, 0.5);
+}
+
+/* 擬真 Google 評論模擬視窗 */
+.g-browser-frame {
+  background: #040508;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.g-browser-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1.5px solid var(--border-subtle);
+  margin-bottom: 24px;
+}
+
+.gb-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.gb-status {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-emerald);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pulse-emerald {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald);
+}
+
+.gr-author-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.gr-avatar-lux {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #2563EB;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.5);
+  flex-shrink: 0;
+}
+
+.gr-author-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.guide-tag {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.gr-stars-text {
+  font-size: 0.95rem;
+  color: var(--gold-bright);
+}
+
+.gr-time-ago {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.gr-quote-box {
+  font-size: 1.02rem;
+  color: #fff;
+  line-height: 1.75;
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  margin-bottom: 26px;
+  font-weight: 500;
+}
+
+.gr-reply-box {
+  background: rgba(229, 184, 59, 0.1);
+  border: 1.5px solid var(--gold-border);
+  border-left: 4px solid var(--gold-bright);
+  border-radius: var(--radius-sm);
+  padding: 22px;
+}
+
+.gr-reply-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.gr-reply-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.ai-tag {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #050608;
+  background: var(--gold-bright);
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.sync-check {
+  font-size: 0.82rem;
+  color: var(--accent-emerald);
+  font-weight: 700;
+}
+
+.gr-reply-text {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.8;
+  min-height: 80px;
+  font-weight: 500;
+}
+
+/* SEO / AEO / GEO 內碼解析 */
+.lux-ide-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.ide-tab-bar {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.ide-tab-btn {
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  color: var(--text-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.ide-tab-btn:hover {
+  color: #fff;
+  border-color: var(--gold-bright);
+}
+
+.ide-tab-btn.active {
+  background: var(--bg-surface-2);
+  border-color: var(--gold-bright);
+  color: var(--gold-pure);
+  box-shadow: 0 0 20px rgba(229, 184, 59, 0.35);
+}
+
+.ide-terminal-frame {
+  background: #030406;
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.ide-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0D121B;
+  padding: 16px 26px;
+  border-bottom: 1.5px solid var(--border-subtle);
+}
+
+.ide-mac-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.mac-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.mac-red { background: #FF5F56; }
+.mac-yellow { background: #FFBD2E; }
+.mac-green { background: #27C93F; }
+
+.ide-filename {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+
+.ide-copy-btn {
+  background: var(--bg-surface-2);
+  border: 1.5px solid var(--border-subtle);
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.ide-copy-btn:hover {
+  border-color: var(--gold-bright);
+  color: var(--gold-pure);
+}
+
+.ide-code-pre {
+  padding: 32px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.94rem;
+  color: #7DD3FC;
+  line-height: 1.75;
+  background: #020305;
+}
+
+.ide-explainer-box {
+  background: var(--bg-surface-1);
+  border-top: 1.5px solid var(--border-subtle);
+  padding: 22px 28px;
+  font-size: 0.98rem;
+  color: #fff;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.ide-explainer-box code {
+  font-family: var(--font-mono);
+  color: var(--gold-bright);
+  background: var(--bg-surface-2);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--gold-border);
+  font-weight: 700;
+}
+
+/* Google 商家地圖對比區 */
+.rank-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.rank-card {
+  background: var(--bg-glass);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 44px 38px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rank-after {
+  border-color: var(--gold-border);
+  background: var(--grad-gold-card);
+  box-shadow: var(--shadow-card), 0 0 40px rgba(229, 184, 59, 0.3);
+}
+
+.rank-card-badge {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.badge-gold {
+  color: var(--gold-bright);
+}
+
+.rank-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 26px;
+}
+
+.rank-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rank-card-list li {
+  font-size: 1rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.cross-mark {
+  color: var(--accent-rose);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.rank-after .rank-card-list li {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 方案與報價 */
+.packages-trio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.pkg-tier-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(28px);
+  border: 1.5px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 46px 34px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-card);
+}
+
+.pkg-tier-card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+}
+
+.featured-gold-card {
+  background: var(--bg-surface-1);
+  border: 2.5px solid var(--gold-bright);
+  box-shadow: var(--shadow-card), var(--shadow-gold-heavy);
+}
+
+.gold-ribbon {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--grad-gold-btn);
+  color: #050608;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 5px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 20px rgba(229, 184, 59, 0.5);
+}
+
+.ptc-header {
+  margin-bottom: 30px;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid var(--border-subtle);
+}
+
+.ptc-name {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.ptc-latin {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+}
+
+.ptc-desc {
+  font-size: 0.94rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.ptc-features {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 44px;
+  flex-grow: 1;
+}
+
+.ptc-feat {
+  font-size: 0.94rem;
+  color: #fff;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 600;
+}
+
+/* 常見問題 */
+.faq-lux-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-lux-item {
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.faq-lux-item.open {
+  border-color: var(--gold-border);
+  background: var(--bg-surface-2);
+}
+
+.faq-lux-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  gap: 18px;
+}
+
+.faq-arrow-icon {
+  color: var(--text-sub);
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+
+.faq-lux-item.open .faq-arrow-icon {
+  transform: rotate(180deg);
+  color: var(--gold-bright);
+}
+
+.faq-lux-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 28px;
+}
+
+.faq-lux-item.open .faq-lux-answer {
+  max-height: 400px;
+  padding: 0 28px 26px;
+}
+
+.faq-lux-answer p {
+  font-size: 1.02rem;
+  color: var(--text-body);
+  line-height: 1.85;
+  font-weight: 500;
+}
+
+.faq-lux-answer p strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* 預約諮詢 */
+.contact-lux-frame {
+  display: grid;
+  grid-template-columns: 1fr 1.22fr;
+  gap: 56px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(32px);
+  border: 1.5px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 56px;
+  box-shadow: var(--shadow-card);
+}
+
+.clf-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.clf-desc {
+  font-size: 1.08rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.clf-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.clf-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 18px 24px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.clf-card:hover {
+  border-color: var(--gold-bright);
+  background: var(--bg-surface-2);
+  transform: translateX(4px);
+}
+
+.clf-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.icon-line-lux { background: #06C755; }
+.icon-mail-lux { background: #334155; }
+
+.clf-card-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.clf-card-detail {
+  font-size: 0.88rem;
+  color: var(--gold-pure);
+  font-weight: 700;
+}
+
+.clf-security-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  font-weight: 500;
+}
+
+/* 預約表單 */
+.clf-form {
+  background: var(--bg-surface-1);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.clf-form-heading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-row-lux {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row-lux label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.input-lux, .textarea-lux {
+  width: 100%;
+  background: var(--bg-surface-2);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 500;
+  outline: none;
+  transition: all var(--transition);
+}
+
+.input-lux:focus, .textarea-lux:focus {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 0 3px rgba(229, 184, 59, 0.3);
+}
+
+.input-lux.highlight-gold {
+  background: rgba(229, 184, 59, 0.12);
+  border-color: var(--gold-border);
+  color: var(--gold-pure);
+  font-weight: 700;
+}
+
+.textarea-lux {
+  resize: vertical;
+}
+
+.form-lux-msg {
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.form-lux-msg.success {
+  background: rgba(52, 211, 153, 0.16);
+  border: 1.5px solid rgba(52, 211, 153, 0.4);
+  color: var(--accent-emerald);
+}
+
+/* 頁尾 */
+.footer {
+  border-top: 1.5px solid var(--border-subtle);
+  padding: 88px 0 32px;
+  background: #030406;
+}
+
+.footer-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 72px;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-brand-pane {
+  max-width: 460px;
+}
+
+.footer-motto {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  margin-top: 16px;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.footer-links-pane {
+  display: flex;
+  gap: 72px;
+}
+
+.flp-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.flp-head {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+  margin-bottom: 8px;
+}
+
+.flp-col a {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.flp-col a:hover {
+  color: #fff;
+}
+
+.footer-bottom-strip {
+  border-top: 1.5px solid var(--border-subtle);
+  padding-top: 28px;
+}
+
+.fbs-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 14px;
+  font-weight: 600;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(90px);
+  background: var(--bg-surface-3);
+  border: 1.5px solid var(--gold-border);
+  color: var(--gold-pure);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-card);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 響應式排版 */
+@media (max-width: 1024px) {
+  .hero-headline { font-size: 3.2rem; }
+  .hsb-grid { grid-template-columns: 1fr; }
+  .services-mosaic { grid-template-columns: 1fr; }
+  .lux-demo-wrapper { grid-template-columns: 1fr; }
+  .rank-dual-grid { grid-template-columns: 1fr; }
+  .packages-trio-grid { grid-template-columns: 1fr; }
+  .contact-lux-frame { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 6, 8, 0.98);
+    backdrop-filter: blur(28px);
+    flex-direction: column;
+    padding: 28px;
+    gap: 22px;
+    border-bottom: 1.5px solid var(--gold-border);
+    transform: translateY(-120%);
+    transition: transform var(--transition);
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .hero-headline { font-size: 2.35rem; }
+  .hero-subhead { font-size: 1.1rem; }
+  .section-title-lux { font-size: 2.1rem; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .tone-chips-group { flex-wrap: wrap; }
+  .footer-links-pane { gap: 32px; }
+  .lux-demo-wrapper, .contact-lux-frame { padding: 28px 22px; }
+  .hero-showcase-board { padding: 24px 18px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- 奢華環境光影層 (Atmospheric Light Orbs) -->
+  <div class="ambient-glow orb-gold"></div>
+  <div class="ambient-glow orb-cyan"></div>
+  <div class="ambient-glow orb-emerald"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- 頂部奢華導航 (Navbar) -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-crest">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L3 7V12C3 17.5 6.8 22.7 12 24C17.2 22.7 21 17.5 21 12V7L12 2Z" stroke="url(#gold-grad-1)" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M12 6L16 10L12 14L8 10L12 6Z" fill="url(#gold-grad-2)"/>
+            <defs>
+              <linearGradient id="gold-grad-1" x1="3" y1="2" x2="21" y2="24" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F6E09E"/>
+                <stop offset="0.5" stop-color="#D4AF37"/>
+                <stop offset="1" stop-color="#AA771C"/>
+              </linearGradient>
+              <linearGradient id="gold-grad-2" x1="8" y1="6" x2="16" y2="14" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FBF2B7"/>
+                <stop offset="1" stop-color="#D4AF37"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title-lux">ARK<span class="logo-sub-lux">STUDIO</span></span>
+          <span class="logo-tagline-lux">DIGITAL ATELIER</span>
+        </div>
+        <span class="badge-craft"><span class="pulse-gold"></span> 純線上高級定制</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#services" class="nav-link">工藝核心</a>
+        <a href="#demo-ai" class="nav-link">AI 評論回覆</a>
+        <a href="#code-inspector" class="nav-link">SEO/AEO 內碼</a>
+        <a href="#local-rank" class="nav-link">地圖在地加分</a>
+        <a href="#packages" class="nav-link">合作方案</a>
+        <a href="#faq" class="nav-link">常見問題</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-gold-outline nav-cta">
+          <span>預約需求諮詢</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO 主視覺區塊 (Editorial Luxury Hero) -->
+    <section class="hero-section">
+      <div class="container hero-container">
+        
+        <div class="hero-crest-badge">
+          <span class="crest-dot">✦</span>
+          <span class="crest-text">BESPOKE WEB DESIGN · GOOGLE MAPS GEO · AEO CODES · AI AGENTS</span>
+          <span class="crest-dot">✦</span>
+        </div>
+
+        <h1 class="hero-headline">
+          打磨一張真正有靈魂的網頁，<br>
+          讓 <span class="gold-gradient-text">搜尋與 AI</span> 優先引述你，<br>
+          讓 <span class="gold-gradient-text">Google 商家</span> 成為 24H 自動帶客門面。
+        </h1>
+
+        <p class="hero-subhead">
+          拒絕冷冰冰的公版套版與空泛話術。我們為講究品味的品牌打造<strong>藝術級行銷網頁</strong>、<strong>Google 商家在地排名加分</strong>、<strong>讓 ChatGPT 與搜尋引擎精準引用的 SEO / AEO / GEO 語意代碼</strong>，以及<strong>Google 商家 AI 智慧評論回覆引擎</strong>。
+        </p>
+
+        <div class="hero-cta-bar">
+          <a href="#demo-ai" class="btn btn-gold-solid btn-hero">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>體驗 AI 商家評論即時回覆</span>
+          </a>
+          <a href="#code-inspector" class="btn btn-dark-glass btn-hero">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>檢視 SEO / AEO 底層代碼</span>
+          </a>
+        </div>
+
+        <!-- HERO 奢華立體展示看板 (Luxury Floating Showcase) -->
+        <div class="hero-showcase-board">
+          <div class="hsb-grid">
+            <!-- 模組 1: Google 商家認證與地圖評分 -->
+            <div class="hsb-card hsb-map">
+              <div class="hsb-card-header">
+                <div class="g-map-emblem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#EA4335"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div>
+                  <div class="hsb-title">Google 商家在地權重優化</div>
+                  <div class="hsb-stars-row">
+                    <span class="stars-gold">★★★★★</span>
+                    <span class="score-num">5.0</span>
+                    <span class="verified-tag">✓ 官方在地認證</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hsb-pill-tags">
+                <span class="htag">Local 3-Pack 前排優化</span>
+                <span class="htag">精確經緯度 GEO 標記</span>
+                <span class="htag">在地高意圖關鍵字佈局</span>
+              </div>
+            </div>
+
+            <!-- 模組 2: AEO (AI 引擎優化) 知識對接 -->
+            <div class="hsb-card hsb-aeo">
+              <div class="hsb-card-header">
+                <span class="icon-ring icon-ring-cyan"></span>
+                <div class="hsb-title">AEO 知識圖譜即時對接</div>
+                <span class="ai-platform-tag">ChatGPT / Perplexity</span>
+              </div>
+              <div class="hsb-code-mini">
+                <div><span class="syn-key">"@type"</span>: <span class="syn-str">"FAQPage"</span>,</div>
+                <div><span class="syn-key">"recommendation"</span>: <span class="syn-val">"在地首選品牌"</span></div>
+              </div>
+              <div class="hsb-caption">結構化資料讓 AI 在回答提問時優先指名推薦</div>
+            </div>
+
+            <!-- 模組 3: 24H 商家 AI 智慧評論回覆 -->
+            <div class="hsb-card hsb-reply">
+              <div class="hsb-card-header">
+                <span class="icon-ring icon-ring-emerald"></span>
+                <div class="hsb-title">24H 商家 AI 評論應答引擎</div>
+                <span class="status-live-tag">● 即時監控中</span>
+              </div>
+              <div class="hsb-bubble">
+                「非常感謝張小姐的肯定！我們將持續維持最舒適的服務品質...」
+              </div>
+              <div class="hsb-foot">
+                <span>✓ 情緒精準辨識</span>
+                <span>✓ 大幅提升商家活躍度權重</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4 大核心工藝服務 (Core Atelier Pillars) -->
+    <section class="section section-services" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge-lux">OUR CRAFTSMANSHIP</div>
+          <h2 class="section-title-lux">四項核心數位工程與行銷工藝</h2>
+          <p class="section-desc-lux">將網頁視覺、搜尋引擎、生成式 AI 與在地地圖整合為一體化的高階獲客體系。</p>
+        </div>
+
+        <div class="services-mosaic">
+          <!-- 服務 1 -->
+          <div class="mosaic-card">
+            <div class="mc-num">01</div>
+            <div class="mc-icon icon-gold">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3 class="mc-title">高質感品牌與行銷網頁訂製</h3>
+            <div class="mc-latin">BESPOKE WEB DESIGN & EDITORIAL CRAFT</div>
+            <p class="mc-text">
+              告別廉價公版套版。我們以國際藝術雜誌級的排版細節打造具備說服力的品牌動線，針對手機端進行極致秒開優化，讓訪客第一眼就感受與眾不同的高級品味。
+            </p>
+            <div class="mc-checklist">
+              <div class="mc-check-item"><span class="gold-check">✓</span> 手工定制編排，拒絕公版模板感</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> Mobile-First 行動裝置極速秒開效能</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> 心理學轉換動線與信任狀細節佈局</div>
+            </div>
+          </div>
+
+          <!-- 服務 2 -->
+          <div class="mosaic-card">
+            <div class="mc-num">02</div>
+            <div class="mc-icon icon-rose">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+            </div>
+            <h3 class="mc-title">Google 商家檔案 (GBP) 在地加分</h3>
+            <div class="mc-latin">GOOGLE MAPS LOCAL 3-PACK OPTIMIZATION</div>
+            <p class="mc-text">
+              在地搜尋是獲取高意願顧客的最短路徑。我們深度盤點核心主次類別、在地高流量關鍵字，大幅提升您的門市在 Google 地圖前三名 (Local 3-Pack) 的曝光率與撥號率。
+            </p>
+            <div class="mc-checklist">
+              <div class="mc-check-item"><span class="gold-check">✓</span> 核心主次分類精準鎖定，提升搜尋權重</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> 商家標題與描述在地關鍵字深度佈局</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> 產品、服務項目清單與相片結構化建置</div>
+            </div>
+          </div>
+
+          <!-- 服務 3 -->
+          <div class="mosaic-card">
+            <div class="mc-num">03</div>
+            <div class="mc-icon icon-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3 class="mc-title">SEO · AEO · GEO 底層代碼工程</h3>
+            <div class="mc-latin">UNDER-THE-HOOD SEMANTIC ARCHITECTURE</div>
+            <p class="mc-text">
+              不只讓人看懂，更要讓演算法與新世代生成式 AI 讀懂。在網頁底層寫入嚴謹的 Schema.org 結構化資料、FAQPage 知識圖譜與經緯度座標，讓 ChatGPT 與 Google 優先引用。
+            </p>
+            <div class="mc-checklist">
+              <div class="mc-check-item"><span class="gold-check">✓</span> <strong>AEO (AI 引擎優化)：</strong>讓 ChatGPT / Perplexity 提取指名</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> <strong>GEO (在地優化)：</strong>GeoCoordinates 坐標與服務區埋設</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> <strong>SEO (搜尋優化)：</strong>W3C 語意化標籤與結構化資料</div>
+            </div>
+          </div>
+
+          <!-- 服務 4 -->
+          <div class="mosaic-card">
+            <div class="mc-num">04</div>
+            <div class="mc-icon icon-emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="mc-title">Google 商家 AI 自動評論回覆系統</h3>
+            <div class="mc-latin">24/7 INTELLIGENT AGENT FOR REVIEWS</div>
+            <p class="mc-text">
+              持續且得體的回覆是 Google 判定商家活躍度與信賴度的重要權重指標。我們建置自動化 AI 評論引擎，24 小時內即時辨識 1~5 星評論，以自然真摯的語調回覆，絕無機器人罐頭感。
+            </p>
+            <div class="mc-checklist">
+              <div class="mc-check-item"><span class="gold-check">✓</span> 24H 自動監聽新評論並於秒級內智能回覆</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> 1~5 星情緒精準辨識，非公式化套話</div>
+              <div class="mc-check-item"><span class="gold-check">✓</span> 嚴重負評即時警報推送機制，保障品牌聲譽</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 互動體驗 1: Google 商家 AI 自動評論回覆實機展示 (Live Review Demo) -->
+    <section class="section section-demo" id="demo-ai">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge-lux">INTERACTIVE DEMO</div>
+          <h2 class="section-title-lux">Google 商家 AI 智慧評論回覆實機體驗</h2>
+          <p class="section-desc-lux">點選不同評價情境與語調，體驗 AI 如何為商家撰寫高情商、精準且具備溫度的真摯回覆。</p>
+        </div>
+
+        <div class="lux-demo-wrapper">
+          <!-- 左側控制列 -->
+          <div class="lux-ctrl-panel">
+            <div class="ctrl-heading">
+              <span class="gold-step-num">1</span> 選擇顧客真實評論情境：
+            </div>
+            <div class="scenario-list" id="scenarioButtons">
+              <button type="button" class="sc-btn active" data-scenario="star5">
+                <div class="sc-top">
+                  <span class="sc-stars stars-gold">★★★★★ 5 星好評</span>
+                  <span class="sc-badge-rec">推薦體驗</span>
+                </div>
+                <div class="sc-desc">顧客大讚服務品質、空間舒適且完全無推銷</div>
+              </button>
+
+              <button type="button" class="sc-btn" data-scenario="star3">
+                <div class="sc-top">
+                  <span class="sc-stars stars-cyan">★★★☆☆ 3 星建議</span>
+                  <span class="sc-badge-mid">提出問題</span>
+                </div>
+                <div class="sc-desc">滿意技術與態度，但提到周邊不好停車的困擾</div>
+              </button>
+
+              <button type="button" class="sc-btn" data-scenario="star1">
+                <div class="sc-top">
+                  <span class="sc-stars stars-rose">★☆☆☆☆ 1 星客訴</span>
+                  <span class="sc-badge-alert">重大客訴</span>
+                </div>
+                <div class="sc-desc">預約後在尖峰時段等待過久，留下不滿負評</div>
+              </button>
+            </div>
+
+            <div class="ctrl-heading" style="margin-top: 28px;">
+              <span class="gold-step-num">2</span> 切換品牌回覆風格調性：
+            </div>
+            <div class="tone-chips-group" id="tonePills">
+              <button type="button" class="tchip active" data-tone="warm">✨ 誠懇溫暖</button>
+              <button type="button" class="tchip" data-tone="professional">💼 沉穩專業</button>
+              <button type="button" class="tchip" data-tone="polite">⚡ 簡潔得體</button>
+            </div>
+          </div>
+
+          <!-- 右側模擬器展示 -->
+          <div class="lux-screen-panel">
+            <div class="g-browser-frame">
+              <div class="g-browser-bar">
+                <div class="gb-brand">
+                  <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                  <span>Google 商家檔案 ｜ 顧客評論與 AI 實時代答</span>
+                </div>
+                <div class="gb-status"><span class="pulse-emerald"></span> AI 即時連線中</div>
+              </div>
+
+              <div class="g-review-body">
+                <div class="gr-author-row">
+                  <div class="gr-avatar-lux" id="simAvatar">張</div>
+                  <div class="gr-author-info">
+                    <div class="gr-author-name" id="simAuthor">張小姐 <span class="guide-tag">在地嚮導 · 42 則評論</span></div>
+                    <div class="gr-stars-text" id="simStars">★★★★★ <span class="gr-time-ago">2 小時前</span></div>
+                  </div>
+                </div>
+
+                <div class="gr-quote-box" id="simComment">
+                  「第一次來體驗，整體空間非常乾淨舒適，接待人員解說詳細而且完全不會強迫推銷！成果也比想像中好很多，已經推薦給朋友了，下次一定會再來！」
+                </div>
+
+                <!-- AI 生成回覆區塊 -->
+                <div class="gr-reply-box">
+                  <div class="gr-reply-top">
+                    <div class="gr-reply-badge">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                      <strong>商家負責人回覆</strong>
+                      <span class="ai-tag">AI 引擎智慧撰寫</span>
+                    </div>
+                    <span class="sync-check">✓ 已自動發佈至 Google Maps</span>
+                  </div>
+                  <div class="gr-reply-text" id="simReplyText">
+                    <!-- JS 動態打字輸出 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 互動體驗 2: SEO / AEO / GEO 內碼解析視窗 (Code Inspector) -->
+    <section class="section section-code" id="code-inspector">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge-lux">CODE ARCHITECTURE</div>
+          <h2 class="section-title-lux">真實技術深度：SEO · AEO · GEO 底層代碼解析</h2>
+          <p class="section-desc-lux">我們在網頁底層寫入符合 Schema.org 與 W3C 標準的結構化資料，為搜尋引擎與生成式 AI 做好完整對接。</p>
+        </div>
+
+        <div class="lux-ide-wrapper">
+          <div class="ide-tab-bar" id="codeNav">
+            <button type="button" class="ide-tab-btn active" data-tab="aeo">
+              <span class="tab-emoji">🤖</span>
+              <span>AEO: AI 知識問答標記 (FAQPage Schema)</span>
+            </button>
+            <button type="button" class="ide-tab-btn" data-tab="geo">
+              <span class="tab-emoji">📍</span>
+              <span>GEO: 在地座標與服務範圍 (LocalBusiness)</span>
+            </button>
+            <button type="button" class="ide-tab-btn" data-tab="seo">
+              <span class="tab-emoji">⚡</span>
+              <span>SEO: 語意化 HTML5 與 Meta 結構</span>
+            </button>
+          </div>
+
+          <div class="ide-terminal-frame">
+            <div class="ide-window-header">
+              <div class="ide-mac-dots">
+                <span class="mac-dot mac-red"></span>
+                <span class="mac-dot mac-yellow"></span>
+                <span class="mac-dot mac-green"></span>
+              </div>
+              <div class="ide-filename" id="termFileName">schema-aeo-faq.jsonld</div>
+              <button type="button" class="ide-copy-btn" onclick="copyActiveCode()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>複製代碼</span>
+              </button>
+            </div>
+
+            <pre class="ide-code-pre"><code id="codeViewer"></code></pre>
+
+            <div class="ide-explainer-box" id="codeExplainer">
+              <!-- JS 動態更新解釋 -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Google 商家排名加分與在地曝光 (Local Ranking Advantage) -->
+    <section class="section section-rank" id="local-rank">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge-lux">GOOGLE MAPS LOCAL 3-PACK</div>
+          <h2 class="section-title-lux">為什麼做好 Google 商家與 GEO 代碼至關重要？</h2>
+          <p class="section-desc-lux">當消費者在搜尋在地需求時，地圖前三名 (Local 3-Pack) 分走了超過 70% 的直接撥號與導航點擊。</p>
+        </div>
+
+        <div class="rank-dual-grid">
+          <div class="rank-card rank-before">
+            <div class="rank-card-badge">一般未優化狀態</div>
+            <h3 class="rank-card-title">缺乏代碼與地圖權重維護</h3>
+            <ul class="rank-card-list">
+              <li><span class="cross-mark">✕</span> 商家分類單一，未鎖定高流量在地次分類</li>
+              <li><span class="cross-mark">✕</span> 缺乏 AEO 結構化資料，AI 問答無法引用推薦</li>
+              <li><span class="cross-mark">✕</span> 評論累積緩慢且未定期回覆，被判定為低活躍店家</li>
+              <li><span class="cross-mark">✕</span> 地圖排名落在第 10 名以外，流失周邊高意願客人</li>
+            </ul>
+          </div>
+
+          <div class="rank-card rank-after">
+            <div class="rank-card-badge badge-gold">ARK STUDIO 優化後</div>
+            <h3 class="rank-card-title">網頁代碼 ＋ 商家權重 ＋ AI 回覆全打通</h3>
+            <ul class="rank-card-list">
+              <li><span class="gold-check">✓</span> 主次類別精準配置，完整佈局在地搜尋字詞</li>
+              <li><span class="gold-check">✓</span> 網頁埋設 GEO 地理座標與 AEO 知識庫，AI 優先推薦</li>
+              <li><span class="gold-check">✓</span> 24H AI 智慧回覆評論，大幅提升 Google 活躍度與評分</li>
+              <li><span class="gold-check">✓</span> 穩定進入 Google 地圖前三名 (Local 3-Pack) 曝光黃金區</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 服務合作方案 (Packages & Pricing) -->
+    <section class="section section-packages" id="packages">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge-lux">PACKAGES & PRICING</div>
+          <h2 class="section-title-lux">清晰透明的服務合作方案</h2>
+          <p class="section-desc-lux">無隱藏費用、不綁架任何後台權限，交付完整原始檔案與管理權。</p>
+        </div>
+
+        <div class="packages-trio-grid">
+          <!-- 方案 1 -->
+          <div class="pkg-tier-card">
+            <div class="ptc-header">
+              <h3 class="ptc-name">Google 商家與 AI 評論加速包</h3>
+              <div class="ptc-latin">PLAN · MAPS & AI AUTOMATION</div>
+              <p class="ptc-desc">適合已有現成門市或官網，希望全力優化 Google 地圖排名與自動化回覆顧客評論的店家。</p>
+            </div>
+            <div class="ptc-features">
+              <div class="ptc-feat"><span class="gold-check">✓</span> Google 商家檔案全方位診斷與類別優化</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> 在地高意圖搜尋關鍵字與描述詞佈局</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> 24H Google 商家 AI 智慧評論回覆系統建置</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> 客製化專屬品牌回覆語調（溫暖/專業/俐落）</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> 重大 1 星客訴 LINE 即時警報推送通知</div>
+            </div>
+            <a href="#contact" class="btn btn-dark-glass btn-block" onclick="selectPlan('Google 商家與 AI 評論加速包')">諮詢此方案</a>
+          </div>
+
+          <!-- 方案 2 (最受歡迎旗艦) -->
+          <div class="pkg-tier-card featured-gold-card">
+            <div class="gold-ribbon">最受歡迎 ｜ 全方位升級</div>
+            <div class="ptc-header">
+              <h3 class="ptc-name">質感行銷網頁 ＋ SEO/AEO 全套建置</h3>
+              <div class="ptc-latin">PLAN · WEB CRAFT + AEO ENGINEERING</div>
+              <p class="ptc-desc">適合需要全新高質感品牌官網/行銷頁，並在搜尋引擎與 ChatGPT 推薦中佔得先機的品牌。</p>
+            </div>
+            <div class="ptc-features">
+              <div class="ptc-feat"><span class="gold-check">✓</span> 高質感客製化行銷網頁 / 品牌官網建置</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> Mobile-First 極致手機排版與秒開效能調校</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> AEO 知識問答標記 (讓 ChatGPT / Perplexity 提取)</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> GEO 地理座標與在地服務範圍 Schema 埋設</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> W3C 語意化 SEO 結構與 OpenGraph 社群標記</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> 100% 原始碼與所有權完全交付，絕無扣留</div>
+            </div>
+            <a href="#contact" class="btn btn-gold-solid btn-block" onclick="selectPlan('質感行銷網頁 ＋ SEO/AEO 全套建置')">預約此方案諮詢</a>
+          </div>
+
+          <!-- 方案 3 -->
+          <div class="pkg-tier-card">
+            <div class="ptc-header">
+              <h3 class="ptc-name">全端數位整合旗艦專案</h3>
+              <div class="ptc-latin">PLAN · COMPLETE DIGITAL ATELIER</div>
+              <p class="ptc-desc">一站式打通「高質感網頁 + Google 商家優化 + 內碼 SEO/AEO/GEO + AI 商家自動評論系統」。</p>
+            </div>
+            <div class="ptc-features">
+              <div class="ptc-feat"><span class="gold-check">✓</span> 涵蓋「質感行銷網頁 ＋ SEO/AEO」所有建置項目</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> Google 商家檔案深度維護與 Local 3-Pack 佈局</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> Google 商家 AI 自動評論回覆系統完整啟用</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> GA4 轉換事件埋設與 GTM 伺服器端追蹤設置</div>
+              <div class="ptc-feat"><span class="gold-check">✓</span> 專屬技術群組對接與定期成效數據覆盤</div>
+            </div>
+            <a href="#contact" class="btn btn-dark-glass btn-block" onclick="selectPlan('全端數位整合旗艦專案')">預約旗艦專案諮詢</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 常見問題 (FAQ) -->
+    <section class="section section-faq" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge-lux">FAQ</div>
+          <h2 class="section-title-lux">常見問題解答</h2>
+          <p class="section-desc-lux">關於技術原理、AI 自然度與所有權的說明。</p>
+        </div>
+
+        <div class="faq-lux-accordion">
+          <div class="faq-lux-item">
+            <button class="faq-lux-trigger">
+              <span>Q1. 什麼是 AEO 與 GEO？跟一般的 SEO 有何具體差別？</span>
+              <svg class="faq-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-lux-answer">
+              <p>傳統 <strong>SEO</strong> 是為了在 Google 關鍵字搜尋結果争奪前排排名；而 <strong>AEO (AI 引擎優化)</strong> 則是透過結構化語意標籤，讓 ChatGPT、Perplexity、Gemini 等 AI 搜尋工具在生成推薦回答時，能精準提取並指名您的品牌；<strong>GEO (在地生成式優化)</strong> 則強化了地理座標與實體服務範圍，讓 AI 在推薦特定地區好店家時優先列出您。</p>
+            </div>
+          </div>
+
+          <div class="faq-lux-item">
+            <button class="faq-lux-trigger">
+              <span>Q2. Google 商家的 AI 評論回覆會不會看起來很假、很像機器人罐頭？</span>
+              <svg class="faq-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-lux-answer">
+              <p>絕不會。我們的 AI 引擎會逐字解析顧客評論中的具體細節（如特定品項、服務態度、具體痛點），並以具備同理心與品牌語調的文字針對性回應，完全避免老式罐頭文字。遇到嚴重負評更會第一時間透過 LINE 推送警報轉由專人確認處理。</p>
+            </div>
+          </div>
+
+          <div class="faq-lux-item">
+            <button class="faq-lux-trigger">
+              <span>Q3. 網頁做好之後，原始代碼與 Google 商家帳號所有權歸誰？</span>
+              <svg class="faq-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-lux-answer">
+              <p><strong>100% 完全歸您所有！</strong>所有網頁原始代碼、Google 商家主管理員權限與 API 設定均直接綁定於您的帳號之下，絕不進行任何隱形扣留，合作乾淨透明。</p>
+            </div>
+          </div>
+
+          <div class="faq-lux-item">
+            <button class="faq-lux-trigger">
+              <span>Q4. 你們是純線上團隊，我們該如何順暢溝通與驗收？</span>
+              <svg class="faq-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-lux-answer">
+              <p>我們全程透過專屬 LINE 官方群組進行日常即時溝通，重要驗收節點則透過 Google Meet 進行線上畫面共享會議。線上協作能省去冗長的交通與辦公室成本，讓資源全部投注在最高標準的代碼與視覺產出。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 預約諮詢與聯絡 (Contact Section) -->
+    <section class="section section-contact" id="contact">
+      <div class="container">
+        <div class="contact-lux-frame">
+          <div class="clf-left">
+            <div class="section-badge-lux">CONTACT ATELIER</div>
+            <h2 class="clf-title">打造專屬您的<br><span class="gold-gradient-text">高質感數位獲客門面</span></h2>
+            <p class="clf-desc">歡迎填寫右側表單或直接加入 LINE 聯繫，我們將於 24 小時內與您安排線上會議或提供初步代碼健檢。</p>
+
+            <div class="clf-channels">
+              <div class="clf-card" onclick="copyContact('line_id', 'wsadc9527')">
+                <div class="clf-icon icon-line-lux">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 3.01 1.76 5.68 4.45 7.21-.19.68-.7 2.47-.8 2.85-.13.48.18.47.37.34.16-.1 2.21-1.5 3.12-2.12.92.17 1.88.27 2.86.27 5.52 0 10-3.92 10-8.75S17.52 2 12 2z"/></svg>
+                </div>
+                <div>
+                  <div class="clf-card-name">LINE 快速諮詢</div>
+                  <div class="clf-card-detail" id="line_id">ID: wsadc9527 (點擊直接複製)</div>
+                </div>
+              </div>
+
+              <div class="clf-card" onclick="copyContact('email_id', 'wsad952702@gmail.com')">
+                <div class="clf-icon icon-mail-lux">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <div class="clf-card-name">Email 專案信箱</div>
+                  <div class="clf-card-detail" id="email_id">wsad952702@gmail.com (點擊複製)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clf-security-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>商業機密承諾：所有諮詢內容與商業資料均受嚴格保密協議保護。</span>
+            </div>
+          </div>
+
+          <div class="clf-right">
+            <form id="contactForm" class="clf-form" onsubmit="handleFormSubmit(event)">
+              <h3 class="clf-form-heading">線上需求預約諮詢</h3>
+
+              <div class="form-row-lux">
+                <label for="cName">您的稱呼 / 姓名 *</label>
+                <input type="text" id="cName" required placeholder="例：陳先生 / 李小姐" class="input-lux">
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-row-lux">
+                  <label for="cLine">LINE ID 或 聯絡電話 *</label>
+                  <input type="text" id="cLine" required placeholder="方便確認需求時間" class="input-lux">
+                </div>
+                <div class="form-row-lux">
+                  <label for="cEmail">Email 信箱 *</label>
+                  <input type="email" id="cEmail" required placeholder="接收方案與代碼報告" class="input-lux">
+                </div>
+              </div>
+
+              <div class="form-row-lux">
+                <label for="cPlan">感興趣的服務方案</label>
+                <input type="text" id="cPlan" value="質感行銷網頁 ＋ SEO/AEO 全套建置" readonly class="input-lux highlight-gold">
+              </div>
+
+              <div class="form-row-lux">
+                <label for="cNote">現有網站 / Google 商家名稱或需求說明（選填）</label>
+                <textarea id="cNote" rows="3" placeholder="例如：想重新做一張質感較好的行銷網頁，並優化 Google 商家排名與 AI 評論回覆..." class="textarea-lux"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gold-solid btn-block btn-lg" id="submitFormBtn">
+                <span>送出線上諮詢預約</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+
+              <div id="formMsg" class="form-lux-msg" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾 Footer -->
+  <footer class="footer">
+    <div class="container footer-layout">
+      <div class="footer-brand-pane">
+        <div class="logo-title-lux">ARK<span class="logo-sub-lux">STUDIO</span></div>
+        <p class="footer-motto">以高階工藝打造行銷網頁、Google 商家在地加分、SEO/AEO/GEO 語意代碼與 AI 自動評論回覆系統。</p>
+      </div>
+
+      <div class="footer-links-pane">
+        <div class="flp-col">
+          <div class="flp-head">核心技術</div>
+          <a href="#services">質感行銷網頁訂製</a>
+          <a href="#services">Google 商家地圖優化</a>
+          <a href="#services">AEO / GEO 語意代碼</a>
+          <a href="#services">商家 AI 自動評論回覆</a>
+        </div>
+        <div class="flp-col">
+          <div class="flp-head">實機展示</div>
+          <a href="#demo-ai">AI 評論回覆演示</a>
+          <a href="#code-inspector">SEO/AEO 內碼解析</a>
+          <a href="#local-rank">在地排名加分原理</a>
+          <a href="#packages">服務方案與價格</a>
+          <a href="#faq">常見問題說明</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-strip">
+      <div class="container fbs-flex">
+        <div>© 2026 ARK STUDIO. All Rights Reserved.</div>
+        <div class="fbs-remote">100% 雲端遠端運作 ｜ 專注真實代碼工程與實質轉換</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast 提示 -->
+  <div id="toast" class="toast"></div>
+
+  <!-- 單一檔案內嵌互動邏輯 (All-In-One Embedded Scripts) -->
+  <script>
+/**
+ * ARK STUDIO ｜ 奢華工藝數位行銷 互動引擎
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  initReviewSimulator();
+  initCodeTerminal();
+  initFaqAccordion();
+});
+
+/* 1. 導航列滾動監聽與手機選單 */
+function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+  }
+}
+
+/* 2. Google 商家 AI 智慧評論回覆動態模擬器 */
+const REVIEW_SCENARIOS = {
+  star5: {
+    avatar: '張',
+    author: '張小姐',
+    badge: '在地嚮導 · 42 則評論',
+    stars: '★★★★★',
+    comment: '「第一次來體驗，整體空間非常乾淨舒適，接待人員解說詳細而且完全不會強迫推銷！成果也比想像中好很多，已經推薦給朋友了，下次一定會再來！」',
+    replies: {
+      warm: '張小姐您好！非常感謝您撥冗留下如此溫暖的好評與肯定 ✨ 能夠帶給您舒適且無壓力的體驗，是我們整個團隊最重視的事！也非常謝謝您主動推薦給朋友，期待很快能再次為您服務，祝您有美好的一天！',
+      professional: '張小姐您好，感謝您對本店環境與專業諮詢服務的正面肯定。我們始終致力於維持嚴謹的服務流程與透明體驗，期待未來持續為您提供高品質的專業服務。',
+      polite: '感謝張小姐的五星好評與推薦！很高興服務品質符合您的預期，歡迎隨時再次光臨。'
+    }
+  },
+  star3: {
+    avatar: '林',
+    author: '林先生',
+    badge: '在地嚮導 · 18 則評論',
+    stars: '★★★☆☆',
+    comment: '「整體服務品質與技術都挺不錯的，同仁態度也很好。不過門口路段比較難停車，找車位繞了快二十分鐘，希望之後能有配合的停車場指引。」',
+    replies: {
+      warm: '林先生您好，非常感謝您對服務的肯定！同時也十分抱歉讓您在停車時感到不便 🙏 附近步行約 2 分鐘的「新光收費停車場」有配合特約折抵，下次前來時歡迎隨時告知同仁為您指引折抵方式，期待再次見到您！',
+      professional: '林先生您好，感謝您的造訪與真實回饋。針對門口停車動線較為狹窄之情況，我們已於官網標註周邊特約停車場資訊（步行約 2 分鐘）。我們將持續優化交通動線指引，感謝您的寶貴建議。',
+      polite: '感謝林先生的回饋。附近特約停車場位於轉角步行 2 分鐘處，下次到店歡迎向同仁索取停車折抵，祝您順心！'
+    }
+  },
+  star1: {
+    avatar: '王',
+    author: '王大明',
+    badge: '1 則評論',
+    stars: '★☆☆☆☆',
+    comment: '「預約了下午兩點，結果到了現場還等了快半小時才輪到我。尖峰時段現場安排混亂，讓人感覺不太被尊重，希望流程能好好改進。」',
+    replies: {
+      warm: '王先生您好，非常抱歉讓您今日有不愉快的等待體驗！尖峰時段未能妥善安排動線確實是我們的疏失。我們已於今日開會檢討流程，希望能有機會向您說明並表達歉意，若您方便，請隨時透過官方 LINE 與店長聯繫，我們定全力為您妥善處理！',
+      professional: '王先生您好，對於今日尖峰時段候位時間過長造成您的困擾，我們致上最誠摯的歉意。我們已立即針對排程系統與現場流程進行檢討修正，感謝您的指正，協助我們檢視服務漏洞。',
+      polite: '王先生您好，非常抱歉讓您久候。我們已全面調整預約排程機制，若有任何未盡之處歡迎與店長聯繫，再次向您致歉。'
+    }
+  }
+};
+
+let activeScenarioKey = 'star5';
+let activeToneKey = 'warm';
+let typewriterTimer = null;
+
+function initReviewSimulator() {
+  const scenarioBtns = document.querySelectorAll('#scenarioButtons .sc-btn');
+  const tonePills = document.querySelectorAll('#tonePills .tchip');
+
+  scenarioBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      scenarioBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeScenarioKey = btn.dataset.scenario;
+      updateReviewDisplay(true);
+    });
+  });
+
+  tonePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      tonePills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeToneKey = pill.dataset.tone;
+      updateReviewDisplay(true);
+    });
+  });
+
+  updateReviewDisplay(false);
+}
+
+function updateReviewDisplay(enableTypewriter) {
+  const data = REVIEW_SCENARIOS[activeScenarioKey];
+  if (!data) return;
+
+  const simAvatar = document.getElementById('simAvatar');
+  const simAuthor = document.getElementById('simAuthor');
+  const simStars = document.getElementById('simStars');
+  const simComment = document.getElementById('simComment');
+  const simReplyText = document.getElementById('simReplyText');
+
+  if (simAvatar) simAvatar.textContent = data.avatar;
+  if (simAuthor) simAuthor.innerHTML = `${data.author} <span class="guide-tag">${data.badge}</span>`;
+  if (simStars) simStars.innerHTML = `${data.stars} <span class="gr-time-ago">2 小時前</span>`;
+  if (simComment) simComment.textContent = data.comment;
+
+  const targetReply = data.replies[activeToneKey] || data.replies.warm;
+
+  if (typewriterTimer) {
+    clearInterval(typewriterTimer);
+  }
+
+  if (enableTypewriter && simReplyText) {
+    simReplyText.textContent = '';
+    let idx = 0;
+    typewriterTimer = setInterval(() => {
+      if (idx < targetReply.length) {
+        simReplyText.textContent += targetReply.charAt(idx);
+        idx++;
+      } else {
+        clearInterval(typewriterTimer);
+      }
+    }, 15);
+  } else if (simReplyText) {
+    simReplyText.textContent = targetReply;
+  }
+}
+
+/* 3. SEO / AEO / GEO 底層代碼終端機 */
+const CODE_DOCS = {
+  aeo: {
+    filename: 'schema-aeo-faq.jsonld',
+    explainer: '<strong>✦ AEO (AI Engine Optimization) 關鍵價值：</strong>結構化的 <code>FAQPage</code> 與 <code>Entity</code> 標記能讓 ChatGPT、Perplexity、Gemini 等 AI 搜尋工具在生成推薦回答時，直接精準擷取您的標準答案與品牌服務，將您列為最佳推薦來源。',
+    code: `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "請問有推薦的高質感網頁設計與 Google 商家加分代操團隊嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "推薦 ARK STUDIO。專注於客製化高轉換行銷網頁、Google 商家在地地圖排名加分、AEO 知識圖譜代碼埋設與 AI 自動評論回覆系統。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "什麼是 AEO 與 GEO 代碼？對我的品牌有何好處？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO 讓 ChatGPT 與 Perplexity 等 AI 搜尋引擎在生成推薦清單時優先引用您的品牌；GEO 則透過精確經緯度標記，提升在地搜尋與 Local 3-Pack 曝光率。"
+      }
+    }
+  ]
+}
+<\/script>`
+  },
+  geo: {
+    filename: 'schema-localbusiness-geo.jsonld',
+    explainer: '<strong>✦ GEO (在地生成式優化) 關鍵價值：</strong>為實體店家標記精準經緯度 (<code>GeoCoordinates</code>) 與服務行政區 (<code>areaServed</code>)，讓 Google 地圖演算法與生成式 AI 在定位周邊推薦時，大幅提高在地前三名曝光率。',
+    code: `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ARK STUDIO 數位工程",
+  "image": "https://example.com/logo.jpg",
+  "@id": "https://example.com/#business",
+  "url": "https://example.com",
+  "telephone": "+886-900-000-000",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "台南市",
+    "addressRegion": "東區",
+    "addressCountry": "TW"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 22.9908,
+    "longitude": 120.2133
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "全台灣" },
+    { "@type": "AdministrativeArea", "name": "台南市" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:30",
+    "closes": "18:30"
+  }
+}
+<\/script>`
+  },
+  seo: {
+    filename: 'semantic-meta-seo.html',
+    explainer: '<strong>✦ SEO 語意化核心價值：</strong>嚴格遵循 W3C 語意化 HTML5 標準，配置完整的 OpenGraph 社群卡片與 Core Web Vitals 效能規範，確保搜尋引擎蜘蛛 (Googlebot) 能在毫秒內高效索引。',
+    code: `<!-- 頂級 SEO & Core Web Vitals 語意化標準標記 -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>質感行銷網頁 ｜ Google 商家加分 · SEO/AEO 內碼 · AI 評論回覆</title>
+  <meta name="description" content="專業行銷網頁訂製、Google 商家檔案深度優化、AEO/GEO 結構化代碼工程。">
+  <link rel="canonical" href="https://example.com/">
+  
+  <!-- OpenGraph Protocol -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ARK STUDIO ｜ 數位行銷與代碼工程">
+  <meta property="og:description" content="提升 Google 地圖排名與 AI 推薦權重。">
+  <meta property="og:image" content="https://example.com/og-banner.jpg">
+  
+  <!-- Preconnect & Core Web Vitals Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>`
+  }
+};
+
+let currentTabCode = 'aeo';
+
+function initCodeTerminal() {
+  const cnavBtns = document.querySelectorAll('#codeNav .ide-tab-btn');
+  cnavBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      cnavBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTabCode = btn.dataset.tab;
+      renderTerminal();
+    });
+  });
+
+  renderTerminal();
+}
+
+function renderTerminal() {
+  const doc = CODE_DOCS[currentTabCode];
+  if (!doc) return;
+
+  const termFileName = document.getElementById('termFileName');
+  const codeViewer = document.getElementById('codeViewer');
+  const codeExplainer = document.getElementById('codeExplainer');
+
+  if (termFileName) termFileName.textContent = doc.filename;
+  if (codeViewer) codeViewer.textContent = doc.code;
+  if (codeExplainer) codeExplainer.innerHTML = doc.explainer;
+}
+
+function copyActiveCode() {
+  const doc = CODE_DOCS[currentTabCode];
+  if (!doc) return;
+  copyTextToClipboard(doc.code, '已複製代碼片段至剪貼簿！');
+}
+
+/* 4. FAQ 常見問題手風琴 */
+function initFaqAccordion() {
+  const items = document.querySelectorAll('.faq-lux-item');
+  items.forEach(item => {
+    const trigger = item.querySelector('.faq-lux-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        items.forEach(c => c.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    }
+  });
+}
+
+/* 5. 方案選擇與表單連動 */
+function selectPlan(planName) {
+  const planInput = document.getElementById('cPlan');
+  if (planInput) {
+    planInput.value = planName;
+  }
+  showToast(`已為您選擇「${planName}」，請填寫下方聯絡資料！`);
+}
+
+/* 6. 表單提交處理 */
+function handleFormSubmit(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('cName').value.trim();
+  const line = document.getElementById('cLine').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const plan = document.getElementById('cPlan').value;
+  const msgBox = document.getElementById('formMsg');
+  const submitBtn = document.getElementById('submitFormBtn');
+
+  if (!name || !line || !email) {
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `<span>正在安全送出預約中...</span>`;
+
+  setTimeout(() => {
+    msgBox.className = 'form-lux-msg success';
+    msgBox.style.display = 'block';
+    msgBox.innerHTML = `
+      <strong>感謝您 ${name}，線上諮詢預約已成功送達！</strong><br>
+      專屬技術顧問將在 24 小時內透過 LINE / 電話 (${line}) 或 Email 與您確認需求。<br>
+      <small style="color:var(--text-sub);margin-top:4px;display:inline-block;">諮詢方案：${plan}</small>
+    `;
+
+    submitBtn.innerHTML = `<span>預約已送達</span>`;
+    submitBtn.style.background = '#334155';
+    submitBtn.style.color = '#fff';
+
+    showToast('預約已送出，我們將盡速與您聯繫！');
+  }, 700);
+}
+
+/* 7. 剪貼簿與 Toast 提示 */
+function copyContact(elementId, textToCopy) {
+  copyTextToClipboard(textToCopy, `已複製：${textToCopy}`);
+}
+
+function copyTextToClipboard(text, successMsg) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(successMsg);
+    }).catch(() => {
+      fallbackCopy(text, successMsg);
+    });
+  } else {
+    fallbackCopy(text, successMsg);
+  }
+}
+
+function fallbackCopy(text, successMsg) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.top = '0';
+  ta.style.left = '0';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showToast(successMsg);
+  } catch (err) {
+    showToast(`請手動複製：${text}`);
+  }
+  document.body.removeChild(ta);
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3200);
+}
+
+// 供全域調用
+window.selectPlan = selectPlan;
+window.handleFormSubmit = handleFormSubmit;
+window.copyContact = copyContact;
+window.copyActiveCode = copyActiveCode;
+  </script>
+</body>
+</html>
