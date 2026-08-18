@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>安全架構與 12 人實體團隊 ｜ HIVEARY 《天堂經典版》代練</title>
+  <meta name="description" content="100% 台灣在地 12 人實體辦公室同場作業，非外包、非大陸人員。自行租用台灣優質機房，每帳號獨享獨立 WireGuard 專屬固定 IP，保障登入來源乾淨一致。" />
+
+  <link rel="icon" type="image/x-icon" href="images/lineage-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-security">
+
+  <!-- Full-Screen Real Photographic Atmosphere Backdrop Layer -->
+  <div class="bg-real-photo-layer"></div>
+  <div class="bg-ambient-backdrop"></div>
+  <canvas id="techCanvas" class="tech-canvas"></canvas>
+  <div class="bg-grid-pattern"></div>
+  <div class="bg-radar-sweep"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container announcement-inner">
+      <div class="status-badge-live">
+        <span class="pulse-dot"></span>
+        <span>台灣專屬獨立機房 WireGuard 連線正常 (Ping: 12ms)</span>
+      </div>
+      <div class="announcement-links">
+        <span class="trial-tag">✨ 2 天試用期 · 不滿意全額無條件退費</span>
+        <a href="contact.html" class="link-quick-book">立即預約席位 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation -->
+  <header class="site-navbar" id="siteNavbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-link">
+        <div class="brand-crest">
+          <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+            <polygon points="24,2 44,13 44,35 24,46 4,35 4,13" stroke="url(#goldGrad)" stroke-width="2.5" fill="rgba(197, 168, 128, 0.08)" />
+            <path d="M24 10 L36 17 L36 29 L24 38 L12 29 L12 17 Z" stroke="url(#goldGrad)" stroke-width="1.5" fill="rgba(0,0,0,0.7)" />
+            <path d="M24 14 L24 34 M16 20 L32 20 M16 28 L32 28" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round" />
+            <circle cx="24" cy="24" r="2.5" fill="#f5e4cd" />
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff4e0" />
+                <stop offset="50%" stop-color="#c5a880" />
+                <stop offset="100%" stop-color="#7a5e38" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-title">HIVEARY</span>
+          <span class="brand-tag">TAIWAN STUDIO · VIP BOOST</span>
+        </div>
+      </a>
+
+      <nav class="nav-links-wrap" id="navLinksWrap">
+        <a href="index.html" class="nav-item">首頁</a>
+        <a href="pricing.html" class="nav-item">方案與試算</a>
+        <a href="classes.html" class="nav-item">職業專精</a>
+        <a href="security.html" class="nav-item active">實體團隊與IP</a>
+        <a href="monitoring.html" class="nav-item">直播與報表</a>
+        <a href="terms.html" class="nav-item">保障條款</a>
+        <a href="contact.html" class="nav-item">預約諮詢</a>
+      </nav>
+
+      <div class="nav-action-wrap">
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-4.6-4.9-8.3-11-8.3C6.9 2 2 5.7 2 10.3c0 4.1 3.9 7.6 9.2 8.2.4.1.9.3 1 .7.1.3.1.8 0 1.2l-.3 1.6c-.1.5-.4 1.8 1.6 1 1.9-.8 5.3-3.1 7.2-5.4 2.2-2.1 3.3-4.7 3.3-7.3z"/></svg>
+          <span>LINE 官方客服</span>
+        </a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="切換選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">首頁</a>
+      <span>/</span>
+      <span class="current">實體團隊環境與獨立 WireGuard IP</span>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero-banner banner-security">
+    <div class="container">
+      <span class="page-hero-kicker">STUDIO & NETWORK SECURITY</span>
+      <h1 class="page-hero-title">100% 台灣實體辦公室 · 獨立 WireGuard 固定 IP</h1>
+      <p class="page-hero-desc">拒絕外包與共用 IP 風險！12 位專職人員現場作業，自行租用台灣機房伺服器，每帳號獨享獨立固定 IP。</p>
+    </div>
+  </div>
+
+  <!-- Physical Studio Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-kicker">PHYSICAL WORKSPACE</span>
+        <h2 class="section-title">台灣在地 12 人專職同場作業</h2>
+        <p class="section-desc">現場主管即時監督，環境單純乾淨，杜絕帳號二手外流！</p>
+      </div>
+
+      <div class="team-layout-grid">
+        <div class="team-text-column">
+          <div class="team-numbers-card" style="display:flex; flex-direction:column; gap:16px; align-items:center; text-align:center; padding:26px;">
+            <div class="team-seal-grand">
+              <!-- 12-Star Bastion Seal SVG -->
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="22" stroke="url(#gold_grad_seal)" stroke-width="1.5" stroke-dasharray="3 2"></circle>
+                <circle cx="24" cy="24" r="18" fill="url(#gold_grad_inner)" stroke="#D4AF37" stroke-width="1"></circle>
+                <!-- 12 Stars around perimeter -->
+                <path d="M24 8l1 2.5 2.5.5-2 1.8.6 2.7-2.1-1.3-2.1 1.3.6-2.7-2-1.8 2.5-.5z" fill="#FFF"/>
+                <path d="M24 16v16M16 24h16M19 19l10 10M29 19L19 29" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
+                <path d="M20 20h8v12h-8z" fill="#0C0F17" stroke="#D4AF37" stroke-width="1.5"/>
+                <path d="M18 20l6-5 6 5" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+                <circle cx="24" cy="26" r="2" fill="#D4AF37"/>
+                <defs>
+                  <linearGradient id="gold_grad_seal" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F5E4B8"/>
+                    <stop offset="0.5" stop-color="#D4AF37"/>
+                    <stop offset="1" stop-color="#8C6F21"/>
+                  </linearGradient>
+                  <linearGradient id="gold_grad_inner" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="rgba(212,175,55,0.2)"/>
+                    <stop offset="1" stop-color="rgba(12,15,23,0.9)"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            
+            <div>
+              <span style="font-size:0.75rem; letter-spacing:2px; color:var(--gold-primary); font-family:var(--font-mono); font-weight:800; text-transform:uppercase;">100% TAIWAN PHYSICAL STUDIO</span>
+              <h3 style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:2px;">12 人在地實體專任團隊</h3>
+            </div>
+
+            <div style="display:flex; justify-content:space-around; width:100%; border-top:1px solid var(--border-subtle); padding-top:16px; margin-top:4px;">
+              <div class="team-num-box" style="display:flex; align-items:center; gap:10px;">
+                <div class="bespoke-emblem-badge emblem-day" style="width:36px; height:36px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                </div>
+                <div style="text-align:left;">
+                  <span class="team-num-title">日班操作組</span>
+                  <span class="team-num-val" style="font-size:1.15rem;">7 位專員</span>
+                </div>
+              </div>
+
+              <div class="team-num-divider"></div>
+
+              <div class="team-num-box" style="display:flex; align-items:center; gap:10px;">
+                <div class="bespoke-emblem-badge emblem-night" style="width:36px; height:36px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </div>
+                <div style="text-align:left;">
+                  <span class="team-num-title">夜班操作組</span>
+                  <span class="team-num-val" style="font-size:1.15rem;">5 位專員</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-features-list">
+            <div class="team-feat-card">
+              <div class="bespoke-emblem-badge emblem-knight" style="width:40px; height:40px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline><circle cx="12" cy="7" r="1.5"></circle></svg>
+              </div>
+              <div class="feat-text">
+                <h4>全體人員在同一實體辦公室同場作業</h4>
+                <p>作業環境紀律嚴明，絕無委外下包與帳號二手轉手風險，帳號安全更有保障。</p>
+              </div>
+            </div>
+
+            <div class="team-feat-card">
+              <div class="bespoke-emblem-badge emblem-elf" style="width:40px; height:40px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line><circle cx="12" cy="10" r="2"></circle></svg>
+              </div>
+              <div class="feat-text">
+                <h4>作業電腦環境極致單純乾淨</h4>
+                <p>僅安裝《天堂經典版》遊戲本體、紫P官方客戶端、Discord 直播與錄影軟體，無任何外掛插件或雜質。</p>
+              </div>
+            </div>
+
+            <div class="team-feat-card">
+              <div class="bespoke-emblem-badge emblem-prince" style="width:40px; height:40px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path><polygon points="12 2 15 5 9 5"></polygon></svg>
+              </div>
+              <div class="feat-text">
+                <h4>自開服已累積 20+ 位課長包月背書</h4>
+                <p>服務對象涵蓋各大伺服器盟主、+9+10 衝暈騎、魂體三重妖精等高端玩家，口碑備受肯定。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-gallery-column">
+          <div class="studio-photo-card" data-img="images/office-workspace.jpg">
+            <img src="images/office-workspace.jpg" alt="辦公室實景，多位工作人員同場作業" class="studio-img" />
+            <div class="studio-photo-overlay">
+              <span class="studio-badge">辦公室現場實拍</span>
+              <p class="studio-caption">辦公室實景：多位工作人員同場作業 <span>(點擊放大 🔍)</span></p>
+            </div>
+          </div>
+
+          <div class="studio-photo-card" data-img="images/team-photo.jpeg">
+            <img src="images/team-photo.jpeg" alt="團隊聚餐合照" class="studio-img" />
+            <div class="studio-photo-overlay">
+              <span class="studio-badge">12 人在地固定團隊</span>
+              <p class="studio-caption">團隊聚餐合照：全員在地台灣人 <span>(點擊放大 🔍)</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network Isolation Section -->
+  <section class="section-wrap" style="background: rgba(8, 12, 22, 0.4);">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-kicker">NETWORK TOPOLOGY</span>
+        <h2 class="section-title">獨立 WireGuard 台灣專屬固定 IP 原理</h2>
+        <p class="section-desc">拒絕共用 IP 導致的連帶風險！自行租用台灣機房，為每位客戶帳號配置專屬獨立固定連線環境。</p>
+      </div>
+
+      <div class="security-layout-grid">
+        <div class="sec-diagram-card studio-photo-card" data-img="images/vpn-diagram.png">
+          <img src="images/vpn-diagram.png" alt="虛擬私有網路架構圖" class="vpn-diagram-img" />
+          <div class="diagram-btn-tag">
+            <span>檢視 WireGuard 獨立網路拓撲圖 🔍</span>
+          </div>
+        </div>
+
+        <div class="sec-points-column">
+          <div class="sec-point-card">
+            <div class="luxury-icon-box icon-box-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <div class="point-text">
+              <h3>每帳號架設獨立 WireGuard 伺服器與專屬固定 IP</h3>
+              <p>自行租用台灣本地優質機房伺服器，為每位客戶帳號單獨部署獨立 WireGuard 端點，絕不與任何其他代練玩家共用連線池。</p>
+            </div>
+          </div>
+
+          <div class="sec-point-card">
+            <div class="luxury-icon-box icon-box-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <div class="point-text">
+              <h3>不與其他玩家共用登入來源，確保登入來源單純一致</h3>
+              <p>NCsoft 與紫P (Purple) 後台系統偵測始終為單一穩定的台灣固定 IP，完全杜絕異地頻繁飄移登入引發的官方風控。</p>
+            </div>
+          </div>
+
+          <div class="sec-point-card">
+            <div class="point-ico-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="point-text">
+              <h3>零連帶封號風險 (Zero Cross-Contamination)</h3>
+              <p>傳統工作室共用浮動 IP，一人違規全體遭殃。HIVEARY 透過嚴格網路隔離技術，保障您的頂級帳號如自用寬頻般安全純淨。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <div class="footer-logo-row">
+          <span class="footer-title">HIVEARY 蜂巢團隊</span>
+        </div>
+        <p class="footer-slogan">安全 · 專業 · 實在 · 值得信賴的頂級遊戲代練品牌</p>
+        <p class="footer-legal">© 2026 HIVEARY. All Rights Reserved. 《天堂經典版》遊戲商標與相關版權為 NCSOFT 所有。</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>快速導覽</h4>
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="pricing.html">方案與費用試算</a></li>
+          <li><a href="classes.html">全職業專精</a></li>
+          <li><a href="security.html">實體團隊與固定IP</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>保障與條款</h4>
+        <ul>
+          <li><a href="monitoring.html">Discord 直播監督</a></li>
+          <li><a href="terms.html">八大鋼鐵條款</a></li>
+          <li><a href="terms.html#trial">2天無條件退費試用</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>官方聯絡管道</h4>
+        <ul>
+          <li><a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer">LINE 官方客服</a></li>
+          <li><a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer">8591 官方賣場</a></li>
+          <li><a href="https://www.hiveary.org" target="_blank" rel="noopener noreferrer">HIVEARY 官方網站</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Conversion Bar -->
+  <div class="sticky-conversion-bar" id="stickyConversionBar">
+    <div class="container sticky-bar-inner">
+      <div class="sticky-status-side">
+        <span class="sticky-live-dot"></span>
+        <span class="sticky-text">天堂經典版包月代練 · <strong>2 天試用不滿意全額退費</strong></span>
+      </div>
+      <div class="sticky-buttons-side">
+        <a href="pricing.html" class="btn btn-glass btn-sm">費用試算</a>
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line btn-sm">
+          加入 LINE 預約
+        </a>
+        <a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer" class="btn btn-8591 btn-sm">
+          8591 賣場
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightboxModal">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-stage">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="關閉">✕</button>
+      <img src="" alt="放大圖片" id="lightboxImg" class="lightbox-img" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

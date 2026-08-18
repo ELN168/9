@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>定價方案與費用試算 ｜ HIVEARY 《天堂經典版》代練</title>
+  <meta name="description" content="透明公開之《天堂經典版》代練包月費率與即時預算試算器。日班 $149/hr、夜班 $175/hr、雙班 $139+$165/hr。精確計時至分鐘，享有 2 天試用不滿意全額退費。" />
+
+  <link rel="icon" type="image/x-icon" href="images/lineage-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-pricing">
+
+  <!-- Full-Screen Real Photographic Atmosphere Backdrop Layer -->
+  <div class="bg-real-photo-layer"></div>
+  <div class="bg-ambient-backdrop"></div>
+  <canvas id="techCanvas" class="tech-canvas"></canvas>
+  <div class="bg-grid-pattern"></div>
+  <div class="bg-radar-sweep"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container announcement-inner">
+      <div class="status-badge-live">
+        <span class="pulse-dot"></span>
+        <span>台灣專屬獨立機房 WireGuard 連線正常 (Ping: 12ms)</span>
+      </div>
+      <div class="announcement-links">
+        <span class="trial-tag">✨ 2 天試用期 · 不滿意全額無條件退費</span>
+        <a href="contact.html" class="link-quick-book">立即預約席位 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation -->
+  <header class="site-navbar" id="siteNavbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-link">
+        <div class="brand-crest">
+          <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+            <polygon points="24,2 44,13 44,35 24,46 4,35 4,13" stroke="url(#goldGrad)" stroke-width="2.5" fill="rgba(197, 168, 128, 0.08)" />
+            <path d="M24 10 L36 17 L36 29 L24 38 L12 29 L12 17 Z" stroke="url(#goldGrad)" stroke-width="1.5" fill="rgba(0,0,0,0.7)" />
+            <path d="M24 14 L24 34 M16 20 L32 20 M16 28 L32 28" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round" />
+            <circle cx="24" cy="24" r="2.5" fill="#f5e4cd" />
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff4e0" />
+                <stop offset="50%" stop-color="#c5a880" />
+                <stop offset="100%" stop-color="#7a5e38" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-title">HIVEARY</span>
+          <span class="brand-tag">TAIWAN STUDIO · VIP BOOST</span>
+        </div>
+      </a>
+
+      <nav class="nav-links-wrap" id="navLinksWrap">
+        <a href="index.html" class="nav-item">首頁</a>
+        <a href="pricing.html" class="nav-item active">方案與試算</a>
+        <a href="classes.html" class="nav-item">職業專精</a>
+        <a href="security.html" class="nav-item">實體團隊與IP</a>
+        <a href="monitoring.html" class="nav-item">直播與報表</a>
+        <a href="terms.html" class="nav-item">保障條款</a>
+        <a href="contact.html" class="nav-item">預約諮詢</a>
+      </nav>
+
+      <div class="nav-action-wrap">
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-4.6-4.9-8.3-11-8.3C6.9 2 2 5.7 2 10.3c0 4.1 3.9 7.6 9.2 8.2.4.1.9.3 1 .7.1.3.1.8 0 1.2l-.3 1.6c-.1.5-.4 1.8 1.6 1 1.9-.8 5.3-3.1 7.2-5.4 2.2-2.1 3.3-4.7 3.3-7.3z"/></svg>
+          <span>LINE 官方客服</span>
+        </a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="切換選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">首頁</a>
+      <span>/</span>
+      <span class="current">方案定價與費用試算</span>
+    </div>
+  </div>
+
+  <!-- Page Hero Banner -->
+  <div class="page-hero-banner banner-pricing">
+    <div class="container">
+      <span class="page-hero-kicker">PRICING & CALCULATOR</span>
+      <h1 class="page-hero-title">透明公開 · 定價方案與即時試算</h1>
+      <p class="page-hero-desc">代練時間精確計算至分鐘，非代練期間（含午休、伺服器維護）一律不計費。包月方案提供 2 天試用期，不滿意全額無條件退費。</p>
+    </div>
+  </div>
+
+  <!-- Main Pricing Cards Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="pricing-grid">
+        <!-- Day Shift -->
+        <div class="luxury-card plan-card">
+          <div class="card-top-glow"></div>
+          <div class="plan-ribbon">日間主力時段</div>
+          <div class="plan-header">
+            <div class="plan-title-row">
+              <div class="luxury-icon-box icon-box-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+              </div>
+              <div>
+                <h3 class="plan-name">日班包月方案</h3>
+                <span class="plan-hours">09:00 – 18:00（每日 8 小時）</span>
+              </div>
+            </div>
+            <p class="plan-schedule-meta">午休 1 小時 · 每週 6 天 · 每週日公休</p>
+          </div>
+
+          <div class="plan-body">
+            <div class="plan-price-block">
+              <span class="plan-orig-price">原價 NT$ 175 元／小時</span>
+              <div class="plan-rate-row">
+                <span class="currency-symbol">NT$</span>
+                <span class="rate-number">149</span>
+                <span class="rate-unit-text">元／小時</span>
+                <span class="plan-discount-badge">包月特惠</span>
+              </div>
+            </div>
+
+            <div class="plan-spec-summary">
+              <div class="spec-row-item">
+                <span class="spec-k">每日時數</span>
+                <span class="spec-v">8 小時</span>
+              </div>
+              <div class="spec-row-item">
+                <span class="spec-k">每月天數</span>
+                <span class="spec-v">20 天</span>
+              </div>
+              <div class="spec-row-item highlight-hours">
+                <span class="spec-k">包月總時數</span>
+                <span class="spec-v">160 小時（9,600 分鐘）</span>
+              </div>
+              <div class="spec-row-item highlight-cost">
+                <span class="spec-k">包月總費用</span>
+                <span class="spec-v font-gold">NT$ 23,840</span>
+              </div>
+            </div>
+
+            <ul class="plan-perks-list">
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>獨立台灣固定 IP</strong>（自行租用台灣機房 WireGuard）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>Discord 24/7 直播</strong>（螢幕/實體攝影鏡頭可選）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>免費開 1 台 BUFF 機</strong>（紫P官方內建多開）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>次日經驗報表</strong>（XP/hr、負重、水錢消耗即時監控）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>7 天錄影存檔</strong>，隨時可申請調閱</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>2 天試用期保障</strong>，操作不習慣可全額無條件退費</li>
+            </ul>
+
+            <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block">
+              預約日班包月席位
+            </a>
+          </div>
+        </div>
+
+        <!-- Night Shift -->
+        <div class="luxury-card plan-card">
+          <div class="card-top-glow"></div>
+          <div class="plan-ribbon ribbon-featured">大課長首選 · 夜間高效衝等</div>
+          <div class="plan-header">
+            <div class="plan-title-row">
+              <div class="luxury-icon-box icon-box-sm icon-box-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </div>
+              <div>
+                <h3 class="plan-name">夜班包月方案</h3>
+                <span class="plan-hours">01:00 – 09:00（每日 8 小時）</span>
+              </div>
+            </div>
+            <p class="plan-schedule-meta">中間休 15 分鐘 · 每週 6 天 · 每週三公休</p>
+          </div>
+
+          <div class="plan-body">
+            <div class="plan-price-block">
+              <span class="plan-orig-price">原價 NT$ 200 元／小時</span>
+              <div class="plan-rate-row">
+                <span class="currency-symbol">NT$</span>
+                <span class="rate-number">175</span>
+                <span class="rate-unit-text">元／小時</span>
+                <span class="plan-discount-badge badge-night">包月特惠</span>
+              </div>
+            </div>
+
+            <div class="plan-spec-summary">
+              <div class="spec-row-item">
+                <span class="spec-k">每日時數</span>
+                <span class="spec-v">8 小時</span>
+              </div>
+              <div class="spec-row-item">
+                <span class="spec-k">每月天數</span>
+                <span class="spec-v">20 天</span>
+              </div>
+              <div class="spec-row-item highlight-hours">
+                <span class="spec-k">包月總時數</span>
+                <span class="spec-v">160 小時（9,600 分鐘）</span>
+              </div>
+              <div class="spec-row-item highlight-cost">
+                <span class="spec-k">包月總費用</span>
+                <span class="spec-v font-gold">NT$ 28,000</span>
+              </div>
+            </div>
+
+            <ul class="plan-perks-list">
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>獨立台灣固定 IP</strong>（自行租用台灣機房 WireGuard）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>Discord 24/7 直播</strong>（夜間專人無縫盯盤）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>免費開 1 台 BUFF 機</strong>（紫P官方內建多開）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>次日經驗報表</strong>（XP/hr、負重、水錢消耗即時監控）</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>7 天錄影存檔</strong>，隨時可申請調閱</li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>2 天試用期保障</strong>，操作不習慣可全額無條件退費</li>
+            </ul>
+
+            <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block">
+              預約夜班包月席位
+            </a>
+          </div>
+        </div>
+
+        <!-- Combo Shift -->
+        <div class="luxury-card plan-card">
+          <div class="card-top-glow"></div>
+          <div class="plan-ribbon ribbon-combo">VIP 雙班專案</div>
+          <div class="plan-header">
+            <div class="plan-title-row">
+              <div class="luxury-icon-box icon-box-sm icon-box-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div>
+                <h3 class="plan-name">日夜雙班包月輪替</h3>
+                <span class="plan-hours">每日 16 小時全時作業</span>
+              </div>
+            </div>
+            <p class="plan-schedule-meta">日班 09:00-18:00 + 夜班 01:00-09:00</p>
+          </div>
+
+          <div class="plan-body">
+            <div class="plan-price-block">
+              <span class="combo-notice-text">日班＋夜班同時包月，每小時各折 10 元！</span>
+              <div class="plan-rate-row">
+                <span class="combo-rate-tag">日班 <strong>$139</strong>/hr + 夜班 <strong>$165</strong>/hr</span>
+              </div>
+            </div>
+
+            <div class="plan-spec-summary">
+              <div class="spec-row-item">
+                <span class="spec-k">每日總時數</span>
+                <span class="spec-v">16 小時</span>
+              </div>
+              <div class="spec-row-item">
+                <span class="spec-k">每月總天數</span>
+                <span class="spec-v">20 天（共 320 小時）</span>
+              </div>
+              <div class="spec-row-item highlight-hours">
+                <span class="spec-k">雙班月省金額</span>
+                <span class="spec-v font-green">現省 NT$ 3,200 元</span>
+              </div>
+              <div class="spec-row-item highlight-cost">
+                <span class="spec-k">雙班總計費用</span>
+                <span class="spec-v font-gold">NT$ 48,640</span>
+              </div>
+            </div>
+
+            <ul class="plan-perks-list">
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>全天候 16 小時高效輪班作業</strong></li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>盟主與伺服器衝等首選</strong></li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>專屬 VIP 服務排班群組</strong></li>
+              <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>享有 2 天試用無條件退費保障</strong></li>
+            </ul>
+
+            <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block">
+              預約雙班 VIP 包月席位
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cost Calculator Section -->
+  <section class="section-wrap" style="background: rgba(8, 12, 22, 0.5);">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-kicker">CUSTOM ESTIMATOR</span>
+        <h2 class="section-title">代練費用即時試算器</h2>
+        <p class="section-desc">自由選取班別、天數與多開配置，即時試算精確預算與折扣明細。</p>
+      </div>
+
+      <div class="calc-panel-card">
+        <div class="calc-form-column">
+          <!-- Step 1: Shift Selector -->
+          <div class="calc-input-group">
+            <label class="calc-label-title">1. 選擇預約班別：</label>
+            <div class="calc-pill-radios">
+              <label class="pill-radio-card active">
+                <input type="radio" name="calcShift" value="day" checked />
+                <div class="pill-card-inner">
+                  <span class="pill-title">日班 (09:00 - 18:00)</span>
+                  <span class="pill-rate">包月 $149/hr</span>
+                </div>
+              </label>
+
+              <label class="pill-radio-card">
+                <input type="radio" name="calcShift" value="night" />
+                <div class="pill-card-inner">
+                  <span class="pill-title">夜班 (01:00 - 09:00)</span>
+                  <span class="pill-rate">包月 $175/hr</span>
+                </div>
+              </label>
+
+              <label class="pill-radio-card">
+                <input type="radio" name="calcShift" value="combo" />
+                <div class="pill-card-inner">
+                  <span class="pill-title">日夜雙班輪替 (16hr)</span>
+                  <span class="pill-rate font-gold">各折 $10/hr</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Custom Days Slider -->
+          <div class="calc-input-group">
+            <label class="calc-label-title" for="calcDaysInput">
+              2. 代練天數：<span id="calcDaysDisplay" class="font-gold">20 天（標準包月 160hr）</span>
+            </label>
+            <div class="calc-range-wrapper">
+              <input type="range" id="calcDaysInput" min="5" max="30" value="20" class="custom-slider" />
+              <div class="slider-marks-row">
+                <span>5天</span>
+                <span>10天</span>
+                <span>15天</span>
+                <span class="mark-active">20天 (標準包月)</span>
+                <span>25天</span>
+                <span>30天</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: BUFF Multiclient Option -->
+          <div class="calc-input-group">
+            <label class="calc-label-title">3. BUFF 輔助機配置：</label>
+            <div class="calc-checkbox-stack">
+              <label class="custom-check-row">
+                <input type="checkbox" checked disabled />
+                <span class="check-box-fake checked">✓</span>
+                <span class="check-text">紫P官方內建免費開 1 台 BUFF 機（包含在方案內，不加價）</span>
+              </label>
+              <label class="custom-check-row" id="labelExtraBuff">
+                <input type="checkbox" id="calcExtraBuff" />
+                <span class="check-box-fake" id="fakeCheckExtra"></span>
+                <span class="check-text">加開第 2 台 BUFF 機輔助（+$500/月）</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Breakdown Column -->
+        <div class="calc-result-column">
+          <div class="result-box-header">
+            <h4>費用試算清單</h4>
+            <span class="trial-tag-pill">2 天無條件退費試用</span>
+          </div>
+
+          <div class="result-data-rows">
+            <div class="data-row">
+              <span class="data-k">選擇班別</span>
+              <strong id="resShiftTitle" class="data-v">日班包月方案 (09:00 - 18:00)</strong>
+            </div>
+            <div class="data-row">
+              <span class="data-k">時數 × 天數</span>
+              <strong id="resHoursBreakdown" class="data-v">8 小時 × 20 天 = 160 小時</strong>
+            </div>
+            <div class="data-row">
+              <span class="data-k">計費費率</span>
+              <strong id="resRateBreakdown" class="data-v">NT$ 149 / 小時 (包月優惠價)</strong>
+            </div>
+            <div class="data-row">
+              <span class="data-k">BUFF 機配置</span>
+              <strong id="resBuffBreakdown" class="data-v">免費 1 台 BUFF 機</strong>
+            </div>
+            <div class="data-divider"></div>
+            <div class="data-total-row">
+              <span class="data-total-label">預估總費用</span>
+              <div class="data-total-val-box">
+                <span class="currency">NT$</span>
+                <span class="amount-number" id="resTotalCost">23,840</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-actions-stack">
+            <button class="btn btn-glass btn-block" id="btnCopyQuote">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>複製試算清單</span>
+            </button>
+            <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block" id="btnOrderLineQuote">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-4.6-4.9-8.3-11-8.3C6.9 2 2 5.7 2 10.3c0 4.1 3.9 7.6 9.2 8.2.4.1.9.3 1 .7.1.3.1.8 0 1.2l-.3 1.6c-.1.5-.4 1.8 1.6 1 1.9-.8 5.3-3.1 7.2-5.4 2.2-2.1 3.3-4.7 3.3-7.3z"/></svg>
+              <span>帶此試算加入 LINE 預約</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <div class="footer-logo-row">
+          <span class="footer-title">HIVEARY 蜂巢團隊</span>
+        </div>
+        <p class="footer-slogan">安全 · 專業 · 實在 · 值得信賴的頂級遊戲代練品牌</p>
+        <p class="footer-legal">© 2026 HIVEARY. All Rights Reserved. 《天堂經典版》遊戲商標與相關版權為 NCSOFT 所有。</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>快速導覽</h4>
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="pricing.html">方案與費用試算</a></li>
+          <li><a href="classes.html">全職業專精</a></li>
+          <li><a href="security.html">實體團隊與固定IP</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>保障與條款</h4>
+        <ul>
+          <li><a href="monitoring.html">Discord 直播監督</a></li>
+          <li><a href="terms.html">八大鋼鐵條款</a></li>
+          <li><a href="terms.html#trial">2天無條件退費試用</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>官方聯絡管道</h4>
+        <ul>
+          <li><a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer">LINE 官方客服</a></li>
+          <li><a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer">8591 官方賣場</a></li>
+          <li><a href="https://www.hiveary.org" target="_blank" rel="noopener noreferrer">HIVEARY 官方網站</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Conversion Bar -->
+  <div class="sticky-conversion-bar" id="stickyConversionBar">
+    <div class="container sticky-bar-inner">
+      <div class="sticky-status-side">
+        <span class="sticky-live-dot"></span>
+        <span class="sticky-text">天堂經典版包月代練 · <strong>2 天試用不滿意全額退費</strong></span>
+      </div>
+      <div class="sticky-buttons-side">
+        <a href="pricing.html" class="btn btn-glass btn-sm">費用試算</a>
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line btn-sm">
+          加入 LINE 預約
+        </a>
+        <a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer" class="btn btn-8591 btn-sm">
+          8591 賣場
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-hub" id="toastHub"></div>
+  <script src="script.js"></script>
+</body>
+</html>

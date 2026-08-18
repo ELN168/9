@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>直播監督與即時報表 ｜ HIVEARY 《天堂經典版》代練</title>
+  <meta name="description" content="Discord 24/7 實況全時監督，可自選遊戲畫面或辦公室鏡頭直播。每日提供經驗效率報表，即時追蹤 XP/hr、BUFF 與水錢負重狀態。" />
+
+  <link rel="icon" type="image/x-icon" href="images/lineage-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-monitoring">
+
+  <!-- Full-Screen Real Photographic Atmosphere Backdrop Layer -->
+  <div class="bg-real-photo-layer"></div>
+  <div class="bg-ambient-backdrop"></div>
+  <canvas id="techCanvas" class="tech-canvas"></canvas>
+  <div class="bg-grid-pattern"></div>
+  <div class="bg-radar-sweep"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container announcement-inner">
+      <div class="status-badge-live">
+        <span class="pulse-dot"></span>
+        <span>台灣專屬獨立機房 WireGuard 連線正常 (Ping: 12ms)</span>
+      </div>
+      <div class="announcement-links">
+        <span class="trial-tag">✨ 2 天試用期 · 不滿意全額無條件退費</span>
+        <a href="contact.html" class="link-quick-book">立即預約席位 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation -->
+  <header class="site-navbar" id="siteNavbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-link">
+        <div class="brand-crest">
+          <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+            <polygon points="24,2 44,13 44,35 24,46 4,35 4,13" stroke="url(#goldGrad)" stroke-width="2.5" fill="rgba(197, 168, 128, 0.08)" />
+            <path d="M24 10 L36 17 L36 29 L24 38 L12 29 L12 17 Z" stroke="url(#goldGrad)" stroke-width="1.5" fill="rgba(0,0,0,0.7)" />
+            <path d="M24 14 L24 34 M16 20 L32 20 M16 28 L32 28" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round" />
+            <circle cx="24" cy="24" r="2.5" fill="#f5e4cd" />
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff4e0" />
+                <stop offset="50%" stop-color="#c5a880" />
+                <stop offset="100%" stop-color="#7a5e38" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-title">HIVEARY</span>
+          <span class="brand-tag">TAIWAN STUDIO · VIP BOOST</span>
+        </div>
+      </a>
+
+      <nav class="nav-links-wrap" id="navLinksWrap">
+        <a href="index.html" class="nav-item">首頁</a>
+        <a href="pricing.html" class="nav-item">方案與試算</a>
+        <a href="classes.html" class="nav-item">職業專精</a>
+        <a href="security.html" class="nav-item">實體團隊與IP</a>
+        <a href="monitoring.html" class="nav-item active">直播與報表</a>
+        <a href="terms.html" class="nav-item">保障條款</a>
+        <a href="contact.html" class="nav-item">預約諮詢</a>
+      </nav>
+
+      <div class="nav-action-wrap">
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-4.6-4.9-8.3-11-8.3C6.9 2 2 5.7 2 10.3c0 4.1 3.9 7.6 9.2 8.2.4.1.9.3 1 .7.1.3.1.8 0 1.2l-.3 1.6c-.1.5-.4 1.8 1.6 1 1.9-.8 5.3-3.1 7.2-5.4 2.2-2.1 3.3-4.7 3.3-7.3z"/></svg>
+          <span>LINE 官方客服</span>
+        </a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="切換選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">首頁</a>
+      <span>/</span>
+      <span class="current">直播監督與經驗報表</span>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero-banner banner-monitoring">
+    <div class="container">
+      <span class="page-hero-kicker">LIVE STREAM & TELEMETRY</span>
+      <h1 class="page-hero-title">代練績效監控 · Discord 24/7 直播監督</h1>
+      <p class="page-hero-desc">每日提供經驗效率報表，全程即時追蹤 XP/hr、BUFF 及負重狀態，練功與休息精確記錄至分鐘！</p>
+    </div>
+  </div>
+
+  <!-- Telemetry Charts Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="telemetry-diagrams-grid">
+        <div class="telemetry-card studio-photo-card" data-img="images/boost-monitoring-diagram.png">
+          <div class="telemetry-card-head">
+            <h3>代練監控架構流程圖</h3>
+            <span class="hud-pill">即時數據流</span>
+          </div>
+          <div class="telemetry-media-frame">
+            <img src="images/boost-monitoring-diagram.png" alt="代練監控架構圖" class="telemetry-img" />
+          </div>
+          <p class="telemetry-desc">遊戲畫面即時推流至 Discord 直播伺服器，同時遙測引擎即時追蹤經驗效率、BUFF 及負重狀態。</p>
+        </div>
+
+        <div class="telemetry-card studio-photo-card" data-img="images/boost-dashboard-screenshot.png">
+          <div class="telemetry-card-head">
+            <h3>代練監控 Dashboard 實測報表</h3>
+            <span class="hud-pill">即時報表</span>
+          </div>
+          <div class="telemetry-media-frame">
+            <img src="images/boost-dashboard-screenshot.png" alt="代練監控 Dashboard 截圖" class="telemetry-img" />
+          </div>
+          <p class="telemetry-desc">每日代練結束後最遲隔天提供當日經驗圖表與報表，練等與休息時間精確記錄至分鐘，計費透明。</p>
+        </div>
+      </div>
+
+      <!-- Live Stream Interactive Demo HUD -->
+      <div class="stream-demo-hud">
+        <div class="stream-hud-header">
+          <div class="stream-live-status">
+            <span class="live-pulse-dot"></span>
+            <strong>DISCORD 24/7 LIVE STREAM 監督實況演示</strong>
+          </div>
+          <div class="stream-toggles-bar">
+            <button class="stream-btn active" id="btnStreamGame">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px; margin-right:4px;"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              紫P遊戲推流
+            </button>
+            <button class="stream-btn" id="btnStreamCam">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px; margin-right:4px;"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              辦公室手勢鏡頭
+            </button>
+            <button class="stream-btn" id="btnStreamMobile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px; margin-right:4px;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              手機端遠端串流
+            </button>
+          </div>
+        </div>
+
+        <div class="stream-player-canvas" id="streamPlayerCanvas" style="background-image: url('images/aden-castle-bg.jpg');">
+          <div class="stream-hud-top">
+            <div class="discord-channel-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4a19.6 19.6 0 0 0-4.8-1.5.1.1 0 0 0-.1 0 13.7 13.7 0 0 0-.6 1.3 18.2 18.2 0 0 0-5.6 0 13.7 13.7 0 0 0-.6-1.3.1.1 0 0 0-.1 0A19.6 19.6 0 0 0 3.7 4.4a.1.1 0 0 0 0 .1C.8 8.8.1 13 .3 17.3a.1.1 0 0 0 .1.1 19.8 19.8 0 0 0 6 3 .1.1 0 0 0 .1 0c.5-.6.9-1.3 1.3-2a.1.1 0 0 0-.1-.2 13 13 0 0 1-1.8-.9.1.1 0 0 1 0-.2c.1-.1.3-.2.4-.3a14.2 14.2 0 0 0 11.4 0c.1.1.3.2.4.3a.1.1 0 0 1 0 .2 13.2 13.2 0 0 1-1.9.9.1.1 0 0 0 0 .2c.4.7.8 1.4 1.3 2a.1.1 0 0 0 .1 0 19.7 19.7 0 0 0 6-3 .1.1 0 0 0 .1-.1c.3-5-.5-9.2-3.4-13zm-11.8 10c-1.2 0-2.1-1.1-2.1-2.4 0-1.3 1-2.4 2.1-2.4 1.2 0 2.1 1.1 2.1 2.4 0 1.3-1 2.4-2.1 2.4zm7 0c-1.2 0-2.1-1.1-2.1-2.4 0-1.3 1-2.4 2.1-2.4 1.2 0 2.1 1.1 2.1 2.4 0 1.3-1 2.4-2.1 2.4z"/></svg>
+              <span>HIVEARY 直播頻道：#lineage-vip-02</span>
+            </div>
+            <div class="stream-telemetry-hud">
+              <span>FPS: 60</span> · <span>Bitrate: 6000kbps</span> · <span>WireGuard TW: 12ms</span>
+            </div>
+          </div>
+          <div class="stream-center-card">
+            <div class="play-circle-ico">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <p>全程於 Discord 進行直播，可自選螢幕直播或攝影鏡頭直播；亦可依需求前往客戶指定伺服器直播</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <div class="footer-logo-row">
+          <span class="footer-title">HIVEARY 蜂巢團隊</span>
+        </div>
+        <p class="footer-slogan">安全 · 專業 · 實在 · 值得信賴的頂級遊戲代練品牌</p>
+        <p class="footer-legal">© 2026 HIVEARY. All Rights Reserved. 《天堂經典版》遊戲商標與相關版權為 NCSOFT 所有。</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>快速導覽</h4>
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="pricing.html">方案與費用試算</a></li>
+          <li><a href="classes.html">全職業專精</a></li>
+          <li><a href="security.html">實體團隊與固定IP</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>保障與條款</h4>
+        <ul>
+          <li><a href="monitoring.html">Discord 直播監督</a></li>
+          <li><a href="terms.html">八大鋼鐵條款</a></li>
+          <li><a href="terms.html#trial">2天無條件退費試用</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>官方聯絡管道</h4>
+        <ul>
+          <li><a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer">LINE 官方客服</a></li>
+          <li><a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer">8591 官方賣場</a></li>
+          <li><a href="https://www.hiveary.org" target="_blank" rel="noopener noreferrer">HIVEARY 官方網站</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Conversion Bar -->
+  <div class="sticky-conversion-bar" id="stickyConversionBar">
+    <div class="container sticky-bar-inner">
+      <div class="sticky-status-side">
+        <span class="sticky-live-dot"></span>
+        <span class="sticky-text">天堂經典版包月代練 · <strong>2 天試用不滿意全額退費</strong></span>
+      </div>
+      <div class="sticky-buttons-side">
+        <a href="pricing.html" class="btn btn-glass btn-sm">費用試算</a>
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line btn-sm">
+          加入 LINE 預約
+        </a>
+        <a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer" class="btn btn-8591 btn-sm">
+          8591 賣場
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightboxModal">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-stage">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="關閉">✕</button>
+      <img src="" alt="放大圖片" id="lightboxImg" class="lightbox-img" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

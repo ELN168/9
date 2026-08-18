@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>服務條款與保障政策 ｜ HIVEARY 《天堂經典版》代練</title>
+  <meta name="description" content="HIVEARY 八大鋼鐵服務條款：100% 活動產出歸客戶、封號死噴依市價全額賠償、7 天錄影存檔查驗、2 天試用不滿意無條件全額退費保障。" />
+
+  <link rel="icon" type="image/x-icon" href="images/lineage-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-terms">
+
+  <!-- Full-Screen Real Photographic Atmosphere Backdrop Layer -->
+  <div class="bg-real-photo-layer"></div>
+  <div class="bg-ambient-backdrop"></div>
+  <canvas id="techCanvas" class="tech-canvas"></canvas>
+  <div class="bg-grid-pattern"></div>
+  <div class="bg-radar-sweep"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container announcement-inner">
+      <div class="status-badge-live">
+        <span class="pulse-dot"></span>
+        <span>台灣專屬獨立機房 WireGuard 連線正常 (Ping: 12ms)</span>
+      </div>
+      <div class="announcement-links">
+        <span class="trial-tag">✨ 2 天試用期 · 不滿意全額無條件退費</span>
+        <a href="contact.html" class="link-quick-book">立即預約席位 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation -->
+  <header class="site-navbar" id="siteNavbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-link">
+        <div class="brand-crest">
+          <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+            <polygon points="24,2 44,13 44,35 24,46 4,35 4,13" stroke="url(#goldGrad)" stroke-width="2.5" fill="rgba(197, 168, 128, 0.08)" />
+            <path d="M24 10 L36 17 L36 29 L24 38 L12 29 L12 17 Z" stroke="url(#goldGrad)" stroke-width="1.5" fill="rgba(0,0,0,0.7)" />
+            <path d="M24 14 L24 34 M16 20 L32 20 M16 28 L32 28" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round" />
+            <circle cx="24" cy="24" r="2.5" fill="#f5e4cd" />
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff4e0" />
+                <stop offset="50%" stop-color="#c5a880" />
+                <stop offset="100%" stop-color="#7a5e38" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-title">HIVEARY</span>
+          <span class="brand-tag">TAIWAN STUDIO · VIP BOOST</span>
+        </div>
+      </a>
+
+      <nav class="nav-links-wrap" id="navLinksWrap">
+        <a href="index.html" class="nav-item">首頁</a>
+        <a href="pricing.html" class="nav-item">方案與試算</a>
+        <a href="classes.html" class="nav-item">職業專精</a>
+        <a href="security.html" class="nav-item">實體團隊與IP</a>
+        <a href="monitoring.html" class="nav-item">直播與報表</a>
+        <a href="terms.html" class="nav-item active">保障條款</a>
+        <a href="contact.html" class="nav-item">預約諮詢</a>
+      </nav>
+
+      <div class="nav-action-wrap">
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-4.6-4.9-8.3-11-8.3C6.9 2 2 5.7 2 10.3c0 4.1 3.9 7.6 9.2 8.2.4.1.9.3 1 .7.1.3.1.8 0 1.2l-.3 1.6c-.1.5-.4 1.8 1.6 1 1.9-.8 5.3-3.1 7.2-5.4 2.2-2.1 3.3-4.7 3.3-7.3z"/></svg>
+          <span>LINE 官方客服</span>
+        </a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="切換選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <a href="index.html">首頁</a>
+      <span>/</span>
+      <span class="current">八大鋼鐵條款與產出歸屬說明</span>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero-banner banner-terms">
+    <div class="container">
+      <span class="page-hero-kicker">IRONCLAD POLICIES</span>
+      <h1 class="page-hero-title">產出歸屬說明 · 八大鋼鐵服務條款</h1>
+      <p class="page-hero-desc">白紙黑字保障您的每一分權益，承諾封號死噴全額市價賠償，讓您託付無後顧之憂！</p>
+    </div>
+  </div>
+
+  <!-- Main Terms Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <!-- 100% Asset Ownership Banner -->
+      <div class="ownership-gold-banner">
+        <div class="luxury-icon-box icon-box-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <div class="ownership-text">
+          <h3>代練期間帳號一切活動產出，100% 完整歸帳號持有人所有</h3>
+          <p>代練期間帳號一切活動產出（含<strong>經驗值、天幣、裝備、道具、素材</strong>），完整歸帳號持有人所有，<strong>我們不會保留任何收益、絕不抽成私留！</strong></p>
+        </div>
+      </div>
+
+      <!-- 8 Ironclad Terms -->
+      <div class="terms-grid-box">
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">01</span>
+          <h4>純人工正常遊玩 · 封號市價賠償</h4>
+          <p>代練全程採純人工正常遊玩方式進行，不使用外掛、腳本或任何自動化工具。若因此導致帳號遭停權或發生異常，將依角色與裝備市價進行賠償。</p>
+        </div>
+
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">02</span>
+          <h4>原有裝備資產安全 · 違者市價賠償</h4>
+          <p>代練期間不會對帳號原有裝備進行任何交易、轉移或刪除，如有違反，依裝備市價賠償。</p>
+        </div>
+
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">03</span>
+          <h4>不幸死亡損失 · 優先補回經驗再計時</h4>
+          <p>若代練過程中角色不幸死亡，將優先補回損失的經驗值，補足後再繼續計時。</p>
+        </div>
+
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">04</span>
+          <h4>買 % 所耗天幣 · 等值時數折抵補足</h4>
+          <p>買 % 所耗天幣，依當前伺服器賣出幣值換算台幣，以等值時數折抵，並補練相應經驗差。</p>
+        </div>
+
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">05</span>
+          <h4>全程錄影存檔 · 保存 7 個日曆天</h4>
+          <p>代練過程全程錄影，保存 7 個日曆天，期間內可申請調閱查驗。</p>
+        </div>
+
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">06</span>
+          <h4>Discord 直播 · 螢幕或鏡頭雙模式</h4>
+          <p>全程於 Discord 進行直播，可自選螢幕直播或攝影鏡頭直播；我們設有固定伺服器，亦可依需求前往客戶指定伺服器直播。</p>
+        </div>
+
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">07</span>
+          <h4>免費紫P多開 · 免費幫開 1 台 BUFF 機</h4>
+          <p>可使用紫P官方內建多開功能，免費幫開一台 BUFF 機；若需更多 BUFF 機，費用另行洽談。</p>
+        </div>
+
+        <div class="luxury-card term-item-card">
+          <div class="card-top-glow"></div>
+          <span class="term-idx">08</span>
+          <h4>客製化內容洽談 · 彈性配合活動打王</h4>
+          <p>代練內容可依需求細部洽談；目前報價以純練等打怪為基準，其他需求另行議價。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2-Day Trial Section -->
+  <section class="section-wrap" id="trial">
+    <div class="container">
+      <div class="trial-guarantee-box">
+        <div class="luxury-icon-box icon-box-lg icon-box-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        </div>
+        <div class="guarantee-text">
+          <h3>包月 2 天試用期保障 · 不滿意全額無條件退費</h3>
+          <p>包月費用需於開始代練前完成付款。<strong>付款後享有完整 2 天（48小時）試用期</strong>，確認地圖配置與操作習慣，<strong>如不滿意可無條件申請全額退費！</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-kicker">FAQ</span>
+        <h2 class="section-title">常見問題解答 (FAQ)</h2>
+      </div>
+
+      <div class="faq-list-container" id="faqAccordion">
+        <div class="faq-card active">
+          <div class="faq-head">
+            <h4>Q1：為什麼選擇你們而不是大陸外包或個人兼職代練？</h4>
+            <span class="faq-toggle-ico">+</span>
+          </div>
+          <div class="faq-body">
+            <p>本服務 100% 由台灣實體辦公室 12 人團隊同場作業，非外包、非大陸人員。我們配備每帳號獨立的 WireGuard 台灣專屬固定 IP、全程 Discord 直播監督、7 天全程錄影存檔，並於 8591 繳存 20 萬保證金，承諾封號死噴全額市價賠償，並提供 2 天無條件退費試用。</p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-head">
+            <h4>Q2：獨立 WireGuard 固定 IP 如何保障帳號安全？</h4>
+            <span class="faq-toggle-ico">+</span>
+          </div>
+          <div class="faq-body">
+            <p>NCsoft 與紫P會監控異常異地登入或多帳號共用 IP。我們自行租用台灣優質機房，為每位客戶分配專屬單一固定 IP，登入來源乾淨一致，系統判定為純正常台灣玩家登入，杜絕官方風控與連帶封號。</p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-head">
+            <h4>Q3：代練期間我可以隨時登入遊戲或調整練功地圖嗎？</h4>
+            <span class="faq-toggle-ico">+</span>
+          </div>
+          <div class="faq-body">
+            <p>當然可以！若您需要親自上線參與血盟攻城戰、打王或整理裝備，只需在 LINE 客服群組提前告知，代練人員會立即安全下線並暫停計時。您亦可隨時在群組指定更換練功地圖或調整技能策略。</p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-head">
+            <h4>Q4：代練期間打到的高價寶物（如紫裝、紅技、祝防）如何處理？</h4>
+            <span class="faq-toggle-ico">+</span>
+          </div>
+          <div class="faq-body">
+            <p>代練條款明定所有產出 100% 歸客戶所有。一旦打到稀有寶物或高價技能書，代練人員會立即在專屬 LINE 群組拍照回報，並安全存入角色倉庫或背包，絕不進行任何交易或挪用。</p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-head">
+            <h4>Q5：如果遇到伺服器例行維護或斷線，時數會被扣除嗎？</h4>
+            <span class="faq-toggle-ico">+</span>
+          </div>
+          <div class="faq-body">
+            <p>完全不會！我們的代練時間嚴格精確計算至「分鐘」。遇官方維護、突發斷線或代練人員休息時間，計時器一律完全暫停，非代練期間分秒不計費，時數一律順延補足。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <div class="footer-logo-row">
+          <span class="footer-title">HIVEARY 蜂巢團隊</span>
+        </div>
+        <p class="footer-slogan">安全 · 專業 · 實在 · 值得信賴的頂級遊戲代練品牌</p>
+        <p class="footer-legal">© 2026 HIVEARY. All Rights Reserved. 《天堂經典版》遊戲商標與相關版權為 NCSOFT 所有。</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>快速導覽</h4>
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="pricing.html">方案與費用試算</a></li>
+          <li><a href="classes.html">全職業專精</a></li>
+          <li><a href="security.html">實體團隊與固定IP</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>保障與條款</h4>
+        <ul>
+          <li><a href="monitoring.html">Discord 直播監督</a></li>
+          <li><a href="terms.html">八大鋼鐵條款</a></li>
+          <li><a href="terms.html#trial">2天無條件退費試用</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>官方聯絡管道</h4>
+        <ul>
+          <li><a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer">LINE 官方客服</a></li>
+          <li><a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer">8591 官方賣場</a></li>
+          <li><a href="https://www.hiveary.org" target="_blank" rel="noopener noreferrer">HIVEARY 官方網站</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Conversion Bar -->
+  <div class="sticky-conversion-bar" id="stickyConversionBar">
+    <div class="container sticky-bar-inner">
+      <div class="sticky-status-side">
+        <span class="sticky-live-dot"></span>
+        <span class="sticky-text">天堂經典版包月代練 · <strong>2 天試用不滿意全額退費</strong></span>
+      </div>
+      <div class="sticky-buttons-side">
+        <a href="pricing.html" class="btn btn-glass btn-sm">費用試算</a>
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line btn-sm">
+          加入 LINE 預約
+        </a>
+        <a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer" class="btn btn-8591 btn-sm">
+          8591 賣場
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIVEARY ｜ 天堂經典版頂級遊戲代練 · 台灣實體旗艦團隊</title>
+  <meta name="description" content="HIVEARY 蜂巢團隊 — 專為大課長與盟主打造之《天堂經典版》頂級遊戲代練服務。100% 台灣在地 12 人實體辦公室同場作業，純人工正常手動遊玩，專屬獨立 WireGuard 固定 IP，Discord 24/7 全程直播監督，20萬保證金保障，享 2 天試用不滿意全額退費。" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.hiveary.org/game-boost/lineage-classic" />
+  <meta property="og:title" content="HIVEARY ｜ 天堂經典版頂級遊戲代練" />
+  <meta property="og:description" content="安全 · 專業 · 實在。100% 台灣在地 12 人實體團隊，獨立固定 IP，Discord 全程直播，產出 100% 歸客戶。" />
+  <meta property="og:image" content="images/lineage-classic-hero.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/lineage-favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-index">
+
+  <!-- Full-Screen Real Photographic Atmosphere Backdrop Layer -->
+  <div class="bg-real-photo-layer"></div>
+  <div class="bg-ambient-backdrop"></div>
+  <canvas id="techCanvas" class="tech-canvas"></canvas>
+  <div class="bg-grid-pattern"></div>
+  <div class="bg-radar-sweep"></div>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container announcement-inner">
+      <div class="status-badge-live">
+        <span class="pulse-dot"></span>
+        <span>台灣專屬獨立機房 WireGuard 連線正常 (Ping: 12ms)</span>
+      </div>
+      <div class="announcement-links">
+        <span class="trial-tag">✨ 2 天試用期 · 不滿意全額無條件退費</span>
+        <a href="contact.html" class="link-quick-book">立即預約席位 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation -->
+  <header class="site-navbar" id="siteNavbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-link">
+        <div class="brand-crest">
+          <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+            <polygon points="24,2 44,13 44,35 24,46 4,35 4,13" stroke="url(#goldGrad)" stroke-width="2.5" fill="rgba(197, 168, 128, 0.08)" />
+            <path d="M24 10 L36 17 L36 29 L24 38 L12 29 L12 17 Z" stroke="url(#goldGrad)" stroke-width="1.5" fill="rgba(0,0,0,0.7)" />
+            <path d="M24 14 L24 34 M16 20 L32 20 M16 28 L32 28" stroke="url(#goldGrad)" stroke-width="1.2" stroke-linecap="round" />
+            <circle cx="24" cy="24" r="2.5" fill="#f5e4cd" />
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff4e0" />
+                <stop offset="50%" stop-color="#c5a880" />
+                <stop offset="100%" stop-color="#7a5e38" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-title">HIVEARY</span>
+          <span class="brand-tag">TAIWAN STUDIO · VIP BOOST</span>
+        </div>
+      </a>
+
+      <!-- Multi-Page Navigation Links -->
+      <nav class="nav-links-wrap" id="navLinksWrap">
+        <a href="index.html" class="nav-item active">首頁</a>
+        <a href="pricing.html" class="nav-item">方案與試算</a>
+        <a href="classes.html" class="nav-item">職業專精</a>
+        <a href="security.html" class="nav-item">實體團隊與IP</a>
+        <a href="monitoring.html" class="nav-item">直播與報表</a>
+        <a href="terms.html" class="nav-item">保障條款</a>
+        <a href="contact.html" class="nav-item">預約諮詢</a>
+      </nav>
+
+      <div class="nav-action-wrap">
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-4.6-4.9-8.3-11-8.3C6.9 2 2 5.7 2 10.3c0 4.1 3.9 7.6 9.2 8.2.4.1.9.3 1 .7.1.3.1.8 0 1.2l-.3 1.6c-.1.5-.4 1.8 1.6 1 1.9-.8 5.3-3.1 7.2-5.4 2.2-2.1 3.3-4.7 3.3-7.3z"/></svg>
+          <span>LINE 官方客服</span>
+        </a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="切換選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="home-hero-section">
+    <div class="home-hero-bg" style="background-image: url('images/lineage-classic-hero.jpg');"></div>
+    <div class="home-hero-vignette"></div>
+
+    <div class="container home-hero-container">
+      <div class="hero-laser-badge">
+        <div class="hero-laser-glow"></div>
+        <div class="hero-laser-body">
+          <span>👑 NCsoft《天堂經典版》台灣在地純人工手操代練</span>
+        </div>
+      </div>
+
+      <h1 class="home-hero-title">
+        專為大課長與盟主打造的<br />
+        <span class="gold-gradient-title">《天堂經典版》旗艦級遊戲代練</span>
+      </h1>
+
+      <p class="home-hero-sub">
+        <strong>100% 台灣在地 12 人實體辦公室同場作業</strong> · 全程純人工正常遊玩 · 絕無外掛腳本<br />
+        <strong>獨立 WireGuard 台灣專屬固定 IP</strong> · Discord 24/7 全程直播監督 · <strong>帳號活動產出 100% 歸客戶</strong> · 享有 2 天試用不滿意全額退費
+      </p>
+
+      <!-- 4 Pillars -->
+      <div class="home-pillars-grid">
+        <div class="luxury-card">
+          <div class="card-top-glow"></div>
+          <div class="card-notch top-left"></div>
+          <div class="card-notch top-right"></div>
+          <div class="pillar-item">
+            <div class="luxury-icon-box icon-box-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line><path d="M12 10v4"></path></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>獨立台灣固定 IP</h4>
+              <p>自行租用台灣機房 WireGuard，絕不與他人共用登入來源</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="luxury-card">
+          <div class="card-top-glow"></div>
+          <div class="card-notch top-left"></div>
+          <div class="card-notch top-right"></div>
+          <div class="pillar-item">
+            <div class="luxury-icon-box icon-box-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect><circle cx="8.5" cy="12" r="2.5"></circle></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Discord 直播監督</h4>
+              <p>可選遊戲推流或實體鏡頭直播，錄影存檔 7 天隨時查驗</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="luxury-card">
+          <div class="card-top-glow"></div>
+          <div class="card-notch top-left"></div>
+          <div class="card-notch top-right"></div>
+          <div class="pillar-item">
+            <div class="luxury-icon-box icon-box-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>死噴異常全額賠償</h4>
+              <p>純手工操作，若因代練異常或死噴，一律依角色裝備市價賠償</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="luxury-card">
+          <div class="card-top-glow"></div>
+          <div class="card-notch top-left"></div>
+          <div class="card-notch top-right"></div>
+          <div class="pillar-item">
+            <div class="luxury-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>產出 100% 歸客戶</h4>
+              <p>經驗值、天幣、神裝與稀有道具全數交付，絕不抽成私留</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="home-actions-row">
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3c0-4.6-4.9-8.3-11-8.3C6.9 2 2 5.7 2 10.3c0 4.1 3.9 7.6 9.2 8.2.4.1.9.3 1 .7.1.3.1.8 0 1.2l-.3 1.6c-.1.5-.4 1.8 1.6 1 1.9-.8 5.3-3.1 7.2-5.4 2.2-2.1 3.3-4.7 3.3-7.3z"/></svg>
+          <span>加入 LINE 預約（享 2 天試用）</span>
+        </a>
+        <a href="pricing.html" class="btn btn-glass btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line></svg>
+          <span>代練定價與即時試算器 →</span>
+        </a>
+        <a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer" class="btn btn-8591 btn-lg">
+          <span>8591 賣場（保證金 20 萬）</span>
+        </a>
+      </div>
+
+      <!-- Trust Strip -->
+      <div class="home-trust-strip">
+        <div class="trust-cell">
+          <span class="trust-val">20+ 位</span>
+          <span class="trust-desc">頂級課長與盟主長期包月背書</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-cell">
+          <span class="trust-val">12 位</span>
+          <span class="trust-desc">台灣實體辦公室固定作業班底</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-cell">
+          <span class="trust-val">100%</span>
+          <span class="trust-desc">純人工手操 · 零外掛封鎖紀錄</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-cell">
+          <span class="trust-val font-gold">NT$ 200,000</span>
+          <span class="trust-desc">8591 官方認證賣場繳存保證金</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Plans Overview Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-kicker">FEATURED PACKAGES</span>
+        <h2 class="section-title">熱門包月方案概覽</h2>
+        <p class="section-desc">透明公開費率，精確計算至分鐘。享有 2 天試用期，不滿意無條件全額退費！</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Day Shift -->
+        <div class="luxury-card plan-card">
+          <div class="card-top-glow"></div>
+          <div class="plan-ribbon">日間時段</div>
+          <div class="plan-header">
+            <div class="plan-title-row">
+              <div class="bespoke-emblem-badge emblem-day" style="width:42px; height:42px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </div>
+              <div>
+                <h3 class="plan-name">日班包月方案</h3>
+                <span class="plan-hours">09:00 – 18:00（每日 8hr）</span>
+              </div>
+            </div>
+          </div>
+          <div class="plan-price-block">
+            <div class="plan-rate-row">
+              <span class="currency-symbol">NT$</span>
+              <span class="rate-number">149</span>
+              <span class="rate-unit-text">元／小時 (包月)</span>
+            </div>
+          </div>
+          <div class="plan-spec-summary">
+            <div class="spec-row-item highlight-cost">
+              <span class="spec-k">20天 (160hr) 總額</span>
+              <span class="spec-v font-gold">NT$ 23,840</span>
+            </div>
+          </div>
+          <ul class="plan-perks-list">
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 獨立台灣 WireGuard 固定 IP</li>
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Discord 24/7 全程直播監督</li>
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 免費開 1 台 BUFF 輔助機</li>
+          </ul>
+          <a href="pricing.html" class="btn btn-gold btn-block">查看完整定價與試算</a>
+        </div>
+
+        <!-- Night Shift -->
+        <div class="luxury-card plan-card">
+          <div class="card-top-glow"></div>
+          <div class="plan-ribbon ribbon-featured">大課長首選</div>
+          <div class="plan-header">
+            <div class="plan-title-row">
+              <div class="bespoke-emblem-badge emblem-night" style="width:42px; height:42px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </div>
+              <div>
+                <h3 class="plan-name">夜班包月方案</h3>
+                <span class="plan-hours">01:00 – 09:00（每日 8hr）</span>
+              </div>
+            </div>
+          </div>
+          <div class="plan-price-block">
+            <div class="plan-rate-row">
+              <span class="currency-symbol">NT$</span>
+              <span class="rate-number">175</span>
+              <span class="rate-unit-text">元／小時 (包月)</span>
+            </div>
+          </div>
+          <div class="plan-spec-summary">
+            <div class="spec-row-item highlight-cost">
+              <span class="spec-k">20天 (160hr) 總額</span>
+              <span class="spec-v font-gold">NT$ 28,000</span>
+            </div>
+          </div>
+          <ul class="plan-perks-list">
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 獨立台灣 WireGuard 固定 IP</li>
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 夜間專人無縫盯盤作業</li>
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 享 2 天試用不滿意全額退費</li>
+          </ul>
+          <a href="pricing.html" class="btn btn-gold btn-block">查看完整定價與試算</a>
+        </div>
+
+        <!-- Combo Shift -->
+        <div class="luxury-card plan-card">
+          <div class="card-top-glow"></div>
+          <div class="plan-ribbon ribbon-combo">VIP 雙班專案</div>
+          <div class="plan-header">
+            <div class="plan-title-row">
+              <div class="bespoke-emblem-badge emblem-knight" style="width:42px; height:42px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div>
+                <h3 class="plan-name">日夜雙班輪替</h3>
+                <span class="plan-hours">每日 16 小時全時作業</span>
+              </div>
+            </div>
+          </div>
+          <div class="plan-price-block">
+            <span class="combo-notice-text">雙班合包，每小時各折 10 元！</span>
+            <div class="plan-rate-row">
+              <span class="combo-rate-tag">日班 $139 + 夜班 $165</span>
+            </div>
+          </div>
+          <div class="plan-spec-summary">
+            <div class="spec-row-item highlight-cost">
+              <span class="spec-k">20天 (320hr) 總額</span>
+              <span class="spec-v font-gold">NT$ 48,640</span>
+            </div>
+          </div>
+          <ul class="plan-perks-list">
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 全天 16 小時高效輪班練功</li>
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 現省 NT$ 3,200 元優惠</li>
+            <li><svg class="check-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 盟主與伺服器衝等首選</li>
+          </ul>
+          <a href="pricing.html" class="btn btn-gold btn-block">查看完整定價與試算</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Page Portal Showcase Grid -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-kicker">EXPLORE HIVEARY</span>
+        <h2 class="section-title">深入探索我們的專屬優勢</h2>
+        <p class="section-desc">點擊進入各專屬分頁，了解我們的全職業專精策略、實體團隊環境與鋼鐵保障條款。</p>
+      </div>
+
+      <div class="home-pillars-grid">
+        <a href="classes.html" class="luxury-card" style="display:block;">
+          <div class="card-top-glow"></div>
+          <h3 style="color:var(--text-pure); font-size:1.15rem; font-weight:800; margin-bottom:8px;">⚔️ 全職業深度專精</h3>
+          <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.55;">精通衝暈騎、魂體三重妖、聖結界法師、雙刀黑妖與君主王族配裝策略與巡邏路線。</p>
+          <span style="color:var(--gold-primary); font-size:0.82rem; font-weight:700; margin-top:12px; display:inline-block;">瀏覽職業攻略 →</span>
+        </a>
+
+        <a href="security.html" class="luxury-card" style="display:block;">
+          <div class="card-top-glow"></div>
+          <h3 style="color:var(--text-pure); font-size:1.15rem; font-weight:800; margin-bottom:8px;">🛡️ 12 人實體團隊與獨立 IP</h3>
+          <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.55;">100% 台灣辦公室現場實拍，每帳號獨享專屬 WireGuard 機房端點，零交叉封鎖風險。</p>
+          <span style="color:var(--gold-primary); font-size:0.82rem; font-weight:700; margin-top:12px; display:inline-block;">查看辦公室與架構 →</span>
+        </a>
+
+        <a href="monitoring.html" class="luxury-card" style="display:block;">
+          <div class="card-top-glow"></div>
+          <h3 style="color:var(--text-pure); font-size:1.15rem; font-weight:800; margin-bottom:8px;">📊 24/7 直播與經驗報表</h3>
+          <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.55;">Discord 即時遊戲畫面與現場鏡頭推流，每日次日提供精確至分鐘之經驗與負重報表。</p>
+          <span style="color:var(--gold-primary); font-size:0.82rem; font-weight:700; margin-top:12px; display:inline-block;">體驗實況看台 →</span>
+        </a>
+
+        <a href="terms.html" class="luxury-card" style="display:block;">
+          <div class="card-top-glow"></div>
+          <h3 style="color:var(--text-pure); font-size:1.15rem; font-weight:800; margin-bottom:8px;">📜 八大鋼鐵服務條款</h3>
+          <p style="color:var(--text-muted); font-size:0.84rem; line-height:1.55;">帳號產出 100% 歸客戶所有，承諾封號死噴全額市價賠償，提供 2 天試用退費保障。</p>
+          <span style="color:var(--gold-primary); font-size:0.82rem; font-weight:700; margin-top:12px; display:inline-block;">查閱完整條款 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <div class="footer-logo-row">
+          <span class="footer-title">HIVEARY 蜂巢團隊</span>
+        </div>
+        <p class="footer-slogan">安全 · 專業 · 實在 · 值得信賴的頂級遊戲代練品牌</p>
+        <p class="footer-legal">© 2026 HIVEARY. All Rights Reserved. 《天堂經典版》遊戲商標與相關版權為 NCSOFT 所有。</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>快速導覽</h4>
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="pricing.html">方案與費用試算</a></li>
+          <li><a href="classes.html">全職業專精</a></li>
+          <li><a href="security.html">實體團隊與固定IP</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>保障與條款</h4>
+        <ul>
+          <li><a href="monitoring.html">Discord 直播監督</a></li>
+          <li><a href="terms.html">八大鋼鐵條款</a></li>
+          <li><a href="terms.html#trial">2天無條件退費試用</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>官方聯絡管道</h4>
+        <ul>
+          <li><a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer">LINE 官方客服</a></li>
+          <li><a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer">8591 官方賣場</a></li>
+          <li><a href="https://www.hiveary.org" target="_blank" rel="noopener noreferrer">HIVEARY 官方網站</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Conversion Bar -->
+  <div class="sticky-conversion-bar" id="stickyConversionBar">
+    <div class="container sticky-bar-inner">
+      <div class="sticky-status-side">
+        <span class="sticky-live-dot"></span>
+        <span class="sticky-text">天堂經典版包月代練 · <strong>2 天試用不滿意全額退費</strong></span>
+      </div>
+      <div class="sticky-buttons-side">
+        <a href="pricing.html" class="btn btn-glass btn-sm">費用試算</a>
+        <a href="https://line.me/ti/p/EYPnD98cYy" target="_blank" rel="noopener noreferrer" class="btn-nav-line btn-sm">
+          加入 LINE 預約
+        </a>
+        <a href="https://www.8591.com.tw/v3/mall/detail/2416930195?aid=3005" target="_blank" rel="noopener noreferrer" class="btn btn-8591 btn-sm">
+          8591 賣場
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
