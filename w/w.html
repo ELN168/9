@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>高雄宏遠當舖 ｜ 法式頂級米金高訂會所・政府合法立案・汽機車免留車・名錶黃金珠寶典當</title>
+  <meta name="description" content="高雄宏遠當舖（鼓山區華榮路65號），政府合法立案。法式私銀級高訂典當會所。專營汽車機車免留車借款、勞力士名錶、999.9純金鑽石高額鑑價、房屋土地二胎大額融資。30分鐘快速放款，100%隱私保密。" />
+
+  <!-- Luxury Haute Typography: Cinzel, Noto Serif TC, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons & Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       1. HAUTE BEIGE & CHAMPAGNE TOKENS (法式頂級米金高訂色系)
+       ═══════════════════════════════════════════════════════════════ */
+    :root {
+      --bg-base: #f9f7f2;
+      --bg-surface: #f2ebdE;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-card-hover: rgba(255, 255, 255, 0.98);
+
+      --gold-primary: #b88a2e;
+      --gold-light: #d4af37;
+      --gold-deep: #7e590f;
+      --gold-glow: rgba(184, 138, 46, 0.14);
+      --gold-hairline: rgba(184, 138, 46, 0.28);
+
+      --text-main: #161513;
+      --text-sub: #464239;
+      --text-muted: #787265;
+      --text-dim: #989182;
+
+      --border-glass: rgba(184, 138, 46, 0.2);
+      --border-subtle: rgba(0, 0, 0, 0.06);
+
+      --font-serif: 'Noto Serif TC', 'Cinzel', serif;
+      --font-en-serif: 'Cinzel', serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+
+      --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    html {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.75;
+      background: var(--bg-base);
+      position: relative;
+    }
+
+    ::selection {
+      background: rgba(184, 138, 46, 0.25);
+      color: var(--gold-deep);
+    }
+
+    /* Top Scroll Progress Indicator */
+    .top-scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+      z-index: 10001;
+      width: 0%;
+      box-shadow: 0 0 10px rgba(184, 138, 46, 0.4);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       2. NAVIGATION BAR
+       ═══════════════════════════════════════════════════════════════ */
+    .nav-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 2.5rem;
+      transition: all 0.4s var(--ease-lux);
+    }
+
+    .nav-wrapper.scrolled {
+      padding: 0.75rem 2.5rem;
+      background: rgba(249, 247, 242, 0.94);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border-glass);
+      box-shadow: 0 10px 35px rgba(120, 100, 70, 0.08);
+    }
+
+    .nav-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+
+    .brand-crown-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(184, 138, 46, 0.16), #ffffff);
+      border: 1px solid var(--gold-hairline);
+      box-shadow: 0 4px 15px rgba(184, 138, 46, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-deep);
+      position: relative;
+    }
+
+    .brand-crown-icon::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px solid rgba(184, 138, 46, 0.25);
+      border-radius: 8px;
+    }
+
+    .brand-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title-zh {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle-en {
+      font-family: var(--font-en-serif);
+      font-size: 0.55rem;
+      letter-spacing: 0.38em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-menu-capsule {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 0.65rem 2rem;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 20px rgba(140, 110, 70, 0.05);
+      list-style: none;
+    }
+
+    .nav-menu-item a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-menu-item a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-menu-item a:hover {
+      color: var(--gold-deep);
+    }
+
+    .nav-menu-item a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .nav-cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-gold-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 26px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-deep) 100%);
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(184, 138, 46, 0.3);
+      transition: all 0.35s var(--ease-lux);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-gold-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(184, 138, 46, 0.45);
+      filter: brightness(1.08);
+    }
+
+    .mobile-hamburger-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 8px;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       3. HERO SECTION (Warm Luxury Editorial)
+       ═══════════════════════════════════════════════════════════════ */
+    .hero-wrap {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 9rem 2.5rem 5rem;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .hero-bg-layer {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .hero-slide-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    .hero-bg-layer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 65% 45%, rgba(249, 247, 242, 0.3) 0%, rgba(249, 247, 242, 0.88) 75%, #f9f7f2 100%),
+        linear-gradient(to right, rgba(249,247,242,0.98) 0%, rgba(249,247,242,0.85) 45%, rgba(249,247,242,0.35) 75%, rgba(249,247,242,0.92) 100%),
+        linear-gradient(to bottom, rgba(249,247,242,0.7) 0%, transparent 25%, transparent 75%, #f9f7f2 100%);
+    }
+
+    .hero-grid {
+      max-width: 1380px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.95fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .hero-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--gold-hairline);
+      box-shadow: 0 4px 15px rgba(184, 138, 46, 0.1);
+      backdrop-filter: blur(16px);
+      margin-bottom: 2rem;
+      animation: fadeDown 0.8s var(--ease-lux) both;
+    }
+
+    .beacon-live {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 10px #16a34a;
+      animation: pulse-beacon 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-beacon {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.85); opacity: 0.4; }
+    }
+
+    .badge-label-text {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      color: var(--gold-deep);
+      font-weight: 700;
+    }
+
+    .hero-title-main {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.14;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      margin-bottom: 1.75rem;
+      animation: fadeUp 0.8s var(--ease-lux) 0.1s both;
+    }
+
+    .gold-gradient-shine {
+      background: linear-gradient(135deg, var(--gold-deep) 0%, var(--gold-primary) 50%, #684a0d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .hero-desc-text {
+      font-size: 1.08rem;
+      color: var(--text-sub);
+      line-height: 1.85;
+      max-width: 600px;
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s var(--ease-lux) 0.2s both;
+    }
+
+    .hero-desc-text strong {
+      color: var(--gold-deep);
+      font-weight: 700;
+    }
+
+    .hero-cta-flex {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+      animation: fadeUp 0.8s var(--ease-lux) 0.3s both;
+    }
+
+    .btn-lux-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-deep) 100%);
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(184, 138, 46, 0.35);
+      transition: all 0.35s var(--ease-lux);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-lux-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(184, 138, 46, 0.5);
+      filter: brightness(1.08);
+    }
+
+    .btn-lux-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--gold-hairline);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(16px);
+      text-decoration: none;
+      transition: all 0.35s var(--ease-lux);
+      cursor: pointer;
+    }
+
+    .btn-lux-ghost:hover {
+      background: rgba(184, 138, 46, 0.1);
+      border-color: var(--gold-primary);
+      color: var(--gold-deep);
+      transform: translateY(-3px);
+    }
+
+    .hero-specs-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-glass);
+      animation: fadeUp 0.8s var(--ease-lux) 0.4s both;
+    }
+
+    .spec-box h5 {
+      font-family: var(--font-en-serif);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--gold-deep);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .spec-box p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       4. HERO RIGHT SIDE: VIP CREDENTIAL & SALON SHOWCASE CARD
+       ═══════════════════════════════════════════════════════════════ */
+    .hero-vip-showcase {
+      position: relative;
+      animation: fadeUp 0.8s var(--ease-lux) 0.25s both;
+    }
+
+    .vip-main-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-hairline);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(140, 110, 70, 0.12);
+      backdrop-filter: blur(30px);
+    }
+
+    .vip-card-img-wrap {
+      width: 100%;
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vip-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-lux);
+    }
+
+    .vip-main-card:hover .vip-card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .vip-card-float-badge {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--gold-hairline);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--gold-deep);
+      letter-spacing: 0.06em;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .vip-card-body {
+      padding: 2.25rem;
+    }
+
+    .vip-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .vip-card-body p {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .vip-service-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+    }
+
+    .vip-service-pill {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--gold-deep);
+      background: rgba(184, 138, 46, 0.1);
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(184, 138, 46, 0.18);
+    }
+
+    .vip-direct-consult-btn {
+      width: 100%;
+      padding: 15px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-deep));
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(184, 138, 46, 0.3);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .vip-direct-consult-btn:hover {
+      filter: brightness(1.1);
+      box-shadow: 0 8px 25px rgba(184, 138, 46, 0.45);
+      transform: translateY(-1px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       5. LIVE FINANCIAL TICKER
+       ═══════════════════════════════════════════════════════════════ */
+    .ticker-bar-wrap {
+      width: 100%;
+      overflow: hidden;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 1.1rem 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .ticker-track-flex {
+      display: flex;
+      gap: 3.5rem;
+      width: max-content;
+      animation: ticker-slide 32s linear infinite;
+    }
+
+    .ticker-unit {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-serif);
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--text-sub);
+      text-transform: uppercase;
+    }
+
+    .ticker-dot-star {
+      color: var(--gold-primary);
+      font-size: 0.75rem;
+    }
+
+    @keyframes ticker-slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       6. EDITORIAL PORTFOLIO GALLERY
+       ═══════════════════════════════════════════════════════════════ */
+    .section-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 6.5rem 2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4.5rem;
+    }
+
+    .sec-eyebrow-tag {
+      font-family: var(--font-en-serif);
+      font-size: 0.78rem;
+      color: var(--gold-deep);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .sec-title-main {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+    }
+
+    .sec-desc-text {
+      color: var(--text-sub);
+      font-size: 0.96rem;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    .editorial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(150, 120, 70, 0.08);
+      transition: all 0.4s var(--ease-lux);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .editorial-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--gold-primary);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(150, 120, 70, 0.16);
+    }
+
+    .editorial-img-box {
+      width: 100%;
+      height: 330px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .editorial-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-lux);
+    }
+
+    .editorial-card:hover .editorial-img-box img {
+      transform: scale(1.06);
+    }
+
+    .editorial-tag-float {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--gold-hairline);
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold-deep);
+      letter-spacing: 0.05em;
+    }
+
+    .editorial-body {
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+
+    .editorial-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .editorial-body p {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .editorial-features-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .editorial-chip {
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(184, 138, 46, 0.08);
+      border: 1px solid var(--border-glass);
+      color: var(--gold-deep);
+      font-weight: 600;
+    }
+
+    .editorial-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gold-deep);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .editorial-link-btn:hover {
+      color: var(--gold-primary);
+      transform: translateX(4px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       7. WHY CHOOSE US / BRAND CREDENTIALS
+       ═══════════════════════════════════════════════════════════════ */
+    .trust-creds-wrap {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-glass);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 6.5rem 2.5rem;
+    }
+
+    .creds-container {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .cred-card {
+      background: #ffffff;
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(150, 120, 70, 0.05);
+      transition: all 0.35s ease;
+    }
+
+    .cred-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(150, 120, 70, 0.1);
+      border-color: var(--gold-primary);
+    }
+
+    .cred-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(184, 138, 46, 0.12);
+      border: 1px solid var(--gold-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-deep);
+      margin-bottom: 1.5rem;
+    }
+
+    .cred-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .cred-card p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       8. FAST APPROVAL 4-STEP TIMELINE
+       ═══════════════════════════════════════════════════════════════ */
+    .timeline-track-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .timeline-step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.75rem;
+      position: relative;
+      transition: all 0.4s var(--ease-lux);
+      box-shadow: 0 8px 25px rgba(150, 120, 70, 0.04);
+    }
+
+    .timeline-step-box:hover {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(150, 120, 70, 0.1);
+    }
+
+    .step-glow-digit {
+      font-family: var(--font-en-serif);
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: rgba(184, 138, 46, 0.2);
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      line-height: 1;
+      transition: all 0.35s ease;
+    }
+
+    .timeline-step-box:hover .step-glow-digit {
+      color: var(--gold-primary);
+      transform: scale(1.1);
+    }
+
+    .timeline-step-box h4 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .timeline-step-box p {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       9. FAQ ACCORDION
+       ═══════════════════════════════════════════════════════════════ */
+    .faq-flow-wrap {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .faq-accordion-item {
+      border: 1px solid var(--border-glass);
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 15px rgba(150, 120, 70, 0.04);
+    }
+
+    .faq-accordion-item.active {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .faq-btn-trigger {
+      width: 100%;
+      padding: 1.5rem 2rem;
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-btn-trigger:hover {
+      color: var(--gold-deep);
+    }
+
+    .faq-icon-cross {
+      color: var(--gold-primary);
+      transition: transform 0.4s var(--ease-lux);
+    }
+
+    .faq-accordion-item.active .faq-icon-cross {
+      transform: rotate(45deg);
+    }
+
+    .faq-collapse-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease-out;
+    }
+
+    .faq-inner-text {
+      padding: 0 2rem 1.5rem;
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      line-height: 1.85;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 1.1rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       10. CTA BANNER & GOOGLE MAPS
+       ═══════════════════════════════════════════════════════════════ */
+    .cta-banner-box {
+      background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(241, 235, 222, 0.98) 75%);
+      border: 1px solid var(--gold-hairline);
+      border-radius: var(--radius-xl);
+      padding: 5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(150, 120, 70, 0.12);
+    }
+
+    .cta-banner-box h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner-box p {
+      color: var(--text-sub);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto 2.75rem;
+      line-height: 1.85;
+    }
+
+    .cta-chip-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.75rem;
+    }
+
+    .cta-badge-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 26px;
+      border-radius: 50px;
+      background: #ffffff;
+      border: 1px solid var(--border-glass);
+      color: var(--gold-deep);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(150, 120, 70, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .cta-badge-link:hover {
+      background: rgba(184, 138, 46, 0.12);
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Map Box */
+    .map-frame-wrapper {
+      position: relative;
+      height: 400px;
+      border-top: 1px solid var(--border-glass);
+      overflow: hidden;
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(0.2) contrast(1.05);
+    }
+
+    .map-floating-overlay {
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--gold-hairline);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px rgba(150, 120, 70, 0.15);
+      z-index: 10;
+      max-width: 340px;
+    }
+
+    .map-floating-overlay h4 {
+      font-family: var(--font-serif);
+      color: var(--gold-deep);
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .map-floating-overlay p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       11. FOOTER
+       ═══════════════════════════════════════════════════════════════ */
+    .footer-lux-wrap {
+      background: #ede7d8;
+      padding: 4.5rem 2.5rem 2.5rem;
+      border-top: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-flex-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .footer-nav-row {
+      display: flex;
+      gap: 2.2rem;
+    }
+
+    .footer-nav-row a {
+      color: var(--text-sub);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-nav-row a:hover {
+      color: var(--gold-deep);
+    }
+
+    .footer-legal-copy {
+      max-width: 1380px;
+      margin: 2rem auto 0;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       12. HAUTE MODAL (VIP Online Appraisal Booking Dialog)
+       ═══════════════════════════════════════════════════════════════ */
+    .vip-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 23, 21, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 100000;
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      transition: all 0.4s var(--ease-lux);
+    }
+
+    .vip-modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .vip-modal-dialog {
+      background: #ffffff;
+      border: 1px solid var(--gold-hairline);
+      border-radius: var(--radius-xl);
+      max-width: 580px;
+      width: 100%;
+      padding: 2.5rem;
+      box-shadow: 0 35px 80px rgba(120, 90, 40, 0.25);
+      position: relative;
+      transform: scale(0.92) translateY(20px);
+      transition: all 0.4s var(--ease-lux);
+    }
+
+    .vip-modal-backdrop.active .vip-modal-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .vip-modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-sub);
+      transition: all 0.3s ease;
+    }
+
+    .vip-modal-close:hover {
+      background: var(--bg-surface);
+      color: var(--text-main);
+    }
+
+    .vip-modal-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .vip-modal-header h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .vip-modal-header p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .vip-category-chips {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .vip-chip-btn {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-glass);
+      background: var(--bg-base);
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .vip-chip-btn.active {
+      background: linear-gradient(135deg, rgba(184, 138, 46, 0.16), #ffffff);
+      border-color: var(--gold-primary);
+      color: var(--gold-deep);
+      font-weight: 700;
+    }
+
+    .vip-input-field {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-glass);
+      background: #faf8f5;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      outline: none;
+      margin-bottom: 1rem;
+      font-family: inherit;
+    }
+
+    .vip-input-field:focus {
+      border-color: var(--gold-primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(184, 138, 46, 0.15);
+    }
+
+    .vip-btn-send {
+      width: 100%;
+      padding: 15px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-deep));
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(184, 138, 46, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .vip-btn-send:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       13. FLOATING QUICK CONCIERGE & TOP
+       ═══════════════════════════════════════════════════════════════ */
+    .sticky-concierge-panel {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      align-items: flex-end;
+    }
+
+    .concierge-fab-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(150, 120, 70, 0.25);
+      transition: all 0.35s var(--ease-lux);
+      border: 1px solid var(--border-glass);
+      cursor: pointer;
+    }
+
+    .concierge-fab-btn:hover {
+      transform: scale(1.12) translateY(-3px);
+      box-shadow: 0 12px 30px rgba(150, 120, 70, 0.4);
+    }
+
+    .fab-phone-gold {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-deep));
+      color: #ffffff;
+      border-color: var(--gold-primary);
+    }
+
+    .fab-line-green {
+      background: #06c755;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .fab-top-trigger {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      color: var(--gold-deep);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+    }
+
+    .fab-top-trigger.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s var(--ease-lux), transform 0.8s var(--ease-lux);
+    }
+
+    .reveal-on-scroll.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+      .creds-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline-track-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-menu-capsule {
+        display: none;
+      }
+      .mobile-hamburger-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-wrapper {
+        padding: 1rem 1.5rem;
+      }
+      .hero-wrap {
+        padding: 7rem 1.5rem 3.5rem;
+      }
+      .section-container {
+        padding: 4.5rem 1.5rem;
+      }
+      .trust-creds-wrap {
+        padding: 4.5rem 1.5rem;
+      }
+      .timeline-track-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-banner-box {
+        padding: 3.5rem 1.5rem;
+      }
+      .footer-flex-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="top-scroll-progress" id="scrollProgressBar"></div>
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <header class="nav-wrapper" id="mainHeader">
+    <div class="nav-container">
+      <a href="#" class="nav-brand" aria-label="宏遠當舖 首頁">
+        <div class="brand-crown-icon">
+          <i data-lucide="shield-check" style="width:24px;height:24px"></i>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title-zh">宏遠當舖</span>
+          <span class="brand-subtitle-en">PRIVATE ASSET LIQUIDITY</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Capsule -->
+      <nav aria-label="主選單">
+        <ul class="nav-menu-capsule">
+          <li class="nav-menu-item"><a href="#services">尊榮典當項目</a></li>
+          <li class="nav-menu-item"><a href="#credentials">合法保障會所</a></li>
+          <li class="nav-menu-item"><a href="#process">核貸流程</a></li>
+          <li class="nav-menu-item"><a href="#faq">常見問題</a></li>
+          <li class="nav-menu-item"><a href="tel:075521165">專線諮詢</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA -->
+      <div class="nav-cta-actions">
+        <button class="btn-gold-action" id="headerModalTrigger">
+          <i data-lucide="phone-call" style="width:16px;height:16px"></i>
+          <span>線上預約鑑價</span>
+        </button>
+        <button class="mobile-hamburger-btn" id="mobileMenuBtn" aria-label="切換選單">
+          <i data-lucide="menu" style="width:22px;height:22px"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════ HERO SECTION ════════════════ -->
+  <section class="hero-wrap" id="hero">
+    <div class="hero-bg-layer">
+      <img src="beige_salon.jpg" alt="宏遠當舖 私人尊榮米金會所外觀" class="hero-slide-img" />
+    </div>
+
+    <div class="hero-grid">
+      <!-- Left Column: Typography & Action -->
+      <div class="hero-typography-col">
+        <div class="hero-pill-badge">
+          <span class="beacon-live"></span>
+          <span class="badge-label-text">高雄市政府立案核准 ｜ 鼓山區華榮路 65 號</span>
+        </div>
+
+        <h1 class="hero-title-main">
+          尊榮資產<br />
+          <span class="gold-gradient-shine">流動性新維度</span>
+        </h1>
+
+        <p class="hero-desc-text">
+          跨越傳統典當格局，締造法式私銀級高訂借貸體驗。<br />
+          專營<strong>汽車機車免留車</strong>、<strong>勞力士瑞士名錶</strong>、<strong>純金鑽石</strong>及<strong>房地二胎大額週轉</strong>。<br />
+          現場精密鑑價、全程獨立 VIP 保密空間，最快 15-30 分鐘資金到位。
+        </p>
+
+        <div class="hero-cta-flex">
+          <button class="btn-lux-primary" id="heroModalTrigger">
+            <i data-lucide="phone-outgoing" style="width:18px;height:18px"></i>
+            <span>立即預約專人鑑價</span>
+          </button>
+          <a href="https://lin.ee/q8O1qR5" target="_blank" class="btn-lux-ghost">
+            <i data-lucide="message-square" style="width:18px;height:18px;color:var(--gold-deep)"></i>
+            <span>LINE 官方 24H 快速估價 →</span>
+          </a>
+        </div>
+
+        <!-- Micro-Specs -->
+        <div class="hero-specs-row">
+          <div class="spec-box">
+            <h5>2.5% MAX</h5>
+            <p>依法定月利率上限內</p>
+          </div>
+          <div class="spec-box">
+            <h5>15-30 MIN</h5>
+            <p>最快現金審核撥款</p>
+          </div>
+          <div class="spec-box">
+            <h5>100% PRIVATE</h5>
+            <p>獨立 VIP 貴賓洽談室</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Clean VIP Credential & Featured Salon Showcase Card -->
+      <div class="hero-vip-showcase">
+        <div class="vip-main-card">
+          <div class="vip-card-img-wrap">
+            <img src="beige_assets.jpg" alt="瑞士名錶與999.9純金典當特寫" />
+            <span class="vip-card-float-badge">✦ 私人貴賓典當會所</span>
+          </div>
+          <div class="vip-card-body">
+            <h3>高雄鼓山 宏遠當舖</h3>
+            <p>深耕高雄在地，提供大額企業融資與個人應急資金調度。現場備有資深珠寶鐘錶鑑定儀器與獨立洽談室，保障您的尊榮隱私。</p>
+            <div class="vip-service-pills">
+              <span class="vip-service-pill">🚗 汽機車免留車</span>
+              <span class="vip-service-pill">⌚ 勞力士名錶專案</span>
+              <span class="vip-service-pill">👑 999.9 純金條塊</span>
+              <span class="vip-service-pill">🏠 房地二胎融資</span>
+            </div>
+            <a href="tel:075521165" class="vip-direct-consult-btn">
+              <i data-lucide="phone-call" style="width:18px;height:18px"></i>
+              <span>撥打門市專線：(07) 552-1165</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ LIVE TICKER ════════════════ -->
+  <div class="ticker-bar-wrap">
+    <div class="ticker-track-flex">
+      <div class="ticker-unit">高雄市政府合法立案登記 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">法定月利率 2.5% 以內透明計息 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">汽機車借款免留車原車可用 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">勞力士・百達翡麗名錶高額鑑價 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">30 分鐘極速現金點交撥款 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">100% 獨立貴賓室極致隱私保護 <span class="ticker-dot-star">✦</span></div>
+      <!-- Loop duplicate -->
+      <div class="ticker-unit">高雄市政府合法立案登記 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">法定月利率 2.5% 以內透明計息 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">汽機車借款免留車原車可用 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">勞力士・百達翡麗名錶高額鑑價 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">30 分鐘極速現金點交撥款 <span class="ticker-dot-star">✦</span></div>
+      <div class="ticker-unit">100% 獨立貴賓室極致隱私保護 <span class="ticker-dot-star">✦</span></div>
+    </div>
+  </div>
+
+  <!-- ════════════════ EDITORIAL PORTFOLIO GALLERY ════════════════ -->
+  <section class="section-container" id="services">
+    <div class="section-header-center reveal-on-scroll">
+      <span class="sec-eyebrow-tag">HAUTE VALUATION PORTFOLIO</span>
+      <h2 class="sec-title-main">頂級高訂典當項目</h2>
+      <p class="sec-desc-text">宏遠以瑞士製錶與高級珠寶鑑定標準，為您的核心資產提供最精準的價值釋放。</p>
+    </div>
+
+    <div class="editorial-grid">
+      <!-- 1. 汽車免留車借款 -->
+      <div class="editorial-card reveal-on-scroll">
+        <div class="editorial-img-box">
+          <img src="img_car.jpg" alt="汽車機車免留車借款 高訂圖" loading="lazy" />
+          <span class="editorial-tag-float">原車保留可用</span>
+        </div>
+        <div class="editorial-body">
+          <div>
+            <h3>I. 汽車・機車借款 (免留車)</h3>
+            <p>國產車、進口車、分期車、租賃車、公司車皆可承作。免留車方案讓您在取得充裕週轉金的同時，愛車依舊保留代步工作，透過監理機關動保設定，合法安全保障雙方權益。</p>
+            <div class="editorial-features-list">
+              <span class="editorial-chip">原車繼續使用</span>
+              <span class="editorial-chip">當日現金放款</span>
+              <span class="editorial-chip">分期車可借</span>
+              <span class="editorial-chip">不限廠牌車齡</span>
+            </div>
+          </div>
+          <button class="editorial-link-btn card-modal-open" data-category="汽車機車借款 (免留車)">
+            <span>立即預約專員鑑價</span>
+            <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. 瑞士名錶典當 -->
+      <div class="editorial-card reveal-on-scroll">
+        <div class="editorial-img-box">
+          <img src="img_watch.jpg" alt="勞力士名錶典當 高訂圖" loading="lazy" />
+          <span class="editorial-tag-float">瑞士鐘錶標準</span>
+        </div>
+        <div class="editorial-body">
+          <div>
+            <h3>II. 勞力士・百達翡麗名錶典當</h3>
+            <p>勞力士 (Rolex)、百達翡麗、愛彼、歐米茄、江詩丹頓等瑞士頂級名錶，由資深鑑定師依據二級市場即時行情精準鑑價，典當物入庫恆溫防潮保險庫安全封存。</p>
+            <div class="editorial-features-list">
+              <span class="editorial-chip">勞力士專案</span>
+              <span class="editorial-chip">高額收當</span>
+              <span class="editorial-chip">恆溫保險庫</span>
+              <span class="editorial-chip">配件盒單增值</span>
+            </div>
+          </div>
+          <button class="editorial-link-btn card-modal-open" data-category="勞力士・百達翡麗名錶典當">
+            <span>LINE 免費傳圖線上估價</span>
+            <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. 純金鑽石珠寶 -->
+      <div class="editorial-card reveal-on-scroll">
+        <div class="editorial-img-box">
+          <img src="img_gold.jpg" alt="純金珠寶鑽石典當 高訂圖" loading="lazy" />
+          <span class="editorial-tag-float">國際即時金價</span>
+        </div>
+        <div class="editorial-body">
+          <div>
+            <h3>III. 999.9 純金・GIA 鑽石珠寶</h3>
+            <p>純金條塊、金飾、白金、GIA 證書鑽石、彩鑽、頂級翡翠珠寶。現場專業光譜儀器公開透明鑑價，緊貼國際即時盤價，提供業界最高成數典當與回購管道。</p>
+            <div class="editorial-features-list">
+              <span class="editorial-chip">國際即時金價</span>
+              <span class="editorial-chip">不扣重高折算</span>
+              <span class="editorial-chip">現場精密點交</span>
+              <span class="editorial-chip">珠寶公會認證</span>
+            </div>
+          </div>
+          <button class="editorial-link-btn card-modal-open" data-category="999.9純金・GIA鑽石珠寶">
+            <span>立即查詢今日金價成數</span>
+            <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. 房地二胎大額融資 -->
+      <div class="editorial-card reveal-on-scroll">
+        <div class="editorial-img-box">
+          <img src="img_estate.jpg" alt="房屋土地二胎大額融資 高訂圖" loading="lazy" />
+          <span class="editorial-tag-float">大額資金方案</span>
+        </div>
+        <div class="editorial-body">
+          <div>
+            <h3>IV. 房屋・土地二胎三胎大額融資</h3>
+            <p>名下自有房屋、透天、大樓、土地、農地、廠房皆可承辦。不看銀行聯徵信用、不限坪數與屋齡，專為企業資金週轉與個人大額資金缺口打造最快速的靈活融資管道。</p>
+            <div class="editorial-features-list">
+              <span class="editorial-chip">大額融資上限高</span>
+              <span class="editorial-chip">不看聯徵信用</span>
+              <span class="editorial-chip">持分房屋可談</span>
+              <span class="editorial-chip">全台地政合法設定</span>
+            </div>
+          </div>
+          <button class="editorial-link-btn card-modal-open" data-category="房屋土地二胎大額融資">
+            <span>預約地政專業評估</span>
+            <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ WHY CHOOSE US / BRAND CREDENTIALS ════════════════ -->
+  <section class="trust-creds-wrap" id="credentials">
+    <div class="creds-container">
+      <div class="section-header-center reveal-on-scroll" style="margin-bottom:2rem">
+        <span class="sec-eyebrow-tag">TRUST & INTEGRITY</span>
+        <h2 class="sec-title-main">為什麼高端顧客指名宏遠？</h2>
+        <p class="sec-desc-text">我們秉持合法、專業、透明、隱密的四大承諾，掃除傳統民間借貸疑慮，做您最穩固的資金靠山。</p>
+      </div>
+
+      <div class="creds-grid">
+        <div class="cred-card reveal-on-scroll">
+          <div class="cred-icon-box">
+            <i data-lucide="shield-check" style="width:24px;height:24px"></i>
+          </div>
+          <h4>政府合法立案 誠信保證</h4>
+          <p>領有高雄市政府核發之當舖營業許可執照，嚴格遵循《當鋪業法》相關規定，所有流程均有法規依循，權益受法律完整保障。</p>
+        </div>
+
+        <div class="cred-card reveal-on-scroll">
+          <div class="cred-icon-box">
+            <i data-lucide="percent" style="width:24px;height:24px"></i>
+          </div>
+          <h4>透明法定利率 絕無巧立名目</h4>
+          <p>法定月利率最高不超過 2.5%（年息 30%），除法定倉棧費外絕無任何代辦手續費或不合理扣款，可依手頭資金隨借隨還。</p>
+        </div>
+
+        <div class="cred-card reveal-on-scroll">
+          <div class="cred-icon-box">
+            <i data-lucide="lock" style="width:24px;height:24px"></i>
+          </div>
+          <h4>獨立 VIP 貴賓室 絕對保密</h4>
+          <p>一對一獨立會客空間，非公開櫃台，徹底杜絕旁人窺探。客戶資料依法嚴密保管封存，100% 守護個人與企業財務隱私。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ 4-STEP APPROVAL TIMELINE ════════════════ -->
+  <section class="section-container" id="process" style="padding-top:5rem">
+    <div class="section-header-center reveal-on-scroll">
+      <span class="sec-eyebrow-tag">FAST APPROVAL FLOW</span>
+      <h2 class="sec-title-main">極速核貸・四步驟現金到手</h2>
+      <p class="sec-desc-text">流程標準透明，杜絕繁瑣程序，最快 15-30 分鐘現場點交現金。</p>
+    </div>
+
+    <div class="timeline-track-grid">
+      <div class="timeline-step-box reveal-on-scroll">
+        <span class="step-glow-digit">01</span>
+        <i data-lucide="message-square" style="color:var(--gold-deep);width:26px;height:26px"></i>
+        <h4>1. 免費線上諮詢</h4>
+        <p>致電 (07) 552-1165 或加入官方 LINE，告知抵押品類別，專員第一時間線上初估金額。</p>
+      </div>
+
+      <div class="timeline-step-box reveal-on-scroll">
+        <span class="step-glow-digit">02</span>
+        <i data-lucide="search" style="color:var(--gold-deep);width:26px;height:26px"></i>
+        <h4>2. 攜件到店鑑價</h4>
+        <p>攜帶雙證件及典當物至鼓山區華榮路門市，由資深鑑價師進行專業儀器透明鑑估。</p>
+      </div>
+
+      <div class="timeline-step-box reveal-on-scroll">
+        <span class="step-glow-digit">03</span>
+        <i data-lucide="file-check" style="color:var(--gold-deep);width:26px;height:26px"></i>
+        <h4>3. 確認方案對保</h4>
+        <p>雙方確認核准額度與利率後，填寫法定當票與合約，條款完全公開，絕無隱藏手續費。</p>
+      </div>
+
+      <div class="timeline-step-box reveal-on-scroll">
+        <span class="step-glow-digit">04</span>
+        <i data-lucide="banknote" style="color:var(--gold-deep);width:26px;height:26px"></i>
+        <h4>4. 即刻現金撥款</h4>
+        <p>手續完成後立即現場點交現金或銀行轉帳，全程最快 30 分鐘內完備，資金迅速到位。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FAQ ACCORDION ════════════════ -->
+  <section class="section-container" id="faq">
+    <div class="section-header-center reveal-on-scroll">
+      <span class="sec-eyebrow-tag">FAQ</span>
+      <h2 class="sec-title-main">借款常見問題解答</h2>
+      <p class="sec-desc-text">為您彙整借款典當的核心疑問，讓您借得安心、還得輕鬆。</p>
+    </div>
+
+    <div class="faq-flow-wrap reveal-on-scroll">
+      <div class="faq-accordion-item active">
+        <button class="faq-btn-trigger">
+          <span>辦理汽機車借款，需要準備哪些證件與資料？</span>
+          <i data-lucide="plus" class="faq-icon-cross" style="width:20px;height:20px"></i>
+        </button>
+        <div class="faq-collapse-body" style="max-height: 220px;">
+          <div class="faq-inner-text">
+            車主本人親洽並備妥：車主身分證正本、第二證件（健保卡或駕照）、汽機車行照正本。若為貸款分期車，請攜帶近期繳款收據或證明即可快速辦理。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-accordion-item">
+        <button class="faq-btn-trigger">
+          <span>什麼是「免留車」方案？真的不影響用車嗎？</span>
+          <i data-lucide="plus" class="faq-icon-cross" style="width:20px;height:20px"></i>
+        </button>
+        <div class="faq-collapse-body">
+          <div class="faq-inner-text">
+            是的！免留車借款會至監理機關辦理「動產擔保設定」，核貸取得週轉金後，車輛仍由您繼續保留使用，完全不影響您的日常通勤與事業運作。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-accordion-item">
+        <button class="faq-btn-trigger">
+          <span>信用有瑕疵、聯徵紀錄不良可以順利借款嗎？</span>
+          <i data-lucide="plus" class="faq-icon-cross" style="width:20px;height:20px"></i>
+        </button>
+        <div class="faq-collapse-body">
+          <div class="faq-inner-text">
+            可以！當舖主要依據擔保品本身的殘值進行專業估價，不查銀行聯徵、不看信用分數，只要物品具備價值，皆能為您快速規劃適切的借款方案。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-accordion-item">
+        <button class="faq-btn-trigger">
+          <span>借款利息與費用如何計算？是否有額外收費？</span>
+          <i data-lucide="plus" class="faq-icon-cross" style="width:20px;height:20px"></i>
+        </button>
+        <div class="faq-collapse-body">
+          <div class="faq-inner-text">
+            宏遠當舖為政府合法立案，嚴格遵循《當鋪業法》規定，法定月利率上限為 2.5%（每萬元月息最高 250 元），除法定倉棧費外，絕無任何額外手續費或不合理扣款。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CTA BANNER ════════════════ -->
+  <section class="section-container" style="padding-top:1rem">
+    <div class="cta-banner-box reveal-on-scroll">
+      <span class="sec-eyebrow-tag" style="color:var(--gold-deep)">IMMEDIATE ASSISTANCE</span>
+      <h2>立即啟動您的資產流動性</h2>
+      <p>不論任何資金週轉規模，現在就透過電話或官方 LINE 進行免費保密諮詢，專人即時為您精準估算。</p>
+
+      <div class="cta-chip-row">
+        <a href="tel:075521165" class="cta-badge-link">
+          <i data-lucide="phone" style="width:18px;height:18px;color:var(--gold-deep)"></i>
+          <span>服務專線：(07) 552-1165</span>
+        </a>
+        <a href="https://lin.ee/q8O1qR5" target="_blank" class="cta-badge-link">
+          <i data-lucide="message-circle" style="width:18px;height:18px;color:var(--gold-deep)"></i>
+          <span>LINE 官方線上估價</span>
+        </a>
+        <a href="https://www.facebook.com/p/%E9%AB%98%E9%9B%84%E5%AE%8F%E9%81%A0%E7%95%B6%E8%88%96-100064245973719/" target="_blank" class="cta-badge-link">
+          <i data-lucide="facebook" style="width:18px;height:18px;color:var(--gold-deep)"></i>
+          <span>Facebook 官方專頁</span>
+        </a>
+      </div>
+
+      <button class="btn-lux-primary" id="ctaModalTrigger">
+        <i data-lucide="phone-call" style="width:20px;height:20px"></i>
+        <span>立即預約免費鑑價</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ════════════════ GOOGLE MAP ════════════════ -->
+  <div class="map-frame-wrapper" id="guarantee">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.358249826315!2d120.29177197598858!3d22.658145729792015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0454a86071ef%3A0xe5a3cbbff117db33!2z6auY6ZuE5biC6byT5bGx5Y2A6I-v5qau6LevNjXomZ8!5e0!3m2!1szh-TW!2stw!4v1700000000000" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <div class="map-floating-overlay">
+      <h4>📍 高雄宏遠當舖</h4>
+      <p>
+        <strong>門市地址：</strong>高雄市鼓山區華榮路65號<br />
+        <strong>諮詢專線：</strong>(07) 552-1165<br />
+        <strong>服務特色：</strong>專人一對一鑑價、全程獨立隱私貴賓室
+      </p>
+    </div>
+  </div>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="footer-lux-wrap">
+    <div class="footer-flex-container">
+      <div class="nav-brand">
+        <div class="brand-crown-icon" style="width:38px;height:38px">
+          <i data-lucide="shield" style="width:20px;height:20px"></i>
+        </div>
+        <div class="brand-text-group">
+          <div style="font-family:var(--font-serif);color:var(--text-main);font-weight:800;font-size:1.15rem">宏遠當舖</div>
+          <span style="font-size:0.55rem;color:var(--gold-deep);letter-spacing:0.25em">HONG YUAN FINANCE</span>
+        </div>
+      </div>
+
+      <div class="footer-nav-row">
+        <a href="#services">尊榮項目</a>
+        <a href="#credentials">合法保障</a>
+        <a href="#process">核貸流程</a>
+        <a href="#faq">常見問題</a>
+        <a href="tel:075521165">聯絡我們</a>
+      </div>
+    </div>
+
+    <div class="footer-legal-copy">
+      <p>© 2024 高雄宏遠當舖 Hong Yuan Pawnshop. All Rights Reserved. 政府合法立案 ｜ 高雄市鼓山區華榮路65號 ｜ 電話：(07) 552-1165</p>
+      <p style="margin-top:4px;color:var(--text-dim);font-size:0.75rem">本當舖嚴格遵守政府當舖業法相關規定，借款最高月利率為 2.5%（年利率 30%），除法定倉棧費外絕無任何代辦手續費。</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════ VIP ONLINE APPRAISAL MODAL ════════════════ -->
+  <div class="vip-modal-backdrop" id="vipModal">
+    <div class="vip-modal-dialog">
+      <button class="vip-modal-close" id="modalCloseBtn" aria-label="關閉視窗">
+        <i data-lucide="x" style="width:20px;height:20px"></i>
+      </button>
+
+      <div class="vip-modal-header">
+        <span class="sec-eyebrow-tag" style="margin-bottom:0.25rem">VIP CONCIERGE</span>
+        <h3>預約專人尊榮鑑價</h3>
+        <p>請選擇您欲調度的核心資產，專員將在 10 分鐘內為您提供初步鑑估結果。</p>
+      </div>
+
+      <div class="vip-category-chips" id="modalChips">
+        <div class="vip-chip-btn active" data-cat="汽車機車借款(免留車)">🚗 汽機車免留車</div>
+        <div class="vip-chip-btn" data-cat="瑞士名錶勞力士典當">⌚ 勞力士・名錶</div>
+        <div class="vip-chip-btn" data-cat="純金鑽石高價典當">👑 999.9 純金鑽石</div>
+        <div class="vip-chip-btn" data-cat="房屋土地二胎融資">🏠 房地二胎大額融資</div>
+      </div>
+
+      <input type="text" id="modalNameInput" class="vip-input-field" placeholder="您的尊姓大名（如：陳先生 / 林小姐）" />
+      <input type="tel" id="modalPhoneInput" class="vip-input-field" placeholder="您的聯絡電話（專人保密聯繫）" />
+      <input type="text" id="modalItemInput" class="vip-input-field" placeholder="典當品詳細描述（例如：2023年 Porsche Macan / 勞力士黑水鬼）" />
+
+      <button class="vip-btn-send" id="modalSubmitBtn">
+        <i data-lucide="check-circle" style="width:18px;height:18px"></i>
+        <span>一鍵轉傳官方 LINE 快速鑑價</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════════════ FLOATING CONCIERGE & TOP ════════════════ -->
+  <div class="sticky-concierge-panel">
+    <button class="concierge-fab-btn fab-top-trigger" id="fabTopBtn" aria-label="回到頂部">
+      <i data-lucide="arrow-up" style="width:20px;height:20px"></i>
+    </button>
+    <a href="https://lin.ee/q8O1qR5" target="_blank" class="concierge-fab-btn fab-line-green" title="LINE 快速諮詢">
+      <i data-lucide="message-circle" style="width:24px;height:24px"></i>
+    </a>
+    <a href="tel:075521165" class="concierge-fab-btn fab-phone-gold" title="電話直撥">
+      <i data-lucide="phone" style="width:24px;height:24px"></i>
+    </a>
+  </div>
+
+  <!-- ════════════════ HAUTE TECH SCRIPTS ════════════════ -->
+  <script>
+    lucide.createIcons();
+
+    // 1. Lenis Butter-Smooth Momentum Scroll
+    let lenis;
+    if (typeof Lenis !== 'undefined') {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+
+    // 2. Scroll Progress & Header Scrolled State
+    const header = document.getElementById('mainHeader');
+    const fabTopBtn = document.getElementById('fabTopBtn');
+    const scrollBar = document.getElementById('scrollProgressBar');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = (y / docHeight) * 100;
+
+      scrollBar.style.width = percent + '%';
+      header.classList.toggle('scrolled', y > 40);
+      fabTopBtn.classList.toggle('visible', y > 400);
+    });
+
+    fabTopBtn.addEventListener('click', () => {
+      if (lenis) {
+        lenis.scrollTo(0);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // 3. VIP Modal Dialog Logic
+    const vipModal = document.getElementById('vipModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalTriggers = [
+      document.getElementById('headerModalTrigger'),
+      document.getElementById('heroModalTrigger'),
+      document.getElementById('ctaModalTrigger')
+    ];
+    let selectedCategory = '汽車機車借款(免留車)';
+
+    modalTriggers.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', () => {
+          vipModal.classList.add('active');
+        });
+      }
+    });
+
+    document.querySelectorAll('.card-modal-open').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedCategory = btn.dataset.category || selectedCategory;
+        document.querySelectorAll('.vip-chip-btn').forEach(chip => {
+          chip.classList.toggle('active', chip.dataset.cat.includes(selectedCategory.substring(0, 2)));
+        });
+        vipModal.classList.add('active');
+      });
+    });
+
+    modalCloseBtn.addEventListener('click', () => {
+      vipModal.classList.remove('active');
+    });
+
+    vipModal.addEventListener('click', (e) => {
+      if (e.target === vipModal) {
+        vipModal.classList.remove('active');
+      }
+    });
+
+    document.querySelectorAll('.vip-chip-btn').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.vip-chip-btn').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        selectedCategory = chip.dataset.cat;
+      });
+    });
+
+    document.getElementById('modalSubmitBtn').addEventListener('click', () => {
+      const name = document.getElementById('modalNameInput').value.trim() || '貴賓客座';
+      const phone = document.getElementById('modalPhoneInput').value.trim() || '未填寫';
+      const item = document.getElementById('modalItemInput').value.trim() || '一般鑑價詢問';
+
+      const message = `【宏遠當舖 VIP 預約鑑價】%0A尊姓：${encodeURIComponent(name)}%0A電話：${encodeURIComponent(phone)}%0A類別：${encodeURIComponent(selectedCategory)}%0A描述：${encodeURIComponent(item)}`;
+      window.open(`https://line.me/R/ti/p/@hongyuan?text=${message}`, '_blank');
+      vipModal.classList.remove('active');
+    });
+
+    // 4. FAQ Accordion Toggle
+    document.querySelectorAll('.faq-accordion-item').forEach(item => {
+      const trigger = item.querySelector('.faq-btn-trigger');
+      const body = item.querySelector('.faq-collapse-body');
+
+      trigger.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        document.querySelectorAll('.faq-accordion-item').forEach(other => {
+          other.classList.remove('active');
+          other.querySelector('.faq-collapse-body').style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // 5. Scroll Reveal Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
