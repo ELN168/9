@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://wangwangwang-mahjong.com/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wangwangwang-mahjong.com/images/official_logo_banner.webp</image:loc>
+      <image:title>汪汪旺桌遊休閒館官方名片</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wangwangwang-mahjong.com/images/real_store_venue_1.webp</image:loc>
+      <image:title>五甲麻將鳳山麻將館推薦汪汪旺現場實景全開</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wangwangwang-mahjong.com/images/tournament_match.webp</image:loc>
+      <image:title>五甲麻將鳳山麻將爭霸賽現場實況</image:title>
+    </image:image>
+  </url>
+</urlset>
