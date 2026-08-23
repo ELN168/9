@@ -34,7 +34,7 @@
 | **`addr:postcode`** | `830` | 郵遞區號 |
 | **`phone`** | `+886 905 845 757` | 手機專線 |
 | **`website`** | `https://wangwangwang-mahjong.com/` | 官方網站 |
-| **`opening_hours`** | `Su-Th 11:00-23:00; Fr-Sa 11:00-01:00` | 標準 OSM 營業時間語法 |
+| **`opening_hours`** | `Mo-Su 11:00-02:00` | 標準 OSM 營業時間語法 |
 | **`wheelchair`** | `yes` | 一樓平整無障礙 |
 | **`smoking`** | `no` | 全面禁菸良好空氣 |
 | **`air_conditioning`**| `yes` | 變頻冷氣全天超涼爽 |
